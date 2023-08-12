@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="TES">
+  <artifact type="war" name="TES">
     <output-path>$PROJECT_DIR$/out/artifacts/TES</output-path>
-    <root id="root">
+    <root id="archive" name="TES.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="TES" />
