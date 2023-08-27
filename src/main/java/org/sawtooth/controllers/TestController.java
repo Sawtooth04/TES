@@ -18,10 +18,7 @@ public class TestController {
     }
 
     @GetMapping("/get")
-    public String getTest() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-        ICustomerRepository repository = storage.GetRepository(ICustomerRepository.class);
-        repository.Get(2);
-        System.out.println("Hit me!");
+    public String getTest() {
         return "Hello, react!";
     }
 }

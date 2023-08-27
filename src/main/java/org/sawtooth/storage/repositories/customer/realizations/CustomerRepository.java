@@ -4,9 +4,6 @@ import org.sawtooth.models.Customer.Customer;
 import org.sawtooth.models.Customer.CustomerMapper;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.SqlParameter;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 
 import java.sql.Types;
 import java.util.List;
