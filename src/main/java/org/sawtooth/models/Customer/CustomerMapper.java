@@ -13,7 +13,8 @@ public class CustomerMapper implements RowMapper<Customer> {
             resultSet.getInt("customerID"),
             resultSet.getString("name"),
             resultSet.getString("passwordHash"),
-            resultSet.getString("email")
+            resultSet.getString("email"),
+            resultSet.getInt("roleID")
         );
     }
 }

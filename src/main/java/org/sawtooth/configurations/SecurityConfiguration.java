@@ -8,8 +8,6 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
@@ -43,9 +41,13 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(
             (authorize) -> authorize.dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
-                .requestMatchers("/test/**").hasRole("admin")
+                .requestMatchers("/registration/*").permitAll()
+                .requestMatchers("/test/*").authenticated()
                 .anyRequest().authenticated()
-        ).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults());
+        ).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults())
+        .csrf((csrf) -> csrf
+            .ignoringRequestMatchers("/registration/*")
+        );;
         return http.build();
     }
 
