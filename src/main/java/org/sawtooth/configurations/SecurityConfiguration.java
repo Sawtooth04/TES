@@ -4,6 +4,7 @@ import jakarta.servlet.DispatcherType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -28,12 +29,13 @@ public class SecurityConfiguration {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
+            .dataSource(dataSource)
             .usersByUsernameQuery("SELECT * FROM sec_get_user(?)")
             .authoritiesByUsernameQuery("SELECT * FROM sec_get_auth(?)");
     }
 
     @Bean
-    public JdbcUserDetailsManager user(PasswordEncoder encoder) {
+    public JdbcUserDetailsManager jdbcUserDetailsManager(PasswordEncoder encoder) {
         return new JdbcUserDetailsManager(dataSource);
     }
 
@@ -46,7 +48,7 @@ public class SecurityConfiguration {
                 .anyRequest().authenticated()
         ).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults())
         .csrf((csrf) -> csrf
-            .ignoringRequestMatchers("/registration/*")
+            .ignoringRequestMatchers("/login", "/registration/*")
         );;
         return http.build();
     }
