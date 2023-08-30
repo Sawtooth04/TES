@@ -1,11 +1,10 @@
 package org.sawtooth.storage.repositories.customer.realizations;
 
-import org.sawtooth.models.Customer.Customer;
-import org.sawtooth.models.Customer.CustomerMapper;
+import org.sawtooth.models.customer.Customer;
+import org.sawtooth.models.customer.CustomerMapper;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.sql.Types;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {

@@ -1,7 +1,7 @@
 package org.sawtooth.controllers;
 
-import org.sawtooth.models.Customer.Customer;
-import org.sawtooth.models.Customer.CustomerRegistrationModel;
+import org.sawtooth.models.customer.Customer;
+import org.sawtooth.models.customer.CustomerRegistrationModel;
 import org.sawtooth.storage.realizations.Storage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
