@@ -44,11 +44,11 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests(
             (authorize) -> authorize.dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
                 .requestMatchers("/registration/*").permitAll()
-                .requestMatchers("/test/*").authenticated()
+                .requestMatchers("/task/*").permitAll()
                 .anyRequest().authenticated()
         ).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults())
         .csrf((csrf) -> csrf
-            .ignoringRequestMatchers("/login", "/registration/*")
+            .ignoringRequestMatchers("/task/*")
         );;
         return http.build();
     }
