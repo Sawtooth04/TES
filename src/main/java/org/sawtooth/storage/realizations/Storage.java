@@ -4,6 +4,14 @@ import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.IRepository;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.customer.realizations.CustomerRepository;
+import org.sawtooth.storage.repositories.role.abstractions.IRoleRepository;
+import org.sawtooth.storage.repositories.role.realizations.RoleRepository;
+import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
+import org.sawtooth.storage.repositories.room.realizations.RoomRepository;
+import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
+import org.sawtooth.storage.repositories.roomcustomer.realizations.RoomCustomerRepository;
+import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
+import org.sawtooth.storage.repositories.roomtask.realizations.RoomTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -26,6 +34,10 @@ public class Storage implements IStorage {
 
     private static void Initialization() {
         repositories.put(ICustomerRepository.class.getName(), CustomerRepository.class.getName());
+        repositories.put(IRoleRepository.class.getName(), RoleRepository.class.getName());
+        repositories.put(IRoomRepository.class.getName(), RoomRepository.class.getName());
+        repositories.put(IRoomCustomerRepository.class.getName(), RoomCustomerRepository.class.getName());
+        repositories.put(IRoomTaskRepository.class.getName(), RoomTaskRepository.class.getName());
     }
 
     public <T extends IRepository> T GetRepository(Class<T> interfaceObject) throws ClassNotFoundException,
