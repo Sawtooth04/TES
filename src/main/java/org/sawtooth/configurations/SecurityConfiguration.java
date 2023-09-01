@@ -45,10 +45,11 @@ public class SecurityConfiguration {
             (authorize) -> authorize.dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
                 .requestMatchers("/registration/*").permitAll()
                 .requestMatchers("/task/*").permitAll()
+                .requestMatchers("/test/*").permitAll()
                 .anyRequest().authenticated()
         ).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults())
         .csrf((csrf) -> csrf
-            .ignoringRequestMatchers("/task/*")
+            .ignoringRequestMatchers("/task/*", "/test/*")
         );;
         return http.build();
     }

@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 public class RoomTaskController {
     private final IStorage storage;
     private final IFilesValidator validator;
-    @Value("${tes.task.folder}")
+    @Value("${tes.tasks.folder}")
     private String tasksPath;
 
     @Autowired
