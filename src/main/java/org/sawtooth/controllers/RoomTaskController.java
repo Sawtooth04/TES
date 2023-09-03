@@ -29,8 +29,7 @@ public class RoomTaskController {
     }
 
     @PostMapping("/upload")
-    public void Upload(@ModelAttribute RoomTaskUploadModel taskUploadModel) throws IOException, ClassNotFoundException,
-        InstantiationException, IllegalAccessException {
+    public void Upload(@ModelAttribute RoomTaskUploadModel taskUploadModel) throws IOException, InstantiationException {
         if (validator.ValidateTask(taskUploadModel.file())) {
             String path = String.format("%s%s/%s", tasksPath, taskUploadModel.roomID(),
                 taskUploadModel.file().getOriginalFilename());

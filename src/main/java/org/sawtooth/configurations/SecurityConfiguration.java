@@ -46,10 +46,11 @@ public class SecurityConfiguration {
                 .requestMatchers("/registration/*").permitAll()
                 .requestMatchers("/task/*").permitAll()
                 .requestMatchers("/test/*").permitAll()
+                .requestMatchers("/solution/*").permitAll()
                 .anyRequest().authenticated()
         ).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults())
         .csrf((csrf) -> csrf
-            .ignoringRequestMatchers("/task/*", "/test/*")
+            .ignoringRequestMatchers("/task/*", "/test/*", "/solution/*")
         );;
         return http.build();
     }

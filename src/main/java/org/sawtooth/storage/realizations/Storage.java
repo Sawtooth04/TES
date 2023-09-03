@@ -43,11 +43,15 @@ public class Storage implements IStorage {
         repositories.put(IRoomSolutionRepository.class.getName(), RoomSolutionRepository.class.getName());
     }
 
-    public <T extends IRepository> T GetRepository(Class<T> interfaceObject) throws ClassNotFoundException,
-            InstantiationException, IllegalAccessException {
-        String repositoryName = repositories.get(interfaceObject.getName());
-        T repository = (T) Class.forName(repositoryName).newInstance();
-        repository.SetJbdcTemplate(template);
-        return repository;
+    public <T extends IRepository> T GetRepository(Class<T> interfaceObject) throws InstantiationException{
+        try {
+            String repositoryName = repositories.get(interfaceObject.getName());
+            T repository = (T) Class.forName(repositoryName).newInstance();
+            repository.SetJbdcTemplate(template);
+            return repository;
+        }
+        catch (Exception exception) {
+            throw new InstantiationException(exception.getMessage());
+        }
     }
 }
