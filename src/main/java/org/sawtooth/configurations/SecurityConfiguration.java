@@ -44,13 +44,14 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests(
             (authorize) -> authorize.dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
                 .requestMatchers("/registration/*").permitAll()
+                .requestMatchers("/login").permitAll()
                 .requestMatchers("/task/*").permitAll()
                 .requestMatchers("/test/*").permitAll()
                 .requestMatchers("/solution/*").permitAll()
                 .anyRequest().authenticated()
         ).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults())
         .csrf((csrf) -> csrf
-            .ignoringRequestMatchers("/task/*", "/test/*", "/solution/*")
+            .ignoringRequestMatchers("/task/*", "/test/*", "/solution/*", "/login")
         );;
         return http.build();
     }

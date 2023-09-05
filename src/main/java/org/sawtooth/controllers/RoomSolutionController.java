@@ -7,6 +7,8 @@ import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,11 +46,11 @@ public class RoomSolutionController {
         zipInputStream.closeEntry();
     }
 
-    private String UnZip(String path, String solutionName, String roomID) throws IOException {
+    private String UnZip(String path, String solutionName, String roomID, String userName) throws IOException {
         ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(path));
         ZipEntry entry;
         Path newFilePath;
-        Path rootPath = Files.createDirectories(Paths.get(String.format("%s/%s/%s/%s", solutionsPath, roomID,
+        Path rootPath = Files.createDirectories(Paths.get(String.format("%s/%s/%s/%s/%s", solutionsPath, roomID, userName,
             solutionName, sourcesFolder)));
 
         while((entry = zipInputStream.getNextEntry()) != null) {
@@ -61,20 +63,22 @@ public class RoomSolutionController {
         return rootPath.toString();
     }
 
-    private String WriteTempSolution(RoomSolutionUploadModel solutionUploadModel) throws IOException {
-        String path = String.format("%s/%s/%s", tempPath, solutionUploadModel.roomID(),
+    private String WriteTempSolution(RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
+        String path = String.format("%s/%s/%s/%s", tempPath, solutionUploadModel.roomID(), userName,
             solutionUploadModel.file().getOriginalFilename());
 
-        Files.createDirectories(Paths.get(String.format("%s/%s", tempPath, solutionUploadModel.roomID())));
+        Files.createDirectories(Paths.get(String.format("%s/%s/%s", tempPath, solutionUploadModel.roomID(), userName)));
         solutionUploadModel.file().transferTo(new File(path));
         return path;
     }
 
     @PostMapping("/upload")
     public void Upload(@ModelAttribute RoomSolutionUploadModel solutionUploadModel) throws IOException, InstantiationException {
+        String userName = SecurityContextHolder.getContext().getAuthentication().getName();
         String solutionName = Objects.requireNonNull(solutionUploadModel.file().getOriginalFilename()).substring(0,
             solutionUploadModel.file().getOriginalFilename().lastIndexOf('.'));
-        String rootPath = UnZip(WriteTempSolution(solutionUploadModel), solutionName, solutionUploadModel.roomID());
+        String rootPath = UnZip(WriteTempSolution(solutionUploadModel, userName), solutionName,
+            solutionUploadModel.roomID(), userName);
 
         storage.GetRepository(IRoomSolutionRepository.class).Add(new RoomSolution(-1,
             Integer.parseInt(solutionUploadModel.roomID()), rootPath));
