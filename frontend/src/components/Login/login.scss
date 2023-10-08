@@ -1,0 +1,26 @@
+$background_color: #ecf6ff;
+$secondary_color: #002544;
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $background_color;
+
+  & .login__logo {
+    width: 10.41%;
+    height: auto;
+  }
+
+  & .login__input {
+    margin-top: 1.38%;
+    outline: none;
+    width: 20.83%;
+    height: 3.70%;
+    border: $secondary_color 2px solid;
+    border-radius: 0.5vw;
+  }
+}

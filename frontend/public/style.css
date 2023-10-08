@@ -1,0 +1,33 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ecf6ff;
+}
+.login .login__logo {
+  width: 10.41%;
+  height: auto;
+}
+.login .login__input {
+  margin-top: 1.38%;
+  outline: none;
+  width: 20.83%;
+  height: 3.7%;
+  border: #002544 2px solid;
+  border-radius: 0.5vw;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
