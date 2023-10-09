@@ -1,5 +1,12 @@
 $background_color: #ecf6ff;
-$secondary_color: #002544;
+$inputs_background_color: #eef4f7;
+$primary_color: #002544;
+$secondary_color: #cc194b;
+$links_color: rgba(0, 37, 68, 0.67);
+
+$header_font_size: 36px;
+$input_font_size: 22px;
+$link_font_size: 18px;
 
 .login {
   display: flex;
@@ -15,12 +22,73 @@ $secondary_color: #002544;
     height: auto;
   }
 
+  & .login__logo-underline {
+    content: "";
+    width: 30.04%;
+    height: 0.3%;
+    background-color: $primary_color;
+  }
+
   & .login__input {
     margin-top: 1.38%;
     outline: none;
     width: 20.83%;
     height: 3.70%;
-    border: $secondary_color 2px solid;
+    padding: 0.15% 0.78%;
+    background-color: $inputs_background_color;
+    border: $primary_color 2px solid;
     border-radius: 0.5vw;
+    font-size: $input_font_size;
+    font-family: 'TTNormsPro SemiBold';
+  }
+
+  & .login__submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.38%;
+    outline: none;
+    width: 14.58%;
+    height: 4.65%;
+    background-color: $inputs_background_color;
+    border: $primary_color 2px solid;
+    color: $primary_color;
+    border-radius: 0.5vw;
+    font-size: $input_font_size;
+    font-family: 'TTNormsPro SemiBold';
+  }
+
+  & .login__link {
+    margin-top: 1.38%;
+    text-decoration: none;
+    font-size: $link_font_size;
+    font-family: 'TTNormsPro SemiBold';
+    color: $links_color;
+  }
+}
+
+.login:after {
+  content: "";
+  height: 3%;
+}
+
+.header {
+  display: flex;
+  padding-top: 1%;
+  justify-content: center;
+  align-items: center;
+
+  & .header__name {
+    margin: 0 0.7% 0 0.7%;
+    font-size: $header_font_size;
+    font-family: 'TTNormsPro SemiBold';
+  }
+
+  & .header__name_primary {
+    color: $primary_color;
+  }
+
+  & .header__name_secondary {
+    color: $secondary_color;
   }
 }
