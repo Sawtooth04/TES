@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import PasswordInput from "../UI/PasswordInput/PasswordInput";
 
 const Login = () => {
     return (
@@ -11,8 +12,8 @@ const Login = () => {
                 <p className={"header__name header__name_primary"}> System </p>
             </div>
             <div className={"login__logo-underline"}/>
-            <input className={"login__password-input login__input"} placeholder={"Логин"}/>
-            <input className={"login__login-input login__input"} placeholder={"Пароль"}/>
+            <input className={"login__login-input login__input"} placeholder={"Логин"} maxLength={12}/>
+            <PasswordInput className={"login__password-input"} maxLength={12}/>
             <button className={"login__submit-button"}> Войти </button>
             <Link className={"login__link"} to={"/"}> Регистрация </Link>
             <Link className={"login__link"} to={"/"}> Забыли пароль? </Link>

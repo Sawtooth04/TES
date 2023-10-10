@@ -12,20 +12,59 @@
   height: auto;
 }
 .login .login__logo-underline {
-  content: "";
   width: 30.04%;
   height: 0.3%;
+  content: "";
   background-color: #002544;
 }
-.login .login__input {
+.login .login__password-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20.83%;
+  height: 3.7%;
   margin-top: 1.38%;
+  padding: 0.15% 0.78%;
+  border: #002544 2px solid;
+  border-radius: 0.5vw;
+}
+.login .login__password-input .password-input__input {
+  width: 100%;
+  height: 100%;
+  padding: 0.15% 0.78%;
   outline: none;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  font-size: 22px;
+  font-family: "TTNormsPro SemiBold";
+}
+.login .login__password-input .password-input__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: auto;
+  height: 70%;
+  right: 0;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.login .login__password-input .password-input__button > img {
+  height: 100%;
+  width: auto;
+}
+.login .login__input {
   width: 20.83%;
   height: 3.7%;
   padding: 0.15% 0.78%;
-  background-color: #eef4f7;
+  margin-top: 1.38%;
+  outline: none;
   border: #002544 2px solid;
   border-radius: 0.5vw;
+  background-color: #eef4f7;
   font-size: 22px;
   font-family: "TTNormsPro SemiBold";
 }
@@ -33,35 +72,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1.38%;
-  outline: none;
   width: 14.58%;
   height: 4.65%;
-  background-color: #eef4f7;
+  margin-top: 1.38%;
+  outline: none;
   border: #002544 2px solid;
-  color: #002544;
   border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
   font-size: 22px;
   font-family: "TTNormsPro SemiBold";
+}
+.login .login__submit-button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
 }
 .login .login__link {
   margin-top: 1.38%;
   text-decoration: none;
+  color: rgba(0, 37, 68, 0.67);
+  transition: color 200ms ease-out;
   font-size: 18px;
   font-family: "TTNormsPro SemiBold";
-  color: rgba(0, 37, 68, 0.67);
+}
+.login .login__link:hover {
+  color: #002544;
 }
 
 .login:after {
-  content: "";
   height: 3%;
+  content: "";
 }
 
 .header {
   display: flex;
-  padding-top: 1%;
   justify-content: center;
   align-items: center;
+  padding-top: 1%;
 }
 .header .header__name {
   margin: 0 0.7% 0 0.7%;
