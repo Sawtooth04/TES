@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const PasswordInput = ({className, maxLength}) => {
+const PasswordInput = ({className, maxLength, placeholder}) => {
     const [isHidden, setIsHidden] = useState(true)
 
     function switchState() {
@@ -9,7 +9,7 @@ const PasswordInput = ({className, maxLength}) => {
 
     return (
         <div className={`${className} password-input`}>
-            <input className={"password-input__input"} placeholder={"Пароль"} type={isHidden ? "password" : "text"}
+            <input className={"password-input__input"} placeholder={placeholder} type={isHidden ? "password" : "text"}
                 maxLength={maxLength}/>
             {isHidden ?
                 <button className={"password-input__button"} onClick={switchState}>

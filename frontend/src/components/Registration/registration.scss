@@ -4,7 +4,7 @@ $header_font_size: 36px;
 $input_font_size: 22px;
 $link_font_size: 18px;
 
-.login {
+.registration {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,19 +13,19 @@ $link_font_size: 18px;
   height: 100%;
   background-color: $background_color;
 
-  & .login__logo {
+  & .registration__logo {
     width: 10.41%;
     height: auto;
   }
 
-  & .login__logo-underline {
+  & .registration__logo-underline {
     width: 30.04%;
     height: 0.3%;
     content: "";
     background-color: $primary_color;
   }
 
-  & > .login__password-input {
+  & > .registration__password-input, > .registration__verification-password-input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@ $link_font_size: 18px;
     }
   }
 
-  & .login__input {
+  & .registration__input {
     width: 20.83%;
     height: 3.70%;
     padding: 0.15% 0.78%;
@@ -81,11 +81,11 @@ $link_font_size: 18px;
     font-family: 'TTNormsPro SemiBold', 'sans-serif';
   }
 
-  & .login__submit-button {
+  & .registration__submit-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 14.58%;
+    width: 17.34%;
     height: 4.65%;
     margin-top: 1.38%;
     outline: none;
@@ -98,13 +98,13 @@ $link_font_size: 18px;
     font-family: 'TTNormsPro SemiBold', 'sans-serif';
   }
 
-  & .login__submit-button:hover {
+  & .registration__submit-button:hover {
     background-color: $primary_color;
     color: $secondary_color;
     cursor: pointer;
   }
 
-  & .login__link {
+  & .registration__link {
     margin-top: 1.38%;
     text-decoration: none;
     color: $links_color;
@@ -113,13 +113,13 @@ $link_font_size: 18px;
     font-family: 'TTNormsPro SemiBold', 'sans-serif';
   }
 
-  & .login__link:hover {
+  & .registration__link:hover {
     color: $primary_color;
   }
 }
 
-.login:after {
-  height: 3%;
+.registration:after {
+  height: 5%;
   content: "";
 }
 

@@ -17,7 +17,7 @@
   content: "";
   background-color: #002544;
 }
-.login .login__password-input {
+.login > .login__password-input {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@
   border: #002544 2px solid;
   border-radius: 0.5vw;
 }
-.login .login__password-input .password-input__input {
+.login > .login__password-input > .password-input__input {
   width: 100%;
   height: 100%;
   padding: 0.15% 0.78%;
@@ -38,9 +38,9 @@
   border-radius: 0.5vw;
   background-color: #eef4f7;
   font-size: 22px;
-  font-family: "TTNormsPro SemiBold";
+  font-family: "TTNormsPro SemiBold", "sans-serif";
 }
-.login .login__password-input .password-input__button {
+.login > .login__password-input > .password-input__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +52,7 @@
   background-color: inherit;
   cursor: pointer;
 }
-.login .login__password-input .password-input__button > img {
+.login > .login__password-input > .password-input__button > img {
   height: 100%;
   width: auto;
 }
@@ -66,7 +66,7 @@
   border-radius: 0.5vw;
   background-color: #eef4f7;
   font-size: 22px;
-  font-family: "TTNormsPro SemiBold";
+  font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login .login__submit-button {
   display: flex;
@@ -82,7 +82,7 @@
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
   font-size: 22px;
-  font-family: "TTNormsPro SemiBold";
+  font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login .login__submit-button:hover {
   background-color: #002544;
@@ -95,7 +95,7 @@
   color: rgba(0, 37, 68, 0.67);
   transition: color 200ms ease-out;
   font-size: 18px;
-  font-family: "TTNormsPro SemiBold";
+  font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login .login__link:hover {
   color: #002544;
@@ -115,7 +115,133 @@
 .header .header__name {
   margin: 0 0.7% 0 0.7%;
   font-size: 36px;
-  font-family: "TTNormsPro SemiBold";
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.header .header__name_primary {
+  color: #002544;
+}
+.header .header__name_secondary {
+  color: #cc194b;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ecf6ff;
+}
+.registration .registration__logo {
+  width: 10.41%;
+  height: auto;
+}
+.registration .registration__logo-underline {
+  width: 30.04%;
+  height: 0.3%;
+  content: "";
+  background-color: #002544;
+}
+.registration > .registration__password-input, .registration > .registration__verification-password-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20.83%;
+  height: 3.7%;
+  margin-top: 1.38%;
+  padding: 0.15% 0.78%;
+  border: #002544 2px solid;
+  border-radius: 0.5vw;
+}
+.registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
+  width: 100%;
+  height: 100%;
+  padding: 0.15% 0.78%;
+  outline: none;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  font-size: 22px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.registration > .registration__password-input > .password-input__button, .registration > .registration__verification-password-input > .password-input__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: auto;
+  height: 70%;
+  right: 0;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.registration > .registration__password-input > .password-input__button > img, .registration > .registration__verification-password-input > .password-input__button > img {
+  height: 100%;
+  width: auto;
+}
+.registration .registration__input {
+  width: 20.83%;
+  height: 3.7%;
+  padding: 0.15% 0.78%;
+  margin-top: 1.38%;
+  outline: none;
+  border: #002544 2px solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  font-size: 22px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.registration .registration__submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17.34%;
+  height: 4.65%;
+  margin-top: 1.38%;
+  outline: none;
+  border: #002544 2px solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 22px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.registration .registration__submit-button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
+}
+.registration .registration__link {
+  margin-top: 1.38%;
+  text-decoration: none;
+  color: rgba(0, 37, 68, 0.67);
+  transition: color 200ms ease-out;
+  font-size: 18px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.registration .registration__link:hover {
+  color: #002544;
+}
+
+.registration:after {
+  height: 5%;
+  content: "";
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1%;
+}
+.header .header__name {
+  margin: 0 0.7% 0 0.7%;
+  font-size: 36px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .header .header__name_primary {
   color: #002544;
@@ -156,6 +282,10 @@ body {
 #root {
   width: 100%;
   height: 100%;
+}
+
+.smooth-show-component {
+  transition: color 200ms ease-out;
 }
 
 /*# sourceMappingURL=style.css.map */

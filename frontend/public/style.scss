@@ -1,4 +1,5 @@
 @import "../src/components/Login/login";
+@import "../src/components/Registration/registration";
 @import "fonts";
 
 body {
@@ -11,3 +12,6 @@ body {
   height: 100%;
 }
 
+.smooth-show-component {
+  transition: color 200ms ease-out;
+}
