@@ -250,6 +250,71 @@
   color: #cc194b;
 }
 
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+.main .main__header {
+  width: 100%;
+  height: 7.4%;
+}
+.main .main__wrapper {
+  width: 100%;
+  height: 92.6%;
+}
+.main .main__wrapper .main__wrapper__content {
+  width: 100%;
+  height: 100%;
+  background-color: #ecf6ff;
+}
+
+.header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0;
+  background-color: #002544;
+}
+.header .header__sidebar-button, .header .header__navigation__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.73%;
+  margin: 0 1.82%;
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.header .header__sidebar-button > img, .header .header__navigation__button > img {
+  width: 100%;
+  height: auto;
+}
+.header .header__navigation {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+}
+.header .header__navigation .navigation__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 52.08%;
+  margin: 0 2.76% 0 0;
+}
+.header .header__navigation .navigation__button > img {
+  width: auto;
+  height: 100%;
+}
+.header .header__logo {
+  width: auto;
+  height: 68.75%;
+}
+
 @font-face {
   font-family: "TTNormsPro";
   font-style: normal;
@@ -280,7 +345,7 @@ body {
 }
 
 #root {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 

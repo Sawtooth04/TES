@@ -1,5 +1,7 @@
 @import "../src/components/Login/login";
 @import "../src/components/Registration/registration";
+@import "../src/components/ContentRoutes/content-routes";
+@import "../src/components/Header/header";
 @import "fonts";
 
 body {
@@ -8,7 +10,7 @@ body {
 }
 
 #root {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 
