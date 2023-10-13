@@ -1,0 +1,16 @@
+.sidebar-item {
+  outline: none;
+  border: none;
+  background-color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=sidebar.css.map */

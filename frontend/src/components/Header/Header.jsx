@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ onSidebarClick }) => {
     return (
         <header className={"header main__header"}>
-            <button className={"header__sidebar-button"}>
+            <button className={"header__sidebar-button"} onClick={onSidebarClick}>
                 <img src={"/assets/images/icons/sidebar.png"} alt={"Sidebar"}/>
             </button>
             <img className={"header__logo"} src={"/assets/images/logo/text-logo.png"} alt={"Logo"}/>

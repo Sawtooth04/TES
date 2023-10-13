@@ -1,17 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Header from "../Header/Header";
+import Sidebar from "../Sidebar/Sidebar";
 
 const ContentRoutes = ({ onNavigate }) => {
+    const [isSidebarHidden, setIsSidebarHidden] = useState(true);
+
     function onMount() {
         onNavigate();
     }
 
+    function onSidebarStateSwitch() {
+        setIsSidebarHidden(!isSidebarHidden);
+    }
+
+    function hideSidebar(event) {
+        setIsSidebarHidden(true);
+        event.stopPropagation();
+    }
+
     return (
         <div className="main">
-            <Header/>
+            <Header onSidebarClick={onSidebarStateSwitch}/>
             <div className="main__wrapper">
-                <div className="main__wrapper__content">
+                <Sidebar hidden={isSidebarHidden}/>
+                <div className="main__wrapper__content" onClick={hideSidebar}>
                     <Routes>
                         <Route path="*" element={<div/>}/>
                     </Routes>
