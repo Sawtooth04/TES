@@ -1,0 +1,19 @@
+@import "../src/components/Login/login";
+@import "../src/components/Registration/registration";
+@import "../src/components/ContentRoutes/content-routes";
+@import "../src/components/Header/header";
+@import "fonts";
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+#root {
+  width: 100vw;
+  height: 100%;
+}
+
+.smooth-show-component {
+  transition: color 200ms ease-out;
+}

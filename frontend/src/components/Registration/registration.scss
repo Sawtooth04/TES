@@ -1,0 +1,145 @@
+@import "../../public-variables";
+
+$header_font_size: 36px;
+$input_font_size: 22px;
+$link_font_size: 18px;
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $background_color;
+
+  & .registration__logo {
+    width: 10.41%;
+    height: auto;
+  }
+
+  & .registration__logo-underline {
+    width: 30.04%;
+    height: 0.3%;
+    content: "";
+    background-color: $primary_color;
+  }
+
+  & > .registration__password-input, > .registration__verification-password-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 20.83%;
+    height: 3.70%;
+    margin-top: 1.38%;
+    padding: 0.15% 0.78%;
+    border: $primary_color 2px solid;
+    border-radius: 0.5vw;
+
+    & > .password-input__input {
+      width: 100%;
+      height: 100%;
+      padding: 0.15% 0.78%;
+      outline: none;
+      border: none;
+      border-radius: 0.5vw;
+      background-color: $inputs_background_color;
+      font-size: $input_font_size;
+      font-family: 'TTNormsPro SemiBold', 'sans-serif';
+    }
+
+    & > .password-input__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: auto;
+      height: 70%;
+      right: 0;
+      border: none;
+      background-color: inherit;
+      cursor: pointer;
+
+      & > img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  & .registration__input {
+    width: 20.83%;
+    height: 3.70%;
+    padding: 0.15% 0.78%;
+    margin-top: 1.38%;
+    outline: none;
+    border: $primary_color 2px solid;
+    border-radius: 0.5vw;
+    background-color: $inputs_background_color;
+    font-size: $input_font_size;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .registration__submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17.34%;
+    height: 4.65%;
+    margin-top: 1.38%;
+    outline: none;
+    border: $primary_color 2px solid;
+    border-radius: 0.5vw;
+    background-color: $inputs_background_color;
+    color: $primary_color;
+    transition: color 200ms ease-out, background-color 200ms ease-out;
+    font-size: $input_font_size;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .registration__submit-button:hover {
+    background-color: $primary_color;
+    color: $secondary_color;
+    cursor: pointer;
+  }
+
+  & .registration__link {
+    margin-top: 1.38%;
+    text-decoration: none;
+    color: $links_color;
+    transition: color 200ms ease-out;
+    font-size: $link_font_size;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .registration__link:hover {
+    color: $primary_color;
+  }
+}
+
+.registration:after {
+  height: 5%;
+  content: "";
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1%;
+
+  & .header__name {
+    margin: 0 0.7% 0 0.7%;
+    font-size: $header_font_size;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .header__name_primary {
+    color: $primary_color;
+  }
+
+  & .header__name_secondary {
+    color: $secondary_color;
+  }
+}
