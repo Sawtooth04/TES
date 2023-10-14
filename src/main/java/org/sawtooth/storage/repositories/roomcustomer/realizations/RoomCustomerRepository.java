@@ -27,4 +27,9 @@ public class RoomCustomerRepository implements IRoomCustomerRepository {
         template.execute(String.format("SELECT * FROM insert_room_customer(%d, %d, %d)",
             roomCustomer.roomCustomerID(), roomCustomer.roomID(), roomCustomer.customerID()));
     }
+
+    @Override
+    public int GetVariant(String name, int roomID) {
+        return template.queryForObject(String.format("SELECT * FROM get_variant('%s', %d)", name, roomID), Integer.class);
+    }
 }

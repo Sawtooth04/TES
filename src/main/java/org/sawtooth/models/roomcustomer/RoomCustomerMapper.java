@@ -10,7 +10,8 @@ public class RoomCustomerMapper implements RowMapper<RoomCustomer> {
         return new RoomCustomer(
             resultSet.getInt("roomCustomerID"),
             resultSet.getInt("roomID"),
-            resultSet.getInt("customerID")
+            resultSet.getInt("customerID"),
+            resultSet.getInt("variant")
         );
     }
 }

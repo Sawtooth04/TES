@@ -24,6 +24,18 @@ public class RoomTaskRepository implements IRoomTaskRepository {
 
     @Override
     public void Add(RoomTask roomTask) {
-        template.execute(String.format("SELECT * FROM insert_room_task(%d, '%s')", roomTask.roomID(), roomTask.path()));
+        template.execute(String.format("SELECT * FROM insert_room_task(%d, '%s', '%s')", roomTask.roomID(), roomTask.name(),
+            roomTask.path()));
+    }
+
+    @Override
+    public int GetID(int roomID, String path) {
+        return template.queryForObject(String.format("SELECT \"roomTaskID\" FROM get_room_task(%d, '%s')", roomID,
+            path), Integer.class);
+    }
+
+    @Override
+    public String GetName(int taskID) {
+        return template.queryForObject(String.format("SELECT \"name\" FROM get_room_task_by_id(%d)", taskID), String.class);
     }
 }

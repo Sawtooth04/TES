@@ -6,17 +6,21 @@ import org.sawtooth.configuration.abstractions.ILanguageConfigurationProvider;
 import org.sawtooth.configuration.models.LanguageConfiguration;
 import org.sawtooth.launcher.configuration.abstractions.ILauncherConfigurationProvider;
 import org.sawtooth.launcher.configuration.models.LauncherConfiguration;
-import org.sawtooth.models.SolutionLaunchResult.SolutionLaunchResult;
+import org.sawtooth.models.solutionlaunchresult.SolutionLaunchResult;
+import org.sawtooth.storage.abstractions.IStorage;
+import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
+import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
 import org.sawtooth.tester.abstractions.ITesterLauncher;
 import org.sawtooth.tester.models.TestLaunchResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 @RestController
@@ -26,28 +30,29 @@ public class TestLaunchController {
     private String solutionsPath;
     @Value("${tes.tasks.folder}")
     private String tasksPath;
-    @Value("${tes.roomid.placeholder}")
-    private String roomIDPlaceholder;
-    @Value("${tes.user.placeholder}")
-    private String userPlaceholder;
+    @Value("${tes.path.placeholder}")
+    private String pathPlaceholder;
+    @Value("${tes.solution.placeholder}")
+    private String solutionPlaceholder;
 
     private final ILanguageConfigurationProvider languageConfigurationProvider;
     private final ICompiler compiler;
     private final ITesterLauncher testerLauncher;
     private final ILauncherConfigurationProvider launcherConfigurationProvider;
+    private final IStorage storage;
 
     @Autowired
-    public TestLaunchController(ILanguageConfigurationProvider provider, ICompiler compiler,
+    public TestLaunchController(ILanguageConfigurationProvider provider, ICompiler compiler, IStorage storage,
         ITesterLauncher testerLauncher, ILauncherConfigurationProvider launcherConfigurationProvider) {
         this.languageConfigurationProvider = provider;
         this.compiler = compiler;
         this.testerLauncher = testerLauncher;
         this.launcherConfigurationProvider = launcherConfigurationProvider;
+        this.storage = storage;
     }
 
-    private boolean TryCompile(LanguageConfiguration languageConfiguration, String roomID, String user, String solution) {
+    private boolean TryCompile(LanguageConfiguration languageConfiguration, String rootPath, String solution) {
         try {
-            String rootPath = String.format("%s/%s/%s/%s", solutionsPath, roomID, user, solution);
             CompileResults r = compiler.TryCompile(languageConfiguration, solution, rootPath);
             return r.exitCode == 0;
         }
@@ -56,41 +61,47 @@ public class TestLaunchController {
         }
     }
 
-    private TestLaunchResults Launch(LauncherConfiguration launcherConfiguration, String roomID, String user, String solution) {
+    private TestLaunchResults Launch(LauncherConfiguration launcherConfiguration, String solution) {
         try {
-            if (TryCompile(launcherConfiguration.languageConfiguration, roomID, user, solution)) {
-                TestLaunchResults launchResults = testerLauncher.TryTestLaunch(
-                        launcherConfiguration,
-                        "test_py"
-                );
-                return launchResults;
-            }
-            return null;
+            return testerLauncher.TryTestLaunch(launcherConfiguration, solution);
         }
         catch (InterruptedException exception) {
             return null;
         }
     }
 
-    private void SetLaunchCommand(LanguageConfiguration languageConfiguration, String roomID, String user) {
+    private void SetLaunchCommand(LanguageConfiguration languageConfiguration, String path, String solution) {
         languageConfiguration.launchingCommand = languageConfiguration.launchingCommand
-            .replace(roomIDPlaceholder, roomID)
-            .replace(userPlaceholder, user);
+            .replace(pathPlaceholder, path)
+            .replace(solutionPlaceholder, solution);
+    }
+
+    private SolutionLaunchResult LaunchAll(LanguageConfiguration languageConfiguration, String solution,
+            ArrayList<LauncherConfiguration> launcherConfigurations) {
+        SolutionLaunchResult solutionLaunchResult = new SolutionLaunchResult();
+
+        for (LauncherConfiguration launcherConfiguration : launcherConfigurations) {
+            launcherConfiguration.languageConfiguration = languageConfiguration;
+            solutionLaunchResult.AddLaunchResult(Launch(launcherConfiguration, solution));
+        }
+        return solutionLaunchResult;
     }
 
     @GetMapping("/launch")
-    public SolutionLaunchResult LaunchAll(String roomID, String language, String solution) throws IOException {
+    public ResponseEntity<SolutionLaunchResult> LaunchAll(int roomID, String language, int taskID, String solution)
+            throws IOException, InstantiationException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        int variant = storage.GetRepository(IRoomCustomerRepository.class).GetVariant(authentication.getName(),roomID);
+        String taskName = storage.GetRepository(IRoomTaskRepository.class).GetName(taskID);
         ArrayList<LauncherConfiguration> launcherConfigurations = launcherConfigurationProvider.TryGetLauncherConfigurations(
-            String.format("%s/%s/%s", tasksPath, roomID, solution));
+            String.format("%s/%s/%s/%s", tasksPath, roomID, taskName, variant));
         LanguageConfiguration languageConfiguration = languageConfigurationProvider.TryGetValue(language);
-        SolutionLaunchResult solutionLaunchResult = new SolutionLaunchResult();
+        String rootPath = String.format("%s/%s/%s/%s", solutionsPath, roomID, taskID, authentication.getName());
 
-        SetLaunchCommand(languageConfiguration, roomID, authentication.getName());
-        for (LauncherConfiguration launcherConfiguration : launcherConfigurations) {
-            launcherConfiguration.languageConfiguration = languageConfiguration;
-            solutionLaunchResult.AddLaunchResult(Launch(launcherConfiguration, roomID, authentication.getName(), solution));
-        }
-        return solutionLaunchResult;
+        SetLaunchCommand(languageConfiguration, rootPath, solution);
+        if (TryCompile(languageConfiguration, rootPath, solution))
+            return ResponseEntity.status(HttpStatus.OK).body(LaunchAll(languageConfiguration, solution,
+                launcherConfigurations));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
 }

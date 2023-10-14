@@ -46,12 +46,12 @@ public class RoomSolutionController {
         zipInputStream.closeEntry();
     }
 
-    private String UnZip(String path, String solutionName, String roomID, String userName) throws IOException {
+    private String UnZip(String path, RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
         ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(path));
         ZipEntry entry;
         Path newFilePath;
-        Path rootPath = Files.createDirectories(Paths.get(String.format("%s/%s/%s/%s/%s", solutionsPath, roomID, userName,
-            solutionName, sourcesFolder)));
+        Path rootPath = Files.createDirectories(Paths.get(String.format("%s/%s/%s/%s/%s", solutionsPath,
+            solutionUploadModel.roomID(), solutionUploadModel.taskID(), userName, sourcesFolder)));
 
         while((entry = zipInputStream.getNextEntry()) != null) {
             newFilePath = Path.of(String.format("%s\\%s", rootPath.toString(), entry.getName()));
@@ -64,23 +64,21 @@ public class RoomSolutionController {
     }
 
     private String WriteTempSolution(RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
-        String path = String.format("%s/%s/%s/%s", tempPath, solutionUploadModel.roomID(), userName,
-            solutionUploadModel.file().getOriginalFilename());
+        String path = String.format("%s/%s/%s/%s", tempPath, solutionUploadModel.roomID(), solutionUploadModel.taskID(),
+            userName);
+        String filePath = String.format("%s/%s", path, solutionUploadModel.file().getOriginalFilename());
 
-        Files.createDirectories(Paths.get(String.format("%s/%s/%s", tempPath, solutionUploadModel.roomID(), userName)));
-        solutionUploadModel.file().transferTo(new File(path));
-        return path;
+        Files.createDirectories(Paths.get(path));
+        solutionUploadModel.file().transferTo(new File(filePath));
+        return filePath;
     }
 
     @PostMapping("/upload")
     public void Upload(@ModelAttribute RoomSolutionUploadModel solutionUploadModel) throws IOException, InstantiationException {
         String userName = SecurityContextHolder.getContext().getAuthentication().getName();
-        String solutionName = Objects.requireNonNull(solutionUploadModel.file().getOriginalFilename()).substring(0,
-            solutionUploadModel.file().getOriginalFilename().lastIndexOf('.'));
-        String rootPath = UnZip(WriteTempSolution(solutionUploadModel, userName), solutionName,
-            solutionUploadModel.roomID(), userName);
+        String rootPath = UnZip(WriteTempSolution(solutionUploadModel, userName), solutionUploadModel, userName);
 
         storage.GetRepository(IRoomSolutionRepository.class).Add(new RoomSolution(-1,
-            Integer.parseInt(solutionUploadModel.roomID()), rootPath));
+            solutionUploadModel.roomID(), rootPath));
     }
 }

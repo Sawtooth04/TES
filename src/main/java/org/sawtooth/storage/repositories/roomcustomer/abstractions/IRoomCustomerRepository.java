@@ -7,4 +7,6 @@ public interface IRoomCustomerRepository extends IRepository {
     public RoomCustomer Get(int id);
 
     public void Add(RoomCustomer roomCustomer);
+
+    public int GetVariant(String name, int roomID);
 }

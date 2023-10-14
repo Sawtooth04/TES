@@ -1,4 +1,4 @@
-package org.sawtooth.models.SolutionLaunchResult;
+package org.sawtooth.models.solutionlaunchresult;
 
 import org.sawtooth.tester.models.TestLaunchResults;
 
