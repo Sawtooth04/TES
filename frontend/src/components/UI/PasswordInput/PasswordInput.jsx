@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const PasswordInput = ({className, maxLength, placeholder}) => {
+const PasswordInput = ({className, maxLength, placeholder, inputRef}) => {
     const [isHidden, setIsHidden] = useState(true)
 
     function switchState() {
@@ -10,7 +10,7 @@ const PasswordInput = ({className, maxLength, placeholder}) => {
     return (
         <div className={`${className} password-input`}>
             <input className={"password-input__input"} placeholder={placeholder} type={isHidden ? "password" : "text"}
-                maxLength={maxLength}/>
+                maxLength={maxLength} ref={inputRef}/>
             {isHidden ?
                 <button className={"password-input__button"} onClick={switchState}>
                     <img src={"/assets/images/icons/show-password.png"} alt={"Show"}/>

@@ -123,23 +123,23 @@ $link_font_size: 18px;
   content: "";
 }
 
-.header {
+.login-header {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 1%;
 
-  & .header__name {
+  & .login-header__name {
     margin: 0 0.7% 0 0.7%;
     font-size: $header_font_size;
     font-family: 'TTNormsPro SemiBold', 'sans-serif';
   }
 
-  & .header__name_primary {
+  & .login-header__name_primary {
     color: $primary_color;
   }
 
-  & .header__name_secondary {
+  & .login-header__name_secondary {
     color: $secondary_color;
   }
 }
