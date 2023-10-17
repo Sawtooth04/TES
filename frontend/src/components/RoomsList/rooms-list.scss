@@ -1,0 +1,16 @@
+@import "../RoomLabel/room-label";
+
+.rooms-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & .rooms-list__room-label {
+    width: 18.12%;
+    height: 29.3%;
+    border-radius: 0.7vw;
+    overflow: hidden;
+    margin: 0 0 1.56% 1.36%;
+  }
+}

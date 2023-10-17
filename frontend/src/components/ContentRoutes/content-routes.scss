@@ -1,19 +1,22 @@
 @import "../../public-variables";
 @import "../Sidebar/sidebar";
+@import "../RoomsList/rooms-list";
 
 .main {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 
   & .main__header {
     width: 100%;
-    height: 7.40%;
+    height: 7.40vh;
   }
 
   & .main__wrapper {
     position: relative;
     width: 100%;
-    height: 92.60%;
+    height: 92.60vh;
+    background-color: $background_color;
 
     & .main__wrapper__sidebar {
       position: absolute;
@@ -25,9 +28,30 @@
     }
 
     & .main__wrapper__content {
+      display: flex;
+      justify-content: center;
+      align-items: start;
       width: 100%;
       height: 100%;
-      background-color: $background_color;
+      overflow-y: auto;
+
+      & .main__wrapper__content__rooms-list {
+        width: 100%;
+        padding: 1.56% 0;
+      }
+    }
+
+    & .main__wrapper__content::-webkit-scrollbar {
+      width: 0.6vw;
+    }
+
+    & .main__wrapper__content::-webkit-scrollbar-track {
+      background-color: $third_background_color;
+    }
+
+    & .main__wrapper__content::-webkit-scrollbar-thumb {
+      background-color: $border_color;
+      border-radius: 0.3vw;
     }
   }
 }

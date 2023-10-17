@@ -1,0 +1,22 @@
+.room-label {
+  display: flex;
+  flex-direction: column;
+}
+.room-label .room-label__header {
+  display: flex;
+  align-items: center;
+  background-color: #5185C5;
+}
+.room-label .room-label__header .room-label__header__name {
+  margin: 0;
+}
+.room-label .room-label__meta {
+  display: flex;
+  align-items: center;
+}
+.room-label .room-label__closest-tasks {
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=rooms-list.css.map */

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
+import RoomLabel from "../RoomLabel/RoomLabel";
+import RoomsList from "../RoomsList/RoomsList";
 
 const ContentRoutes = ({ onNavigate }) => {
     const [isSidebarHidden, setIsSidebarHidden] = useState(true);
@@ -26,7 +28,7 @@ const ContentRoutes = ({ onNavigate }) => {
                 <Sidebar hidden={isSidebarHidden}/>
                 <div className="main__wrapper__content" onClick={hideSidebar}>
                     <Routes>
-                        <Route path="*" element={<div/>}/>
+                        <Route path="*" element={<RoomsList />}/>
                     </Routes>
                 </div>
             </div>

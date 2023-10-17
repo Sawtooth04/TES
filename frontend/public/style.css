@@ -62,7 +62,7 @@
   padding: 0.15% 0.78%;
   margin-top: 1.38%;
   outline: none;
-  border: #002544 2px solid;
+  border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
   font-size: 22px;
@@ -76,7 +76,7 @@
   height: 4.65%;
   margin-top: 1.38%;
   outline: none;
-  border: #002544 2px solid;
+  border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
   color: #002544;
@@ -152,7 +152,7 @@
   height: 3.7%;
   margin-top: 1.38%;
   padding: 0.15% 0.78%;
-  border: #002544 2px solid;
+  border: #002544 0.2vw solid;
   border-radius: 0.5vw;
 }
 .registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
@@ -188,7 +188,7 @@
   padding: 0.15% 0.78%;
   margin-top: 1.38%;
   outline: none;
-  border: #002544 2px solid;
+  border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
   font-size: 22px;
@@ -202,7 +202,7 @@
   height: 4.65%;
   margin-top: 1.38%;
   outline: none;
-  border: #002544 2px solid;
+  border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
   color: #002544;
@@ -312,18 +312,93 @@
   transform: translateX(0);
 }
 
+.near-task {
+  display: flex;
+  flex-direction: column;
+}
+.near-task .near-task__deadline, .near-task .near-task__name {
+  margin: 0;
+}
+.near-task .near-task__deadline {
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 14px;
+}
+.near-task .near-task__name {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 14px;
+}
+
+.room-label {
+  display: flex;
+  flex-direction: column;
+  border: #b4bec7 0.2vw solid;
+}
+.room-label .room-label__header {
+  display: flex;
+  align-items: center;
+  height: 19.79%;
+  padding: 0 8.62%;
+  background-color: #5185C5;
+}
+.room-label .room-label__header .room-label__header__name {
+  margin: 0;
+  color: #ecf6ff;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 28px;
+}
+.room-label .room-label__meta {
+  display: flex;
+  align-items: center;
+  height: 13.99%;
+  padding: 0 8.62%;
+  background-color: #5185C5;
+}
+.room-label .room-label__meta .room-label__meta__audience {
+  margin: 0;
+  color: #ecf6ff;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
+}
+.room-label .room-label__nearest-tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8.62%;
+  flex-shrink: 1;
+  background-color: #eef4f7;
+}
+.room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task {
+  padding: 4.31% 0;
+}
+
+.rooms-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.rooms-list .rooms-list__room-label {
+  width: 18.12%;
+  height: 29.3%;
+  border-radius: 0.7vw;
+  overflow: hidden;
+  margin: 0 0 1.56% 1.36%;
+}
+
 .main {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 .main .main__header {
   width: 100%;
-  height: 7.4%;
+  height: 7.4vh;
 }
 .main .main__wrapper {
   position: relative;
   width: 100%;
-  height: 92.6%;
+  height: 92.6vh;
+  background-color: #ecf6ff;
 }
 .main .main__wrapper .main__wrapper__sidebar {
   position: absolute;
@@ -334,9 +409,26 @@
   padding: 0 0.78% 0 3.9%;
 }
 .main .main__wrapper .main__wrapper__content {
+  display: flex;
+  justify-content: center;
+  align-items: start;
   width: 100%;
   height: 100%;
-  background-color: #ecf6ff;
+  overflow-y: auto;
+}
+.main .main__wrapper .main__wrapper__content .main__wrapper__content__rooms-list {
+  width: 100%;
+  padding: 1.56% 0;
+}
+.main .main__wrapper .main__wrapper__content::-webkit-scrollbar {
+  width: 0.6vw;
+}
+.main .main__wrapper .main__wrapper__content::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.main .main__wrapper .main__wrapper__content::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
 }
 
 .header {
@@ -412,7 +504,7 @@
 }
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #root {

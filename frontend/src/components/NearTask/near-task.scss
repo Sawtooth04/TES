@@ -1,0 +1,18 @@
+.near-task {
+  display: flex;
+  flex-direction: column;
+
+  & .near-task__deadline, & .near-task__name {
+    margin: 0;
+  }
+
+  & .near-task__deadline {
+    font-family: "TTNormsPro SemiBold", "sans-serif";
+    font-size: 14px;
+  }
+
+  & .near-task__name {
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 14px;
+  }
+}

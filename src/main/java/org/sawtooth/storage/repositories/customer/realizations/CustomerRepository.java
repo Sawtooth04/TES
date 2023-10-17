@@ -17,13 +17,16 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public Customer Get(int id) {
-        List<Customer> result = template.query(String.format("SELECT * FROM get_customer_by_id(%d)", id), new CustomerMapper());
-        return result.get(0);
+        return template.queryForObject(String.format("SELECT * FROM get_customer_by_id(%d)", id), new CustomerMapper());
     }
 
     @Override
     public void Add(Customer customer) {
         template.execute(String.format("SELECT * FROM insert_default_customer('%s', '%s', '%s')",
             customer.name(), customer.passwordHash(), customer.email()));
+    }
+
+    public Customer Get(String name) {
+        return template.queryForObject(String.format("SELECT * FROM get_customer_by_name('%s')", name), new CustomerMapper());
     }
 }
