@@ -11,9 +11,18 @@ body {
 
 #root {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
 }
 
 .smooth-show-component {
   transition: color 200ms ease-out;
+}
+
+@keyframes smooth-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

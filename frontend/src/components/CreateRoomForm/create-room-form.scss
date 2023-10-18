@@ -1,0 +1,80 @@
+@import "../../public-variables";
+
+.add-room-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 92.6vh;
+  background-color: $tint_color;
+  animation: smooth-show 200ms ease-out;
+
+  & .add-room-form__form {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 22.39%;
+    padding: 0 0.78%;
+    margin-bottom: 4.16%;
+    background-color: $background_color;
+    border: $border_color 0.2vw solid;
+    border-radius: 0.78vw;
+    overflow: hidden;
+
+    & .add-room-form__form__header {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      width: 100%;
+      padding: 0 3.75%;
+      background-color: $primary_color;
+
+      & .add-room-form-header__name {
+        margin: 1.38vh 0;
+        font-size: 20px;
+        font-family: 'TTNormsPro SemiBold', 'sans-serif';
+        white-space: nowrap;
+        color: $background_color;
+      }
+    }
+
+    & .add-room-form__form__input {
+      width: 92.5%;
+      height: 3.7vh;
+      padding: 0 3.4%;
+      margin-top: 1.38vh;
+      outline: none;
+      border: $primary_color 0.2vw solid;
+      border-radius: 0.5vw;
+      background-color: $inputs_background_color;
+      font-size: 20px;
+      font-family: 'TTNormsPro SemiBold', 'sans-serif';
+    }
+
+    & .add-room-form__form__submit-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45%;
+      height: 3.7vh;
+      margin: 1.38vh 0;
+      outline: none;
+      border: $primary_color 0.2vw solid;
+      border-radius: 0.5vw;
+      background-color: $inputs_background_color;
+      color: $primary_color;
+      transition: color 200ms ease-out, background-color 200ms ease-out;
+      font-size: 20px;
+      font-family: 'TTNormsPro SemiBold', 'sans-serif';
+    }
+
+    & .add-room-form__form__submit-button:hover {
+      background-color: $primary_color;
+      color: $secondary_color;
+      cursor: pointer;
+    }
+  }
+}

@@ -33,4 +33,14 @@ public class RoomsController {
         }
         return null;
     }
+
+    @PostMapping("/create")
+    public void CreateRoom(@RequestBody Room room) {
+        try {
+            storage.GetRepository(IRoomRepository.class).Add(room);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

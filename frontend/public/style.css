@@ -232,21 +232,21 @@
   content: "";
 }
 
-.header {
+.registration-header {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 1%;
 }
-.header .header__name {
+.registration-header .registration-header__name {
   margin: 0 0.7% 0 0.7%;
   font-size: 36px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
-.header .header__name_primary {
+.registration-header .registration-header__name_primary {
   color: #002544;
 }
-.header .header__name_secondary {
+.registration-header .registration-header__name_secondary {
   color: #cc194b;
 }
 
@@ -385,6 +385,79 @@
   margin: 0 0 1.56% 1.36%;
 }
 
+.add-room-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 92.6vh;
+  background-color: rgba(65, 65, 65, 0.4);
+  animation: smooth-show 200ms ease-out;
+}
+.add-room-form .add-room-form__form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 22.39%;
+  padding: 0 0.78%;
+  margin-bottom: 4.16%;
+  background-color: #ecf6ff;
+  border: #b4bec7 0.2vw solid;
+  border-radius: 0.78vw;
+  overflow: hidden;
+}
+.add-room-form .add-room-form__form .add-room-form__form__header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  padding: 0 3.75%;
+  background-color: #002544;
+}
+.add-room-form .add-room-form__form .add-room-form__form__header .add-room-form-header__name {
+  margin: 1.38vh 0;
+  font-size: 20px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  white-space: nowrap;
+  color: #ecf6ff;
+}
+.add-room-form .add-room-form__form .add-room-form__form__input {
+  width: 92.5%;
+  height: 3.7vh;
+  padding: 0 3.4%;
+  margin-top: 1.38vh;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  font-size: 20px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.add-room-form .add-room-form__form .add-room-form__form__submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  height: 3.7vh;
+  margin: 1.38vh 0;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 20px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.add-room-form .add-room-form__form .add-room-form__form__submit-button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
+}
+
 .main {
   width: 100vw;
   height: 100vh;
@@ -509,11 +582,20 @@ body {
 
 #root {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
 }
 
 .smooth-show-component {
   transition: color 200ms ease-out;
+}
+
+@keyframes smooth-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

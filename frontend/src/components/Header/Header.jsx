@@ -1,6 +1,7 @@
 import React from 'react';
+import CreateRoomForm from "../CreateRoomForm/CreateRoomForm";
 
-const Header = ({ onSidebarClick }) => {
+const Header = ({ onSidebarClick, openCreateRoomDialog }) => {
     return (
         <header className={"header main__header"}>
             <button className={"header__sidebar-button"} onClick={onSidebarClick}>
@@ -8,7 +9,7 @@ const Header = ({ onSidebarClick }) => {
             </button>
             <img className={"header__logo"} src={"/assets/images/logo/text-logo.png"} alt={"Logo"}/>
             <nav className={"header__navigation navigation"}>
-                <button className={"header__navigation__button navigation__button"}>
+                <button className={"header__navigation__button navigation__button"} onClick={openCreateRoomDialog}>
                     <img src={"/assets/images/icons/add-course.png"} alt={"Sidebar"}/>
                 </button>
                 <button className={"header__navigation__button navigation__button"}>

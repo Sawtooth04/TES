@@ -26,10 +26,10 @@ const Registration = () => {
     return (
         <div className={"registration smooth-show-component"}>
             <img className={"registration__logo"} src={"/assets/images/logo/logo-396-400.png"} alt={"Logo"}/>
-            <div className={"registration__header header"}>
-                <p className={"header__name header__name_primary"}> Thoth </p>
-                <p className={"header__name header__name_secondary"}> Education </p>
-                <p className={"header__name header__name_primary"}> System </p>
+            <div className={"registration__header registration-header"}>
+                <p className={"registration-header__name registration-header__name_primary"}> Thoth </p>
+                <p className={"registration-header__name registration-header__name_secondary"}> Education </p>
+                <p className={"registration-header__name registration-header__name_primary"}> System </p>
             </div>
             <div className={"registration__logo-underline"}/>
             <input className={"registration__email-input registration__input"} placeholder={"Почта"} maxLength={320}
