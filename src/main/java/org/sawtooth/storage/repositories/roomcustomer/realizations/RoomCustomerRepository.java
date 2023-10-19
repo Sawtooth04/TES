@@ -24,8 +24,8 @@ public class RoomCustomerRepository implements IRoomCustomerRepository {
 
     @Override
     public void Add(RoomCustomer roomCustomer) {
-        template.execute(String.format("SELECT * FROM insert_room_customer(%d, %d, %d)",
-            roomCustomer.roomCustomerID(), roomCustomer.roomID(), roomCustomer.customerID()));
+        template.execute(String.format("SELECT * FROM insert_room_customer(%d, %d)", roomCustomer.roomID(),
+            roomCustomer.customerID()));
     }
 
     @Override

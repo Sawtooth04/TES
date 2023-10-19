@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import RoomLabel from "../RoomLabel/RoomLabel";
 
-const RoomsList = () => {
+const RoomsList = ({ onMount }) => {
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
@@ -13,6 +13,7 @@ const RoomsList = () => {
             setRooms(await response.json());
         }
 
+        onMount();
         void getRooms();
     }, []);
 

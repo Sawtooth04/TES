@@ -22,8 +22,9 @@ public class RoomRepository implements IRoomRepository {
     }
 
     @Override
-    public void Add(Room room) {
-        template.execute(String.format("SELECT * FROM insert_room('%s')", room.name()));
+    public int Add(Room room) {
+        return template.queryForObject(String.format("SELECT * FROM insert_room('%s', %d)", room.name(), room.ownerID()),
+            Integer.class);
     }
 
     @Override

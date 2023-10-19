@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
@@ -9,12 +9,16 @@ const ContentRoutes = ({ onNavigate }) => {
     const [isSidebarHidden, setIsSidebarHidden] = useState(true);
     const [createRoomDialogOpened, setCreateRoomDialogOpened] = useState(false);
 
+    useEffect(() => {
+        onNavigate();
+    }, []);
+
     function onMount() {
         onNavigate();
     }
 
-    function openCreateRoomDialog() {
-        setCreateRoomDialogOpened(true);
+    function switchCreateRoomDialogState() {
+        setCreateRoomDialogOpened(!createRoomDialogOpened);
     }
 
     function onSidebarStateSwitch() {
@@ -28,13 +32,13 @@ const ContentRoutes = ({ onNavigate }) => {
 
     return (
         <div className="main">
-            <Header onSidebarClick={onSidebarStateSwitch} openCreateRoomDialog={openCreateRoomDialog}/>
+            <Header onSidebarClick={onSidebarStateSwitch} switchCreateRoomDialogState={switchCreateRoomDialogState}/>
             <div className="main__wrapper">
                 <Sidebar hidden={isSidebarHidden}/>
                 <div className="main__wrapper__content" onClick={hideSidebar}>
-                    {(createRoomDialogOpened) ? <CreateRoomForm/> : null}
+                    {(createRoomDialogOpened) ? <CreateRoomForm onCreate={switchCreateRoomDialogState}/> : null}
                     <Routes>
-                        <Route path="*" element={<RoomsList />}/>
+                        <Route path="*" element={<RoomsList onMount={onMount}/>}/>
                     </Routes>
                 </div>
             </div>

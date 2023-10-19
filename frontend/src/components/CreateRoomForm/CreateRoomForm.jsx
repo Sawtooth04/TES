@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 
-const CreateRoomForm = () => {
+const CreateRoomForm = ({ onCreate }) => {
     const nameInput = useRef(null);
     const subjectInput = useRef(null);
 
@@ -10,6 +10,7 @@ const CreateRoomForm = () => {
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({roomID: -1, name: nameInput.current.value})
         });
+        onCreate();
     }
 
     return (

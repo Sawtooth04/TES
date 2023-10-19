@@ -26,7 +26,7 @@
   height: 3.7%;
   margin-top: 1.38%;
   padding: 0.15% 0.78%;
-  border: #002544 2px solid;
+  border: #002544 0.2vw solid;
   border-radius: 0.5vw;
 }
 .login > .login__password-input > .password-input__input {

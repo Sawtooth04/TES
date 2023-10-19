@@ -8,7 +8,7 @@ import java.util.List;
 public interface IRoomRepository extends IRepository {
     public Room Get(int id);
 
-    public void Add(Room room);
+    public int Add(Room room);
 
     public List<Room> GetCustomerRooms(int customerID);
 }

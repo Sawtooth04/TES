@@ -1,9 +1,11 @@
 package org.sawtooth.controllers;
 
 import org.sawtooth.models.room.Room;
+import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
+import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +39,12 @@ public class RoomsController {
     @PostMapping("/create")
     public void CreateRoom(@RequestBody Room room) {
         try {
-            storage.GetRepository(IRoomRepository.class).Add(room);
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName()).customerID();
+            int roomID = storage.GetRepository(IRoomRepository.class).Add(room.withOwnerID(customerID));
+
+            storage.GetRepository(IRoomCustomerRepository.class).Add(new RoomCustomer(-1, roomID,
+                customerID, -1));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

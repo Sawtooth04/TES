@@ -54,8 +54,9 @@ public class SecurityConfiguration {
             (authorize) -> authorize.dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
                 .requestMatchers("/registration/*").permitAll()
                 .requestMatchers("/login").permitAll()
+                .requestMatchers("/authentication/*").permitAll()
                 .anyRequest().authenticated()
-        ).httpBasic(withDefaults()).formLogin(withDefaults())
+        ).formLogin(withDefaults())
         .csrf((csrf) -> csrf.ignoringRequestMatchers("/**"))
         .cors(withDefaults());
         return http.build();

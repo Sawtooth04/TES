@@ -8,8 +8,9 @@ import java.sql.SQLException;
 public class RoomMapper implements RowMapper<Room> {
     public Room mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         return new Room(
-                resultSet.getInt("roomID"),
-                resultSet.getString("name")
+            resultSet.getInt("roomID"),
+            resultSet.getString("name"),
+            resultSet.getInt("ownerID")
         );
     }
 }
