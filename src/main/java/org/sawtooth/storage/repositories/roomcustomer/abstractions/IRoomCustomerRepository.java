@@ -6,7 +6,7 @@ import org.sawtooth.storage.repositories.IRepository;
 public interface IRoomCustomerRepository extends IRepository {
     public RoomCustomer Get(int id);
 
-    public void Add(RoomCustomer roomCustomer);
+    public int Add(RoomCustomer roomCustomer);
 
     public int GetVariant(String name, int roomID);
 }
