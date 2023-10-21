@@ -1,9 +1,10 @@
 import React from 'react';
 import NearTask from "../NearTask/NearTask";
 
-const RoomLabel = ({ room }) => {
+const RoomLabel = ({ room, onClick }) => {
+
     return (
-        <div className={"room-label rooms-list__room-label"}>
+        <div className={"room-label rooms-list__room-label"} onClick={() => {onClick(room.roomID)}}>
             <div className="room-label__header">
                 <p className={"room-label__header__name"}> {room.name} </p>
             </div>

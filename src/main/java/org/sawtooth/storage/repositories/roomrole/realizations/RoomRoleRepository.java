@@ -15,12 +15,11 @@ public class RoomRoleRepository implements IRoomRoleRepository {
 
     @Override
     public RoomRole Get(int id) {
-        return template.queryForObject(String.format("SELECT * FROM get_room_role_by_id(%d)", id), new RoomRoleMapper());
+        return template.queryForObject("SELECT * FROM get_room_role_by_id(?)", new RoomRoleMapper(), id);
     }
 
     @Override
     public RoomRole Get(String name) {
-        return template.queryForObject(String.format("SELECT * FROM get_room_role_by_name('%s')", name),
-            new RoomRoleMapper());
+        return template.queryForObject("SELECT * FROM get_room_role_by_name(?)", new RoomRoleMapper(), name);
     }
 }

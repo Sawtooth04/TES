@@ -4,6 +4,7 @@ import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.models.roomtask.RoomTaskMapper;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
 
 import java.util.List;
 
@@ -17,25 +18,24 @@ public class RoomTaskRepository implements IRoomTaskRepository {
 
     @Override
     public RoomTask Get(int id) {
-        List<RoomTask> result = template.query(String.format("SELECT * FROM get_room_task_by_id(%d)", id),
-            new RoomTaskMapper());
-        return result.get(0);
+        return template.queryForObject("SELECT * FROM get_room_task_by_id(?)", new RoomTaskMapper(), id);
     }
 
     @Override
     public void Add(RoomTask roomTask) {
-        template.execute(String.format("SELECT * FROM insert_room_task(%d, '%s', '%s')", roomTask.roomID(), roomTask.name(),
-            roomTask.path()));
+        template.query("SELECT * FROM insert_room_task(?, ?, ?)", new SingleColumnRowMapper<Void>(), roomTask.roomID(),
+            roomTask.name(), roomTask.path());
     }
 
     @Override
     public int GetID(int roomID, String path) {
-        return template.queryForObject(String.format("SELECT \"roomTaskID\" FROM get_room_task(%d, '%s')", roomID,
-            path), Integer.class);
+        return template.queryForObject("SELECT \"roomTaskID\" FROM get_room_task(?, ?)", new SingleColumnRowMapper<>(),
+            roomID, path);
     }
 
     @Override
     public String GetName(int taskID) {
-        return template.queryForObject(String.format("SELECT \"name\" FROM get_room_task_by_id(%d)", taskID), String.class);
+        return template.queryForObject("SELECT \"name\" FROM get_room_task_by_id(?)", new SingleColumnRowMapper<>(),
+            taskID);
     }
 }

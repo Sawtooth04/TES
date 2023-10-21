@@ -17,12 +17,11 @@ public class RoleRepository implements IRoleRepository {
 
     @Override
     public Role Get(int id) {
-        List<Role> result = template.query(String.format("SELECT * FROM get_role_by_id(%d)", id), new RoleMapper());
-        return result.get(0);
+        return template.queryForObject("SELECT * FROM get_role_by_id(?)", new RoleMapper(), id);
     }
 
     @Override
     public void Add(Role role) {
-        template.execute(String.format("SELECT * FROM insert_role('%s')", role.name()));
+        template.query("SELECT * FROM insert_role(?)", new RoleMapper(), role.name());
     }
 }

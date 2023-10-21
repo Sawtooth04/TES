@@ -5,6 +5,7 @@ import org.sawtooth.models.roomtask.RoomTaskMapper;
 import org.sawtooth.models.roomtaskvariant.RoomTaskVariant;
 import org.sawtooth.storage.repositories.roomtaskvariant.abstractions.IRoomTaskVariantRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
 
 import java.util.List;
 
@@ -18,14 +19,12 @@ public class RoomTaskVariantRepository implements IRoomTaskVariantRepository {
 
     @Override
     public RoomTask Get(int id) {
-        List<RoomTask> result = template.query(String.format("SELECT * FROM get_room_task_variant_by_id(%d)", id),
-            new RoomTaskMapper());
-        return result.get(0);
+        return template.queryForObject("SELECT * FROM get_room_task_variant_by_id(?)", new RoomTaskMapper(), id);
     }
 
     @Override
     public void Add(RoomTaskVariant roomTaskVariant) {
-        template.execute(String.format("SELECT * FROM insert_room_task_variant(%d, %d)", roomTaskVariant.roomTaskID(),
-            roomTaskVariant.variant()));
+        template.query("SELECT * FROM insert_room_task_variant(?, ?)", new SingleColumnRowMapper<>(),
+            roomTaskVariant.roomTaskID(), roomTaskVariant.variant());
     }
 }

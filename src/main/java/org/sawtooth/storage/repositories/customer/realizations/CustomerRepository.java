@@ -4,6 +4,8 @@ import org.sawtooth.models.customer.Customer;
 import org.sawtooth.models.customer.CustomerMapper;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
 
 import java.util.List;
 
@@ -17,16 +19,16 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public Customer Get(int id) {
-        return template.queryForObject(String.format("SELECT * FROM get_customer_by_id(%d)", id), new CustomerMapper());
+        return template.queryForObject("SELECT * FROM get_customer_by_id(?)", new CustomerMapper(), id);
     }
 
     @Override
     public void Add(Customer customer) {
-        template.execute(String.format("SELECT * FROM insert_default_customer('%s', '%s', '%s')",
-            customer.name(), customer.passwordHash(), customer.email()));
+        template.query("SELECT * FROM insert_default_customer(?, ?, ?)", new SingleColumnRowMapper<>(),
+            customer.name(), customer.passwordHash(), customer.email());
     }
 
     public Customer Get(String name) {
-        return template.queryForObject(String.format("SELECT * FROM get_customer_by_name('%s')", name), new CustomerMapper());
+        return template.queryForObject("SELECT * FROM get_customer_by_name(?)", new CustomerMapper(), name);
     }
 }

@@ -4,6 +4,7 @@ import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomcustomer.RoomCustomerMapper;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
 
 import java.util.List;
 
@@ -17,19 +18,24 @@ public class RoomCustomerRepository implements IRoomCustomerRepository {
 
     @Override
     public RoomCustomer Get(int id) {
-        List<RoomCustomer> result = template.query(String.format("SELECT * FROM get_room_customer_by_id(%d)", id),
-            new RoomCustomerMapper());
-        return result.get(0);
+        return template.queryForObject("SELECT * FROM get_room_customer_by_id(?)", new RoomCustomerMapper(), id);
     }
 
     @Override
     public int Add(RoomCustomer roomCustomer) {
-        return template.queryForObject(String.format("SELECT * FROM insert_room_customer(%d, %d)", roomCustomer.roomID(),
-            roomCustomer.customerID()), Integer.class);
+        return template.queryForObject("SELECT * FROM insert_room_customer(?, ?)", new SingleColumnRowMapper<>(),
+            roomCustomer.roomID(), roomCustomer.customerID());
     }
 
     @Override
     public int GetVariant(String name, int roomID) {
-        return template.queryForObject(String.format("SELECT * FROM get_variant('%s', %d)", name, roomID), Integer.class);
+        return template.queryForObject("SELECT * FROM get_variant(?, ?)", new SingleColumnRowMapper<>(),
+            name, roomID);
+    }
+
+    @Override
+    public boolean IsCustomerInRoom(int customerID, int roomID) {
+        return template.queryForObject("SELECT * FROM is_customer_in_room(?, ?)", new SingleColumnRowMapper<>(),
+            customerID, roomID);
     }
 }

@@ -4,6 +4,7 @@ import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomsolution.RoomSolutionMapper;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
 
 import java.util.List;
 
@@ -17,13 +18,12 @@ public class RoomSolutionRepository implements IRoomSolutionRepository {
 
     @Override
     public RoomSolution Get(int id) {
-        List<RoomSolution> result = template.query(String.format("SELECT * FROM get_room_solution_by_id(%d)", id),
-            new RoomSolutionMapper());
-        return result.get(0);
+        return template.queryForObject("SELECT * FROM get_room_solution_by_id(?)", new RoomSolutionMapper(), id);
     }
 
     @Override
     public void Add(RoomSolution roomSolution) {
-        template.execute(String.format("SELECT * FROM insert_room_solution(%d, '%s')", roomSolution.roomID(), roomSolution.path()));
+        template.query("SELECT * FROM insert_room_solution(?, ?)", new SingleColumnRowMapper<>(),
+            roomSolution.roomID(), roomSolution.path());
     }
 }
