@@ -1,5 +1,7 @@
 package org.sawtooth.storage.repositories.room.realizations;
 
+import org.sawtooth.models.customer.Customer;
+import org.sawtooth.models.customer.CustomerMapper;
 import org.sawtooth.models.room.Room;
 import org.sawtooth.models.room.RoomMapper;
 import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
@@ -30,5 +32,9 @@ public class RoomRepository implements IRoomRepository {
     @Override
     public List<Room> GetCustomerRooms(int customerID) {
         return template.query("SELECT * FROM get_customer_rooms(?)", new RoomMapper(), customerID);
+    }
+
+    public Customer GetRoomOwner(int roomID) {
+        return template.queryForObject("SELECT * FROM get_room_owner(?)", new CustomerMapper(), roomID);
     }
 }

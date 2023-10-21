@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 
 const Room = ({ onMount }) => {
     const [room, setRoom] = useState(null);
+    const [roomOwner, setRoomOwner] = useState(null);
     const { roomID } = useParams();
 
     useEffect(() => {
@@ -16,15 +17,32 @@ const Room = ({ onMount }) => {
                 setRoom(await response.json());
         }
 
+        async function getRoomOwner() {
+            let params = new URLSearchParams({roomID: roomID}),
+                response = await fetch(`/room/get-room-owner?${params.toString()}`, {
+                    method: 'get',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+                })
+            if (response.ok)
+                setRoomOwner(await response.json());
+        }
+
         onMount();
         void getRoom();
+        void getRoomOwner();
     }, []);
 
     return (
         <div className={"room"}>
-            <div className="room__header">
-
-            </div>
+            {(room != null && roomOwner != null) ?
+                <div className="room__header">
+                    <p className={"room__header__name"}> {room.name} </p>
+                    <div className={"room__header__owner"}>
+                        <p className={"room__header__owner__article"}> Организатор: </p>
+                        <p className={"room__header__owner__name"}> {roomOwner.name} </p>
+                    </div>
+                </div> : null
+            }
             <div className="room__content">
                 <div className="room__content__header">
 

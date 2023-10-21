@@ -1,3 +1,5 @@
+@import "../../public-variables";
+
 .room {
   display: flex;
   flex-direction: column;
@@ -7,9 +9,42 @@
   height: 100%;
 
   & .room__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 78.12%;
     height: 16.5%;
     background-color: #5185C5;
+
+    & .room__header__name {
+      margin: 0;
+      color: $background_color;
+      font-family: "TTNormsPro", sans-serif;
+      font-weight: bold;
+      font-size: 38px;
+    }
+
+    & .room__header__owner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & .room__header__owner__article {
+        margin: 0;
+        color: $background_color;
+        font-family: "TTNormsPro", sans-serif;
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      & .room__header__owner__name {
+        margin: 0 0 0 0.5em;
+        color: $background_color;
+        font-family: "TTNormsPro SemiBold", sans-serif;
+        font-size: 22px;
+      }
+    }
   }
 
   & .room__content {

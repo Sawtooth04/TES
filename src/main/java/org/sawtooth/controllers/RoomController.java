@@ -1,5 +1,6 @@
 package org.sawtooth.controllers;
 
+import org.sawtooth.models.customer.Customer;
 import org.sawtooth.models.room.Room;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
@@ -30,6 +31,21 @@ public class RoomController {
                 .getAuthentication().getName()).customerID();
             if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomID))
                 return storage.GetRepository(IRoomRepository.class).Get(roomID);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    @GetMapping("/get-room-owner")
+    @ResponseBody
+    public Customer GetRoomOwner(int roomID) {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                    .getAuthentication().getName()).customerID();
+            if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomID))
+                return storage.GetRepository(IRoomRepository.class).GetRoomOwner(roomID);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
