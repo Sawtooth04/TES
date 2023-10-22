@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {NavLink, Route, Routes, useParams} from "react-router-dom";
+import RoomMain from "./RoomMain/RoomMain";
 
 const Room = ({ onMount }) => {
     const [room, setRoom] = useState(null);
@@ -44,11 +45,24 @@ const Room = ({ onMount }) => {
                 </div> : null
             }
             <div className="room__content">
-                <div className="room__content__header">
-
+                <div className="room__content__header content-header">
+                    <NavLink className={"content-header__link"} to={"main"}>
+                        Главная
+                    </NavLink>
+                    <NavLink className={"content-header__link"} to={"tasks"}>
+                        Задания
+                    </NavLink>
+                    <NavLink className={"content-header__link"} to={"members"}>
+                        Участники
+                    </NavLink>
+                    <NavLink className={"content-header__link"} to={"description"}>
+                        Описание
+                    </NavLink>
                 </div>
                 <div className="room__content__body">
-
+                    <Routes>
+                        <Route exact path="main" element={<RoomMain/>}/>
+                    </Routes>
                 </div>
             </div>
         </div>

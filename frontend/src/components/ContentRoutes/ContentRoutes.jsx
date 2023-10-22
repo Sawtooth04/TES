@@ -39,7 +39,7 @@ const ContentRoutes = ({ onNavigate }) => {
                 <div className="main__wrapper__content" onClick={hideSidebar}>
                     {(createRoomDialogOpened) ? <CreateRoomForm onCreate={switchCreateRoomDialogState}/> : null}
                     <Routes>
-                        <Route path="/room/:roomID" element={<Room onMount={onMount}/>}/>
+                        <Route path="/room/:roomID/*" element={<Room onMount={onMount}/>}/>
                         <Route path="*" element={<RoomsList onMount={onMount}/>}/>
                     </Routes>
                 </div>

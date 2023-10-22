@@ -1,0 +1,12 @@
+.room-main {
+  display: flex;
+  justify-items: center;
+  align-items: start;
+}
+.room-main .room-main__last-updates {
+  width: 23.33%;
+  height: 44.7%;
+  background-color: #eef4f7;
+}
+
+/*# sourceMappingURL=room-main.css.map */
