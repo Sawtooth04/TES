@@ -1,9 +1,22 @@
 import React from 'react';
 import CreateCommentForm from "../../UI/CreateCommentForm/CreateCommentForm";
+import {useParams} from "react-router-dom";
 
 const RoomMain = () => {
-    async function onSendPost(text) {
+    const { roomID } = useParams();
 
+    async function onSendPost(text) {
+        await fetch("/room-post/add", {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                roomID: roomID,
+                text: text
+            })
+        });
     }
 
     return (

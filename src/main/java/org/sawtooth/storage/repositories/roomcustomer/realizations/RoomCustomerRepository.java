@@ -21,6 +21,11 @@ public class RoomCustomerRepository implements IRoomCustomerRepository {
         return template.queryForObject("SELECT * FROM get_room_customer_by_id(?)", new RoomCustomerMapper(), id);
     }
 
+    public RoomCustomer Get(int roomID, int customerID) {
+        return template.queryForObject("SELECT * FROM get_room_customer(?, ?)", new RoomCustomerMapper(), roomID,
+            customerID);
+    }
+
     @Override
     public int Add(RoomCustomer roomCustomer) {
         return template.queryForObject("SELECT * FROM insert_room_customer(?, ?)", new SingleColumnRowMapper<>(),

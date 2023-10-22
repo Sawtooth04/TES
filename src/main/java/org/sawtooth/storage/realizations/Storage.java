@@ -10,6 +10,8 @@ import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
 import org.sawtooth.storage.repositories.room.realizations.RoomRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomer.realizations.RoomCustomerRepository;
+import org.sawtooth.storage.repositories.roomcustomerpost.abstractions.IRoomCustomerPostRepository;
+import org.sawtooth.storage.repositories.roomcustomerpost.realizations.RoomCustomerPostRepository;
 import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCustomerRoleRepository;
 import org.sawtooth.storage.repositories.roomcustomerrole.realizations.RoomCustomerRoleRepository;
 import org.sawtooth.storage.repositories.roomrole.abstractions.IRoomRoleRepository;
@@ -50,6 +52,7 @@ public class Storage implements IStorage {
         repositories.put(IRoomTaskVariantRepository.class.getName(), RoomTaskVariantRepository.class.getName());
         repositories.put(IRoomRoleRepository.class.getName(), RoomRoleRepository.class.getName());
         repositories.put(IRoomCustomerRoleRepository.class.getName(), RoomCustomerRoleRepository.class.getName());
+        repositories.put(IRoomCustomerPostRepository.class.getName(), RoomCustomerPostRepository.class.getName());
     }
 
     public <T extends IRepository> T GetRepository(Class<T> interfaceObject) throws InstantiationException{
