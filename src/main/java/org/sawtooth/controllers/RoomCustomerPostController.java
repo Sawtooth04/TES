@@ -12,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @RestController
 @RequestMapping("/room-post")
@@ -36,5 +37,17 @@ public class RoomCustomerPostController {
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @GetMapping("/get")
+    @ResponseBody
+    public List<RoomCustomerPost> Get(int roomID, int start, int count) {
+        try {
+            return storage.GetRepository(IRoomCustomerPostRepository.class).Get(roomID, start, count);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 }

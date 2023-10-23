@@ -58,5 +58,19 @@
         margin: 0 1.33% 0 1.33%;
       }
     }
+
+    & .infinite-scroll {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      width: 100%;
+      flex-grow: 1;
+      overflow: auto;
+
+      & > * {
+        margin-top: 3vh;
+      }
+    }
   }
 }

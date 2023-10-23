@@ -510,6 +510,18 @@
 .room-main .room-main__posts .create-comment-form > *:last-child {
   margin: 0 1.33% 0 1.33%;
 }
+.room-main .room-main__posts .infinite-scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  overflow: auto;
+}
+.room-main .room-main__posts .infinite-scroll > * {
+  margin-top: 3vh;
+}
 
 .room {
   display: flex;
