@@ -6,13 +6,16 @@ import {postsPerPagesCount, maxPostsPerPagesCount} from "../../../constants";
 
 const RoomMain = () => {
     const { roomID } = useParams();
+    const [isLoading, setIsLoading] = useState(true);
+    const [scrolledToTheEnd, setScrolledToTheEnd] = useState(false);
     const [posts, setPosts]  = useState([]);
-    const [postsPage, setPostsPage] = useState(0);
-    const [isPrev, setIsPrev] = useState(false);
+    const [postsStart, setPostsStart] = useState(0);
+    const [postsEnd, setPostsEnd] = useState(10);
+    const [isPrev, setIsPrev] = useState(true);
 
     useEffect(() => {
         void getPosts();
-    }, [postsPage]);
+    }, [postsStart, postsEnd]);
 
     async function onSendPost(text) {
         await fetch("/room-post/add", {
@@ -31,8 +34,10 @@ const RoomMain = () => {
     async function getPosts() {
         let params = new URLSearchParams();
         params.append('roomID', roomID);
-        params.append('start', String(postsPage * postsPerPagesCount));
+        (isPrev) ? params.append('start', String(postsStart)) :
+            params.append('start', String(postsEnd - postsPerPagesCount));
         params.append('count', String(postsPerPagesCount));
+        setIsLoading(true);
 
         let response = await fetch(`/room-post/get?${params.toString()}`, {
             method: "get",
@@ -47,26 +52,42 @@ const RoomMain = () => {
 
     function appendPosts(arr) {
         if (!isPrev) {
-            if (posts.length + postsPerPagesCount > maxPostsPerPagesCount)
-                posts.splice(0, postsPerPagesCount);
-            setPosts([...posts, ...arr])
+            if (arr.length !== 0) {
+                if (posts.length + postsPerPagesCount > maxPostsPerPagesCount)
+                    posts.splice(0, postsPerPagesCount);
+                setPosts([...posts, ...arr])
+            }
+            else
+                setScrolledToTheEnd(true);
         }
         else {
             if (posts.length + postsPerPagesCount > maxPostsPerPagesCount)
                 posts.splice(posts.length - postsPerPagesCount, postsPerPagesCount);
             setPosts([...arr, ...posts])
+            setScrolledToTheEnd(false);
         }
+        setIsLoading(false);
     }
 
     function onNextPage() {
-        setIsPrev(false);
-        setPostsPage(postsPage + 1);
+        if (!isLoading && !scrolledToTheEnd) {
+            let newEnd = postsEnd + postsPerPagesCount;
+
+            setIsPrev(false);
+            setPostsEnd(newEnd);
+            if (newEnd - postsStart > maxPostsPerPagesCount && newEnd !== 2 * maxPostsPerPagesCount)
+                setPostsStart(postsStart + postsPerPagesCount)
+        }
     }
 
     function onPrevPage() {
-        if (postsPage >= 1) {
+        if (postsStart >= postsPerPagesCount && !isLoading) {
+            let newStart = postsStart - postsPerPagesCount;
+
             setIsPrev(true);
-            setPostsPage(postsPage - 1);
+            setPostsStart(newStart);
+            if (postsEnd - newStart > maxPostsPerPagesCount)
+                setPostsEnd(postsEnd - postsPerPagesCount * (postsEnd - newStart) / maxPostsPerPagesCount);
             return true;
         }
         return false;
