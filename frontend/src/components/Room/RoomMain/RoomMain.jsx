@@ -3,6 +3,7 @@ import CreateCommentForm from "../../UI/CreateCommentForm/CreateCommentForm";
 import {useParams} from "react-router-dom";
 import InfiniteScroll from "../../UI/InfiniteScroll/InfiniteScroll";
 import {postsPerPagesCount, maxPostsPerPagesCount} from "../../../constants";
+import RoomPost from "./RoomPost/RoomPost";
 
 const RoomMain = () => {
     const { roomID } = useParams();
@@ -102,7 +103,7 @@ const RoomMain = () => {
                 <CreateCommentForm onSendCallback={onSendPost}/>
                 <InfiniteScroll onNext={onNextPage} onPrev={onPrevPage}>
                     {posts.map((post) => {
-                        return <p key={post.roomCustomerPostID}> {post.text} </p>
+                        return <RoomPost post={post} key={post.roomCustomerPostID}/>
                     })}
                 </InfiniteScroll>
             </div>

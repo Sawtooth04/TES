@@ -32,7 +32,7 @@ public class RoomCustomerPostController {
             RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(post.roomID(), customerID);
 
             storage.GetRepository(IRoomCustomerPostRepository.class).Add(new RoomCustomerPost(-1,
-                roomCustomer.roomCustomerID(), new Timestamp(System.currentTimeMillis()), post.text()));
+                roomCustomer.roomCustomerID(), new Timestamp(System.currentTimeMillis()), post.text(), -1, null));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

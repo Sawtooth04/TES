@@ -12,7 +12,9 @@ public class RoomCustomerPostMapper implements RowMapper<RoomCustomerPost> {
             rs.getInt("roomCustomerPostID"),
             rs.getInt("roomCustomerID"),
             rs.getTimestamp("posted"),
-            rs.getString("text")
+            rs.getString("text"),
+            rs.getInt("customerID"),
+            rs.getString("name")
         );
     }
 }

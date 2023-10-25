@@ -1,0 +1,46 @@
+@import "../../../../public-variables";
+
+.room-post {
+  padding: 0 1.33%;
+
+  & .room-post__header {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    & > * {
+      margin: 0;
+    }
+
+    & .room-post__header__name {
+      color: $primary_color;
+      font-family: "TTNormsPro SemiBold", "sans-serif";
+      font-size: 18px;
+    }
+
+    & .room-post__header__time {
+      padding-left: 1.33%;
+      color: $primary_color;
+      font-family: "TTNormsPro Light", "sans-serif";
+      font-size: 18px;
+    }
+  }
+
+  & .room-post__header:after {
+    content: "";
+    position: absolute;
+    left: -1.35%;
+    bottom: 0;
+    width: 102.68%;
+    height: 0.07vw;
+    background-color: $border_color;
+  }
+
+  & .room-post__text {
+    max-width: 100%;
+    margin: 1% 0;
+    color: $primary_color;
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 18px;
+  }
+}
