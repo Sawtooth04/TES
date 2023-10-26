@@ -2,12 +2,10 @@ package org.sawtooth.controllers;
 
 import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomsolution.RoomSolutionUploadModel;
-import org.sawtooth.models.roomtask.RoomTaskUploadModel;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +16,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 

@@ -11,8 +11,10 @@ public class RoomTaskMapper implements RowMapper<RoomTask> {
         return new RoomTask(
             resultSet.getInt("roomTaskID"),
             resultSet.getInt("roomID"),
-                resultSet.getString("name"),
-            resultSet.getString("path")
+            resultSet.getString("name"),
+            resultSet.getString("description"),
+            resultSet.getTimestamp("added"),
+            resultSet.getTimestamp("lastTerm")
         );
     }
 }

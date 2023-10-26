@@ -1,3 +1,5 @@
 package org.sawtooth.models.roomtask;
 
-public record RoomTask(int roomTaskID, int roomID, String name, String path) {}
+import java.sql.Timestamp;
+
+public record RoomTask(int roomTaskID, int roomID, String name, String description, Timestamp added, Timestamp lastTerm) {}
