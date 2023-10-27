@@ -1,0 +1,9 @@
+.room-last-task {
+  display: flex;
+  flex-direction: column;
+}
+.room-last-task .room-last-task__name, .room-last-task .room-last-task__description {
+  margin: 0;
+}
+
+/*# sourceMappingURL=room-last-task.css.map */

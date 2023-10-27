@@ -5,6 +5,7 @@ import org.sawtooth.models.roomrole.RoomRole;
 import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
+import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCustomerRoleRepository;
 import org.sawtooth.storage.repositories.roomrole.abstractions.IRoomRoleRepository;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
@@ -12,6 +13,8 @@ import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/task")
@@ -24,7 +27,7 @@ public class RoomTaskController {
     }
 
     @PostMapping("/add")
-    public void Add(@RequestBody RoomTask roomTask) throws InstantiationException {
+    public void Add(@RequestBody RoomTask roomTask) {
         try {
             Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
@@ -36,5 +39,21 @@ public class RoomTaskController {
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @GetMapping("/get-latest")
+    @ResponseBody
+    public List<RoomTask> GetLatest(int roomID) {
+        try {
+            Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName());
+
+            if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customer.customerID(), roomID))
+                return storage.GetRepository(IRoomTaskRepository.class).GetLatest(roomID, 5);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 }

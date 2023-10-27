@@ -1,4 +1,5 @@
 @import "RoomPost/room-post";
+@import "RoomLastTask/room-last-task";
 @import "../../../public-variables";
 
 .room-main {
@@ -7,11 +8,19 @@
   align-items: start;
 
   & .room-main__last-updates {
+    display: flex;
+    flex-direction: column;
     width: 23.33%;
-    height: 44.7%;
+    height: 55%;
+    padding: 0.7% 0;
     background-color: $third_background_color;
     border: 0.10vw $border_color solid;
     border-radius: 0.52vw;
+
+    & .room-main__last-updates__task {
+      flex-grow: 1;
+      padding: 0 4.28%;
+    }
   }
 
   & .room-main__posts {

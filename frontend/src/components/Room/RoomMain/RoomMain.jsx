@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import InfiniteScroll from "../../UI/InfiniteScroll/InfiniteScroll";
 import {postsPerPagesCount, maxPostsPerPagesCount} from "../../../constants";
 import RoomPost from "./RoomPost/RoomPost";
+import RoomLastTask from "./RoomLastTask/RoomLastTask";
 
 const RoomMain = () => {
     const { roomID } = useParams();
@@ -13,6 +14,11 @@ const RoomMain = () => {
     const [postsStart, setPostsStart] = useState(0);
     const [postsEnd, setPostsEnd] = useState(10);
     const [isPrev, setIsPrev] = useState(true);
+    const [latestTasks, setLatestTasks]  = useState([]);
+
+    useEffect(() => {
+        void getLatestTasks();
+    }, [])
 
     useEffect(() => {
         void getPosts();
@@ -94,10 +100,23 @@ const RoomMain = () => {
         return false;
     }
 
+    async function getLatestTasks() {
+        let response = await fetch(`/task/get-latest?roomID=${roomID}`, {
+            method: "get",
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        if (response.ok)
+            setLatestTasks(await response.json());
+    }
+
     return (
         <div className={"room__content__body__main room-main"}>
             <div className="room-main__last-updates">
-
+                {latestTasks.map((task) => {
+                    return <RoomLastTask task={task} key={task.roomTaskID}/>
+                })}
             </div>
             <div className="room-main__posts">
                 <CreateCommentForm onSendCallback={onSendPost}/>

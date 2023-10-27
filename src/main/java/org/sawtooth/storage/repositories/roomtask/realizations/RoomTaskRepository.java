@@ -6,6 +6,8 @@ import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskReposito
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
 
+import java.util.List;
+
 public class RoomTaskRepository implements IRoomTaskRepository {
     private JdbcTemplate template;
 
@@ -17,6 +19,11 @@ public class RoomTaskRepository implements IRoomTaskRepository {
     @Override
     public RoomTask Get(int id) {
         return template.queryForObject("SELECT * FROM get_room_task_by_id(?)", new RoomTaskMapper(), id);
+    }
+
+    @Override
+    public List<RoomTask> GetLatest(int roomID, int count) {
+        return template.query("SELECT * FROM get_latest_room_tasks(?, ?)", new RoomTaskMapper(), roomID, count);
     }
 
     @Override

@@ -7,7 +7,7 @@ const InfiniteScroll = ({ onPrev, onNext, children }) => {
         if (children.length > 1) {
             let observer = new IntersectionObserver(onIntersect, {
                 root: document.querySelector('.infinite-scroll'),
-                threshold: 1
+                threshold: 0.5
             })
 
             observer.observe(wrapper.current.firstChild);
@@ -17,7 +17,7 @@ const InfiniteScroll = ({ onPrev, onNext, children }) => {
     }, [children]);
 
     function onIntersect(entries, observer) {
-        if (entries[0].intersectionRatio === 1) {
+        if (Math.round(entries[0].intersectionRatio) === 1) {
             if (entries[0].target === wrapper.current.lastChild)
                 onNext();
             else
