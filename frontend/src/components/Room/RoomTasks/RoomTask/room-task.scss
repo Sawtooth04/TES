@@ -1,0 +1,37 @@
+@import "../../../UI/ContextMenuButton/context-menu-button";
+
+.room-task {
+  display: flex;
+  align-items: center;
+  padding: 0.4% 1.2%;
+
+  & .room-task__icon {
+    width: auto;
+    height: 66.6%;
+  }
+
+  & .room-task__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 1.25%;
+
+    & > * {
+      margin: 0
+    }
+
+    & .room-task__body__header {
+      font-family: "TTNormsPro SemiBold", "sans-serif";
+      font-size: 16px;
+    }
+
+    & .room-task__body__date {
+      font-family: "TTNormsPro", "sans-serif";
+      font-size: 16px;
+    }
+  }
+
+  & .context-menu-button {
+    width: 1.3%;
+  }
+}

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {NavLink, Route, Routes, useParams} from "react-router-dom";
 import RoomMain from "./RoomMain/RoomMain";
+import RoomTasks from "./RoomTasks/RoomTasks";
 
 const Room = ({ onMount }) => {
     const [room, setRoom] = useState(null);
@@ -61,7 +62,8 @@ const Room = ({ onMount }) => {
                 </div>
                 <div className="room__content__body">
                     <Routes>
-                        <Route exact path="main" element={<RoomMain/>}/>
+                        <Route path={"tasks"} element={<RoomTasks/>}/>
+                        <Route path={"*"} element={<RoomMain/>}/>
                     </Routes>
                 </div>
             </div>

@@ -1,0 +1,19 @@
+.context-menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.context-menu-button .context-menu-button__part {
+  width: 25%;
+  padding-top: 50%;
+  border-radius: 50%;
+  background-color: #002544;
+}
+
+.room-task {
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=room-task.css.map */

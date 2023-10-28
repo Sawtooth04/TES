@@ -22,6 +22,11 @@ public class RoomTaskRepository implements IRoomTaskRepository {
     }
 
     @Override
+    public List<RoomTask> Get(int roomID, int start, int count) {
+        return template.query("SELECT * FROM get_room_tasks(?, ?, ?)", new RoomTaskMapper(), roomID, start, count);
+    }
+
+    @Override
     public List<RoomTask> GetLatest(int roomID, int count) {
         return template.query("SELECT * FROM get_latest_room_tasks(?, ?)", new RoomTaskMapper(), roomID, count);
     }

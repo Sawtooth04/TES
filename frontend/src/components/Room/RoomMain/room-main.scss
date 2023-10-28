@@ -1,5 +1,5 @@
 @import "RoomPost/room-post";
-@import "RoomLastTask/room-last-task";
+@import "../RoomLastTask/room-last-task";
 @import "../../../public-variables";
 
 .room-main {
@@ -35,7 +35,7 @@
     & .create-comment-form {
       display: flex;
       align-items: center;
-      width: 97.32%;
+      width: 97%;
       height: 10.43%;
       background-color: $third_background_color;
       border: 0.10vw $border_color solid;
@@ -74,10 +74,10 @@
       display: flex;
       flex-direction: column;
       justify-content: start;
-      align-items: start;
-      width: 97.32%;
+      align-items: center;
+      width: 100%;
       flex-grow: 1;
-      margin-top: 2.23%;
+      margin-top: 3vh;
       overflow: auto;
 
       & > * {
@@ -90,7 +90,7 @@
     }
 
     & .room-main__posts__room-post {
-      width: 94.44%;
+      width: 91.5%;
       background-color: $third_background_color;
       border: 0.10vw $border_color solid;
       border-radius: 0.52vw;

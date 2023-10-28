@@ -41,6 +41,18 @@ public class RoomTaskController {
         }
     }
 
+    @GetMapping("/get")
+    @ResponseBody
+    public List<RoomTask> Get(int roomID, int start, int count) {
+        try {
+            return storage.GetRepository(IRoomTaskRepository.class).Get(roomID, start, count);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
     @GetMapping("/get-latest")
     @ResponseBody
     public List<RoomTask> GetLatest(int roomID) {

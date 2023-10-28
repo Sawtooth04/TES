@@ -4,7 +4,7 @@ import {useParams} from "react-router-dom";
 import InfiniteScroll from "../../UI/InfiniteScroll/InfiniteScroll";
 import {postsPerPagesCount, maxPostsPerPagesCount} from "../../../constants";
 import RoomPost from "./RoomPost/RoomPost";
-import RoomLastTask from "./RoomLastTask/RoomLastTask";
+import RoomLastTask from "../RoomLastTask/RoomLastTask";
 
 const RoomMain = () => {
     const { roomID } = useParams();
