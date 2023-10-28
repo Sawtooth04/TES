@@ -1,4 +1,5 @@
 import React, {useRef} from 'react';
+import PopUpForm from "../UI/PopUpForm/PopUpForm";
 
 const CreateRoomForm = ({ onCreate }) => {
     const nameInput = useRef(null);
@@ -14,16 +15,11 @@ const CreateRoomForm = ({ onCreate }) => {
     }
 
     return (
-        <div className={"add-room-form"}>
-            <div className={"add-room-form__form"}>
-                <div className={"add-room-form__form__header add-room-form-header"}>
-                    <p className={"add-room-form-header__name"}> Создать комнату </p>
-                </div>
-                <input className={"add-room-form__form__input"} placeholder={"Название комнаты"} maxLength={30} ref={nameInput}/>
-                <input className={"add-room-form__form__input"} placeholder={"Предмет"} maxLength={30} ref={subjectInput}/>
-                <button className={"add-room-form__form__submit-button"} onClick={create}> Создать </button>
-            </div>
-        </div>
+        <PopUpForm header={"Создать комнату"}>
+            <input placeholder={"Название комнаты"} maxLength={30} ref={nameInput}/>
+            <input placeholder={"Предмет"} maxLength={30} ref={subjectInput}/>
+            <button onClick={create}> Создать </button>
+        </PopUpForm>
     );
 };
 

@@ -1,5 +1,6 @@
 @import "../RoomLastTask/room-last-task";
 @import "RoomTask/room-task";
+@import "../../UI/PopUpForm/pop-up-form";
 
 .room-tasks {
   display: flex;
@@ -33,6 +34,17 @@
       border: 0.10vw $border_color solid;
       border-radius: 0.52vw;
     }
+
+    & .room-tasks__tasks__add-button {
+      height: 7.5%;
+      cursor: pointer;
+      margin-top: 0;
+
+      & > img {
+        width: auto;
+        height: 100%;
+      }
+    }
   }
 
   & .infinite-scroll {
@@ -48,8 +60,8 @@
       margin-top: 3vh;
     }
 
-    & > *:first-child {
-      margin-top: 0;
+    & > *:first-child+* {
+      margin-top: 1.5vh;
     }
   }
 
