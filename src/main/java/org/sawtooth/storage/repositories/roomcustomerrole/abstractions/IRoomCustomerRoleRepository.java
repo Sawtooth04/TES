@@ -6,10 +6,14 @@ import org.sawtooth.models.roomcustomerrole.RoomCustomerRole;
 import org.sawtooth.models.roomrole.RoomRole;
 import org.sawtooth.storage.repositories.IRepository;
 
+import java.util.List;
+
 public interface IRoomCustomerRoleRepository extends IRepository {
     public RoomCustomer Get(int customerID);
 
     public void Add(RoomCustomerRole roomCustomerRole);
 
     public boolean IsCustomerHasRole(int roomID, Customer customer, RoomRole role);
+
+    public List<Customer> GetCustomersByRole(int roomID, int roleID);
 }

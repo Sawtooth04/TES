@@ -1,6 +1,7 @@
 package org.sawtooth.storage.repositories.roomcustomerrole.realizations;
 
 import org.sawtooth.models.customer.Customer;
+import org.sawtooth.models.customer.CustomerMapper;
 import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomcustomer.RoomCustomerMapper;
 import org.sawtooth.models.roomcustomerrole.RoomCustomerRole;
@@ -8,6 +9,8 @@ import org.sawtooth.models.roomrole.RoomRole;
 import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCustomerRoleRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
+
+import java.util.List;
 
 public class RoomCustomerRoleRepository implements IRoomCustomerRoleRepository {
     private JdbcTemplate template;
@@ -33,5 +36,11 @@ public class RoomCustomerRoleRepository implements IRoomCustomerRoleRepository {
     public boolean IsCustomerHasRole(int roomID, Customer customer, RoomRole role) {
         return template.queryForObject("SELECT * FROM is_customer_has_role(?, ?, ?)", new SingleColumnRowMapper<>(),
             role.roomRoleID(), customer.customerID(), roomID);
+    }
+
+    @Override
+    public List<Customer> GetCustomersByRole(int roomID, int roleID) {
+        return template.query("SELECT * FROM get_room_customers_by_role_id(?, ?)", new CustomerMapper(), roomID,
+            roleID);
     }
 }

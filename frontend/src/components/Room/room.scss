@@ -1,6 +1,7 @@
 @import "../../public-variables";
 @import "RoomMain/room-main";
 @import "RoomTasks/room-tasks";
+@import "RoomMembers/room-members";
 
 .room {
   display: flex;
@@ -87,7 +88,7 @@
     position: absolute;
     content: "";
     width: 100%;
-    height: 10%;
+    height: 0.4vh;
     left: 0;
     bottom: 0;
     background-color: #5185C5;
