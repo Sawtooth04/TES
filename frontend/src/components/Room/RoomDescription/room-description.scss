@@ -1,0 +1,14 @@
+@import "../../../public-variables";
+
+.room-description {
+  padding: 1.14%;
+  background-color: $third_background_color;
+  border: 0.10vw $border_color solid;
+  border-radius: 0.52vw;
+
+  & .room-description__description {
+    margin: 0;
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 18px;
+  }
+}

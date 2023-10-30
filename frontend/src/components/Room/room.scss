@@ -2,6 +2,7 @@
 @import "RoomMain/room-main";
 @import "RoomTasks/room-tasks";
 @import "RoomMembers/room-members";
+@import "RoomDescription/room-description";
 
 .room {
   display: flex;
@@ -63,12 +64,21 @@
     }
 
     & .room__content__body {
+      display: flex;
+      justify-content: center;
+      align-items: start;
       width: 100%;
       height: 90.46%;
 
       & > div {
         width: 100%;
         height: 100%;
+      }
+
+      & .room__content__body__description {
+        width: 70%;
+        height: auto;
+        overflow-y: auto;
       }
     }
   }

@@ -3,6 +3,7 @@ import {Navigate, NavLink, Route, Routes, useParams} from "react-router-dom";
 import RoomMain from "./RoomMain/RoomMain";
 import RoomTasks from "./RoomTasks/RoomTasks";
 import RoomMembers from "./RoomMembers/RoomMembers";
+import RoomDescription from "./RoomDescription/RoomDescription";
 
 const Room = ({ onMount }) => {
     const [room, setRoom] = useState(null);
@@ -63,6 +64,7 @@ const Room = ({ onMount }) => {
                 </div>
                 <div className="room__content__body">
                     <Routes>
+                        <Route path={"description"} element={<RoomDescription room={room}/>}/>
                         <Route path={"members"} element={<RoomMembers/>}/>
                         <Route path={"tasks"} element={<RoomTasks/>}/>
                         <Route path={"main"} element={<RoomMain/>}/>

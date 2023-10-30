@@ -888,6 +888,18 @@
   border-radius: 0.3vw;
 }
 
+.room-description {
+  padding: 1.14%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.room-description .room-description__description {
+  margin: 0;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
+}
+
 .room {
   display: flex;
   flex-direction: column;
@@ -942,12 +954,20 @@
   height: 9.54%;
 }
 .room .room__content .room__content__body {
+  display: flex;
+  justify-content: center;
+  align-items: start;
   width: 100%;
   height: 90.46%;
 }
 .room .room__content .room__content__body > div {
   width: 100%;
   height: 100%;
+}
+.room .room__content .room__content__body .room__content__body__description {
+  width: 70%;
+  height: auto;
+  overflow-y: auto;
 }
 
 .content-header .content-header__link {
