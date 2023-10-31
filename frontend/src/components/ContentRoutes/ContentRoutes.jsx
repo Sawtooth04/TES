@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import RoomsList from "../RoomsList/RoomsList";
 import CreateRoomForm from "../CreateRoomForm/CreateRoomForm";
 import Room from "../Room/Room";
+import RoomTask from "../RoomTask/RoomTask";
 
 const ContentRoutes = ({ onNavigate }) => {
     const [isSidebarHidden, setIsSidebarHidden] = useState(true);
@@ -39,6 +40,7 @@ const ContentRoutes = ({ onNavigate }) => {
                 <div className="main__wrapper__content" onClick={hideSidebar}>
                     {(createRoomDialogOpened) ? <CreateRoomForm onCreate={switchCreateRoomDialogState}/> : null}
                     <Routes>
+                        <Route path="/room/:roomID/task/:roomTaskID" element={<RoomTask onMount={onMount}/>}/>
                         <Route path="/room/:roomID/*" element={<Room onMount={onMount}/>}/>
                         <Route path="*" element={<RoomsList onMount={onMount}/>}/>
                     </Routes>

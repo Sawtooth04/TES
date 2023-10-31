@@ -21,7 +21,7 @@ public class RoomTaskVariantRepository implements IRoomTaskVariantRepository {
 
     @Override
     public void Add(RoomTaskVariant roomTaskVariant) {
-        template.query("SELECT * FROM insert_room_task_variant(?, ?, ?)", new SingleColumnRowMapper<Void>(),
-            roomTaskVariant.roomTaskID(), roomTaskVariant.variant(), roomTaskVariant.path());
+        template.query("SELECT * FROM insert_room_task_variant(?, ?, ?, ?)", new SingleColumnRowMapper<Void>(),
+            roomTaskVariant.roomTaskID(), roomTaskVariant.variant(), roomTaskVariant.path(), roomTaskVariant.description());
     }
 }

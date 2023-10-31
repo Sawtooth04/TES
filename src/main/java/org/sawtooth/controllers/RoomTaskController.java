@@ -43,6 +43,22 @@ public class RoomTaskController {
 
     @GetMapping("/get")
     @ResponseBody
+    public RoomTask Get(int roomID, int roomTaskID) {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName()).customerID();
+
+            if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomID))
+                return storage.GetRepository(IRoomTaskRepository.class).Get(roomTaskID);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    @GetMapping("/get-page")
+    @ResponseBody
     public List<RoomTask> Get(int roomID, int start, int count) {
         try {
             return storage.GetRepository(IRoomTaskRepository.class).Get(roomID, start, count);

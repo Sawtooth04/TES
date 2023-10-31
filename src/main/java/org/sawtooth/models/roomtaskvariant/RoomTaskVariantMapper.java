@@ -13,7 +13,8 @@ public class RoomTaskVariantMapper implements RowMapper<RoomTaskVariant> {
             resultSet.getInt("roomTaskVariantID"),
             resultSet.getInt("roomTaskID"),
             resultSet.getInt("variant"),
-            resultSet.getString("path")
+            resultSet.getString("path"),
+            resultSet.getString("description")
         );
     }
 }

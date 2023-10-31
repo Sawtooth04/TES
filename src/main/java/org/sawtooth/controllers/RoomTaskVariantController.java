@@ -40,7 +40,7 @@ public class RoomTaskVariantController {
             Files.createDirectories(Paths.get(path));
             uploadModel.file().transferTo(new File(String.format("%s/%s", path, uploadModel.file().getOriginalFilename())));
             storage.GetRepository(IRoomTaskVariantRepository.class).Add(new RoomTaskVariant(-1,
-                roomTask.roomTaskID(), uploadModel.variant(), path));
+                roomTask.roomTaskID(), uploadModel.variant(), path, uploadModel.description()));
         }
     }
 }

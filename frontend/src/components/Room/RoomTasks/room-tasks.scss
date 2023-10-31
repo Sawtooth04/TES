@@ -1,5 +1,5 @@
 @import "../RoomLastTask/room-last-task";
-@import "RoomTask/room-task";
+@import "RoomTaskLabel/room-task";
 @import "../../UI/PopUpForm/pop-up-form";
 
 .room-tasks {
@@ -33,6 +33,7 @@
       background-color: $third_background_color;
       border: 0.10vw $border_color solid;
       border-radius: 0.52vw;
+      cursor: pointer;
     }
 
     & .room-tasks__tasks__add-button {
