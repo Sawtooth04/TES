@@ -1,3 +1,4 @@
+@import "RoomTaskComments/room-task-comments";
 @import "../../public-variables";
 
 .room-task {
@@ -15,11 +16,11 @@
       display: flex;
       align-items: center;
       position: relative;
-      padding: 3.18% 0 1% 0;
+      height: 12.76%;
 
       & .room-task__content__header__logo {
         width: auto;
-        height: 100%;
+        height: 60%;
       }
 
       & .room-task__content__header__name {
@@ -39,6 +40,11 @@
       left: 0;
       bottom: 0;
       background-color: #5185C5;
+    }
+
+    & .room-task__content__comments {
+      height: 84.04%;
+      margin-top: 3.24%;
     }
   }
 

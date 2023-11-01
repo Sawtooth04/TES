@@ -989,6 +989,89 @@
   background-color: #5185C5;
 }
 
+.room-task-comment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.room-task-comment .room-task-comment__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3.12vw;
+}
+.room-task-comment .room-task-comment__header .context-menu-button > img {
+  width: auto;
+  height: 100%;
+}
+
+.room-task-comments {
+  display: flex;
+  flex-direction: column;
+}
+.room-task-comments .room-task-comments__header {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 10%;
+}
+.room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 60%;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > img {
+  width: auto;
+  height: 100%;
+}
+.room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > p {
+  margin: 0;
+  padding-left: 4.4%;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 16px;
+  white-space: nowrap;
+}
+.room-task-comments .room-task-comments__header .room-task-comments__header__comments {
+  height: 40%;
+  margin: 0;
+  padding-left: 1%;
+  font-family: "TTNormsPro", "sans-serif";
+  font-weight: bold;
+  font-size: 18px;
+}
+.room-task-comments .room-task-comments__comments {
+  height: 90%;
+}
+.room-task-comments .room-task-comments__comments .infinite-scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.room-task-comments .room-task-comments__comments .infinite-scroll > * {
+  margin-top: 3vh;
+}
+.room-task-comments .room-task-comments__comments .infinite-scroll > *:first-child + * {
+  margin-top: 1.5vh;
+}
+.room-task-comments .room-task-comments__comments .infinite-scroll::-webkit-scrollbar {
+  width: 0.6vw;
+}
+.room-task-comments .room-task-comments__comments .infinite-scroll::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.room-task-comments .room-task-comments__comments .infinite-scroll::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+
 .room-task {
   display: flex;
   justify-content: center;
@@ -1004,11 +1087,11 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 3.18% 0 1% 0;
+  height: 12.76%;
 }
 .room-task .room-task__content .room-task__content__header .room-task__content__header__logo {
   width: auto;
-  height: 100%;
+  height: 60%;
 }
 .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
   flex-grow: 1;
@@ -1025,6 +1108,10 @@
   left: 0;
   bottom: 0;
   background-color: #5185C5;
+}
+.room-task .room-task__content .room-task__content__comments {
+  height: 84.04%;
+  margin-top: 3.24%;
 }
 .room-task .room-task__controls {
   width: 18.07%;

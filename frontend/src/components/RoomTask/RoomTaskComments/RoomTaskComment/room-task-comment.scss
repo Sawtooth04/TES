@@ -1,0 +1,19 @@
+.room-task-comment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & .room-task-comment__header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 3.12vw;
+
+    .context-menu-button {
+      & > img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+}

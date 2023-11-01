@@ -40,8 +40,8 @@ const RoomTasks = () => {
                 })}
             </div>
             <div className="room-tasks__tasks">
-                <InfiniteScrollPaginator roomID={roomID} endpoint={'/task/get-page'} countByPage={tasksPerPagesCount}
-                    maxCountByPage={maxTasksPerPagesCount} data={tasks} updateData={setTasks}>
+                <InfiniteScrollPaginator param={roomID} paramName={"roomID"} endpoint={'/task/get-page'} data={tasks}
+                    countByPage={tasksPerPagesCount} maxCountByPage={maxTasksPerPagesCount} updateData={setTasks}>
                     <div className={"room-tasks__tasks__add-button"} onClick={switchCreateTaskDialogState}>
                         <img src={"/assets/images/icons/add-task.png"} alt={"Add task"}/>
                     </div>

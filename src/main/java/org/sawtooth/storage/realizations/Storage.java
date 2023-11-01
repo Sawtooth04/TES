@@ -20,6 +20,8 @@ import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolution
 import org.sawtooth.storage.repositories.roomsolution.realizations.RoomSolutionRepository;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
 import org.sawtooth.storage.repositories.roomtask.realizations.RoomTaskRepository;
+import org.sawtooth.storage.repositories.roomtaskcomment.abstractions.IRoomTaskCommentRepository;
+import org.sawtooth.storage.repositories.roomtaskcomment.realizations.RoomTaskCommentRepository;
 import org.sawtooth.storage.repositories.roomtaskvariant.abstractions.IRoomTaskVariantRepository;
 import org.sawtooth.storage.repositories.roomtaskvariant.realizations.RoomTaskVariantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +55,7 @@ public class Storage implements IStorage {
         repositories.put(IRoomRoleRepository.class.getName(), RoomRoleRepository.class.getName());
         repositories.put(IRoomCustomerRoleRepository.class.getName(), RoomCustomerRoleRepository.class.getName());
         repositories.put(IRoomCustomerPostRepository.class.getName(), RoomCustomerPostRepository.class.getName());
+        repositories.put(IRoomTaskCommentRepository.class.getName(), RoomTaskCommentRepository.class.getName());
     }
 
     public <T extends IRepository> T GetRepository(Class<T> interfaceObject) throws InstantiationException{
