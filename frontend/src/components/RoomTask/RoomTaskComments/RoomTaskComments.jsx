@@ -1,15 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {taskCommentsPerPagesCount, maxTaskCommentsPerPagesCount} from "../../../constants";
 import InfiniteScrollPaginator from "../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 import RoomTaskComment from "./RoomTaskComment/RoomTaskComment";
+import CreateRoomTaskCommentForm from "../../UI/CreateRoomTaskCommentForm/CreateRoomTaskCommentForm";
 
 const RoomTaskComments = ({ roomTaskID }) => {
     const [comments, setComments] = useState([]);
+    const [createTaskCommentDialogOpened, setCreateTaskCommentDialogOpened] = useState(false);
+
+    function switchCreateTaskCommentDialogState() {
+        setCreateTaskCommentDialogOpened(!createTaskCommentDialogOpened);
+    }
 
     return (
         <div className={"room-task__content__comments room-task-comments"}>
+            {createTaskCommentDialogOpened ? <CreateRoomTaskCommentForm roomTaskID={roomTaskID}
+                onCreate={switchCreateTaskCommentDialogState}/> : null}
             <div className={"room-task-comments__header"}>
-                <button className={"room-task-comments__header__add-comment-button"}>
+                <button className={"room-task-comments__header__add-comment-button"} onClick={switchCreateTaskCommentDialogState}>
                     <img src={"/assets/images/icons/add-task-comment.png"} alt={"Add comment"}/>
                     <p> Добавить комментарий </p>
                 </button>

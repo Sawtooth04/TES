@@ -9,9 +9,7 @@ const RoomTaskComment = ({ comment }) => {
                 <p className={"room-task-comment__header__posted"}> {new Date(comment.posted).toLocaleString("ru")} </p>
                 <ContextMenuButton/>
             </div>
-            <div className="room-task-comment__body">
-                <p className={"room-task-comment__body__comment"}> {comment.comment} </p>
-            </div>
+            <p className={"room-task-comment__comment"}> {comment.comment} </p>
         </div>
     );
 };

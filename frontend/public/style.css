@@ -992,7 +992,12 @@
 .room-task-comment {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 93%;
+  height: auto;
+  padding: 0 2.14% 1.7% 2.14%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
 }
 .room-task-comment .room-task-comment__header {
   display: flex;
@@ -1000,9 +1005,31 @@
   width: 100%;
   height: 3.12vw;
 }
+.room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+  margin: 0;
+  flex-grow: 1;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 16px;
+}
+.room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+  margin: 0;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+}
+.room-task-comment .room-task-comment__header .context-menu-button {
+  height: 100%;
+  margin-left: 2.14%;
+}
 .room-task-comment .room-task-comment__header .context-menu-button > img {
   width: auto;
-  height: 100%;
+  height: 65%;
+}
+.room-task-comment .room-task-comment__comment {
+  max-width: 100%;
+  margin: 0;
+  word-break: break-word;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
 }
 
 .room-task-comments {
