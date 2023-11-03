@@ -37,7 +37,6 @@ public class RoomTaskCommentController {
     }
 
     @PostMapping("/add")
-    @ResponseBody
     public void Add(@RequestBody RoomTaskComment roomTaskComment) {
         try {
             int customerID = storage.GetRepository(ICustomerRepository.class).Get(
@@ -46,6 +45,21 @@ public class RoomTaskCommentController {
 
             if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomTask.roomID()))
                 storage.GetRepository(IRoomTaskCommentRepository.class).Add(roomTaskComment.WithRoomCustomerId(customerID));
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @PostMapping("/delete")
+    public void Delete(@RequestBody RoomTaskCommentView roomTaskComment) {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(
+                    SecurityContextHolder.getContext().getAuthentication().getName()).customerID();
+            RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomTaskComment.roomTaskID());
+
+            if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomTask.roomID()))
+                storage.GetRepository(IRoomTaskCommentRepository.class).Delete(roomTaskComment.roomTaskCommentID());
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

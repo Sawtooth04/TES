@@ -12,4 +12,6 @@ public interface IRoomTaskCommentRepository extends IRepository {
     public void Add(RoomTaskComment roomTaskComment);
 
     public List<RoomTaskCommentView> Get(int roomTaskID, int start, int count);
+
+    public void Delete(int id);
 }

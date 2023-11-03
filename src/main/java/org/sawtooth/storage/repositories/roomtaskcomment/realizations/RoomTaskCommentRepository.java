@@ -36,4 +36,9 @@ public class RoomTaskCommentRepository implements IRoomTaskCommentRepository {
         return template.query("SELECT * FROM get_room_task_comments(?, ?, ?)", new RoomTaskCommentViewMapper(),
             roomTaskID, start, count);
     }
+
+    @Override
+    public void Delete(int id) {
+        template.query("SELECT * FROM delete_room_task_comment_by_id(?)", new SingleColumnRowMapper<Void>(), id);
+    }
 }

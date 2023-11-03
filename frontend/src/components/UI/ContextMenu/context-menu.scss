@@ -1,0 +1,52 @@
+@import "../../../public-variables";
+
+.context-menu {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 22.39%;
+  padding: 0 0.78%;
+  right: 4%;
+  top: 10%;
+  background-color: $background_color;
+  border: $border_color 0.2vw solid;
+  border-radius: 0.78vw;
+  overflow: hidden;
+
+  & > button {
+    position: relative;
+    width: 100%;
+    margin-top: 4%;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-family: "TTNormsPro SemiBold", "sans-serif";
+    font-size: 18px;
+  }
+
+  & > button:hover:before {
+    content: "";
+    position: absolute;
+    height: 0.08vw;
+    width: 90%;
+    top: 0;
+    left: 5%;
+    background-color: $border_color;
+  }
+
+  & > button:hover:after {
+    content: "";
+    position: absolute;
+    height: 0.08vw;
+    width: 90%;
+    bottom: 0;
+    left: 5%;
+    background-color: $border_color;
+  }
+
+  & > button:last-child {
+    margin-bottom: 4%;
+  }
+}

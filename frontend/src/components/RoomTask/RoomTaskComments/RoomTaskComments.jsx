@@ -12,6 +12,11 @@ const RoomTaskComments = ({ roomTaskID }) => {
         setCreateTaskCommentDialogOpened(!createTaskCommentDialogOpened);
     }
 
+    function onDelete(comment) {
+        comments.splice(comments.indexOf(comment), 1)
+        setComments([...comments]);
+    }
+
     return (
         <div className={"room-task__content__comments room-task-comments"}>
             {createTaskCommentDialogOpened ? <CreateRoomTaskCommentForm roomTaskID={roomTaskID}
@@ -28,7 +33,7 @@ const RoomTaskComments = ({ roomTaskID }) => {
                     updateData={setComments} countByPage={taskCommentsPerPagesCount} endpoint={"/task-comment/get-page"}
                     maxCountByPage={maxTaskCommentsPerPagesCount}>
                     {comments.map((comment) => {
-                        return <RoomTaskComment comment={comment} key={comment.roomTaskCommentID}/>
+                        return <RoomTaskComment comment={comment} key={comment.roomTaskCommentID} onDelete={onDelete}/>
                     })}
                 </InfiniteScrollPaginator>
             </div>

@@ -1,10 +1,12 @@
 @import "../../../../public-variables";
+@import "../../../UI/ContextMenu/context-menu";
 
 .room-task-comment {
   display: flex;
   flex-direction: column;
   width: 93%;
   height: auto;
+  position: relative;
   padding: 0 2.14% 1.7% 2.14%;
   background-color: $third_background_color;
   border: 0.10vw $border_color solid;

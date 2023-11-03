@@ -989,11 +989,59 @@
   background-color: #5185C5;
 }
 
+.context-menu {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 22.39%;
+  padding: 0 0.78%;
+  right: 4%;
+  top: 10%;
+  background-color: #ecf6ff;
+  border: #b4bec7 0.2vw solid;
+  border-radius: 0.78vw;
+  overflow: hidden;
+}
+.context-menu > button {
+  position: relative;
+  width: 100%;
+  margin-top: 4%;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 18px;
+}
+.context-menu > button:hover:before {
+  content: "";
+  position: absolute;
+  height: 0.08vw;
+  width: 90%;
+  top: 0;
+  left: 5%;
+  background-color: #b4bec7;
+}
+.context-menu > button:hover:after {
+  content: "";
+  position: absolute;
+  height: 0.08vw;
+  width: 90%;
+  bottom: 0;
+  left: 5%;
+  background-color: #b4bec7;
+}
+.context-menu > button:last-child {
+  margin-bottom: 4%;
+}
+
 .room-task-comment {
   display: flex;
   flex-direction: column;
   width: 93%;
   height: auto;
+  position: relative;
   padding: 0 2.14% 1.7% 2.14%;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;

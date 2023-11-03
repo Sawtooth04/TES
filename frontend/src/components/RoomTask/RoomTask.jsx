@@ -13,8 +13,8 @@ const RoomTask = () => {
             params.set("roomID", roomID);
             params.set("roomTaskID", roomTaskID);
             let response = await fetch(`/task/get?${params.toString()}`, {
-               method: "get",
-               "Accept": "application/json"
+                method: "get",
+                "Accept": "application/json"
             });
 
             if (response.ok)

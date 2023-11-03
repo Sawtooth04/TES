@@ -1,5 +1,4 @@
 import React from 'react';
-import CreateRoomForm from "../CreateRoomForm/CreateRoomForm";
 
 const Header = ({ onSidebarClick, switchCreateRoomDialogState }) => {
     return (

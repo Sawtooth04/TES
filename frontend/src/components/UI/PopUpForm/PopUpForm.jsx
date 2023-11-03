@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 
-const PopUpForm = ({header, children }) => {
+const PopUpForm = ({ header, children }) => {
+
     return (
         <div className={"pop-up-form"}>
             <div className={"pop-up-form__form"}>
