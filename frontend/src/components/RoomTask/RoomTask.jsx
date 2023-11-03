@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import RoomTaskComments from "./RoomTaskComments/RoomTaskComments";
+import RoomTaskControls from "./RoomTaskControls/RoomTaskControls";
 
 const RoomTask = () => {
     const { roomID, roomTaskID } = useParams();
@@ -32,9 +33,7 @@ const RoomTask = () => {
                 </div>
                 <RoomTaskComments roomTaskID = {roomTaskID}/>
             </div>
-            <div className={"room-task__controls"}>
-
-            </div>
+            <RoomTaskControls />
         </div>
     );
 };

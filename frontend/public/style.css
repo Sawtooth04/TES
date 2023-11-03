@@ -1099,15 +1099,66 @@
   border-radius: 0.3vw;
 }
 
+.room-task__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.room-task__controls .room-task__controls__solution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.room-task__controls .room-task__controls__solution .room-task__controls__solution__header {
+  display: flex;
+  width: 100%;
+  padding: 2.16% 4.32%;
+}
+.room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
+  flex-grow: 1;
+  margin: 0;
+  text-align: start;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 22px;
+  white-space: nowrap;
+}
+.room-task__controls .room-task__controls__solution .room-task__controls__solution__submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  height: 3.7vh;
+  margin: 1.38vh 0;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 20px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.room-task__controls .room-task__controls__solution .room-task__controls__solution__submit-button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
+}
+
 .room-task {
   display: flex;
   justify-content: center;
+  align-items: start;
   width: 100%;
   height: 94.6%;
   margin-top: 1.56%;
 }
 .room-task .room-task__content {
   width: 48.95%;
+  height: 100%;
   margin-right: 1.56%;
 }
 .room-task .room-task__content .room-task__content__header {
