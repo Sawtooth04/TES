@@ -33,7 +33,7 @@ const RoomTask = () => {
                 </div>
                 <RoomTaskComments roomTaskID = {roomTaskID}/>
             </div>
-            <RoomTaskControls />
+            <RoomTaskControls roomID={roomID} roomTaskID={roomTaskID}/>
         </div>
     );
 };

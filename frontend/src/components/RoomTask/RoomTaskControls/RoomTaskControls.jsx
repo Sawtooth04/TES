@@ -1,16 +1,10 @@
 import React from 'react';
+import RoomTaskControlsSolution from "./RoomTaskControlsSolution/RoomTaskControlsSolution";
 
-const RoomTaskControls = () => {
+const RoomTaskControls = ({ roomID, roomTaskID }) => {
     return (
         <div className={"room-task__controls"}>
-            <div className={"room-task__controls__solution"}>
-                <div className="room-task__controls__solution__header">
-                    <p className={"room-task__controls__solution__header__title"}> Мое решение </p>
-                </div>
-                <div className="room-task__controls__solution__files">
-                </div>
-                <button className={"room-task__controls__solution__submit-button"}> Сдать </button>
-            </div>
+            <RoomTaskControlsSolution roomID={roomID} roomTaskID={roomTaskID}/>
             <div className={"room-task__controls__solution-comments"}>
 
             </div>

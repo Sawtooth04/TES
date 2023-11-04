@@ -1163,24 +1163,25 @@
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__header {
   display: flex;
-  width: 100%;
+  width: 92%;
   padding: 2.16% 4.32%;
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
-  flex-grow: 1;
   margin: 0;
-  text-align: start;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 22px;
   white-space: nowrap;
+}
+.room-task__controls .room-task__controls__solution .room-task__controls__solution__files > input {
+  display: none;
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__submit-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45%;
   height: 3.7vh;
   margin: 1.38vh 0;
+  padding: 5%;
   outline: none;
   border: #002544 0.2vw solid;
   border-radius: 0.5vw;
@@ -1189,6 +1190,7 @@
   transition: color 200ms ease-out, background-color 200ms ease-out;
   font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
+  white-space: nowrap;
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__submit-button:hover {
   background-color: #002544;
