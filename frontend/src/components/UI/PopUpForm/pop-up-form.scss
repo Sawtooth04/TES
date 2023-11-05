@@ -78,5 +78,18 @@
       color: $secondary_color;
       cursor: pointer;
     }
+
+    & > select {
+      width: 92.5%;
+      height: 4.5vh;
+      padding: 0 3.4%;
+      margin-top: 1.38vh;
+      outline: none;
+      border: $primary_color 0.2vw solid;
+      border-radius: 0.5vw;
+      background-color: $inputs_background_color;
+      font-size: 18px;
+      font-family: 'TTNormsPro SemiBold', 'sans-serif';
+    }
   }
 }

@@ -36,26 +36,26 @@ public class RoomSolutionController {
     }
 
     private void WriteFile(String newFilePath, ZipInputStream zipInputStream) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream(newFilePath);
-
-        fileOutputStream.write(zipInputStream.readAllBytes());
-        fileOutputStream.close();
-        zipInputStream.closeEntry();
+        try (FileOutputStream fileOutputStream = new FileOutputStream(newFilePath, false)) {
+            fileOutputStream.write(zipInputStream.readAllBytes());
+            zipInputStream.closeEntry();
+        }
     }
 
     private String UnZip(String path, RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
-        ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(path));
         ZipEntry entry;
         Path newFilePath;
         Path rootPath = Files.createDirectories(Paths.get(String.format("%s/%s/%s/%s/%s", solutionsPath,
             solutionUploadModel.roomID(), solutionUploadModel.taskID(), userName, sourcesFolder)));
 
-        while((entry = zipInputStream.getNextEntry()) != null) {
-            newFilePath = Path.of(String.format("%s\\%s", rootPath.toString(), entry.getName()));
-            if (entry.isDirectory() && Files.notExists(newFilePath))
-                Files.createDirectory(newFilePath);
-            else
-                WriteFile(newFilePath.toString(), zipInputStream);
+        try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(path))) {
+            while((entry = zipInputStream.getNextEntry()) != null) {
+                newFilePath = Path.of(String.format("%s\\%s", rootPath.toString(), entry.getName()));
+                if (!entry.isDirectory())
+                    WriteFile(newFilePath.toString(), zipInputStream);
+                else if (Files.notExists(newFilePath))
+                    Files.createDirectory(newFilePath);
+            }
         }
         return rootPath.toString();
     }
@@ -70,11 +70,20 @@ public class RoomSolutionController {
         return filePath;
     }
 
+    private void DeleteTempSolution(RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
+        String path = String.format("%s/%s/%s/%s", tempPath, solutionUploadModel.roomID(), solutionUploadModel.taskID(),
+                userName);
+        String filePath = String.format("%s/%s", path, solutionUploadModel.file().getOriginalFilename());
+
+        Files.deleteIfExists(Path.of(filePath));
+    }
+
     @PostMapping("/upload")
     public void Upload(@ModelAttribute RoomSolutionUploadModel solutionUploadModel) throws IOException, InstantiationException {
         String userName = SecurityContextHolder.getContext().getAuthentication().getName();
         String rootPath = UnZip(WriteTempSolution(solutionUploadModel, userName), solutionUploadModel, userName);
 
+        DeleteTempSolution(solutionUploadModel, userName);
         storage.GetRepository(IRoomSolutionRepository.class).Add(new RoomSolution(-1,
             solutionUploadModel.roomID(), rootPath));
     }
