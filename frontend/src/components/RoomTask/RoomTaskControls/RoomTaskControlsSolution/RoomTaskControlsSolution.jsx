@@ -8,6 +8,7 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
     const [solution, setSolution] = useState(null);
     const [languages, setLanguages] = useState(null);
     const [language, setLanguage] = useState(null);
+    const [testResult, setTestResult] = useState(null);
     const [chooseLanguageDialogOpened, setChooseLanguageDialogOpened] = useState(false);
     const [solutionStatus, setSolutionStatus] = useState(SolutionStatus.EMPTY);
     const fileInput = useRef();
@@ -33,8 +34,8 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             let response = await fetch(`/test/launch?${params.toString()}`, {
                 method: "get"
             })
+            setTestResult(await response.json());
             setSolutionStatus(SolutionStatus.TESTED);
-            console.log(await response.json());
         }
 
         if (solutionStatus === SolutionStatus.TESTING)
@@ -71,6 +72,7 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
         }
         else
             setSolutionStatus(SolutionStatus.EMPTY);
+        fileInput.current.value = null;
     }
 
     async function onSolutionChange() {
@@ -115,7 +117,7 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             </div>
             <div className="room-task__controls__solution__content">
                 <input type={"file"} ref={fileInput} onChange={onSolutionChange} webkitdirectory=""/>
-                <RoomTaskControlsSolutionOutput solutionStatus={solutionStatus}/>
+                <RoomTaskControlsSolutionOutput solutionStatus={solutionStatus} testResult={testResult}/>
             </div>
             <button className={"room-task__controls__solution__submit-button"} onClick={addSolution}> Загрузить </button>
         </div>

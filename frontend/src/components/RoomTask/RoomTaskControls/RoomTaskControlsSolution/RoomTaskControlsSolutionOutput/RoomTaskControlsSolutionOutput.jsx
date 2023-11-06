@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {SolutionStatus} from "../../../../../constants";
 import InfoOutput from "./InfoOutput/InfoOutput";
+import ErrorOutput from "./ErrorOutput/ErrorOutput";
 
-const RoomTaskControlsSolutionOutput = ({ solutionStatus }) => {
-
+const RoomTaskControlsSolutionOutput = ({ solutionStatus, testResult }) => {
     return (
         <div className={"room-task__controls__solution__content__output solution-output"}>
             { (solutionStatus === SolutionStatus.EMPTY) ?
@@ -16,10 +16,22 @@ const RoomTaskControlsSolutionOutput = ({ solutionStatus }) => {
                     Выполняется загрузка проекта. Пожалуйста, подождите.
                 </InfoOutput> : null }
 
-            { (solutionStatus === SolutionStatus.LOADED) ?
+            { (solutionStatus === SolutionStatus.TESTING || solutionStatus === SolutionStatus.LOADED) ?
                 <InfoOutput>
                     Проект загружен. Выполняется проверка.
                 </InfoOutput> : null }
+
+            { (solutionStatus === SolutionStatus.TESTED && testResult.isCompiled) ?
+                <InfoOutput>
+                    Проект успешно скомпилирован.
+                </InfoOutput> : null
+            }
+
+            { (solutionStatus === SolutionStatus.TESTED && !testResult.isCompiled) ?
+                <ErrorOutput>
+                    Произошла ошибка компиляции! Проверьте правильность написанного кода.
+                </ErrorOutput> : null
+            }
         </div>
     );
 };

@@ -39,7 +39,7 @@ const RoomMembers = () => {
                     <p className="room-members__teachers__header"> Преподаватели </p>
                     <div className="room-members__members__list">
                         {teachers.map((teacher) => {
-                            return <RoomMember member={teacher}/>
+                            return <RoomMember member={teacher} key={teacher.customerID}/>
                         })}
                     </div>
                 </div> : null
@@ -49,7 +49,7 @@ const RoomMembers = () => {
                     <p className="room-members__members__header"> Другие учащиеся </p>
                     <div className="room-members__members__list">
                         {members.map((member) => {
-                            return <RoomMember member={member}/>
+                            return <RoomMember member={member} key={member.customerID}/>
                         })}
                     </div>
                 </div> : null

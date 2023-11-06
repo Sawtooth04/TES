@@ -1166,14 +1166,19 @@
   padding: 3% 0;
 }
 .solution-output .solution-output__output {
-  width: 90%;
+  width: 85%;
+  border: 0.1vw #b4bec7 solid;
   border-radius: 0.52vw;
-  padding: 2%;
+  padding: 3%;
 }
 .solution-output .solution-output__output > * {
   margin: 0;
   font-family: "TTNormsPro", "sans-serif";
   font-size: 16px;
+}
+.solution-output .solution-output__error-output {
+  border-width: 0.15vw;
+  border-color: #bd0000;
 }
 
 .room-task__controls {
@@ -1206,12 +1211,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__content > input {
   display: none;
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__content .room-task__controls__solution__content__output {
-  width: 95%;
+  width: 100%;
   max-height: 32vh;
   overflow-y: auto;
   border: 0.1vw #b4bec7 solid;
