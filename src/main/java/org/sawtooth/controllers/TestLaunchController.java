@@ -100,6 +100,6 @@ public class TestLaunchController {
         if (TryCompile(languageConfiguration, rootPath, solution))
             return ResponseEntity.status(HttpStatus.OK).body(LaunchAll(languageConfiguration, solution,
                 launcherConfigurations));
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        return ResponseEntity.status(HttpStatus.OK).body(new SolutionLaunchResult(false));
     }
 }

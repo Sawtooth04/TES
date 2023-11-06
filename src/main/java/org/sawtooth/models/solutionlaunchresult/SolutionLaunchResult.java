@@ -7,11 +7,20 @@ import java.util.Objects;
 
 public class SolutionLaunchResult {
     public boolean isSuccessful;
+    public boolean isCompiled;
     public ArrayList<TestLaunchResults> correctLaunchResults;
     public ArrayList<TestLaunchResults> incorrectLaunchResults;
 
     public SolutionLaunchResult() {
         isSuccessful = true;
+        isCompiled = true;
+        correctLaunchResults = new ArrayList<>();
+        incorrectLaunchResults = new ArrayList<>();
+    }
+
+    public SolutionLaunchResult(boolean compiled) {
+        isSuccessful = compiled;
+        isCompiled = compiled;
         correctLaunchResults = new ArrayList<>();
         incorrectLaunchResults = new ArrayList<>();
     }

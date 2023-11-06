@@ -5,6 +5,7 @@ import RoomTaskControlsSolutionOutput from "./RoomTaskControlsSolutionOutput/Roo
 import {SolutionStatus} from "../../../../constants";
 
 const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
+    const [solution, setSolution] = useState(null);
     const [languages, setLanguages] = useState(null);
     const [language, setLanguage] = useState(null);
     const [chooseLanguageDialogOpened, setChooseLanguageDialogOpened] = useState(false);
@@ -21,6 +22,29 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
 
         void getLanguages();
     }, [])
+
+    useEffect(() => {
+        async function testSolution() {
+            let params = new URLSearchParams();
+            params.set("roomID", roomID);
+            params.set("language", language);
+            params.set("taskID", roomTaskID);
+            params.set("solution", solution);
+            let response = await fetch(`/test/launch?${params.toString()}`, {
+                method: "get"
+            })
+            setSolutionStatus(SolutionStatus.TESTED);
+            console.log(await response.json());
+        }
+
+        if (solutionStatus === SolutionStatus.TESTING)
+            void testSolution();
+    }, [solutionStatus]);
+
+    function setLanguageCallback(newLanguage) {
+        setLanguage(newLanguage);
+        setSolutionStatus(SolutionStatus.TESTING);
+    }
 
     function addSolution() {
         setSolutionStatus(SolutionStatus.LOADING);
@@ -41,11 +65,12 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             body: data
         })
 
-        if (response.ok)
+        if (response.ok) {
+            switchChooseLanguageDialogOpened();
             setSolutionStatus(SolutionStatus.LOADED);
+        }
         else
             setSolutionStatus(SolutionStatus.EMPTY);
-        switchChooseLanguageDialogOpened();
     }
 
     async function onSolutionChange() {
@@ -78,11 +103,12 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             reader.onload = readResultProcessing.bind({name: fileInput.current.files[i].webkitRelativePath, reader: reader});
             reader.readAsArrayBuffer(fileInput.current.files[i]);
         }
+        setSolution(root);
     }
 
     return (
         <div className={"room-task__controls__solution"}>
-            { (chooseLanguageDialogOpened) ? <ChooseLanguageDialog languages={languages} setLanguage={setLanguage}
+            { (chooseLanguageDialogOpened) ? <ChooseLanguageDialog languages={languages} setLanguage={setLanguageCallback}
                onChoose={switchChooseLanguageDialogOpened}/> : null }
             <div className="room-task__controls__solution__header">
                 <p className={"room-task__controls__solution__header__title"}> Мое решение </p>
