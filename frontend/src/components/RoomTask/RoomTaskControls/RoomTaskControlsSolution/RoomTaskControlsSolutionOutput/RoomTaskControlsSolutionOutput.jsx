@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {SolutionStatus} from "../../../../../constants";
 import InfoOutput from "./InfoOutput/InfoOutput";
 import ErrorOutput from "./ErrorOutput/ErrorOutput";
+import SuccessOutput from "./SuccessOutput/SuccessOutput";
+import IncorrectResultOutput from "./IncorrectResultOutput/IncorrectResultOutput";
 
 const RoomTaskControlsSolutionOutput = ({ solutionStatus, testResult }) => {
     return (
@@ -31,6 +33,24 @@ const RoomTaskControlsSolutionOutput = ({ solutionStatus, testResult }) => {
                 <ErrorOutput>
                     Произошла ошибка компиляции! Проверьте правильность написанного кода.
                 </ErrorOutput> : null
+            }
+
+            { (solutionStatus === SolutionStatus.TESTED && testResult.isCompiled && testResult.isSuccessful) ?
+                <SuccessOutput>
+                    Проект прошел тестирование.
+                </SuccessOutput> : null
+            }
+
+            { (solutionStatus === SolutionStatus.TESTED && testResult.isCompiled && !testResult.isSuccessful) ? [
+                <ErrorOutput>
+                    <p> Проект не прошел тестирование. </p>
+                    <p> {`Пройдено тестов: ${testResult.correctLaunchResults.length}.`} </p>
+                    <p> {`Не пройдено тестов: ${testResult.incorrectLaunchResults.length}.`} </p>
+                </ErrorOutput>,
+
+                ...testResult.incorrectLaunchResults.map((result) => {
+                     return <IncorrectResultOutput launchResult={result}/>
+                 })] : null
             }
         </div>
     );

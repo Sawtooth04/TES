@@ -1,3 +1,4 @@
+@import "../../../../UI/FoldView/fold-view";
 @import "../../../../../public-variables";
 
 .solution-output {
@@ -11,6 +12,11 @@
     border: 0.10vw $border_color solid;
     border-radius: 0.52vw;
     padding: 3%;
+    margin-top: 3%;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     & > * {
       margin: 0;
@@ -22,5 +28,47 @@
   & .solution-output__error-output {
     border-width: 0.15vw;
     border-color: $error_color;
+
+    & > .solution-output__error-output__text {
+      & > * {
+        margin: 0 0 1vh 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    & > * {
+      margin-bottom: 1vh;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    & .fold-view {
+      width: 100%;
+
+      .fold-view__content {
+        width: 100%;
+        word-break: break-word;
+
+        & > p {
+          width: 100%;
+          margin: 0.5vh 0 0 0;
+          text-indent: 1.2em;
+        }
+      }
+
+      .fold-view__header:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  & .solution-output__success-output {
+    border-width: 0.15vw;
+    border-color: $success_color;
   }
 }

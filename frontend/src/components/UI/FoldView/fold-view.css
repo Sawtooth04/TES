@@ -1,0 +1,22 @@
+.fold-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.fold-view .fold-view__header {
+  cursor: pointer;
+}
+.fold-view .fold-view__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 0;
+  overflow-y: hidden;
+  transition: height 200ms ease-out;
+}
+
+.fold-view_opened .fold-view__content {
+  height: auto;
+}
+
+/*# sourceMappingURL=fold-view.css.map */
