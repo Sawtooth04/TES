@@ -1227,7 +1227,7 @@
   text-indent: 1.2em;
 }
 .solution-output .solution-output__error-output .fold-view .fold-view__header:hover {
-  color: #002544;
+  color: #cc194b;
 }
 .solution-output .solution-output__success-output {
   border-width: 0.15vw;

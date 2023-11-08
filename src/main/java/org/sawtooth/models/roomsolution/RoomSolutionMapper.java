@@ -11,8 +11,11 @@ public class RoomSolutionMapper implements RowMapper<RoomSolution> {
     public RoomSolution mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         return new RoomSolution(
             resultSet.getInt("roomSolutionID"),
-            resultSet.getInt("roomID"),
-            resultSet.getString("path")
+            resultSet.getInt("roomTaskID"),
+            resultSet.getInt("roomCustomerID"),
+            resultSet.getString("path"),
+            resultSet.getBoolean("isSuccessfullyTested"),
+            resultSet.getBoolean("isAccepted")
         );
     }
 }

@@ -108,6 +108,14 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
         setSolution(root);
     }
 
+    async function setSolutionSuccessfullyTested() {
+        let response = await fetch("/solution/set-successfully-tested", {
+            method: "post",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify(roomTaskID)
+        })
+    }
+
     return (
         <div className={"room-task__controls__solution"}>
             { (chooseLanguageDialogOpened) ? <ChooseLanguageDialog languages={languages} setLanguage={setLanguageCallback}
@@ -119,7 +127,12 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
                 <input type={"file"} ref={fileInput} onChange={onSolutionChange} webkitdirectory=""/>
                 <RoomTaskControlsSolutionOutput solutionStatus={solutionStatus} testResult={testResult}/>
             </div>
-            <button className={"room-task__controls__solution__submit-button"} onClick={addSolution}> Загрузить </button>
+            { (testResult != null && testResult.isSuccessful) ?
+                <button className={"room-task__controls__solution__submit-button"} onClick={setSolutionSuccessfullyTested}>
+                    Отправить на проверку
+                </button> :
+                <button className={"room-task__controls__solution__submit-button"} onClick={addSolution}> Загрузить </button>
+            }
         </div>
     );
 };

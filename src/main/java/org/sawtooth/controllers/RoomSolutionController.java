@@ -3,14 +3,12 @@ package org.sawtooth.controllers;
 import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomsolution.RoomSolutionUploadModel;
 import org.sawtooth.storage.abstractions.IStorage;
+import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -82,9 +80,18 @@ public class RoomSolutionController {
     public void Upload(@ModelAttribute RoomSolutionUploadModel solutionUploadModel) throws IOException, InstantiationException {
         String userName = SecurityContextHolder.getContext().getAuthentication().getName();
         String rootPath = UnZip(WriteTempSolution(solutionUploadModel, userName), solutionUploadModel, userName);
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(userName).customerID();
 
         DeleteTempSolution(solutionUploadModel, userName);
-        storage.GetRepository(IRoomSolutionRepository.class).Add(new RoomSolution(-1,
-            solutionUploadModel.roomID(), rootPath));
+        storage.GetRepository(IRoomSolutionRepository.class).Add(solutionUploadModel.taskID(), customerID, rootPath);
+    }
+
+    @PostMapping("/set-successfully-tested")
+    public void SetSuccessfullyTested(@RequestBody int roomTaskID) throws InstantiationException {
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+            .getAuthentication().getName()).customerID();
+
+        if (storage.GetRepository(IRoomSolutionRepository.class).IsSolutionExists(roomTaskID, customerID))
+            storage.GetRepository(IRoomSolutionRepository.class).SetSuccessfullyTested(roomTaskID, customerID);
     }
 }

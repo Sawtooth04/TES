@@ -22,8 +22,20 @@ public class RoomSolutionRepository implements IRoomSolutionRepository {
     }
 
     @Override
-    public void Add(RoomSolution roomSolution) {
-        template.query("SELECT * FROM insert_room_solution(?, ?)", new SingleColumnRowMapper<>(),
-            roomSolution.roomID(), roomSolution.path());
+    public void Add(int roomTaskID, int customerID, String path) {
+        template.query("SELECT * FROM insert_room_solution(?, ?, ?)", new SingleColumnRowMapper<>(),
+            roomTaskID, customerID, path);
+    }
+
+    @Override
+    public void SetSuccessfullyTested(int roomTaskID, int customerID) {
+        template.query("SELECT * FROM set_solution_successfully_tested(?, ?)", new SingleColumnRowMapper<>(),
+            roomTaskID, customerID);
+    }
+
+    @Override
+    public boolean IsSolutionExists(int roomTaskID, int customerID) {
+        return Boolean.TRUE.equals(template.queryForObject("SELECT * FROM is_solution_exists(?, ?)",
+            new SingleColumnRowMapper<Boolean>(), roomTaskID, customerID));
     }
 }
