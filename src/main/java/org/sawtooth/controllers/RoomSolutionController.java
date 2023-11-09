@@ -1,6 +1,6 @@
 package org.sawtooth.controllers;
 
-import org.sawtooth.models.roomsolution.RoomSolution;
+import org.sawtooth.models.roomsolution.RoomSolutionResponse;
 import org.sawtooth.models.roomsolution.RoomSolutionUploadModel;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
@@ -93,5 +93,18 @@ public class RoomSolutionController {
 
         if (storage.GetRepository(IRoomSolutionRepository.class).IsSolutionExists(roomTaskID, customerID))
             storage.GetRepository(IRoomSolutionRepository.class).SetSuccessfullyTested(roomTaskID, customerID);
+    }
+
+    @GetMapping("/get")
+    @ResponseBody
+    public RoomSolutionResponse GetSolution(int roomTaskID) throws InstantiationException {
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+            .getAuthentication().getName()).customerID();
+
+        if (storage.GetRepository(IRoomSolutionRepository.class).IsSolutionExists(roomTaskID, customerID))
+            return RoomSolutionResponse.FromRoomSolution(storage.GetRepository(IRoomSolutionRepository.class).Get(
+                roomTaskID, customerID));
+        else
+            return null;
     }
 }

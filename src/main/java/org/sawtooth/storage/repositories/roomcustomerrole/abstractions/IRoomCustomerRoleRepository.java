@@ -9,7 +9,7 @@ import org.sawtooth.storage.repositories.IRepository;
 import java.util.List;
 
 public interface IRoomCustomerRoleRepository extends IRepository {
-    public RoomCustomer Get(int customerID);
+    public RoomCustomerRole Get(int roomCustomerID);
 
     public void Add(RoomCustomerRole roomCustomerRole);
 

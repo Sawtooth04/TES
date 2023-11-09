@@ -6,7 +6,7 @@ import RoomTaskLabel from "./RoomTaskLabel/RoomTaskLabel";
 import CreateRoomTaskForm from "../../UI/CreateRoomTaskForm/CreateRoomTaskForm";
 import InfiniteScrollPaginator from "../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 
-const RoomTasks = () => {
+const RoomTasks = ({ role }) => {
     const { roomID } = useParams();
     const [latestTasks, setLatestTasks]  = useState([]);
     const [createTaskDialogOpened, setCreateTaskDialogOpened] = useState(false);
@@ -42,9 +42,11 @@ const RoomTasks = () => {
             <div className="room-tasks__tasks">
                 <InfiniteScrollPaginator param={roomID} paramName={"roomID"} endpoint={'/task/get-page'} data={tasks}
                     countByPage={tasksPerPagesCount} maxCountByPage={maxTasksPerPagesCount} updateData={setTasks}>
-                    <div className={"room-tasks__tasks__add-button"} onClick={switchCreateTaskDialogState}>
-                        <img src={"/assets/images/icons/add-task.png"} alt={"Add task"}/>
-                    </div>
+                    { (role === "teacher") ?
+                        <div className={"room-tasks__tasks__add-button"} onClick={switchCreateTaskDialogState}>
+                            <img src={"/assets/images/icons/add-task.png"} alt={"Add task"}/>
+                        </div> : null
+                    }
                     {tasks.map((task) => {
                         return <RoomTaskLabel task={task} key={task.roomTaskID}/>
                     })}

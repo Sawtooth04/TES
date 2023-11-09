@@ -6,6 +6,7 @@ import {SolutionStatus} from "../../../../constants";
 
 const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
     const [solution, setSolution] = useState(null);
+    const [solutionName, setSolutionName] = useState(null);
     const [languages, setLanguages] = useState(null);
     const [language, setLanguage] = useState(null);
     const [testResult, setTestResult] = useState(null);
@@ -22,6 +23,7 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
         }
 
         void getLanguages();
+        void getSolution();
     }, [])
 
     useEffect(() => {
@@ -30,7 +32,7 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             params.set("roomID", roomID);
             params.set("language", language);
             params.set("taskID", roomTaskID);
-            params.set("solution", solution);
+            params.set("solution", solutionName);
             let response = await fetch(`/test/launch?${params.toString()}`, {
                 method: "get"
             })
@@ -41,6 +43,21 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
         if (solutionStatus === SolutionStatus.TESTING)
             void testSolution();
     }, [solutionStatus]);
+
+    async function getSolution() {
+        let response = await fetch(`/solution/get?roomTaskID=${roomTaskID}`, {
+            method: "get",
+            headers: {"Accept": "application/json"}
+        });
+
+        if (response.ok)
+            try {
+                setSolution(await response.json());
+            }
+            catch (err) {
+                setSolution(null);
+            }
+    }
 
     function setLanguageCallback(newLanguage) {
         setLanguage(newLanguage);
@@ -105,7 +122,7 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             reader.onload = readResultProcessing.bind({name: fileInput.current.files[i].webkitRelativePath, reader: reader});
             reader.readAsArrayBuffer(fileInput.current.files[i]);
         }
-        setSolution(root);
+        setSolutionName(root);
     }
 
     async function setSolutionSuccessfullyTested() {
@@ -114,6 +131,14 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(roomTaskID)
         })
+        if (response.ok)
+            await getSolution();
+    }
+
+    function clearSolution() {
+        setSolutionStatus(SolutionStatus.EMPTY);
+        setSolution(null);
+        setTestResult(null);
     }
 
     return (
@@ -125,14 +150,30 @@ const RoomTaskControlsSolution = ({ roomID, roomTaskID }) => {
             </div>
             <div className="room-task__controls__solution__content">
                 <input type={"file"} ref={fileInput} onChange={onSolutionChange} webkitdirectory=""/>
-                <RoomTaskControlsSolutionOutput solutionStatus={solutionStatus} testResult={testResult}/>
+                { (solution != null && solution.isSuccessfullyTested) ?
+                    null : <RoomTaskControlsSolutionOutput solutionStatus={solutionStatus} testResult={testResult}/>
+                }
             </div>
-            { (testResult != null && testResult.isSuccessful) ?
-                <button className={"room-task__controls__solution__submit-button"} onClick={setSolutionSuccessfullyTested}>
-                    Отправить на проверку
-                </button> :
-                <button className={"room-task__controls__solution__submit-button"} onClick={addSolution}> Загрузить </button>
-            }
+            <div className="room-task__controls__solution__controls">
+                { (solution != null && solution.isSuccessfullyTested) ?
+                    <p className={"room-task__controls__solution__controls__paragraph"}>
+                        Проект прошел тестирование. Ожидайте результаты проверки преподавателем.
+                    </p> :
+                    (testResult != null && testResult.isSuccessful) ? [
+                            <button className={"room-task__controls__solution__controls__submit-button"} key={1}
+                                onClick={setSolutionSuccessfullyTested}>
+                                Сдать
+                            </button>,
+                            <button className={"room-task__controls__solution__controls__submit-button"} key={2}
+                                onClick={clearSolution}>
+                                Сброс
+                            </button>
+                        ] :
+                        <button className={"room-task__controls__solution__controls__submit-button"} onClick={addSolution}>
+                            Загрузить
+                        </button>
+                }
+            </div>
         </div>
     );
 };

@@ -10,8 +10,10 @@ const InfiniteScroll = ({ onPrev, onNext, children }) => {
                 threshold: 0.5
             })
 
-            observer.observe(wrapper.current.firstChild);
-            observer.observe(wrapper.current.lastChild);
+            if (wrapper.current.firstChild !== null && wrapper.current.lastChild !== null) {
+                observer.observe(wrapper.current.firstChild);
+                observer.observe(wrapper.current.lastChild);
+            }
             return () => { observer.disconnect() }
         }
     }, [children]);

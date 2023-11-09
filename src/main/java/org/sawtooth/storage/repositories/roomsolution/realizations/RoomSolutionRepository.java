@@ -22,6 +22,12 @@ public class RoomSolutionRepository implements IRoomSolutionRepository {
     }
 
     @Override
+    public RoomSolution Get(int roomTaskID, int customerID) {
+        return template.queryForObject("SELECT * FROM get_room_solution(?, ?)", new RoomSolutionMapper(), roomTaskID,
+            customerID);
+    }
+
+    @Override
     public void Add(int roomTaskID, int customerID, String path) {
         template.query("SELECT * FROM insert_room_solution(?, ?, ?)", new SingleColumnRowMapper<>(),
             roomTaskID, customerID, path);

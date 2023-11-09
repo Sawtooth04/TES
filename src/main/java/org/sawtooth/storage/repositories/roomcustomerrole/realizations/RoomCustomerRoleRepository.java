@@ -5,6 +5,7 @@ import org.sawtooth.models.customer.CustomerMapper;
 import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomcustomer.RoomCustomerMapper;
 import org.sawtooth.models.roomcustomerrole.RoomCustomerRole;
+import org.sawtooth.models.roomcustomerrole.RoomCustomerRoleMapper;
 import org.sawtooth.models.roomrole.RoomRole;
 import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCustomerRoleRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,9 +22,9 @@ public class RoomCustomerRoleRepository implements IRoomCustomerRoleRepository {
     }
 
     @Override
-    public RoomCustomer Get(int customerID) {
-        return template.queryForObject("SELECT * FROM get_room_customer_role_by_customer_id(?)", new RoomCustomerMapper(),
-            customerID);
+    public RoomCustomerRole Get(int roomCustomerID) {
+        return template.queryForObject("SELECT * FROM get_room_customer_role_by_customer_id(?)", new RoomCustomerRoleMapper(),
+            roomCustomerID);
     }
 
     @Override

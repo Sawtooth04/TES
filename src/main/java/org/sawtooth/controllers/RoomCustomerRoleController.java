@@ -1,6 +1,8 @@
 package org.sawtooth.controllers;
 
 import org.sawtooth.models.customer.Customer;
+import org.sawtooth.models.roomcustomer.RoomCustomer;
+import org.sawtooth.models.roomcustomerrole.RoomCustomerRole;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
@@ -23,6 +25,23 @@ public class RoomCustomerRoleController {
     @Autowired
     public RoomCustomerRoleController(IStorage storage) {
         this.storage = storage;
+    }
+
+    @GetMapping("/get")
+    @ResponseBody
+    public String GetCustomerRole(int roomID) {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName()).customerID();
+            RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomID, customerID);
+            RoomCustomerRole role = storage.GetRepository(IRoomCustomerRoleRepository.class).Get(roomCustomer.roomCustomerID());
+
+            return storage.GetRepository(IRoomRoleRepository.class).Get(role.roomRoleID()).name();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     @GetMapping("/get/teachers")

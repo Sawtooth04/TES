@@ -8,6 +8,7 @@ import RoomDescription from "./RoomDescription/RoomDescription";
 const Room = ({ onMount }) => {
     const [room, setRoom] = useState(null);
     const [roomOwner, setRoomOwner] = useState(null);
+    const [role, setRole] = useState(null);
     const { roomID } = useParams();
 
     useEffect(() => {
@@ -31,9 +32,20 @@ const Room = ({ onMount }) => {
                 setRoomOwner(await response.json());
         }
 
+        async function getRole() {
+            let response = await fetch(`/room-customer-role/get?roomID=${roomID}`, {
+                method: "get",
+                headers: {"Accept": "application/json"}
+            });
+
+            if (response.ok)
+                setRole(await response.text());
+        }
+
         onMount();
         void getRoom();
         void getRoomOwner();
+        void getRole();
     }, []);
 
     return (
@@ -66,7 +78,7 @@ const Room = ({ onMount }) => {
                     <Routes>
                         <Route path={"description"} element={<RoomDescription room={room}/>}/>
                         <Route path={"members"} element={<RoomMembers/>}/>
-                        <Route path={"tasks"} element={<RoomTasks/>}/>
+                        <Route path={"tasks"} element={<RoomTasks role={role}/>}/>
                         <Route path={"main"} element={<RoomMain/>}/>
                         <Route path={"*"} element={<Navigate to={"main"}/>}/>
                     </Routes>
