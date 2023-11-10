@@ -4,6 +4,7 @@ import RoomMain from "./RoomMain/RoomMain";
 import RoomTasks from "./RoomTasks/RoomTasks";
 import RoomMembers from "./RoomMembers/RoomMembers";
 import RoomDescription from "./RoomDescription/RoomDescription";
+import RoomTeaching from "./RoomTeaching/RoomTeaching";
 
 const Room = ({ onMount }) => {
     const [room, setRoom] = useState(null);
@@ -73,6 +74,11 @@ const Room = ({ onMount }) => {
                     <NavLink className={"content-header__link"} to={"description"}>
                         Описание
                     </NavLink>
+                    { (role === "teacher") ?
+                        <NavLink className={"content-header__link"} to={"teaching"}>
+                            Преподавание
+                        </NavLink> : null
+                    }
                 </div>
                 <div className="room__content__body">
                     <Routes>
@@ -80,6 +86,7 @@ const Room = ({ onMount }) => {
                         <Route path={"members"} element={<RoomMembers/>}/>
                         <Route path={"tasks"} element={<RoomTasks role={role}/>}/>
                         <Route path={"main"} element={<RoomMain/>}/>
+                        <Route path={"teaching/*"} element={<RoomTeaching roomID={roomID}/>}/>
                         <Route path={"*"} element={<Navigate to={"main"}/>}/>
                     </Routes>
                 </div>

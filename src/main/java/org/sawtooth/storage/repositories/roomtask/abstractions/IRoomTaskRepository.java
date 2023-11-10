@@ -12,5 +12,7 @@ public interface IRoomTaskRepository extends IRepository {
 
     public List<RoomTask> GetLatest(int roomID, int count);
 
+    public List<RoomTask> GetUnverified(int roomID, int start, int count);
+
     public void Add(RoomTask roomTask);
 }

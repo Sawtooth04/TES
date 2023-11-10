@@ -913,6 +913,104 @@
   font-size: 18px;
 }
 
+.unverified-task-label {
+  display: flex;
+  align-items: center;
+  padding: 0.4% 1.2%;
+}
+.unverified-task-label .unverified-task-label__icon {
+  width: auto;
+  height: 66.6%;
+}
+.unverified-task-label .unverified-task-label__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 1.25%;
+}
+.unverified-task-label .unverified-task-label__body > * {
+  margin: 0;
+}
+.unverified-task-label .unverified-task-label__body .unverified-task-label__body__header {
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 16px;
+}
+.unverified-task-label .unverified-task-label__body .unverified-task-label__body__date {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+}
+
+.room__teaching__body__unverified {
+  width: 100%;
+  height: 100%;
+}
+.room__teaching__body__unverified .room-teaching__body__unverified__task {
+  width: 91.5%;
+  min-height: 6vh;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+  cursor: pointer;
+}
+.room__teaching__body__unverified .infinite-scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  overflow: auto;
+}
+.room__teaching__body__unverified .infinite-scroll > * {
+  margin-top: 3vh;
+}
+.room__teaching__body__unverified .infinite-scroll > *:first-child + * {
+  margin-top: 1.5vh;
+}
+.room__teaching__body__unverified .infinite-scroll::-webkit-scrollbar {
+  width: 0.6vw;
+}
+.room__teaching__body__unverified .infinite-scroll::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.room__teaching__body__unverified .infinite-scroll::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+
+.room-teaching {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: start;
+}
+.room-teaching .room-teaching__header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.room-teaching .room-teaching__header .room-teaching__header__link {
+  position: relative;
+  margin: 0 0 0 1.56%;
+  color: #5185C5;
+  text-decoration: none;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 26px;
+}
+.room-teaching .room-teaching__header .room-teaching__header__link.active:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.4vh;
+  left: 0;
+  bottom: 0;
+  background-color: #5185C5;
+}
+.room-teaching .room-teaching__body {
+  width: 100%;
+  height: 100%;
+}
+
 .room {
   display: flex;
   flex-direction: column;

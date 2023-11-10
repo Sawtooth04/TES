@@ -84,4 +84,16 @@ public class RoomTaskController {
         }
         return null;
     }
+
+    @GetMapping("/get-unverified-page")
+    @ResponseBody
+    public List<RoomTask> GetUnverified(int roomID, int start, int count) {
+        try {
+            return storage.GetRepository(IRoomTaskRepository.class).GetUnverified(roomID, start, count);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 }

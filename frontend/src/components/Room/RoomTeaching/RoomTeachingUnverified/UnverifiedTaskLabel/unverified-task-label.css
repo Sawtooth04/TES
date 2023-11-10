@@ -1,0 +1,28 @@
+.unverified-task-label {
+  display: flex;
+  align-items: center;
+  padding: 0.4% 1.2%;
+}
+.unverified-task-label .unverified-task-label__icon {
+  width: auto;
+  height: 66.6%;
+}
+.unverified-task-label .unverified-task-label__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 1.25%;
+}
+.unverified-task-label .unverified-task-label__body > * {
+  margin: 0;
+}
+.unverified-task-label .unverified-task-label__body .unverified-task-label__body__header {
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 16px;
+}
+.unverified-task-label .unverified-task-label__body .unverified-task-label__body__date {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=unverified-task-label.css.map */
