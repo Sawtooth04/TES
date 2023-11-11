@@ -1,31 +1,60 @@
+@import "../../../../../public-variables";
+
 .unverified-task-label {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   padding: 0.4% 1.2%;
 
-  & .unverified-task-label__icon {
-    width: auto;
-    height: 66.6%;
+  & .unverified-task-label__wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    & .unverified-task-label__wrapper__icon {
+      width: auto;
+      height: 66.6%;
+    }
+
+    & .unverified-task-label__wrapper__body {
+      display: flex;
+      justify-content: end;
+      flex-grow: 1;
+      padding: 0 1.25%;
+
+      & > * {
+        margin: 0
+      }
+
+      & .unverified-task-label__wrapper__body__header {
+        margin: 0 auto;
+        font-family: "TTNormsPro SemiBold", "sans-serif";
+        font-size: 16px;
+      }
+
+      & .unverified-task-label__wrapper__body__date {
+        font-family: "TTNormsPro", "sans-serif";
+        font-size: 16px;
+      }
+    }
   }
 
-  & .unverified-task-label__body {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 0 1.25%;
+  & .fold-view {
+    width: 100%;
 
-    & > * {
-      margin: 0
-    }
-
-    & .unverified-task-label__body__header {
-      font-family: "TTNormsPro SemiBold", "sans-serif";
-      font-size: 16px;
-    }
-
-    & .unverified-task-label__body__date {
+    & .unverified-task-label__fold-view__solution {
+      margin: 1vh 0 0 0;
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 16px;
+      font-size: 18px;
+      transition: color 200ms ease-out;
+
+      &:last-child {
+        margin: 1vh 0;
+      }
+    }
+
+    & .unverified-task-label__fold-view__solution:hover {
+      color: $secondary_color;
     }
   }
 }

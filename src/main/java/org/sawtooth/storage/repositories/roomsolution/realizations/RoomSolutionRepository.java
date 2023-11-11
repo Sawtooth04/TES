@@ -2,6 +2,8 @@ package org.sawtooth.storage.repositories.roomsolution.realizations;
 
 import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomsolution.RoomSolutionMapper;
+import org.sawtooth.models.roomsolution.RoomUnverifiedSolution;
+import org.sawtooth.models.roomsolution.RoomUnverifiedSolutionMapper;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
@@ -25,6 +27,12 @@ public class RoomSolutionRepository implements IRoomSolutionRepository {
     public RoomSolution Get(int roomTaskID, int customerID) {
         return template.queryForObject("SELECT * FROM get_room_solution(?, ?)", new RoomSolutionMapper(), roomTaskID,
             customerID);
+    }
+
+    @Override
+    public List<RoomUnverifiedSolution> GetUnverified(int roomTaskID) {
+        return template.query("SELECT * FROM get_unverified_solutions_by_task_id(?)", new RoomUnverifiedSolutionMapper(),
+            roomTaskID);
     }
 
     @Override

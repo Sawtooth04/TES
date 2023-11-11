@@ -1,7 +1,9 @@
 package org.sawtooth.controllers;
 
+import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomsolution.RoomSolutionResponse;
 import org.sawtooth.models.roomsolution.RoomSolutionUploadModel;
+import org.sawtooth.models.roomsolution.RoomUnverifiedSolution;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
@@ -14,6 +16,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -102,9 +107,15 @@ public class RoomSolutionController {
             .getAuthentication().getName()).customerID();
 
         if (storage.GetRepository(IRoomSolutionRepository.class).IsSolutionExists(roomTaskID, customerID))
-            return RoomSolutionResponse.FromRoomSolution(storage.GetRepository(IRoomSolutionRepository.class).Get(
-                roomTaskID, customerID));
+            return RoomSolutionResponse.FromRoomSolution(storage.GetRepository(IRoomSolutionRepository.class).Get(roomTaskID,
+                customerID));
         else
             return null;
+    }
+
+    @GetMapping("/get-unverified")
+    @ResponseBody
+    public List<RoomUnverifiedSolution> GetUnverifiedSolutions(int roomTaskID) throws InstantiationException {
+        return storage.GetRepository(IRoomSolutionRepository.class).GetUnverified(roomTaskID);
     }
 }

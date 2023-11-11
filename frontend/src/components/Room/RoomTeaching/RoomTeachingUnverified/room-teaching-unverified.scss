@@ -2,6 +2,9 @@
 @import "../../../../public-variables";
 
 .room__teaching__body__unverified {
+  display: flex;
+  justify-content: center;
+  align-items: start;
   width: 100%;
   height: 100%;
 
@@ -19,8 +22,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    width: 100%;
-    flex-grow: 1;
+    width: 50%;
     overflow: auto;
 
     & > * {

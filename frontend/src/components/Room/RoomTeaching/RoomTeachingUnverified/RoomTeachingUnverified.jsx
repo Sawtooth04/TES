@@ -5,13 +5,29 @@ import UnverifiedTaskLabel from "./UnverifiedTaskLabel/UnverifiedTaskLabel";
 
 const RoomTeachingUnverified = ({ roomID }) => {
     const [unverifiedTasks, setUnverifiedTasks] = useState([]);
+    const [solutionsDictionary, setSolutionsDictionary] = useState({});
+
+    async function onTaskClick(roomTaskID) {
+        if (typeof(solutionsDictionary[roomTaskID]) === "undefined") {
+            let newDictionary;
+            let response = await fetch(`/solution/get-unverified?roomTaskID=${roomTaskID}`, {
+                method: "get",
+                headers: {"Accept": "application/json"}
+            });
+
+            newDictionary = {...solutionsDictionary}
+            newDictionary[roomTaskID.toString()] = await response.json();
+            setSolutionsDictionary(newDictionary);
+        }
+    }
 
     return (
         <div className={"room__teaching__body__unverified"}>
             <InfiniteScrollPaginator param={roomID} paramName={"roomID"} endpoint={'/task/get-unverified-page'} data={unverifiedTasks}
                 countByPage={tasksPerPagesCount} maxCountByPage={maxTasksPerPagesCount} updateData={setUnverifiedTasks}>
                 {unverifiedTasks.map((task) => {
-                    return <UnverifiedTaskLabel task={task} key={task.roomTaskID}/>
+                    return <UnverifiedTaskLabel task={task} key={task.roomTaskID} onClick={onTaskClick}
+                        solutions={solutionsDictionary[`${task.roomTaskID}`]}/>
                 })}
             </InfiniteScrollPaginator>
         </div>
