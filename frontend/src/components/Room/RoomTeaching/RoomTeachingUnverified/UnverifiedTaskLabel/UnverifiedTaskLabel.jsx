@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import FoldView from "../../../../UI/FoldView/FoldView";
+import {useNavigate, useParams} from "react-router-dom";
 
 const UnverifiedTaskLabel = ({ task, onClick, solutions }) => {
+    const { roomID } = useParams();
     const [isFoldViewOpened, setIsFoldViewOpened] = useState(false);
+    const navigate = useNavigate();
 
     async function onTaskClick() {
         onClick(task.roomTaskID);
         setIsFoldViewOpened(!isFoldViewOpened);
+    }
+
+    function onSolutionClick(roomSolutionID) {
+        navigate(`/room/${roomID}/teaching/unverified/solution/${roomSolutionID}`);
     }
 
     return (
@@ -21,7 +28,8 @@ const UnverifiedTaskLabel = ({ task, onClick, solutions }) => {
             { (typeof(solutions) !== "undefined") ?
                 <FoldView header={""} state={isFoldViewOpened}>
                     {solutions.map((solution) => {
-                        return <p className={"unverified-task-label__fold-view__solution"} key={solution.roomSolutionID}>
+                        return <p className={"unverified-task-label__fold-view__solution"} key={solution.roomSolutionID}
+                            onClick={() => onSolutionClick(solution.roomSolutionID)}>
                             {solution.customerName}
                         </p>
                     })}

@@ -1,0 +1,19 @@
+@import "../../../UI/TreeView/tree-view";
+
+.unverified-solution {
+  display: flex;
+
+  & .unverified-solution__sidebar {
+    width: 30%;
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 18px;
+  }
+
+  & .unverified-solution__body {
+    width: 40%;
+  }
+
+  & .unverified-solution__solution-controls {
+    width: 30%;
+  }
+}

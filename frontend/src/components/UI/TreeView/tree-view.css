@@ -1,0 +1,18 @@
+.tree-view {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.tree-view .tree-view__item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.tree-view .tree-view__item > .tree-view__item__nested-items {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 1vw;
+}
+
+/*# sourceMappingURL=tree-view.css.map */
