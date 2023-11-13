@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import FoldView from "../../FoldView/FoldView";
+import PopUpView from "../../PopUpView/PopUpView";
 
-const TreeItem = ({ item }) => {
-    const [isFoldViewOpened, setIsFoldViewOpened] = useState(false);
+const TreeItem = ({ item, onClick }) => {
+    const [isPopUpViewOpened, setIsPopUpViewOpened] = useState(false);
 
     async function onItemClick(event) {
         event.stopPropagation();
-        setIsFoldViewOpened(!isFoldViewOpened);
+        onClick(item);
+        setIsPopUpViewOpened(!isPopUpViewOpened);
     }
 
     return (
@@ -14,11 +16,12 @@ const TreeItem = ({ item }) => {
             <p className={"tree-view__item__item"}> { item.name } </p>
             { (typeof(item.nestedItems) !== "undefined") ?
                 <div className={"tree-view__item__nested-items"}>
-                    <FoldView header={""} state={isFoldViewOpened}>
-                        {item.nestedItems.map((nestedItem) => {
-                            return <TreeItem item={nestedItem}/>
+                    <PopUpView state={isPopUpViewOpened}>
+                        {item.nestedItems.map((nestedItem, index) => {
+                            return <TreeItem item={nestedItem} onClick={onClick} key={`${item.id}${index}`}/>
                         })}
-                    </FoldView>
+                    </PopUpView>
+
                 </div> : null
             }
         </div>

@@ -1019,9 +1019,10 @@
 }
 .tree-view .tree-view__item > .tree-view__item__nested-items {
   display: flex;
+  height: auto;
   flex-direction: column;
   align-items: start;
-  padding-left: 1vw;
+  padding-left: 1.3vw;
 }
 .tree-view .tree-view__item > .tree-view__item__nested-items .fold-view .fold-view__content {
   align-items: start;
@@ -1033,11 +1034,26 @@
 
 .unverified-solution {
   display: flex;
+  height: 100%;
 }
 .unverified-solution .unverified-solution__sidebar {
   width: 30%;
   font-family: "TTNormsPro", "sans-serif";
   font-size: 18px;
+}
+.unverified-solution .unverified-solution__sidebar .tree-view {
+  height: 100%;
+}
+.unverified-solution .unverified-solution__sidebar .tree-view .tree-view__item {
+  height: auto;
+}
+.unverified-solution .unverified-solution__sidebar .tree-view .tree-view__item .pop-up-view_opened {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.unverified-solution .unverified-solution__sidebar .tree-view .tree-view__item .pop-up-view_opened {
+  display: none;
 }
 .unverified-solution .unverified-solution__body {
   width: 40%;

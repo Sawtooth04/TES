@@ -4,9 +4,11 @@ import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomsolution.RoomSolutionResponse;
 import org.sawtooth.models.roomsolution.RoomSolutionUploadModel;
 import org.sawtooth.models.roomsolution.RoomUnverifiedSolution;
+import org.sawtooth.models.solutiontreeitem.SolutionTreeItem;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
+import org.sawtooth.utils.RoomSolutionTreeBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -117,5 +119,12 @@ public class RoomSolutionController {
     @ResponseBody
     public List<RoomUnverifiedSolution> GetUnverifiedSolutions(int roomTaskID) throws InstantiationException {
         return storage.GetRepository(IRoomSolutionRepository.class).GetUnverified(roomTaskID);
+    }
+
+    @GetMapping("/get-solution-tree-level")
+    @ResponseBody
+    public ArrayList<SolutionTreeItem> GetSolutionTreeLevel(int roomSolutionID, String relativePath) throws InstantiationException {
+        String fullPath = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID).path().concat(relativePath);
+        return (new RoomSolutionTreeBuilder()).GetRoomSolutionTree(fullPath);
     }
 }

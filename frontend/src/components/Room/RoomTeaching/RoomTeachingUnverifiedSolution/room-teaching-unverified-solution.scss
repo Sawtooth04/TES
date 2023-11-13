@@ -2,11 +2,30 @@
 
 .unverified-solution {
   display: flex;
+  height: 100%;
 
   & .unverified-solution__sidebar {
     width: 30%;
     font-family: "TTNormsPro", "sans-serif";
     font-size: 18px;
+
+    & .tree-view {
+      height: 100%;
+
+      & .tree-view__item {
+        height: auto;
+
+        & .pop-up-view_opened {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+        }
+
+        & .pop-up-view_opened {
+          display: none;
+        }
+      }
+    }
   }
 
   & .unverified-solution__body {
