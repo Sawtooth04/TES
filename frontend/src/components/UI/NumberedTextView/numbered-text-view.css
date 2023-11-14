@@ -1,0 +1,11 @@
+.numbered-text-view {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  overflow: auto;
+}
+.numbered-text-view .numbered-text-view__line {
+  display: flex;
+}
+
+/*# sourceMappingURL=numbered-text-view.css.map */

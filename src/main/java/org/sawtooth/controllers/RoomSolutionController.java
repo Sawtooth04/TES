@@ -127,4 +127,11 @@ public class RoomSolutionController {
         String fullPath = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID).path().concat(relativePath);
         return (new RoomSolutionTreeBuilder()).GetRoomSolutionTree(fullPath);
     }
+
+    @GetMapping("/get-solution-tree-file")
+    @ResponseBody
+    public List<String> GetSolutionTreeFile(int roomSolutionID, String relativePath) throws InstantiationException, IOException {
+        String fullPath = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID).path().concat(relativePath);
+        return Files.readAllLines(Path.of(fullPath));
+    }
 }

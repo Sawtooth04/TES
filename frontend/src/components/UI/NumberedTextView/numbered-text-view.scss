@@ -1,0 +1,14 @@
+.numbered-text-view {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  overflow: auto;
+
+  & .numbered-text-view__line {
+    display: flex;
+
+    & > * {
+      margin: 0;
+    }
+  }
+}

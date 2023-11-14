@@ -6,9 +6,9 @@ const TreeItem = ({ item, onClick }) => {
     const [isPopUpViewOpened, setIsPopUpViewOpened] = useState(false);
 
     async function onItemClick(event) {
-        event.stopPropagation();
-        onClick(item);
         setIsPopUpViewOpened(!isPopUpViewOpened);
+        onClick(item);
+        event.stopPropagation();
     }
 
     return (
@@ -21,7 +21,6 @@ const TreeItem = ({ item, onClick }) => {
                             return <TreeItem item={nestedItem} onClick={onClick} key={`${item.id}${index}`}/>
                         })}
                     </PopUpView>
-
                 </div> : null
             }
         </div>
