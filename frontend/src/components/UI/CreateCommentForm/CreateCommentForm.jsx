@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 
-const CreateCommentForm = ({ onSendCallback }) => {
+const CreateCommentForm = ({ onSendCallback, placeholder }) => {
     const input = useRef(null);
 
     function onSend() {
@@ -9,7 +9,7 @@ const CreateCommentForm = ({ onSendCallback }) => {
 
     return (
         <div className={"create-comment-form"}>
-            <input className={"create-comment-form__input"} placeholder={"Поделитесь с участниками курса..."} ref={input}/>
+            <input className={"create-comment-form__input"} placeholder={placeholder} ref={input}/>
             <div className={"create-comment-form__button"} onClick={onSend}>
                 <img src={"/assets/images/icons/send.png"} alt={"Send"}/>
             </div>

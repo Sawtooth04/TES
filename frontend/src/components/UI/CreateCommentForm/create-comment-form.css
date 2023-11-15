@@ -1,0 +1,34 @@
+.create-comment-form {
+  display: flex;
+  align-items: center;
+  width: 97%;
+  height: 10.43%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.create-comment-form .create-comment-form__input {
+  height: 57.14%;
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  font-size: 24px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.create-comment-form .create-comment-form__button {
+  height: 57.14%;
+  cursor: pointer;
+}
+.create-comment-form .create-comment-form__button img {
+  width: auto;
+  height: 100%;
+}
+.create-comment-form > * {
+  margin-left: 1.33%;
+}
+.create-comment-form > *:last-child {
+  margin: 0 1.33% 0 1.33%;
+}
+
+/*# sourceMappingURL=create-comment-form.css.map */

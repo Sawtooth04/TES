@@ -1,19 +1,20 @@
-@import "../../../public-variables";
 @import "RoomTaskControlsSolution/RoomTaskControlsSolutionOutput/room-task-controls-solution-output";
+@import "../../UI/CreateCommentForm/create-comment-form";
+@import "../../../public-variables";
 
 .room-task__controls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $third_background_color;
-  border: 0.10vw $border_color solid;
-  border-radius: 0.52vw;
 
   & .room-task__controls__solution {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: $third_background_color;
+    border: 0.10vw $border_color solid;
+    border-radius: 0.52vw;
 
     & .room-task__controls__solution__header {
       display: flex;
@@ -96,6 +97,35 @@
         font-size: 18px;
         font-family: 'TTNormsPro SemiBold', 'sans-serif';
         text-align: center;
+      }
+    }
+  }
+
+  & .room-task__controls__solution-comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    margin-top: 3vh;
+    background-color: $third_background_color;
+    border: 0.10vw $border_color solid;
+    border-radius: 0.52vw;
+
+    & .create-comment-form {
+      width: 95%;
+      height: 9%;
+      margin-top: 2.5%;
+
+      & .create-comment-form__input {
+        font-size: 20px;
+      }
+
+      & .create-comment-form__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70%;
       }
     }
   }

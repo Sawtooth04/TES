@@ -1,5 +1,6 @@
 @import "RoomPost/room-post";
 @import "../RoomLastTask/room-last-task";
+@import "../../UI/CreateCommentForm/create-comment-form";
 @import "../../../public-variables";
 
 .room-main {
@@ -31,44 +32,6 @@
     flex-direction: column;
     justify-content: start;
     align-items: end;
-
-    & .create-comment-form {
-      display: flex;
-      align-items: center;
-      width: 97%;
-      height: 10.43%;
-      background-color: $third_background_color;
-      border: 0.10vw $border_color solid;
-      border-radius: 0.52vw;
-
-      & .create-comment-form__input {
-        height: 57.14%;
-        flex-grow: 1;
-        outline: none;
-        border: none;
-        background-color: inherit;
-        font-size: 24px;
-        font-family: 'TTNormsPro SemiBold', 'sans-serif';
-      }
-
-      & .create-comment-form__button {
-        height: 57.14%;
-        cursor: pointer;
-
-        & img {
-          width: auto;
-          height: 100%;
-        }
-      }
-
-      & > * {
-        margin-left: 1.33%;
-      }
-
-      & > *:last-child {
-        margin: 0 1.33% 0 1.33%;
-      }
-    }
 
     & .infinite-scroll {
       display: flex;

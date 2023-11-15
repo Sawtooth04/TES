@@ -516,6 +516,39 @@
   margin: 0;
 }
 
+.create-comment-form {
+  display: flex;
+  align-items: center;
+  width: 97%;
+  height: 10.43%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.create-comment-form .create-comment-form__input {
+  height: 57.14%;
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  font-size: 24px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.create-comment-form .create-comment-form__button {
+  height: 57.14%;
+  cursor: pointer;
+}
+.create-comment-form .create-comment-form__button img {
+  width: auto;
+  height: 100%;
+}
+.create-comment-form > * {
+  margin-left: 1.33%;
+}
+.create-comment-form > *:last-child {
+  margin: 0 1.33% 0 1.33%;
+}
+
 .room-main {
   display: flex;
   justify-items: center;
@@ -543,38 +576,6 @@
   flex-direction: column;
   justify-content: start;
   align-items: end;
-}
-.room-main .room-main__posts .create-comment-form {
-  display: flex;
-  align-items: center;
-  width: 97%;
-  height: 10.43%;
-  background-color: #eef4f7;
-  border: 0.1vw #b4bec7 solid;
-  border-radius: 0.52vw;
-}
-.room-main .room-main__posts .create-comment-form .create-comment-form__input {
-  height: 57.14%;
-  flex-grow: 1;
-  outline: none;
-  border: none;
-  background-color: inherit;
-  font-size: 24px;
-  font-family: "TTNormsPro SemiBold", "sans-serif";
-}
-.room-main .room-main__posts .create-comment-form .create-comment-form__button {
-  height: 57.14%;
-  cursor: pointer;
-}
-.room-main .room-main__posts .create-comment-form .create-comment-form__button img {
-  width: auto;
-  height: 100%;
-}
-.room-main .room-main__posts .create-comment-form > * {
-  margin-left: 1.33%;
-}
-.room-main .room-main__posts .create-comment-form > *:last-child {
-  margin: 0 1.33% 0 1.33%;
 }
 .room-main .room-main__posts .infinite-scroll {
   display: flex;
@@ -1411,7 +1412,7 @@
 .room-task-comments .room-task-comments__comments .infinite-scroll > * {
   margin-top: 3vh;
 }
-.room-task-comments .room-task-comments__comments .infinite-scroll > *:first-child + * {
+.room-task-comments .room-task-comments__comments .infinite-scroll > *:first-child {
   margin-top: 1.5vh;
 }
 .room-task-comments .room-task-comments__comments .infinite-scroll::-webkit-scrollbar {
@@ -1500,19 +1501,52 @@
   border-color: #00bd00;
 }
 
+.create-comment-form {
+  display: flex;
+  align-items: center;
+  width: 97%;
+  height: 10.43%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.create-comment-form .create-comment-form__input {
+  height: 57.14%;
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  font-size: 24px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.create-comment-form .create-comment-form__button {
+  height: 57.14%;
+  cursor: pointer;
+}
+.create-comment-form .create-comment-form__button img {
+  width: auto;
+  height: 100%;
+}
+.create-comment-form > * {
+  margin-left: 1.33%;
+}
+.create-comment-form > *:last-child {
+  margin: 0 1.33% 0 1.33%;
+}
+
 .room-task__controls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #eef4f7;
-  border: 0.1vw #b4bec7 solid;
-  border-radius: 0.52vw;
 }
 .room-task__controls .room-task__controls__solution {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__header {
   display: flex;
@@ -1586,13 +1620,38 @@
   font-family: "TTNormsPro SemiBold", "sans-serif";
   text-align: center;
 }
+.room-task__controls .room-task__controls__solution-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 3vh;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.room-task__controls .room-task__controls__solution-comments .create-comment-form {
+  width: 95%;
+  height: 9%;
+  margin-top: 2.5%;
+}
+.room-task__controls .room-task__controls__solution-comments .create-comment-form .create-comment-form__input {
+  font-size: 20px;
+}
+.room-task__controls .room-task__controls__solution-comments .create-comment-form .create-comment-form__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+}
 
 .room-task {
   display: flex;
   justify-content: center;
   align-items: start;
   width: 100%;
-  height: 94.6%;
+  height: 92.5%;
   margin-top: 1.56%;
 }
 .room-task .room-task__content {
@@ -1632,6 +1691,7 @@
 }
 .room-task .room-task__controls {
   width: 26.07%;
+  height: 100%;
 }
 
 .main {
