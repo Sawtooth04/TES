@@ -1,22 +1,23 @@
 package org.sawtooth.controllers;
 
 import org.sawtooth.models.roomcustomer.RoomCustomer;
+import org.sawtooth.models.roomcustomermessage.RoomCustomerMessage;
+import org.sawtooth.models.roomcustomermessage.RoomCustomerMessageMeta;
 import org.sawtooth.models.roomcustomermessage.RoomMemberMessageUploadModel;
-import org.sawtooth.models.roomcustomerpost.RoomCustomerPost;
-import org.sawtooth.models.roomcustomerpost.RoomCustomerPostUploadModel;
+import org.sawtooth.models.roomsolution.RoomSolution;
+import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomermessage.abstractions.IRoomCustomerMessageRepository;
-import org.sawtooth.storage.repositories.roomcustomerpost.abstractions.IRoomCustomerPostRepository;
+import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
+import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
+import org.sawtooth.storage.repositories.roomtask.realizations.RoomTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.sql.Timestamp;
+import java.util.List;
 
 @RestController
 @RequestMapping("/room-customer-message")
@@ -41,5 +42,37 @@ public class RoomCustomerMessageController {
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @GetMapping("/get-page")
+    public List<RoomCustomerMessage> GetPage(int roomTaskID, int start, int count) throws InstantiationException {
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+            .getAuthentication().getName()).customerID();
+        RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomTaskID);
+        RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomTask.roomID(), customerID);
+
+        return storage.GetRepository(IRoomCustomerMessageRepository.class).Get(roomTaskID, roomCustomer.roomCustomerID(),
+            start, count);
+    }
+
+    @GetMapping("/get-teacher-page")
+    public List<RoomCustomerMessage> GetTeacherPage(int roomSolutionID, int start, int count) throws InstantiationException {
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+            .getAuthentication().getName()).customerID();
+        RoomSolution roomSolution = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID);
+        RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomSolution.roomTaskID());
+        RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomTask.roomID(), customerID);
+
+        return storage.GetRepository(IRoomCustomerMessageRepository.class).GetByMember(roomSolution.roomTaskID(),
+            roomCustomer.roomCustomerID(), roomSolution.roomCustomerID(), start, count);
+    }
+
+    @GetMapping("/get-messages-meta")
+    public List<RoomCustomerMessageMeta> GetTeacherPage(int roomID) throws InstantiationException {
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName()).customerID();
+        RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomID, customerID);
+
+        return storage.GetRepository(IRoomCustomerMessageRepository.class).GetMessagesMeta(roomID, roomCustomer.roomCustomerID());
     }
 }

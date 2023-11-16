@@ -1144,6 +1144,46 @@
   border-radius: 0 0.52vw 0.52vw 0;
 }
 
+.room__teaching__body__messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.room__teaching__body__messages .room__teaching__body__messages__message {
+  width: 50%;
+  margin-top: 3vh;
+  padding: 1.2%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.room__teaching__body__messages .room__teaching__body__messages__message .room__teaching__body__messages__message__name {
+  margin: 0;
+  text-align: center;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 20px;
+}
+.room__teaching__body__messages .room__teaching__body__messages__message.message_unread {
+  border-width: 0.2vw;
+  border-color: #002544;
+}
+
+.room__teaching__body__messages::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+.room__teaching__body__messages::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+
+.room__teaching__body__messages::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+
 .room-teaching {
   display: flex;
   flex-direction: column;
@@ -1534,6 +1574,40 @@
   margin: 0 1.33% 0 1.33%;
 }
 
+.room-task-message {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 0 2.14% 1.7% 2.14%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.room-task-message .room-task-message__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2vw;
+}
+.room-task-message .room-task-message__header .room-task-message__header__customer-name {
+  margin: 0;
+  flex-grow: 1;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 16px;
+}
+.room-task-message .room-task-message__header .room-task-message__header__sent {
+  margin: 0;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+}
+.room-task-message .room-task-message__message {
+  max-width: 100%;
+  margin: 0;
+  word-break: break-word;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
+}
+
 .room-task__controls {
   display: flex;
   flex-direction: column;
@@ -1620,30 +1694,63 @@
   font-family: "TTNormsPro SemiBold", "sans-serif";
   text-align: center;
 }
-.room-task__controls .room-task__controls__solution-comments {
+.room-task__controls .room-task__controls__solution-messages {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-height: 60%;
   flex-grow: 1;
   margin-top: 3vh;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;
   border-radius: 0.52vw;
 }
-.room-task__controls .room-task__controls__solution-comments .create-comment-form {
+.room-task__controls .room-task__controls__solution-messages .create-comment-form {
   width: 95%;
   height: 9%;
   margin-top: 2.5%;
 }
-.room-task__controls .room-task__controls__solution-comments .create-comment-form .create-comment-form__input {
+.room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
   font-size: 20px;
 }
-.room-task__controls .room-task__controls__solution-comments .create-comment-form .create-comment-form__button {
+.room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__button {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 70%;
+}
+.room-task__controls .room-task__controls__solution-messages .infinite-scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  overflow: auto;
+}
+.room-task__controls .room-task__controls__solution-messages .infinite-scroll > * {
+  margin-top: 3vh;
+}
+.room-task__controls .room-task__controls__solution-messages .infinite-scroll > *:first-child {
+  margin-top: 1.5vh;
+}
+.room-task__controls .room-task__controls__solution-messages .infinite-scroll > *:last-child {
+  margin-bottom: 1.5vh;
+}
+.room-task__controls .room-task__controls__solution-messages .infinite-scroll::-webkit-scrollbar {
+  width: 0.6vw;
+}
+.room-task__controls .room-task__controls__solution-messages .infinite-scroll::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.room-task__controls .room-task__controls__solution-messages .infinite-scroll::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+.room-task__controls .room-task__controls__solution-messages .room-task__controls__solution-messages__message {
+  width: 90.72%;
+  margin-top: 2.5%;
 }
 
 .room-task {

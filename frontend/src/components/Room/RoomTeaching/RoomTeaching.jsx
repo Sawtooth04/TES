@@ -3,11 +3,15 @@ import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import RoomTeachingUnverified from "./RoomTeachingUnverified/RoomTeachingUnverified";
 import RoomTeachingVerified from "./RoomTeachingVerified/RoomTeachingVerified";
 import RoomTeachingUnverifiedSolution from "./RoomTeachingUnverifiedSolution/RoomTeachingUnverifiedSolution";
+import RoomTeachingMessages from "./RoomTeachingMessages/RoomTeachingMessages";
 
 const RoomTeaching = ({ roomID }) => {
     return (
         <div className={"room__content__body__teaching room-teaching"}>
             <div className={"room-teaching__header"}>
+                <NavLink className={"room-teaching__header__link"} to={"messages"}>
+                    Сообщения
+                </NavLink>
                 <NavLink className={"room-teaching__header__link"} to={"unverified"}>
                     Непроверенные
                 </NavLink>
@@ -17,10 +21,11 @@ const RoomTeaching = ({ roomID }) => {
             </div>
             <div className="room-teaching__body">
                 <Routes>
+                    <Route path={"messages"} element={<RoomTeachingMessages roomID={roomID}/>}/>
                     <Route path={"unverified"} element={<RoomTeachingUnverified roomID={roomID}/>}/>
                     <Route path={"unverified/solution/:solutionID"} element={<RoomTeachingUnverifiedSolution/>}/>
                     <Route path={"verified"} element={<RoomTeachingVerified/>}/>
-                    <Route path={"*"} element={<Navigate to={"unverified"}/>}/>
+                    <Route path={"*"} element={<Navigate to={"messages"}/>}/>
                 </Routes>
             </div>
         </div>

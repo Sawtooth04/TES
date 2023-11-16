@@ -13,7 +13,8 @@ public class RoomCustomerMessageMapper implements RowMapper<RoomCustomerMessage>
             resultSet.getString("name"),
             resultSet.getString("text"),
             resultSet.getTimestamp("sent"),
-            resultSet.getBoolean("own")
+            resultSet.getBoolean("own"),
+            resultSet.getBoolean("isRead")
         );
     }
 }

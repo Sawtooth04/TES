@@ -1,0 +1,39 @@
+@import "../../../../public-variables";
+
+.room-task-message {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 0 2.14% 1.7% 2.14%;
+  background-color: $third_background_color;
+  border: 0.10vw $border_color solid;
+  border-radius: 0.52vw;
+
+  & .room-task-message__header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2vw;
+
+    & .room-task-message__header__customer-name {
+      margin: 0;
+      flex-grow: 1;
+      font-family: "TTNormsPro SemiBold", "sans-serif";
+      font-size: 16px;
+    }
+
+    & .room-task-message__header__sent {
+      margin: 0;
+      font-family: "TTNormsPro", "sans-serif";
+      font-size: 16px;
+    }
+  }
+
+  & .room-task-message__message {
+    max-width: 100%;
+    margin: 0;
+    word-break: break-word;
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 18px;
+  }
+}

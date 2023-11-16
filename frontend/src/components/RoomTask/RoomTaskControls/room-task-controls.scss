@@ -1,5 +1,6 @@
 @import "RoomTaskControlsSolution/RoomTaskControlsSolutionOutput/room-task-controls-solution-output";
 @import "../../UI/CreateCommentForm/create-comment-form";
+@import "RoomTaskMessage/room-task-message";
 @import "../../../public-variables";
 
 .room-task__controls {
@@ -101,11 +102,12 @@
     }
   }
 
-  & .room-task__controls__solution-comments {
+  & .room-task__controls__solution-messages {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-height: 60%;
     flex-grow: 1;
     margin-top: 3vh;
     background-color: $third_background_color;
@@ -127,6 +129,46 @@
         justify-content: center;
         height: 70%;
       }
+    }
+
+    & .infinite-scroll {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      width: 100%;
+      flex-grow: 1;
+      overflow: auto;
+
+      & > * {
+        margin-top: 3vh;
+      }
+
+      & > *:first-child {
+        margin-top: 1.5vh;
+      }
+
+      & > *:last-child {
+        margin-bottom: 1.5vh;
+      }
+    }
+
+    & .infinite-scroll::-webkit-scrollbar {
+      width: 0.6vw;
+    }
+
+    & .infinite-scroll::-webkit-scrollbar-track {
+      background-color: $third_background_color;
+    }
+
+    & .infinite-scroll::-webkit-scrollbar-thumb {
+      background-color: $border_color;
+      border-radius: 0.3vw;
+    }
+
+    & .room-task__controls__solution-messages__message {
+      width: 90.72%;
+      margin-top: 2.5%;
     }
   }
 }
