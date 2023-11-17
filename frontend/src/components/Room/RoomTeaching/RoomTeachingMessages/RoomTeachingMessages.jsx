@@ -20,7 +20,7 @@ const RoomTeachingMessages = ({ roomID }) => {
     return (
         <div className={"room__teaching__body__messages"}>
             {messagesMeta.map((messageMeta) => {
-                return <RoomTeachingMessage message={messageMeta} key={messageMeta.name}/>
+                return <RoomTeachingMessage message={messageMeta} key={`${messageMeta.roomCustomerID}_${messageMeta.roomTaskID}`}/>
             })}
         </div>
     );

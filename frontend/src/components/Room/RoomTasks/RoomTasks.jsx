@@ -40,7 +40,7 @@ const RoomTasks = ({ role }) => {
                 })}
             </div>
             <div className="room-tasks__tasks">
-                <InfiniteScrollPaginator param={roomID} paramName={"roomID"} endpoint={'/task/get-page'} data={tasks}
+                <InfiniteScrollPaginator params={{"roomID": roomID}} endpoint={'/task/get-page'} data={tasks}
                     countByPage={tasksPerPagesCount} maxCountByPage={maxTasksPerPagesCount} updateData={setTasks}>
                     { (role === "teacher") ?
                         <div className={"room-tasks__tasks__add-button"} onClick={switchCreateTaskDialogState}>

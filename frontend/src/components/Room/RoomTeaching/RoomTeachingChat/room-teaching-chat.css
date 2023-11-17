@@ -1,0 +1,9 @@
+.room__teaching__body__chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 70%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=room-teaching-chat.css.map */

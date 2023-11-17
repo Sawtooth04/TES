@@ -1,11 +1,12 @@
 @import "RoomTeachingUnverified/room-teaching-unverified";
 @import "RoomTeachingUnverifiedSolution/room-teaching-unverified-solution";
 @import "RoomTeachingMessages/room-teaching-messages";
+@import "RoomTeachingChat/room-teaching-chat";
 
 .room-teaching {
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-content: center;
   align-items: start;
 
   & .room-teaching__header {
@@ -34,6 +35,8 @@
   }
 
   & .room-teaching__body {
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
 

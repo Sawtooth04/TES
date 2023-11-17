@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import InfiniteScroll from "../InfiniteScroll/InfiniteScroll";
 
-const InfiniteScrollPaginator = ({ children, param, paramName, endpoint, countByPage, maxCountByPage, data, updateData }) => {
+const InfiniteScrollPaginator = ({ children, params, endpoint, countByPage, maxCountByPage, data, updateData }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [scrolledToTheEnd, setScrolledToTheEnd] = useState(false);
     const [start, setStart] = useState(0);
@@ -13,12 +13,14 @@ const InfiniteScrollPaginator = ({ children, param, paramName, endpoint, countBy
     }, [start, end]);
 
     function buildParams() {
-        let params = new URLSearchParams();
-        params.append(paramName, param);
-        (isPrevious) ? params.append('start', String(start)) :
-            params.append('start', String(end - countByPage));
-        params.append('count', String(countByPage));
-        return params.toString();
+        let result = new URLSearchParams();
+
+        for (let key in params)
+            result.append(key, params[key]);
+        (isPrevious) ? result.append('start', String(start)) :
+            result.append('start', String(end - countByPage));
+        result.append('count', String(countByPage));
+        return result.toString();
     }
 
     async function getData() {

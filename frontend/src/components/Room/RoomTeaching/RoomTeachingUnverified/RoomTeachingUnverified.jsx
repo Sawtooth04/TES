@@ -23,7 +23,7 @@ const RoomTeachingUnverified = ({ roomID }) => {
 
     return (
         <div className={"room__teaching__body__unverified"}>
-            <InfiniteScrollPaginator param={roomID} paramName={"roomID"} endpoint={'/task/get-unverified-page'} data={unverifiedTasks}
+            <InfiniteScrollPaginator param={{"roomID": roomID}} endpoint={'/task/get-unverified-page'} data={unverifiedTasks}
                 countByPage={tasksPerPagesCount} maxCountByPage={maxTasksPerPagesCount} updateData={setUnverifiedTasks}>
                 {unverifiedTasks.map((task) => {
                     return <UnverifiedTaskLabel task={task} key={task.roomTaskID} onClick={onTaskClick}

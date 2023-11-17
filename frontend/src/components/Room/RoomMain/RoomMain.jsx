@@ -49,8 +49,8 @@ const RoomMain = () => {
             </div>
             <div className="room-main__posts">
                 <CreateCommentForm onSendCallback={onSendPost} placeholder={"Поделитесь с участниками курса..."}/>
-                <InfiniteScrollPaginator param={roomID} endpoint={'/room-post/get'} countByPage={postsPerPagesCount}
-                    maxCountByPage={maxPostsPerPagesCount} data={posts} updateData={setPosts} paramName={"roomID"}>
+                <InfiniteScrollPaginator params={{"roomID": roomID}} endpoint={'/room-post/get'} countByPage={postsPerPagesCount}
+                    maxCountByPage={maxPostsPerPagesCount} data={posts} updateData={setPosts}>
                     {posts.map((post) => {
                         return <RoomPost post={post} key={post.roomCustomerPostID}/>
                     })}

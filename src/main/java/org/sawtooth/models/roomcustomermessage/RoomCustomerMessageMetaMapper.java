@@ -9,8 +9,10 @@ public class RoomCustomerMessageMetaMapper implements RowMapper<RoomCustomerMess
     @Override
     public RoomCustomerMessageMeta mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         return new RoomCustomerMessageMeta(
-                resultSet.getString("name"),
-                resultSet.getBoolean("isRead")
+            resultSet.getInt("roomCustomerID"),
+            resultSet.getInt("roomTaskID"),
+            resultSet.getString("name"),
+            resultSet.getBoolean("isRead")
         );
     }
 }

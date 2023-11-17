@@ -4,6 +4,7 @@ import RoomTeachingUnverified from "./RoomTeachingUnverified/RoomTeachingUnverif
 import RoomTeachingVerified from "./RoomTeachingVerified/RoomTeachingVerified";
 import RoomTeachingUnverifiedSolution from "./RoomTeachingUnverifiedSolution/RoomTeachingUnverifiedSolution";
 import RoomTeachingMessages from "./RoomTeachingMessages/RoomTeachingMessages";
+import RoomTeachingChat from "./RoomTeachingChat/RoomTeachingChat";
 
 const RoomTeaching = ({ roomID }) => {
     return (
@@ -21,6 +22,7 @@ const RoomTeaching = ({ roomID }) => {
             </div>
             <div className="room-teaching__body">
                 <Routes>
+                    <Route path={"chat/:roomTaskID/:roomCustomerID"} element={<RoomTeachingChat />}/>
                     <Route path={"messages"} element={<RoomTeachingMessages roomID={roomID}/>}/>
                     <Route path={"unverified"} element={<RoomTeachingUnverified roomID={roomID}/>}/>
                     <Route path={"unverified/solution/:solutionID"} element={<RoomTeachingUnverifiedSolution/>}/>

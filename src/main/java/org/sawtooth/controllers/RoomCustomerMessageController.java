@@ -4,6 +4,7 @@ import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomcustomermessage.RoomCustomerMessage;
 import org.sawtooth.models.roomcustomermessage.RoomCustomerMessageMeta;
 import org.sawtooth.models.roomcustomermessage.RoomMemberMessageUploadModel;
+import org.sawtooth.models.roomcustomermessage.RoomTeacherMessageUploadModel;
 import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.storage.abstractions.IStorage;
@@ -44,6 +45,21 @@ public class RoomCustomerMessageController {
         }
     }
 
+    @PostMapping("/add-teacher")
+    public void AddTeacher(@RequestBody RoomTeacherMessageUploadModel message) {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                    .getAuthentication().getName()).customerID();
+            RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(message.roomID(), customerID);
+
+            storage.GetRepository(IRoomCustomerMessageRepository.class).AddTeacherMessage(roomCustomer.roomCustomerID(),
+                    message.roomTaskID(), message.text(), message.recipient());
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     @GetMapping("/get-page")
     public List<RoomCustomerMessage> GetPage(int roomTaskID, int start, int count) throws InstantiationException {
         int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
@@ -56,19 +72,18 @@ public class RoomCustomerMessageController {
     }
 
     @GetMapping("/get-teacher-page")
-    public List<RoomCustomerMessage> GetTeacherPage(int roomSolutionID, int start, int count) throws InstantiationException {
+    public List<RoomCustomerMessage> GetTeacherPage(int roomCustomerID, int roomTaskID, int start, int count) throws InstantiationException {
         int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
             .getAuthentication().getName()).customerID();
-        RoomSolution roomSolution = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID);
-        RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomSolution.roomTaskID());
+        RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomTaskID);
         RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomTask.roomID(), customerID);
 
-        return storage.GetRepository(IRoomCustomerMessageRepository.class).GetByMember(roomSolution.roomTaskID(),
-            roomCustomer.roomCustomerID(), roomSolution.roomCustomerID(), start, count);
+        return storage.GetRepository(IRoomCustomerMessageRepository.class).GetByMember(roomTaskID,
+            roomCustomer.roomCustomerID(), roomCustomerID, start, count);
     }
 
     @GetMapping("/get-messages-meta")
-    public List<RoomCustomerMessageMeta> GetTeacherPage(int roomID) throws InstantiationException {
+    public List<RoomCustomerMessageMeta> GetTeacherPageMeta(int roomID) throws InstantiationException {
         int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName()).customerID();
         RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomID, customerID);

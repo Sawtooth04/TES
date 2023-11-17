@@ -1,3 +1,3 @@
 package org.sawtooth.models.roomcustomermessage;
 
-public record RoomCustomerMessageMeta(String name, boolean isRead) { }
+public record RoomCustomerMessageMeta(int roomCustomerID, int roomTaskID, String name, boolean isRead) { }

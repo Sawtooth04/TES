@@ -29,7 +29,7 @@ const RoomTaskComments = ({ roomTaskID }) => {
                 <p className={"room-task-comments__header__comments"}> Комментарии </p>
             </div>
             <div className="room-task-comments__comments">
-                <InfiniteScrollPaginator param={roomTaskID} paramName={"roomTaskID"} data={comments}
+                <InfiniteScrollPaginator params={{"roomTaskID": roomTaskID}} data={comments}
                     updateData={setComments} countByPage={taskCommentsPerPagesCount} endpoint={"/task-comment/get-page"}
                     maxCountByPage={maxTaskCommentsPerPagesCount}>
                     {comments.map((comment) => {
