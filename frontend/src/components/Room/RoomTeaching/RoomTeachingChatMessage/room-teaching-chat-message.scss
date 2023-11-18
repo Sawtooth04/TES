@@ -1,0 +1,40 @@
+@import "../../../../public-variables";
+
+.message {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 1%;
+  padding: 1.3%;
+  border: 0.10vw $border_color solid;
+  border-radius: 0.52vw;
+
+  &.message_own {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  & .message__header {
+    display: flex;
+    align-items: center;
+
+    & .message__header__name, .message__header__time {
+      margin: 0;
+      color: $primary_color;
+      font-family: "TTNormsPro SemiBold", "sans-serif";
+      font-size: 18px;
+    }
+
+    & .message__header__time {
+      margin-left: auto;
+    }
+  }
+
+  & .message__text {
+    margin: 1.3% 0 0 0;
+    color: $primary_color;
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 18px;
+  }
+}

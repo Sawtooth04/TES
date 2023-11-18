@@ -102,6 +102,16 @@ public class RoomSolutionController {
             storage.GetRepository(IRoomSolutionRepository.class).SetSuccessfullyTested(roomTaskID, customerID);
     }
 
+    @PostMapping("/set-accepted")
+    public void SetAccepted(@RequestBody int roomSolutionID) throws InstantiationException {
+        storage.GetRepository(IRoomSolutionRepository.class).SetAccepted(roomSolutionID);
+    }
+
+    @PostMapping("/set-declined")
+    public void SetDeclined(@RequestBody int roomSolutionID) throws InstantiationException {
+        storage.GetRepository(IRoomSolutionRepository.class).SetDeclined(roomSolutionID);
+    }
+
     @GetMapping("/get")
     @ResponseBody
     public RoomSolutionResponse GetSolution(int roomTaskID) throws InstantiationException {

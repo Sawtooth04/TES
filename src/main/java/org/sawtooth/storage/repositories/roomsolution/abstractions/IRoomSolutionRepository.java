@@ -17,5 +17,9 @@ public interface IRoomSolutionRepository extends IRepository {
 
     public void SetSuccessfullyTested(int roomTaskID, int customerID);
 
+    public void SetAccepted(int roomSolutionID);
+
+    public void SetDeclined(int roomSolutionID);
+
     public boolean IsSolutionExists(int roomTaskID, int customerID);
 }

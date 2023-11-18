@@ -25,7 +25,7 @@ const RoomTaskControls = ({ roomID, roomTaskID }) => {
             <RoomTaskControlsSolution roomID={roomID} roomTaskID={roomTaskID}/>
             <div className={"room-task__controls__solution-messages"}>
                 <CreateCommentForm placeholder={"Оставьте сообщение"} onSendCallback={onSend}/>
-                <InfiniteScrollPaginator param={roomTaskID} paramName={"roomTaskID"} data={messages}
+                <InfiniteScrollPaginator params={{"roomTaskID": roomTaskID}} data={messages}
                     updateData={setMessages} countByPage={messagesPerPagesCount} endpoint={"/room-customer-message/get-page"}
                     maxCountByPage={maxMessagesPerPagesCount}>
                     {messages.map((message) => {

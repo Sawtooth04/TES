@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import TreeView from "../../../UI/TreeView/TreeView";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import NumberedTextView from "../../../UI/NumberedTextView/NumberedTextView";
+import InfiniteScrollPaginator from "../../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
+import {maxMessagesPerPagesCount, messagesPerPagesCount} from "../../../../constants";
+import RoomTeachingChatMessage from "../RoomTeachingChatMessage/RoomTeachingChatMessage";
+import CreateRoomTeacherMessageForm from "../CreateRoomTeacherMessageForm/CreateRoomTeacherMessageForm";
 
 const RoomTeachingUnverifiedSolution = () => {
-    const { solutionID } = useParams();
+    const { roomID, solutionID } = useParams();
     const [solutionTreeItems, setSolutionTreeItems] = useState([]);
     const [currentFile, setCurrentFile] = useState([]);
+    const [messages, setMessages] = useState([]);
+    const [createMessageDialogOpened, setCreateMessageDialogOpened] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getFirstSolutionTreeLayer() {
@@ -60,6 +67,28 @@ const RoomTeachingUnverifiedSolution = () => {
         }
     }
 
+    function switchCreateMessageDialogState() {
+        setCreateMessageDialogOpened(!createMessageDialogOpened);
+    }
+
+    async function setAccepted() {
+        await fetch(`/solution/set-accepted`, {
+            method: "post",
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify(solutionID)
+        });
+        navigate(`/room/${roomID}/teaching/unverified`);
+    }
+
+    async function setDeclined() {
+        await fetch(`/solution/set-declined`, {
+            method: "post",
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify(solutionID)
+        });
+        navigate(`/room/${roomID}/teaching/unverified`);
+    }
+
     return (
         <div className={"room-teaching__body__unverified-solution unverified-solution"}>
             <div className={"unverified-solution__sidebar"}>
@@ -69,6 +98,26 @@ const RoomTeachingUnverifiedSolution = () => {
                 <NumberedTextView text={currentFile}/>
             </div>
             <div className={"unverified-solution__solution-controls"}>
+                <InfiniteScrollPaginator params={{"roomSolutionID": solutionID}}
+                    endpoint={'/room-customer-message/get-teacher-page-by-solution'} countByPage={messagesPerPagesCount}
+                    maxCountByPage={maxMessagesPerPagesCount} data={messages} updateData={setMessages}>
+                    {messages.map((message) => {
+                        return <RoomTeachingChatMessage message={message} key={message.roomCustomerMessageID}/>
+                    })}
+                </InfiniteScrollPaginator>
+                {createMessageDialogOpened ? <CreateRoomTeacherMessageForm roomSolutionID={solutionID}
+                    onAddClick={switchCreateMessageDialogState}/> : null}
+                <button className={"unverified-solution__solution-controls__button"} onClick={switchCreateMessageDialogState}>
+                    Отправить сообщение
+                </button>
+                <div className="unverified-solution__solution-controls__wrapper">
+                    <button className={"unverified-solution__solution-controls__wrapper__button"} onClick={setDeclined}>
+                        Отклонить
+                    </button>
+                    <button className={"unverified-solution__solution-controls__wrapper__button"} onClick={setAccepted}>
+                        Принять
+                    </button>
+                </div>
 
             </div>
         </div>

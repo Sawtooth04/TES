@@ -3,7 +3,7 @@ import CreateCommentForm from "../../../UI/CreateCommentForm/CreateCommentForm";
 import {maxMessagesPerPagesCount, messagesPerPagesCount,} from "../../../../constants";
 import InfiniteScrollPaginator from "../../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 import {useParams} from "react-router-dom";
-import RoomTeachingChatMessage from "./RoomTeachingChatMessage/RoomTeachingChatMessage";
+import RoomTeachingChatMessage from "../RoomTeachingChatMessage/RoomTeachingChatMessage";
 
 const RoomTeachingChat = () => {
     const { roomID, roomTaskID, roomCustomerID } = useParams();
