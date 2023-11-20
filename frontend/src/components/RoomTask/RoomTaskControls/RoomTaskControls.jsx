@@ -5,7 +5,7 @@ import {maxMessagesPerPagesCount, messagesPerPagesCount} from "../../../constant
 import InfiniteScrollPaginator from "../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 import RoomTaskMessage from "./RoomTaskMessage/RoomTaskMessage";
 
-const RoomTaskControls = ({ roomID, roomTaskID }) => {
+const RoomTaskControls = ({ roomID, roomTaskID, role }) => {
     const [messages, setMessages] = useState([]);
 
     async function onSend(text) {
@@ -22,7 +22,10 @@ const RoomTaskControls = ({ roomID, roomTaskID }) => {
 
     return (
         <div className={"room-task__controls"}>
-            <RoomTaskControlsSolution roomID={roomID} roomTaskID={roomTaskID}/>
+            {(role !== "teacher") ?
+                <RoomTaskControlsSolution roomID={roomID} roomTaskID={roomTaskID}/> :
+                null
+            }
             <div className={"room-task__controls__solution-messages"}>
                 <CreateCommentForm placeholder={"Оставьте сообщение"} onSendCallback={onSend}/>
                 <InfiniteScrollPaginator params={{"roomTaskID": roomTaskID}} data={messages}

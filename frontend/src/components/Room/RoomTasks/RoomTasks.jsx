@@ -48,7 +48,7 @@ const RoomTasks = ({ role }) => {
                         </div> : null
                     }
                     {tasks.map((task) => {
-                        return <RoomTaskLabel task={task} key={task.roomTaskID}/>
+                        return <RoomTaskLabel task={task} key={task.roomTaskID} role={role}/>
                     })}
                 </InfiniteScrollPaginator>
             </div>

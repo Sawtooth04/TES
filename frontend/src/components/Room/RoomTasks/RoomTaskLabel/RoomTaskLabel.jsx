@@ -2,7 +2,7 @@ import React from 'react';
 import ContextMenuButton from "../../../UI/ContextMenuButton/ContextMenuButton";
 import {useNavigate} from "react-router-dom";
 
-const RoomTaskLabel = ({ task }) => {
+const RoomTaskLabel = ({ task, role }) => {
     const navigate = useNavigate();
 
     function onClick() {
