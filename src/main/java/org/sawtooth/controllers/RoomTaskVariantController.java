@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 @RestController
 @RequestMapping("/task-variant")
@@ -50,13 +51,24 @@ public class RoomTaskVariantController {
 
     @GetMapping("/get")
     @ResponseBody
-    public RoomTaskVariant Get(int roomID, int roomTaskID) throws IOException, InstantiationException {
+    public RoomTaskVariant Get(int roomID, int roomTaskID) throws InstantiationException {
         int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
             .getAuthentication().getName()).customerID();
         RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomID, customerID);
 
         if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomID))
             return storage.GetRepository(IRoomTaskVariantRepository.class).Get(roomTaskID, roomCustomer.variant());
+        return null;
+    }
+
+    @GetMapping("/get-all")
+    @ResponseBody
+    public List<RoomTaskVariant> GetAll(int roomID, int roomTaskID) throws InstantiationException {
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+            .getAuthentication().getName()).customerID();
+
+        if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomID))
+            return storage.GetRepository(IRoomTaskVariantRepository.class).GetVariants(roomTaskID);
         return null;
     }
 }

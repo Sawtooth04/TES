@@ -4,6 +4,7 @@ import CreateCommentForm from "../../UI/CreateCommentForm/CreateCommentForm";
 import {maxMessagesPerPagesCount, messagesPerPagesCount} from "../../../constants";
 import InfiniteScrollPaginator from "../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 import RoomTaskMessage from "./RoomTaskMessage/RoomTaskMessage";
+import RoomTaskTeacherControls from "./RoomTaskTeacherControls/RoomTaskTeacherControls";
 
 const RoomTaskControls = ({ roomID, roomTaskID, role }) => {
     const [messages, setMessages] = useState([]);
@@ -24,18 +25,20 @@ const RoomTaskControls = ({ roomID, roomTaskID, role }) => {
         <div className={"room-task__controls"}>
             {(role !== "teacher") ?
                 <RoomTaskControlsSolution roomID={roomID} roomTaskID={roomTaskID}/> :
-                null
+                <RoomTaskTeacherControls roomID={roomID} roomTaskID={roomTaskID}/>
             }
-            <div className={"room-task__controls__solution-messages"}>
-                <CreateCommentForm placeholder={"Оставьте сообщение"} onSendCallback={onSend}/>
-                <InfiniteScrollPaginator params={{"roomTaskID": roomTaskID}} data={messages}
-                    updateData={setMessages} countByPage={messagesPerPagesCount} endpoint={"/room-customer-message/get-page"}
-                    maxCountByPage={maxMessagesPerPagesCount}>
-                    {messages.map((message) => {
-                        return <RoomTaskMessage message={message} key={message.roomCustomerMessageID}/>
-                    })}
-                </InfiniteScrollPaginator>
-            </div>
+            {(role !== "teacher") ?
+                <div className={"room-task__controls__solution-messages"}>
+                    <CreateCommentForm placeholder={"Оставьте сообщение"} onSendCallback={onSend}/>
+                    <InfiniteScrollPaginator params={{"roomTaskID": roomTaskID}} data={messages}
+                        updateData={setMessages} countByPage={messagesPerPagesCount} endpoint={"/room-customer-message/get-page"}
+                        maxCountByPage={maxMessagesPerPagesCount}>
+                        {messages.map((message) => {
+                            return <RoomTaskMessage message={message} key={message.roomCustomerMessageID}/>
+                        })}
+                    </InfiniteScrollPaginator>
+                </div> : null
+            }
         </div>
     );
 };
