@@ -1797,7 +1797,7 @@
   align-items: center;
   position: absolute;
   top: 15%;
-  left: 25%;
+  left: 24.82%;
   width: 10%;
   height: 60%;
   overflow: auto;
@@ -1805,7 +1805,6 @@
   font-size: 18px;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;
-  border-right: none;
   border-radius: 0.52vw 0 0 0.52vw;
 }
 .room-task-variants-form .room-task-variants-form__sidebar .room-task-variants-form__sidebar__variant {
@@ -1819,14 +1818,19 @@
   color: #cc194b;
   cursor: pointer;
 }
-.room-task-variants-form .room-task-variants-form::-webkit-scrollbar {
+.room-task-variants-form .room-task-variants-form__sidebar .room-task-variants-form__sidebar__header {
+  width: auto;
+  height: 6vh;
+  margin: 1.5vh 0 0 0;
+}
+.room-task-variants-form .room-task-variants-form__sidebar::-webkit-scrollbar {
   width: 0.45vw;
   height: 0.45vw;
 }
-.room-task-variants-form .room-task-variants-form::-webkit-scrollbar-track {
+.room-task-variants-form .room-task-variants-form__sidebar::-webkit-scrollbar-track {
   background-color: #eef4f7;
 }
-.room-task-variants-form .room-task-variants-form::-webkit-scrollbar-thumb {
+.room-task-variants-form .room-task-variants-form__sidebar::-webkit-scrollbar-thumb {
   background-color: #b4bec7;
   border-radius: 0.3vw;
 }
@@ -1841,36 +1845,166 @@
   font-size: 16px;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;
+  border-left: none;
   border-radius: 0 0.52vw 0.52vw 0;
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant {
   display: flex;
   flex-direction: column;
   padding: 3%;
-  font-size: 16px;
+  font-size: 18px;
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant * {
   margin: 0;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__name {
+  width: 100%;
+  text-align: center;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 20px;
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input {
   display: flex;
   align-items: center;
   width: 100%;
+  height: 3.7%;
+  margin-top: 2vh;
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__name {
   width: 15%;
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__input {
-  width: 83%;
-  height: 3.7%;
+  width: 80%;
+  height: 100%;
   padding: 0.7%;
-  margin-left: 2%;
+  margin-left: auto;
   outline: none;
   border: #b4bec7 0.1vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
   font-size: 16px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 2vh;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  border-right: 0.1vw #b4bec7 solid;
+  overflow-y: auto;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__sidebar .room-task-variants-form__body__variant__values__sidebar__header {
+  width: auto;
+  height: 4vh;
+  margin-top: 1.1vh;
+  cursor: pointer;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__sidebar .room-task-variants-form__body__variant__values__sidebar__item {
+  margin-top: 1.3vh;
+  transition: color 200ms ease-out;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__sidebar .room-task-variants-form__body__variant__values__sidebar__item.item_current {
+  color: #cc194b;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__sidebar .room-task-variants-form__body__variant__values__sidebar__item:last-child {
+  margin-bottom: 1.3vh;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__sidebar .room-task-variants-form__body__variant__values__sidebar__item:hover {
+  color: #cc194b;
+  cursor: pointer;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  padding: 1%;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__header {
+  text-align: center;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 92%;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__header {
+  width: auto;
+  height: 4vh;
+  margin-top: 1.1vh;
+  cursor: pointer;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 98%;
+  flex-grow: 1;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item {
+  margin-top: 1.3vh;
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  border-bottom: 0.1vw #b4bec7 solid;
+  outline: none;
+  font-size: 18px;
+  font-family: "TTNormsPro", "sans-serif";
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item:last-child {
+  margin-bottom: 1.3vh;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.7vh;
+  margin-right: 3%;
+  padding: 2%;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 20px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  white-space: nowrap;
+}
+.room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
+}
+.room-task-variants-form .room-task-variants-form__body::-webkit-scrollbar {
+  width: 0.45vw;
+  height: 0.45vw;
+}
+.room-task-variants-form .room-task-variants-form__body::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.room-task-variants-form .room-task-variants-form__body::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
 }
 
 .room-task__controls {
