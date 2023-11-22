@@ -1,5 +1,6 @@
 package org.sawtooth.models.roomtaskvariant;
 
-import org.springframework.web.multipart.MultipartFile;
+import org.sawtooth.launcher.configuration.models.LauncherConfiguration;
 
-public record RoomTaskVariantUploadModel(int roomTaskID, int variant, String description, MultipartFile file) {}
+public record RoomTaskVariantUploadModel(int roomTaskID, int variant, String description,
+                                         LauncherConfigurationUploadModel[] configs) {}

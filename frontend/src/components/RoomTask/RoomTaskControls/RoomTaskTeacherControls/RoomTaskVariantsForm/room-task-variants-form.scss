@@ -1,3 +1,4 @@
+@import "../../../../UI/CancelButton/cancel-button";
 @import "../../../../../public-variables";
 
 .room-task-variants-form {
@@ -44,6 +45,7 @@
       width: auto;
       height: 6vh;
       margin: 1.5vh 0 0 0;
+      cursor: pointer;
     }
   }
 
@@ -219,6 +221,7 @@
         display: flex;
         justify-content: start;
         width: 100%;
+        margin-top: 1.3vh;
 
         & .room-task-variants-form__body__variant__controls__button {
           display: flex;
@@ -238,11 +241,25 @@
           white-space: nowrap;
         }
 
-        & .room-task-variants-form__body__variant__controls__button:hover {
+        & .room-task-variants-form__body__variant__controls__button:hover, .button_hover {
           background-color: $primary_color;
           color: $secondary_color;
           cursor: pointer;
         }
+      }
+    }
+
+    & .cancel-button {
+      position: absolute;
+      right: 1%;
+      top: 1%;
+      width: 1.5vw;
+      height: 1.5vw;
+
+      & .cancel-button__first-line, .cancel-button__second-line {
+        background-color: $primary_color;
+        top: 0.75vw;
+        height: 0.25vw;
       }
     }
   }

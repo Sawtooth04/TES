@@ -13,4 +13,6 @@ public interface IRoomTaskVariantRepository extends IRepository {
     public List<RoomTaskVariant> GetVariants(int roomTaskID);
 
     public void Add(RoomTaskVariant roomTaskVariant);
+
+    public void Delete(RoomTaskVariant roomTaskVariant);
 }

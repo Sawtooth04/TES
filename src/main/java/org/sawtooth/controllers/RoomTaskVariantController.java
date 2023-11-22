@@ -14,14 +14,13 @@ import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskReposito
 import org.sawtooth.storage.repositories.roomtaskvariant.abstractions.IRoomTaskVariantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,28 +30,48 @@ import java.util.Objects;
 @RequestMapping("/task-variant")
 public class RoomTaskVariantController {
     private final IStorage storage;
-    private final IFilesValidator validator;
     @Value("${tes.tasks.folder}")
     private String tasksPath;
 
     @Autowired
-    public RoomTaskVariantController(IStorage storage, IFilesValidator validator) {
+    public RoomTaskVariantController(IStorage storage) {
         this.storage = storage;
-        this.validator = validator;
     }
 
-    @PostMapping("/upload")
-    public void Upload(@ModelAttribute RoomTaskVariantUploadModel uploadModel) throws IOException, InstantiationException {
-        if (validator.ValidateTask(uploadModel.file())) {
-            RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(uploadModel.roomTaskID());
-            String path = String.format("%s/%s/%s/%s", tasksPath, roomTask.roomID(), roomTask.roomTaskID(),
-                uploadModel.variant());
+    private boolean ClearDirectory(File directory) {
+        boolean result = true;
 
-            Files.createDirectories(Paths.get(path));
-            uploadModel.file().transferTo(new File(String.format("%s/%s", path, uploadModel.file().getOriginalFilename())));
-            storage.GetRepository(IRoomTaskVariantRepository.class).Add(new RoomTaskVariant(-1,
-                roomTask.roomTaskID(), uploadModel.variant(), path, uploadModel.description()));
-        }
+        for (File file : Objects.requireNonNull(directory.listFiles()))
+            result &= file.delete();
+        return result;
+    }
+
+    @PostMapping("/upload-or-update")
+    public void UploadOrUpdate(@RequestBody RoomTaskVariantUploadModel uploadModel) throws IOException, InstantiationException {
+        RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(uploadModel.roomTaskID());
+        String path = String.format("%s/%s/%s/%s", tasksPath, roomTask.roomID(), roomTask.roomTaskID(),
+            uploadModel.variant());
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        ClearDirectory(Files.createDirectories(Paths.get(path)).toFile());
+        for (int i = 0; i < uploadModel.configs().length; i++)
+            try (FileWriter writer = new FileWriter(String.format("%s/%d.json", path, i), false)) {
+                writer.write(objectMapper.writeValueAsString(uploadModel.configs()[i]));
+            }
+        storage.GetRepository(IRoomTaskVariantRepository.class).Add(new RoomTaskVariant(-1,
+            roomTask.roomTaskID(), uploadModel.variant(), path, uploadModel.description()));
+    }
+
+    @GetMapping("/delete")
+    public void Delete(int roomTaskID, int variant, int roomID) throws InstantiationException {
+        int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+            .getAuthentication().getName()).customerID();
+        RoomTaskVariant roomTaskVariant = storage.GetRepository(IRoomTaskVariantRepository.class).Get(roomTaskID, variant);
+        File directory = new File(roomTaskVariant.path());
+
+        if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomID) &&
+            ClearDirectory(directory) && directory.delete())
+            storage.GetRepository(IRoomTaskVariantRepository.class).Delete(roomTaskVariant);
     }
 
     @GetMapping("/get")

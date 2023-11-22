@@ -1,0 +1,24 @@
+.cancel-button {
+  position: relative;
+  cursor: pointer;
+  width: 4vw;
+  height: 4vw;
+
+  & .cancel-button__first-line {
+    position: absolute;
+    width: 100%;
+    height: 0.5vw;
+    left: 0;
+    top: 2vw;
+    transform: rotate(45deg);
+  }
+
+  & .cancel-button__second-line {
+    position: absolute;
+    width: 100%;
+    height: 0.5vw;
+    left: 0;
+    top: 2vw;
+    transform: rotate(-45deg);
+  }
+}

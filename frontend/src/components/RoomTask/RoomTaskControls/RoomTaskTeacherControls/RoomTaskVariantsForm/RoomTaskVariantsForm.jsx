@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import SidebarVariant from "./SidebarVariant/SidebarVariant";
 import BodyVariant from "./BodyVariant/BodyVariant";
+import CancelButton from "../../../../UI/CancelButton/CancelButton";
 
-const RoomTaskVariantsForm = ({ roomID, roomTaskID, onCancel }) => {
+const RoomTaskVariantsForm = ({ roomID, roomTaskID, onClose }) => {
     const [variants, setVariants] = useState([]);
     const [currentVariant, setCurrentVariant] = useState(null);
 
@@ -34,7 +35,7 @@ const RoomTaskVariantsForm = ({ roomID, roomTaskID, onCancel }) => {
         }]);
     }
 
-    function saveVariant(variant, body) {
+    function saveVariant(variant) {
         let newVariants = [...variants];
         newVariants[variants.findIndex((item) => item.variant === variant.variant)] = variant;
         setVariants(newVariants);
@@ -59,6 +60,7 @@ const RoomTaskVariantsForm = ({ roomID, roomTaskID, onCancel }) => {
             <div className={"room-task-variants-form__body"}>
                 { (currentVariant != null) ? <BodyVariant variant={currentVariant} saveVariant={saveVariant}
                     deleteVariant={deleteVariant}/> : null}
+                <CancelButton onClick={onClose}/>
             </div>
         </div>
     );

@@ -95,7 +95,6 @@ public class TestLaunchController {
             String.format("%s/%d/%d/%d", tasksPath, roomID, taskID, variant));
         LanguageConfiguration languageConfiguration = languageConfigurationProvider.TryGetValue(language);
         String rootPath = String.format("%s/%d/%d/%s", solutionsPath, roomID, taskID, authentication.getName());
-
         SetLaunchCommand(languageConfiguration, rootPath, solution);
         if (TryCompile(languageConfiguration, rootPath, solution))
             return ResponseEntity.status(HttpStatus.OK).body(LaunchAll(languageConfiguration, solution,

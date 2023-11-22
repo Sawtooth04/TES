@@ -1,0 +1,12 @@
+.cancel-button .cancel-button__first-line {
+  width: 100%;
+  height: 3vw;
+  transform: rotate(45deg);
+}
+.cancel-button .cancel-button__second-line {
+  width: 100%;
+  height: 3vw;
+  transform: rotate(-45deg);
+}
+
+/*# sourceMappingURL=cancel-button.css.map */
