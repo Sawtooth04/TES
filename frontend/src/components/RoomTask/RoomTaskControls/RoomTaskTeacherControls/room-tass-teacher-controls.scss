@@ -1,1 +1,26 @@
 @import "RoomTaskVariantsForm/room-task-variants-form";
+
+.room-task__controls__teacher-control__statistic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  & .room-task__controls__teacher-control__statistic__item {
+    display: flex;
+    margin-top: 1.3vh;
+    width: 70%;
+
+    & .room-task__controls__teacher-control__statistic__item__paragraph {
+      width: 60%;
+      margin: 0;
+      font-family: "TTNormsPro", "sans-serif";
+      font-size: 18px;
+    }
+
+    & .room-task__controls__teacher-control__statistic__item__paragraph:last-child {
+      width: 40%;
+      text-align: center;
+    }
+  }
+}

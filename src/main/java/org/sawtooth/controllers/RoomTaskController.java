@@ -1,8 +1,10 @@
 package org.sawtooth.controllers;
 
 import org.sawtooth.models.customer.Customer;
+import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomrole.RoomRole;
 import org.sawtooth.models.roomtask.RoomTask;
+import org.sawtooth.models.roomtask.RoomTaskStatistic;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
@@ -61,7 +63,11 @@ public class RoomTaskController {
     @ResponseBody
     public List<RoomTask> Get(int roomID, int start, int count) {
         try {
-            return storage.GetRepository(IRoomTaskRepository.class).Get(roomID, start, count);
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName()).customerID();
+            RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomID, customerID);
+
+            return storage.GetRepository(IRoomTaskRepository.class).Get(roomID, roomCustomer.roomCustomerID(), start, count);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -75,9 +81,10 @@ public class RoomTaskController {
         try {
             Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
+            RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomID, customer.customerID());
 
             if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customer.customerID(), roomID))
-                return storage.GetRepository(IRoomTaskRepository.class).GetLatest(roomID, 5);
+                return storage.GetRepository(IRoomTaskRepository.class).GetLatest(roomID, roomCustomer.roomCustomerID(), 5);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -90,6 +97,34 @@ public class RoomTaskController {
     public List<RoomTask> GetUnverified(int roomID, int start, int count) {
         try {
             return storage.GetRepository(IRoomTaskRepository.class).GetUnverified(roomID, start, count);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    @GetMapping("/get-verified-page")
+    @ResponseBody
+    public List<RoomTask> GetVerified(int roomID, int start, int count) {
+        try {
+            return storage.GetRepository(IRoomTaskRepository.class).GetVerified(roomID, start, count);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    @GetMapping("/get-statistic")
+    @ResponseBody
+    public RoomTaskStatistic GetStatistic(int roomID,int roomTaskID) {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName()).customerID();
+
+            if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomID))
+                return storage.GetRepository(IRoomTaskRepository.class).GetStatistic(roomTaskID);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

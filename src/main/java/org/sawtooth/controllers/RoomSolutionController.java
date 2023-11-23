@@ -1,9 +1,6 @@
 package org.sawtooth.controllers;
 
-import org.sawtooth.models.roomsolution.RoomSolution;
-import org.sawtooth.models.roomsolution.RoomSolutionResponse;
-import org.sawtooth.models.roomsolution.RoomSolutionUploadModel;
-import org.sawtooth.models.roomsolution.RoomUnverifiedSolution;
+import org.sawtooth.models.roomsolution.*;
 import org.sawtooth.models.solutiontreeitem.SolutionTreeItem;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
@@ -129,6 +126,12 @@ public class RoomSolutionController {
     @ResponseBody
     public List<RoomUnverifiedSolution> GetUnverifiedSolutions(int roomTaskID) throws InstantiationException {
         return storage.GetRepository(IRoomSolutionRepository.class).GetUnverified(roomTaskID);
+    }
+
+    @GetMapping("/get-verified")
+    @ResponseBody
+    public List<RoomVerifiedSolution> GetVerifiedSolutions(int roomTaskID) throws InstantiationException {
+        return storage.GetRepository(IRoomSolutionRepository.class).GetVerified(roomTaskID);
     }
 
     @GetMapping("/get-solution-tree-level")

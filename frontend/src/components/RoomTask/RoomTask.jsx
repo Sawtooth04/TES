@@ -47,9 +47,11 @@ const RoomTask = () => {
         }
 
         void getTask();
-        void getTaskVariant();
         void getRole();
-    }, []);
+        if (role && role !== "teacher") {
+            void getTaskVariant();
+        }
+    }, [role]);
 
     return (
         <div className={"room-task"}>

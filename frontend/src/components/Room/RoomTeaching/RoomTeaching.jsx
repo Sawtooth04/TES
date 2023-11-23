@@ -26,7 +26,7 @@ const RoomTeaching = ({ roomID }) => {
                     <Route path={"messages"} element={<RoomTeachingMessages roomID={roomID}/>}/>
                     <Route path={"unverified"} element={<RoomTeachingUnverified roomID={roomID}/>}/>
                     <Route path={"unverified/solution/:solutionID"} element={<RoomTeachingUnverifiedSolution/>}/>
-                    <Route path={"verified"} element={<RoomTeachingVerified/>}/>
+                    <Route path={"verified"} element={<RoomTeachingVerified roomID={roomID}/>}/>
                     <Route path={"*"} element={<Navigate to={"messages"}/>}/>
                 </Routes>
             </div>

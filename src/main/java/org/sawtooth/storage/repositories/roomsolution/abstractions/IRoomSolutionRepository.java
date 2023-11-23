@@ -2,6 +2,7 @@ package org.sawtooth.storage.repositories.roomsolution.abstractions;
 
 import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomsolution.RoomUnverifiedSolution;
+import org.sawtooth.models.roomsolution.RoomVerifiedSolution;
 import org.sawtooth.storage.repositories.IRepository;
 
 import java.util.List;
@@ -12,6 +13,8 @@ public interface IRoomSolutionRepository extends IRepository {
     public RoomSolution Get(int roomTaskID, int customerID);
 
     public List<RoomUnverifiedSolution> GetUnverified(int roomTaskID);
+
+    public List<RoomVerifiedSolution> GetVerified(int roomTaskID);
 
     public void Add(int roomTaskID, int customerID, String path);
 

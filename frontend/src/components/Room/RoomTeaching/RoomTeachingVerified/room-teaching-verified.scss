@@ -1,14 +1,14 @@
-@import "../RoomTeachingUnverified/UnverifiedTaskLabel/unverified-task-label";
+@import "../RoomTeachingVerified/VerifiedTaskLabel/verified-task-label";
 @import "../../../../public-variables";
 
-.room__teaching__body__unverified {
+.room__teaching__body__verified {
   display: flex;
   justify-content: center;
   align-items: start;
   width: 100%;
   height: 100%;
 
-  & .room-teaching__body__unverified__task {
+  & .room-teaching__body__verified__task {
     width: 91.5%;
     min-height: 6vh;
     background-color: $third_background_color;

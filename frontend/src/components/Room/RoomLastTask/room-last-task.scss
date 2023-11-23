@@ -6,6 +6,7 @@
   justify-content: center;
   flex-grow: 1;
   padding: 0 4.28%;
+  transition: color 200ms ease-out;
 
   & .room-last-task__name {
     font-family: "TTNormsPro SemiBold", "sans-serif";
@@ -20,4 +21,9 @@
   & .room-last-task__name, .room-last-task__description {
     margin: 0;
   }
+}
+
+.room-last-task:hover {
+  cursor: pointer;
+  color: $secondary_color;
 }

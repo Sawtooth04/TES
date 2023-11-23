@@ -25,8 +25,10 @@ const RoomTaskVariantsForm = ({ roomID, roomTaskID, onClose }) => {
     }
 
     function onVariantAdd() {
-        let lastVariant = variants.reduce((prev, curr) => (prev.variant <= curr.variant) ? curr : prev);
+        let lastVariant = {variant: 0};
 
+        if (variants.length > 0)
+            lastVariant = variants.reduce((prev, curr) => (prev.variant <= curr.variant) ? curr : prev)
         setVariants([...variants, {
             "description": "",
             "roomTaskID": roomTaskID,
