@@ -57,6 +57,8 @@
   }
 
   & .unverified-solution__body {
+    display: flex;
+    align-items: start;
     width: 60%;
     height: 94%;
     overflow: auto;
@@ -66,7 +68,7 @@
     border: 0.10vw $border_color solid;
 
     & .numbered-text-view {
-      width: 100%;
+      width: 94%;
       height: 100%;
 
       & .numbered-text-view__line {
@@ -102,6 +104,16 @@
     & .numbered-text-view::-webkit-scrollbar-thumb {
       background-color: $border_color;
       border-radius: 0.3vw;
+    }
+
+    & .cancel-button {
+      width: 4%;
+      height: 3vw;
+      margin: 0 auto 0 auto;
+
+      & .cancel-button__first-line, .cancel-button__second-line {
+        background-color: $primary_color;
+      }
     }
   }
 
@@ -166,7 +178,7 @@
       justify-content: center;
       width: 90%;
       height: 4.5vh;
-      margin: 1.5vh 0;
+      margin-top: 1.5vh;
       outline: none;
       border: $primary_color 0.2vw solid;
       border-radius: 0.5vw;
@@ -187,6 +199,7 @@
       display: flex;
       justify-content: space-between;
       width: 90%;
+      margin-top: 1.5vh;
 
       & > .unverified-solution__solution-controls__wrapper__button {
         display: flex;

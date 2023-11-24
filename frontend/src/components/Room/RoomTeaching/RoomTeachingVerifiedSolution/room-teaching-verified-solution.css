@@ -1,0 +1,132 @@
+.tree-view {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 4% 0;
+}
+.tree-view .tree-view__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 0.5vh;
+  border-left: 0.05vw #b4bec7 solid;
+}
+.tree-view .tree-view__item:first-child {
+  padding-top: 0;
+}
+.tree-view .tree-view__item .tree-view__item__item {
+  margin: 0;
+}
+.tree-view .tree-view__item > .tree-view__item__nested-items {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 1.8vw;
+}
+.tree-view .tree-view__item > .tree-view__item__nested-items .fold-view .fold-view__content {
+  align-items: start;
+}
+.tree-view .tree-view__item:hover > .tree-view__item__item {
+  cursor: pointer;
+  color: #cc194b;
+}
+
+.numbered-text-view {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  overflow: auto;
+}
+.numbered-text-view .numbered-text-view__line {
+  display: flex;
+}
+.numbered-text-view .numbered-text-view__line > * {
+  margin: 0;
+}
+
+.verified-solution {
+  display: flex;
+  align-items: start;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.3%;
+  background-color: rgba(65, 65, 65, 0.4);
+}
+.verified-solution .verified-solution__sidebar {
+  width: 14%;
+  height: 94%;
+  padding: 0 1%;
+  overflow: auto;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-right: none;
+  border-radius: 0.52vw 0 0 0.52vw;
+}
+.verified-solution .verified-solution__sidebar .tree-view .tree-view__item {
+  height: auto;
+}
+.verified-solution .verified-solution__sidebar .tree-view .tree-view__item .pop-up-view_opened {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.verified-solution .verified-solution__sidebar .tree-view .tree-view__item .pop-up-view_closed {
+  display: none;
+}
+.verified-solution .verified-solution__sidebar::-webkit-scrollbar {
+  width: 0.45vw;
+  height: 0.45vw;
+}
+.verified-solution .verified-solution__sidebar::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.verified-solution .verified-solution__sidebar::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+.verified-solution .verified-solution__body {
+  width: 60%;
+  height: 94%;
+  overflow: auto;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+}
+.verified-solution .verified-solution__body .numbered-text-view {
+  width: 100%;
+  height: 100%;
+}
+.verified-solution .verified-solution__body .numbered-text-view .numbered-text-view__line .numbered-text-view__line__number {
+  min-width: 4vw;
+  background-color: #d0d6d9;
+  text-align: center;
+  border-right: 0.1vw #b4bec7 solid;
+}
+.verified-solution .verified-solution__body .numbered-text-view .numbered-text-view__line .numbered-text-view__line__text {
+  padding-left: 1%;
+  white-space: nowrap;
+}
+.verified-solution .verified-solution__body .numbered-text-view .numbered-text-view__line:hover .numbered-text-view__line__number {
+  background-color: #cc194b;
+}
+.verified-solution .verified-solution__body .numbered-text-view::-webkit-scrollbar {
+  width: 0.6vw;
+  height: 0.6vw;
+}
+.verified-solution .verified-solution__body .numbered-text-view::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.verified-solution .verified-solution__body .numbered-text-view::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+
+/*# sourceMappingURL=room-teaching-verified-solution.css.map */

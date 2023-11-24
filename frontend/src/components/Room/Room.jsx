@@ -86,7 +86,7 @@ const Room = ({ onMount }) => {
                         <Route path={"members"} element={<RoomMembers/>}/>
                         <Route path={"tasks"} element={<RoomTasks role={role}/>}/>
                         <Route path={"main"} element={<RoomMain/>}/>
-                        <Route path={"teaching/*"} element={<RoomTeaching roomID={roomID}/>}/>
+                        <Route path={"teaching/*"} element={<RoomTeaching room={room}/>}/>
                         <Route path={"*"} element={<Navigate to={"main"}/>}/>
                     </Routes>
                 </div>

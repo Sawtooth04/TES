@@ -1,0 +1,14 @@
+.room-teaching-management-input {
+  display: flex;
+  flex-direction: column;
+}
+.room-teaching-management-input .room-teaching-management-input__header {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+}
+.room-teaching-management-input .room-teaching-management-input__input {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=room-teaching-management-input.css.map */

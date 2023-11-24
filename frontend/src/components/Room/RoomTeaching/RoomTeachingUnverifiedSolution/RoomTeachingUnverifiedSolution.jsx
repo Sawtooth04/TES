@@ -6,6 +6,7 @@ import InfiniteScrollPaginator from "../../../UI/InfiniteScrollPaginator/Infinit
 import {maxMessagesPerPagesCount, messagesPerPagesCount} from "../../../../constants";
 import RoomTeachingChatMessage from "../RoomTeachingChatMessage/RoomTeachingChatMessage";
 import CreateRoomTeacherMessageForm from "../CreateRoomTeacherMessageForm/CreateRoomTeacherMessageForm";
+import CancelButton from "../../../UI/CancelButton/CancelButton";
 
 const RoomTeachingUnverifiedSolution = () => {
     const { roomID, solutionID } = useParams();
@@ -89,6 +90,10 @@ const RoomTeachingUnverifiedSolution = () => {
         navigate(`/room/${roomID}/teaching/unverified`);
     }
 
+    function onExit() {
+        navigate(`/room/${roomID}/teaching/unverified`);
+    }
+
     return (
         <div className={"room-teaching__body__unverified-solution unverified-solution"}>
             <div className={"unverified-solution__sidebar"}>
@@ -110,6 +115,9 @@ const RoomTeachingUnverifiedSolution = () => {
                 <button className={"unverified-solution__solution-controls__button"} onClick={switchCreateMessageDialogState}>
                     Отправить сообщение
                 </button>
+                <button className={"unverified-solution__solution-controls__button"} onClick={onExit}>
+                    Закрыть
+                </button>
                 <div className="unverified-solution__solution-controls__wrapper">
                     <button className={"unverified-solution__solution-controls__wrapper__button"} onClick={setDeclined}>
                         Отклонить
@@ -118,7 +126,6 @@ const RoomTeachingUnverifiedSolution = () => {
                         Принять
                     </button>
                 </div>
-
             </div>
         </div>
     );
