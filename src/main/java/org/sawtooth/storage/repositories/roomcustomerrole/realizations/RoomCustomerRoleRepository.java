@@ -34,6 +34,12 @@ public class RoomCustomerRoleRepository implements IRoomCustomerRoleRepository {
     }
 
     @Override
+    public void Set(int roomCustomerID, String role) {
+        template.queryForObject("SELECT * FROM set_room_customer_role(?, ?)", new SingleColumnRowMapper<>(),
+            roomCustomerID, role);
+    }
+
+    @Override
     public boolean IsCustomerHasRole(int roomID, Customer customer, RoomRole role) {
         return template.queryForObject("SELECT * FROM is_customer_has_role(?, ?, ?)", new SingleColumnRowMapper<>(),
             role.roomRoleID(), customer.customerID(), roomID);

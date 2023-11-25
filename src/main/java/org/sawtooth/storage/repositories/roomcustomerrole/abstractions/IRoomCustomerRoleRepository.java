@@ -13,6 +13,8 @@ public interface IRoomCustomerRoleRepository extends IRepository {
 
     public void Add(RoomCustomerRole roomCustomerRole);
 
+    public void Set(int roomCustomerID, String role);
+
     public boolean IsCustomerHasRole(int roomID, Customer customer, RoomRole role);
 
     public List<Customer> GetCustomersByRole(int roomID, int roleID);

@@ -1626,6 +1626,87 @@
   font-size: 20px;
 }
 
+.add-room-teacher-dialog {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(65, 65, 65, 0.4);
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 30%;
+  height: 40%;
+  margin-top: 9%;
+  padding-bottom: 1.3%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 85%;
+  overflow-y: auto;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members .add-room-teacher-dialog__form__members__member {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 4vh;
+  margin-top: 1.5%;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members .add-room-teacher-dialog__form__members__member .add-room-teacher-dialog__form__members__member__name {
+  margin: 0;
+  font-size: 20px;
+  font-family: "TTNormsPro", "sans-serif";
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members .add-room-teacher-dialog__form__members__member .add-room-teacher-dialog__form__members__member__button {
+  margin-left: auto;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members::-webkit-scrollbar {
+  width: 0.6vw;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members-dialog__form::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members__member__button, .add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 20px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__members__member__button:hover, .add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__close:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
+}
+.add-room-teacher-dialog .add-room-teacher-dialog__form .add-room-teacher-dialog__form__close {
+  height: 15%;
+}
+
 .room__teaching__body__management {
   display: flex;
   flex-direction: column;
@@ -1646,6 +1727,84 @@
   margin: 0;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 24px;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-height: 15%;
+  max-height: 50%;
+  padding: 1%;
+  margin-top: 1.5%;
+  background-color: #eef4f7;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0.52vw;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
+  margin: 0;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 24px;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 3vw;
+  margin-top: 1.5%;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
+  margin: 0;
+  font-size: 20px;
+  font-family: "TTNormsPro", "sans-serif";
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .cancel-button {
+  width: 1.3vw;
+  height: 1.3vw;
+  margin-left: auto;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .cancel-button .cancel-button__first-line, .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .cancel-button .cancel-button__second-line {
+  background-color: #002544;
+  height: 0.2vw;
+  top: 0.6vw;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers::-webkit-scrollbar {
+  width: 0.6vw;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers::-webkit-scrollbar-track {
+  background-color: #eef4f7;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers::-webkit-scrollbar-thumb {
+  background-color: #b4bec7;
+  border-radius: 0.3vw;
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 2.5vw;
+  margin: 1.3% auto 0 auto;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 20px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
 }
 
 .room-teaching {
