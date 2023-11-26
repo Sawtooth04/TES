@@ -2,16 +2,17 @@ package org.sawtooth.controllers;
 
 import org.sawtooth.models.customer.Customer;
 import org.sawtooth.models.room.Room;
+import org.sawtooth.models.room.RoomUpdateModel;
+import org.sawtooth.models.roomrole.RoomRole;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
+import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCustomerRoleRepository;
+import org.sawtooth.storage.repositories.roomrole.abstractions.IRoomRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/room")
@@ -51,5 +52,20 @@ public class RoomController {
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    @PostMapping("/update")
+    @ResponseBody
+    public void UpdateRoom(@RequestBody RoomUpdateModel updateModel) {
+        try {
+            Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                .getAuthentication().getName());
+            RoomRole roomRole = storage.GetRepository(IRoomRoleRepository.class).Get("teacher");
+            if (storage.GetRepository(IRoomCustomerRoleRepository.class).IsCustomerHasRole(updateModel.roomID(), customer, roomRole))
+                storage.GetRepository(IRoomRepository.class).Update(updateModel);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

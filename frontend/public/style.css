@@ -1785,7 +1785,7 @@
   background-color: #b4bec7;
   border-radius: 0.3vw;
 }
-.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__button {
+.room__teaching__body__management .room__teaching__body__management__teachers__button, .room__teaching__body__management .room__teaching__body__management__main__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1801,7 +1801,7 @@
   font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
-.room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__button:hover {
+.room__teaching__body__management .room__teaching__body__management__teachers__button:hover, .room__teaching__body__management .room__teaching__body__management__main__button:hover {
   background-color: #002544;
   color: #cc194b;
   cursor: pointer;

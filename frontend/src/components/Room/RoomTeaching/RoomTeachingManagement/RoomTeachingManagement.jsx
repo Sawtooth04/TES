@@ -64,6 +64,18 @@ const RoomTeachingManagement = ({ room }) => {
         setAddRoomTeacherDialogOpened(!addRoomTeacherDialogOpened);
     }
 
+    async function saveRoom() {
+        await fetch("/room/update", {
+            method: "post",
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify({
+                "roomID": room.roomID,
+                "name": name,
+                "description": description
+            })
+        })
+    }
+
     return (
         <div className={"room__teaching__body__management"}>
             {addRoomTeacherDialogOpened ? <AddRoomTeacherDialog members={members} onClose={switchAddRoomTeacherDialogOpened}
@@ -72,6 +84,9 @@ const RoomTeachingManagement = ({ room }) => {
                 <p className={"room__teaching__body__management__main__header"}> Общие сведения </p>
                 <RoomTeachingManagementInput value={name} onChange={setName} header={"Название комнаты"}/>
                 <RoomTeachingManagementInput value={description} onChange={setDescription} header={"Описание"}/>
+                <button className={"room__teaching__body__management__main__button"} onClick={saveRoom}>
+                    Сохранить
+                </button>
             </div>
             <div className={"room__teaching__body__management__teachers"}>
                 <p className={"room__teaching__body__management__teachers__header"}> Преподаватели </p>
