@@ -27,9 +27,9 @@ public class RoomCustomerRepository implements IRoomCustomerRepository {
     }
 
     @Override
-    public int Add(RoomCustomer roomCustomer) {
+    public int Add(int roomID, int customerID) {
         return template.queryForObject("SELECT * FROM insert_room_customer(?, ?)", new SingleColumnRowMapper<>(),
-            roomCustomer.roomID(), roomCustomer.customerID());
+                roomID, customerID);
     }
 
     @Override

@@ -9,7 +9,7 @@ public interface IRoomCustomerRepository extends IRepository {
 
     public RoomCustomer Get(int roomID, int customerID);
 
-    public int Add(RoomCustomer roomCustomer);
+    public int Add(int roomID, int customerID);
 
     public int GetVariant(String name, int roomID);
 

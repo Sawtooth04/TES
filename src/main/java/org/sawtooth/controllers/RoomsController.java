@@ -45,8 +45,7 @@ public class RoomsController {
             int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName()).customerID(),
                 roomID = storage.GetRepository(IRoomRepository.class).Add(room.withOwnerID(customerID)),
-                roomCustomerID = storage.GetRepository(IRoomCustomerRepository.class).Add(new RoomCustomer(-1,
-                    roomID, customerID, -1)),
+                roomCustomerID = storage.GetRepository(IRoomCustomerRepository.class).Add(roomID, customerID),
                 roomRoleID = storage.GetRepository(IRoomRoleRepository.class).Get("teacher").roomRoleID();
 
             storage.GetRepository(IRoomCustomerRoleRepository.class).Add(new RoomCustomerRole(-1,

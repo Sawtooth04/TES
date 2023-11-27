@@ -42,7 +42,8 @@ const ContentRoutes = ({ onNavigate }) => {
                     <Routes>
                         <Route path="/room/:roomID/task/:roomTaskID" element={<RoomTask onMount={onMount}/>}/>
                         <Route path="/room/:roomID/*" element={<Room onMount={onMount}/>}/>
-                        <Route path="*" element={<RoomsList onMount={onMount}/>}/>
+                        <Route path="/rooms/join" element={<RoomsList onMount={onMount} isJoining={true}/>}/>
+                        <Route path="*" element={<RoomsList onMount={onMount} isJoining={false}/>}/>
                     </Routes>
                 </div>
             </div>

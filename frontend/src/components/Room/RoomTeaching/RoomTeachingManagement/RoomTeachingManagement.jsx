@@ -76,12 +76,23 @@ const RoomTeachingManagement = ({ room }) => {
         })
     }
 
+    async function getRoomJoinToken() {
+        let response = await fetch(`/room/get-room-token?roomID=${room.roomID}`, {
+            method: "get",
+            headers: {"Accept": "application/json"}
+        });
+        await navigator.clipboard.writeText(await response.text());
+    }
+
     return (
         <div className={"room__teaching__body__management"}>
             {addRoomTeacherDialogOpened ? <AddRoomTeacherDialog members={members} onClose={switchAddRoomTeacherDialogOpened}
                 onAdd={addTeacher}/> : null}
             <div className={"room__teaching__body__management__main"}>
-                <p className={"room__teaching__body__management__main__header"}> Общие сведения </p>
+                <p className={"room__teaching__body__management__main__header"}>
+                    Общие сведения
+                    <img src={"/assets/images/icons/link.png"} alt={"Link"} onClick={getRoomJoinToken}/>
+                </p>
                 <RoomTeachingManagementInput value={name} onChange={setName} header={"Название комнаты"}/>
                 <RoomTeachingManagementInput value={description} onChange={setDescription} header={"Описание"}/>
                 <button className={"room__teaching__body__management__main__button"} onClick={saveRoom}>

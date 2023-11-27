@@ -1,0 +1,17 @@
+.pop-up-form {
+  & .pop-up-form__form__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    & > .pop-up-form__form__wrapper__button {
+      width: auto;
+    }
+  }
+
+  & .pop-up-form__form__message {
+    margin: 1.38vh 0 0 0;
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 18px;
+  }
+}

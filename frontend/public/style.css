@@ -371,6 +371,20 @@
   padding: 4.31% 0;
 }
 
+.pop-up-form .pop-up-form__form__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.pop-up-form .pop-up-form__form__wrapper > .pop-up-form__form__wrapper__button {
+  width: auto;
+}
+.pop-up-form .pop-up-form__form__message {
+  margin: 1.38vh 0 0 0;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
+}
+
 .rooms-list {
   display: flex;
   justify-content: start;
@@ -736,7 +750,7 @@
   font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
-.pop-up-form .pop-up-form__form > button {
+.pop-up-form .pop-up-form__form button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -752,7 +766,7 @@
   font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
-.pop-up-form .pop-up-form__form > button:hover {
+.pop-up-form .pop-up-form__form button:hover {
   background-color: #002544;
   color: #cc194b;
   cursor: pointer;
@@ -1724,16 +1738,25 @@
   border-radius: 0.52vw;
 }
 .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 24px;
+}
+.room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header > * {
+  height: 4vh;
+}
+.room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header > img {
+  cursor: pointer;
 }
 .room__teaching__body__management .room__teaching__body__management__teachers {
   display: flex;
   flex-direction: column;
   width: 60%;
   min-height: 15%;
-  max-height: 50%;
+  max-height: 45%;
   padding: 1%;
   margin-top: 1.5%;
   background-color: #eef4f7;
