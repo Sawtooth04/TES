@@ -17,4 +17,12 @@ public interface IRoomRepository extends IRepository {
     public List<Room> GetCustomerRooms(int customerID);
 
     public Customer GetRoomOwner(int roomID);
+
+    public void SetRoomColor(int roomID, int color);
+
+    public void SetBackgroundPath(int roomID, String backgroundPath);
+
+    public String GetBackgroundPath(int roomID);
+
+    public int GetColor(int roomID);
 }

@@ -11,7 +11,7 @@
     align-items: center;
     height: 19.79%;
     padding: 0 8.62%;
-    background-color: #5185C5;
+    background-color: rgb(var(--color));
 
     & .room-label__header__name {
       margin: 0;
@@ -26,7 +26,7 @@
     align-items: center;
     height: 13.99%;
     padding: 0 8.62%;
-    background-color: #5185C5;
+    background-color: rgb(var(--color));
 
     & .room-label__meta__audience {
       margin: 0;

@@ -20,7 +20,7 @@
     & .room-teaching__header__link {
       position: relative;
       margin: 0 0 0 1.56%;
-      color: #5185C5;
+      color: rgb(var(--color));
       text-decoration: none;
       font-family: "TTNormsPro SemiBold", "sans-serif";
       font-size: 20px;
@@ -33,7 +33,7 @@
       height: 0.3vh;
       left: 0;
       bottom: 0;
-      background-color: #5185C5;
+      background-color: rgb(var(--color));
     }
   }
 

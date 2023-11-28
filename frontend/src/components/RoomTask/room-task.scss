@@ -44,7 +44,7 @@
       height: 0.4vh;
       left: 0;
       bottom: 0;
-      background-color: #5185C5;
+      background-color: rgb(var(--color));
     }
 
     & .room-task__content__description {
@@ -84,7 +84,7 @@
       height: 0.2vh;
       left: 0;
       bottom: 0;
-      background-color: #5185C5;
+      background-color: rgb(var(--color));
     }
 
     & .room-task__content__comments {

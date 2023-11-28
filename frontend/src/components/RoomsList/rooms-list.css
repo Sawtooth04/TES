@@ -5,7 +5,7 @@
 .room-label .room-label__header {
   display: flex;
   align-items: center;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-label .room-label__header .room-label__header__name {
   margin: 0;

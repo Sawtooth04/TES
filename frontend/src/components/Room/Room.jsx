@@ -10,6 +10,9 @@ const Room = ({ onMount }) => {
     const [room, setRoom] = useState(null);
     const [roomOwner, setRoomOwner] = useState(null);
     const [role, setRole] = useState(null);
+    const [background, setBackground] = useState(null);
+    const [color, setColor] = useState(null);
+    const [headerColor, setHeaderColor] = useState(null);
     const { roomID } = useParams();
 
     useEffect(() => {
@@ -43,16 +46,42 @@ const Room = ({ onMount }) => {
                 setRole(await response.text());
         }
 
+        async function getBackground() {
+            let response = await fetch(`/room/get/background?roomID=${roomID}`, {
+                method: "get",
+                headers: {"Accept": "image/jpeg"}
+            });
+
+            if (response.ok)
+                setBackground(await response.blob());
+        }
+
+        async function getColor() {
+            let response = await fetch(`/room/get/color?roomID=${roomID}`, {
+                method: "get",
+            });
+            let newColor, parts;
+
+            if (response.ok) {
+                newColor = await response.text();
+                parts = newColor.split(", ");
+                setHeaderColor(`${255 - Number(parts[0])}, ${255 - Number(parts[1])}, ${255 - Number(parts[2])}`);
+                setColor(newColor);
+            }
+        }
+
         onMount();
         void getRoom();
         void getRoomOwner();
         void getRole();
+        void getBackground();
+        void getColor();
     }, []);
 
     return (
-        <div className={"room"}>
+        <div className={"room"} style = {{"--color": (color) ? color : "0, 37, 86", "--headerColor": (headerColor) ? headerColor : "236,246,255"}}>
             {(room != null && roomOwner != null) ?
-                <div className="room__header">
+                <div className="room__header" style={(background) ? {backgroundImage: `url(${URL.createObjectURL(background)})`} : null}>
                     <p className={"room__header__name"}> {room.name} </p>
                     <div className={"room__header__owner"}>
                         <p className={"room__header__owner__article"}> Организатор: </p>

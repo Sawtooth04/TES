@@ -20,11 +20,12 @@
     justify-content: center;
     width: 78.12%;
     height: 16.5%;
-    background-color: #5185C5;
+    background-color: $third_background_color;
+    background-repeat: repeat;
 
     & .room__header__name {
       margin: 0;
-      color: $background_color;
+      color: rgb(var(--headerColor));
       font-family: "TTNormsPro", sans-serif;
       font-weight: bold;
       font-size: 38px;
@@ -37,7 +38,7 @@
 
       & .room__header__owner__article {
         margin: 0;
-        color: $background_color;
+        color: rgb(var(--headerColor));
         font-family: "TTNormsPro", sans-serif;
         font-weight: bold;
         font-size: 22px;
@@ -45,7 +46,7 @@
 
       & .room__header__owner__name {
         margin: 0 0 0 0.5em;
-        color: $background_color;
+        color: rgb(var(--headerColor));
         font-family: "TTNormsPro SemiBold", sans-serif;
         font-size: 22px;
       }
@@ -89,7 +90,7 @@
   & .content-header__link {
     position: relative;
     margin: 0 0 0 1.56%;
-    color: #5185C5;
+    color: rgb(var(--color));
     text-decoration: none;
     font-family: "TTNormsPro SemiBold", "sans-serif";
     font-size: 26px;
@@ -102,6 +103,6 @@
     height: 0.4vh;
     left: 0;
     bottom: 0;
-    background-color: #5185C5;
+    background-color: rgb(var(--color));
   }
 }

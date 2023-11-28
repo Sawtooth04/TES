@@ -11,7 +11,8 @@ public class RoomMapper implements RowMapper<Room> {
             resultSet.getInt("roomID"),
             resultSet.getString("name"),
             resultSet.getInt("ownerID"),
-            resultSet.getString("description")
+            resultSet.getString("description"),
+            resultSet.getInt("color")
         );
     }
 }

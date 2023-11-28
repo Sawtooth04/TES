@@ -338,7 +338,7 @@
   align-items: center;
   height: 19.79%;
   padding: 0 8.62%;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-label .room-label__header .room-label__header__name {
   margin: 0;
@@ -351,7 +351,7 @@
   align-items: center;
   height: 13.99%;
   padding: 0 8.62%;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-label .room-label__meta .room-label__meta__audience {
   margin: 0;
@@ -863,7 +863,7 @@
   position: relative;
   margin: 0;
   padding-left: 3%;
-  color: #5185C5;
+  color: rgb(var(--color));
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 40px;
 }
@@ -874,7 +874,7 @@
   height: 0.4vh;
   left: 0;
   bottom: 0;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-members .room-members__members {
   display: flex;
@@ -885,7 +885,7 @@
   position: relative;
   margin: 0;
   padding-left: 3%;
-  color: #5185C5;
+  color: rgb(var(--color));
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 40px;
 }
@@ -896,7 +896,7 @@
   height: 0.4vh;
   left: 0;
   bottom: 0;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-members .room-members__members .room-members__members__list {
   display: flex;
@@ -1727,6 +1727,9 @@
   align-items: center;
   width: 100%;
 }
+.room__teaching__body__management > input {
+  display: none;
+}
 .room__teaching__body__management .room__teaching__body__management__main {
   display: flex;
   flex-direction: column;
@@ -1747,8 +1750,14 @@
 }
 .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header > * {
   height: 4vh;
+  margin: 0;
 }
-.room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header > img {
+.room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header .room__teaching__body__management__main__header__controls {
+  display: flex;
+}
+.room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header .room__teaching__body__management__main__header__controls > img {
+  width: auto;
+  height: 100%;
   cursor: pointer;
 }
 .room__teaching__body__management .room__teaching__body__management__teachers {
@@ -1844,7 +1853,7 @@
 .room-teaching .room-teaching__header .room-teaching__header__link {
   position: relative;
   margin: 0 0 0 1.56%;
-  color: #5185C5;
+  color: rgb(var(--color));
   text-decoration: none;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 20px;
@@ -1856,7 +1865,7 @@
   height: 0.3vh;
   left: 0;
   bottom: 0;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-teaching .room-teaching__body {
   display: flex;
@@ -1883,11 +1892,12 @@
   justify-content: center;
   width: 78.12%;
   height: 16.5%;
-  background-color: #5185C5;
+  background-color: #eef4f7;
+  background-repeat: repeat;
 }
 .room .room__header .room__header__name {
   margin: 0;
-  color: #ecf6ff;
+  color: rgb(var(--headerColor));
   font-family: "TTNormsPro", sans-serif;
   font-weight: bold;
   font-size: 38px;
@@ -1899,14 +1909,14 @@
 }
 .room .room__header .room__header__owner .room__header__owner__article {
   margin: 0;
-  color: #ecf6ff;
+  color: rgb(var(--headerColor));
   font-family: "TTNormsPro", sans-serif;
   font-weight: bold;
   font-size: 22px;
 }
 .room .room__header .room__header__owner .room__header__owner__name {
   margin: 0 0 0 0.5em;
-  color: #ecf6ff;
+  color: rgb(var(--headerColor));
   font-family: "TTNormsPro SemiBold", sans-serif;
   font-size: 22px;
 }
@@ -1941,7 +1951,7 @@
 .content-header .content-header__link {
   position: relative;
   margin: 0 0 0 1.56%;
-  color: #5185C5;
+  color: rgb(var(--color));
   text-decoration: none;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 26px;
@@ -1953,7 +1963,7 @@
   height: 0.4vh;
   left: 0;
   bottom: 0;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 
 .context-menu {
@@ -2757,7 +2767,7 @@
   height: 0.4vh;
   left: 0;
   bottom: 0;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-task .room-task__content .room-task__content__description {
   position: relative;
@@ -2791,7 +2801,7 @@
   height: 0.2vh;
   left: 0;
   bottom: 0;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room-task .room-task__content .room-task__content__comments {
   min-height: 24.04%;

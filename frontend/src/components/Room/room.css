@@ -5,7 +5,7 @@
 .room .room__header {
   width: 78.12%;
   height: 16.5%;
-  background-color: #5185C5;
+  background-color: rgb(var(--color));
 }
 .room .room__content {
   width: 100%;

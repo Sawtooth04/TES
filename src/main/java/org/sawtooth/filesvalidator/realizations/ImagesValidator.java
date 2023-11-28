@@ -2,22 +2,21 @@ package org.sawtooth.filesvalidator.realizations;
 
 import org.sawtooth.filesvalidator.abstractions.IFilesValidator;
 import org.sawtooth.filesvalidator.validators.abstractions.IValidator;
-import org.sawtooth.filesvalidator.validators.realizations.IMimeValidator;
+import org.sawtooth.filesvalidator.validators.realizations.ImageValidator;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 @Component
-public class FilesValidator implements IFilesValidator {
+public class ImagesValidator implements IFilesValidator {
     private final ArrayList<IValidator> validators = new ArrayList<IValidator>(Arrays.asList(
-        new IMimeValidator()
+        new ImageValidator()
     ));
 
     @Override
-    public boolean ValidateTask(MultipartFile file) {
+    public boolean Validate(MultipartFile file) {
         boolean result = true;
 
         for (IValidator validator : validators)

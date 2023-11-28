@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import RoomTeachingManagementInput from "./RoomTeachingManagementInput/RoomTeachingManagementInput";
 import CancelButton from "../../../UI/CancelButton/CancelButton";
 import AddRoomTeacherDialog from "./AddRoomTeacherDialog/AddRoomTeacherDialog";
@@ -9,6 +9,7 @@ const RoomTeachingManagement = ({ room }) => {
     const [teachers, setTeachers] = useState([]);
     const [members, setMembers] = useState([]);
     const [addRoomTeacherDialogOpened, setAddRoomTeacherDialogOpened] = useState(false);
+    const fileInput = useRef();
 
     useEffect(() => {
         if (room) {
@@ -84,15 +85,33 @@ const RoomTeachingManagement = ({ room }) => {
         await navigator.clipboard.writeText(await response.text());
     }
 
+    function setBackground() {
+        fileInput.current.click();
+    }
+
+    async function onBackgroundChange() {
+        let data = new FormData();
+        data.append("roomID", room.roomID);
+        data.append("file", fileInput.current.files[0]);
+        let response = await fetch("/room/upload/background", {
+            method: "post",
+            body: data
+        })
+    }
+
     return (
         <div className={"room__teaching__body__management"}>
             {addRoomTeacherDialogOpened ? <AddRoomTeacherDialog members={members} onClose={switchAddRoomTeacherDialogOpened}
                 onAdd={addTeacher}/> : null}
+            <input type={"file"} accept="image/jpeg" ref={fileInput} onChange={onBackgroundChange}/>
             <div className={"room__teaching__body__management__main"}>
-                <p className={"room__teaching__body__management__main__header"}>
-                    Общие сведения
-                    <img src={"/assets/images/icons/link.png"} alt={"Link"} onClick={getRoomJoinToken}/>
-                </p>
+                <div className="room__teaching__body__management__main__header">
+                    <p className={"room__teaching__body__management__main__header__header"}> Общие </p>
+                    <div className="room__teaching__body__management__main__header__controls">
+                        <img src={"/assets/images/icons/link.png"} alt={"Link"} onClick={getRoomJoinToken}/>
+                        <img src={"/assets/images/icons/edit.png"} alt={"Edit background"} onClick={setBackground}/>
+                    </div>
+                </div>
                 <RoomTeachingManagementInput value={name} onChange={setName} header={"Название комнаты"}/>
                 <RoomTeachingManagementInput value={description} onChange={setDescription} header={"Описание"}/>
                 <button className={"room__teaching__body__management__main__button"} onClick={saveRoom}>

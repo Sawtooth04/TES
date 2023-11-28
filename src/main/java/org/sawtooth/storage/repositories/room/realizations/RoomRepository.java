@@ -44,4 +44,25 @@ public class RoomRepository implements IRoomRepository {
     public Customer GetRoomOwner(int roomID) {
         return template.queryForObject("SELECT * FROM get_room_owner(?)", new CustomerMapper(), roomID);
     }
+
+    @Override
+    public void SetRoomColor(int roomID, int color) {
+        template.queryForObject("SELECT * FROM set_room_color(?, ?)", new SingleColumnRowMapper<>(), roomID, color);
+    }
+
+    @Override
+    public void SetBackgroundPath(int roomID, String backgroundPath) {
+        template.queryForObject("SELECT * FROM set_room_background_path(?, ?)", new SingleColumnRowMapper<>(),
+            roomID, backgroundPath);
+    }
+
+    @Override
+    public String GetBackgroundPath(int roomID) {
+        return template.queryForObject("SELECT * FROM get_room_background_path(?)", new SingleColumnRowMapper<>(), roomID);
+    }
+
+    @Override
+    public int GetColor(int roomID) {
+        return template.queryForObject("SELECT * FROM get_room_color(?)", new SingleColumnRowMapper<>(), roomID);
+    }
 }
