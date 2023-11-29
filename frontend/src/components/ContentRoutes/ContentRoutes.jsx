@@ -8,6 +8,7 @@ import Room from "../Room/Room";
 import RoomTask from "../RoomTask/RoomTask";
 import OwnRoomsList from "../OwnRoomsList/OwnRoomsList";
 import StudyingRoomsList from "../StudyingRoomsList/StudyingRoomsList";
+import Notifications from "../Notifications/Notifications";
 
 const ContentRoutes = ({ onNavigate }) => {
     const [isSidebarHidden, setIsSidebarHidden] = useState(true);
@@ -39,6 +40,7 @@ const ContentRoutes = ({ onNavigate }) => {
             <Header onSidebarClick={onSidebarStateSwitch} switchCreateRoomDialogState={switchCreateRoomDialogState}/>
             <div className="main__wrapper">
                 <Sidebar hidden={isSidebarHidden}/>
+                <Notifications />
                 <div className="main__wrapper__content" onClick={hideSidebar}>
                     {(createRoomDialogOpened) ? <CreateRoomForm onCreate={switchCreateRoomDialogState}/> : null}
                     <Routes>

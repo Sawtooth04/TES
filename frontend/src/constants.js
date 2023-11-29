@@ -6,4 +6,6 @@ export const taskCommentsPerPagesCount = 10;
 export const maxTaskCommentsPerPagesCount = 20;
 export const messagesPerPagesCount = 10;
 export const maxMessagesPerPagesCount = 20;
+export const notificationsPerPagesCount = 10;
+export const maxNotificationsPerPagesCount = 20;
 export const SolutionStatus = { EMPTY: 1, LOADING: 2, LOADED: 3, TESTING: 4, TESTED: 5 };

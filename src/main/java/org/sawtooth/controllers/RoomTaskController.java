@@ -1,17 +1,22 @@
 package org.sawtooth.controllers;
 
 import org.sawtooth.models.customer.Customer;
+import org.sawtooth.models.customernotification.CustomerNotification;
+import org.sawtooth.models.room.Room;
 import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomrole.RoomRole;
 import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.models.roomtask.RoomTaskStatistic;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
+import org.sawtooth.storage.repositories.customernotificationrepository.abstractions.ICustomerNotificationRepository;
+import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCustomerRoleRepository;
 import org.sawtooth.storage.repositories.roomrole.abstractions.IRoomRoleRepository;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
 
+import org.sawtooth.utils.CustomerNotificationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +36,18 @@ public class RoomTaskController {
     @PostMapping("/add")
     public void Add(@RequestBody RoomTask roomTask) {
         try {
+            CustomerNotificationBuilder notificationBuilder = new CustomerNotificationBuilder();
             Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
             RoomRole teacherRole = storage.GetRepository(IRoomRoleRepository.class).Get("teacher");
+            Room room = storage.GetRepository(IRoomRepository.class).Get(roomTask.roomID());
+            CustomerNotification notification = notificationBuilder.BuildAddedTaskNotification(room, roomTask);
 
-            if (storage.GetRepository(IRoomCustomerRoleRepository.class).IsCustomerHasRole(roomTask.roomID(), customer, teacherRole))
+            if (storage.GetRepository(IRoomCustomerRoleRepository.class).IsCustomerHasRole(roomTask.roomID(), customer, teacherRole)) {
                 storage.GetRepository(IRoomTaskRepository.class).Add(roomTask);
+                storage.GetRepository(ICustomerNotificationRepository.class).AddRoomCustomersNotification(roomTask.roomID(),
+                    notification.header(), notification.text());
+            }
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

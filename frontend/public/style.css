@@ -2813,6 +2813,24 @@
   height: 100%;
 }
 
+.notifications {
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  right: 0;
+  background-color: #e6f3ff;
+  border: 0.1vw #b4bec7 solid;
+}
+.notifications .notifications__notification {
+  display: flex;
+  flex-direction: column;
+}
+.notifications .notifications__notification .notifications__notification__header, .notifications .notifications__notification .notifications__notification__text {
+  margin: 0;
+}
+
 .main {
   width: 100vw;
   height: 100vh;
