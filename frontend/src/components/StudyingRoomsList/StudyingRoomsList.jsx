@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import RoomLabel from "../RoomLabel/RoomLabel";
 import {useNavigate} from "react-router-dom";
-import JoinRoomForm from "../JoinRoomForm/JoinRoomForm";
+import RoomLabel from "../RoomLabel/RoomLabel";
 
-const RoomsList = ({ onMount, isJoining }) => {
+const StudyingRoomsList = ({ onMount }) => {
     const [rooms, setRooms] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         async function getRooms() {
-            let response = await fetch("/rooms/get/rooms", {
+            let response = await fetch("/rooms/get/studying-rooms", {
                 'method': 'get',
                 'headers': {'Accept': 'application/json'}
             });
@@ -25,8 +24,7 @@ const RoomsList = ({ onMount, isJoining }) => {
     }
 
     return (
-        <div className={"rooms-list main__wrapper__content__rooms-list"}>
-            {isJoining ? <JoinRoomForm/> : null}
+        <div className={"studying-rooms-list main__wrapper__content__studying-rooms-list"}>
             {rooms.map((room) => {
                 return <RoomLabel room={{...room, 'audience': 5}} onClick={onClick} key={room.roomID}/>
             })}
@@ -34,4 +32,4 @@ const RoomsList = ({ onMount, isJoining }) => {
     );
 };
 
-export default RoomsList;
+export default StudyingRoomsList;

@@ -41,6 +41,16 @@ public class RoomRepository implements IRoomRepository {
         return template.query("SELECT * FROM get_customer_rooms(?)", new RoomMapper(), customerID);
     }
 
+    @Override
+    public List<Room> GetCustomerOwnRooms(int customerID) {
+        return template.query("SELECT * FROM get_customer_own_rooms(?)", new RoomMapper(), customerID);
+    }
+
+    @Override
+    public List<Room> GetCustomerStudyingRooms(int customerID) {
+        return template.query("SELECT * FROM get_customer_studying_rooms(?)", new RoomMapper(), customerID);
+    }
+
     public Customer GetRoomOwner(int roomID) {
         return template.queryForObject("SELECT * FROM get_room_owner(?)", new CustomerMapper(), roomID);
     }

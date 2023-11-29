@@ -6,6 +6,8 @@ import RoomsList from "../RoomsList/RoomsList";
 import CreateRoomForm from "../CreateRoomForm/CreateRoomForm";
 import Room from "../Room/Room";
 import RoomTask from "../RoomTask/RoomTask";
+import OwnRoomsList from "../OwnRoomsList/OwnRoomsList";
+import StudyingRoomsList from "../StudyingRoomsList/StudyingRoomsList";
 
 const ContentRoutes = ({ onNavigate }) => {
     const [isSidebarHidden, setIsSidebarHidden] = useState(true);
@@ -42,6 +44,8 @@ const ContentRoutes = ({ onNavigate }) => {
                     <Routes>
                         <Route path="/room/:roomID/task/:roomTaskID" element={<RoomTask onMount={onMount}/>}/>
                         <Route path="/room/:roomID/*" element={<Room onMount={onMount}/>}/>
+                        <Route path="/rooms/own" element={<OwnRoomsList onMount={onMount}/>}/>
+                        <Route path="/rooms/studying" element={<StudyingRoomsList onMount={onMount}/>}/>
                         <Route path="/rooms/join" element={<RoomsList onMount={onMount} isJoining={true}/>}/>
                         <Route path="*" element={<RoomsList onMount={onMount} isJoining={false}/>}/>
                     </Routes>

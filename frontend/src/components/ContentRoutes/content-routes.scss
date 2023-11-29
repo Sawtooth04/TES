@@ -38,7 +38,7 @@
       height: 100%;
       overflow-y: auto;
 
-      & .main__wrapper__content__rooms-list {
+      & .main__wrapper__content__rooms-list, .main__wrapper__content__own-rooms-list, .main__wrapper__content__studying-rooms-list {
         width: 100%;
         padding: 1.56% 0;
       }

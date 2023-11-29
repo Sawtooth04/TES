@@ -16,6 +16,10 @@ public interface IRoomRepository extends IRepository {
 
     public List<Room> GetCustomerRooms(int customerID);
 
+    public List<Room> GetCustomerOwnRooms(int customerID);
+
+    public List<Room> GetCustomerStudyingRooms(int customerID);
+
     public Customer GetRoomOwner(int roomID);
 
     public void SetRoomColor(int roomID, int color);

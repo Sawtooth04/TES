@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -25,7 +26,7 @@ public class RoomsController {
         this.storage = storage;
     }
 
-    @GetMapping("/get-rooms")
+    @GetMapping("/get/rooms")
     @ResponseBody
     public List<Room> GetRooms() {
         try {
@@ -36,7 +37,35 @@ public class RoomsController {
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return null;
+        return new ArrayList<>();
+    }
+
+    @GetMapping("/get/own-rooms")
+    @ResponseBody
+    public List<Room> GetOwnRooms() {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                    .getAuthentication().getName()).customerID();
+            return storage.GetRepository(IRoomRepository.class).GetCustomerOwnRooms(customerID);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return new ArrayList<>();
+    }
+
+    @GetMapping("/get/studying-rooms")
+    @ResponseBody
+    public List<Room> GetStudyingRooms() {
+        try {
+            int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
+                    .getAuthentication().getName()).customerID();
+            return storage.GetRepository(IRoomRepository.class).GetCustomerStudyingRooms(customerID);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return new ArrayList<>();
     }
 
     @PostMapping("/create")

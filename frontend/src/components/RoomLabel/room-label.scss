@@ -5,17 +5,18 @@
   display: flex;
   flex-direction: column;
   border: $border_color 0.2vw solid;
+  background-color: $third_background_color;
+  cursor: pointer;
 
   & .room-label__header {
     display: flex;
     align-items: center;
     height: 19.79%;
     padding: 0 8.62%;
-    background-color: rgb(var(--color));
 
     & .room-label__header__name {
       margin: 0;
-      color: $background_color;
+      color: $primary_color;
       font-family: "TTNormsPro SemiBold", "sans-serif";
       font-size: 28px;
     }
@@ -26,11 +27,11 @@
     align-items: center;
     height: 13.99%;
     padding: 0 8.62%;
-    background-color: rgb(var(--color));
+    border-bottom: $border_color 0.2vw solid;
 
     & .room-label__meta__audience {
       margin: 0;
-      color: $background_color;
+      color: $primary_color;
       font-family: "TTNormsPro", "sans-serif";
       font-size: 18px;
     }
@@ -42,7 +43,6 @@
     justify-content: center;
     padding: 0 8.62%;
     flex-shrink: 1;
-    background-color: $third_background_color;
 
     & .room-label__nearest-tasks__near-task {
       padding: 4.31% 0;

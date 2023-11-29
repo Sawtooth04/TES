@@ -332,17 +332,18 @@
   display: flex;
   flex-direction: column;
   border: #b4bec7 0.2vw solid;
+  background-color: #eef4f7;
+  cursor: pointer;
 }
 .room-label .room-label__header {
   display: flex;
   align-items: center;
   height: 19.79%;
   padding: 0 8.62%;
-  background-color: rgb(var(--color));
 }
 .room-label .room-label__header .room-label__header__name {
   margin: 0;
-  color: #ecf6ff;
+  color: #002544;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   font-size: 28px;
 }
@@ -351,11 +352,11 @@
   align-items: center;
   height: 13.99%;
   padding: 0 8.62%;
-  background-color: rgb(var(--color));
+  border-bottom: #b4bec7 0.2vw solid;
 }
 .room-label .room-label__meta .room-label__meta__audience {
   margin: 0;
-  color: #ecf6ff;
+  color: #002544;
   font-family: "TTNormsPro", "sans-serif";
   font-size: 18px;
 }
@@ -365,7 +366,6 @@
   justify-content: center;
   padding: 0 8.62%;
   flex-shrink: 1;
-  background-color: #eef4f7;
 }
 .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task {
   padding: 4.31% 0;
@@ -391,7 +391,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.rooms-list .rooms-list__room-label {
+.rooms-list .room-label {
   width: 18.12%;
   height: 29.3%;
   border-radius: 0.7vw;
@@ -2844,7 +2844,7 @@
   height: 100%;
   overflow-y: auto;
 }
-.main .main__wrapper .main__wrapper__content .main__wrapper__content__rooms-list {
+.main .main__wrapper .main__wrapper__content .main__wrapper__content__rooms-list, .main .main__wrapper .main__wrapper__content .main__wrapper__content__own-rooms-list, .main .main__wrapper .main__wrapper__content .main__wrapper__content__studying-rooms-list {
   width: 100%;
   padding: 1.56% 0;
 }
@@ -2904,6 +2904,152 @@
 .header .header__logo {
   width: auto;
   height: 68.75%;
+}
+
+.near-task {
+  display: flex;
+  flex-direction: column;
+}
+.near-task .near-task__deadline, .near-task .near-task__name {
+  margin: 0;
+}
+.near-task .near-task__deadline {
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 14px;
+}
+.near-task .near-task__name {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 14px;
+}
+
+.room-label {
+  display: flex;
+  flex-direction: column;
+  border: #b4bec7 0.2vw solid;
+  background-color: #eef4f7;
+  cursor: pointer;
+}
+.room-label .room-label__header {
+  display: flex;
+  align-items: center;
+  height: 19.79%;
+  padding: 0 8.62%;
+}
+.room-label .room-label__header .room-label__header__name {
+  margin: 0;
+  color: #002544;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 28px;
+}
+.room-label .room-label__meta {
+  display: flex;
+  align-items: center;
+  height: 13.99%;
+  padding: 0 8.62%;
+  border-bottom: #b4bec7 0.2vw solid;
+}
+.room-label .room-label__meta .room-label__meta__audience {
+  margin: 0;
+  color: #002544;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
+}
+.room-label .room-label__nearest-tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8.62%;
+  flex-shrink: 1;
+}
+.room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task {
+  padding: 4.31% 0;
+}
+
+.own-rooms-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.own-rooms-list .room-label {
+  width: 18.12%;
+  height: 29.3%;
+  border-radius: 0.7vw;
+  overflow: hidden;
+  margin: 0 0 1.56% 1.36%;
+}
+
+.near-task {
+  display: flex;
+  flex-direction: column;
+}
+.near-task .near-task__deadline, .near-task .near-task__name {
+  margin: 0;
+}
+.near-task .near-task__deadline {
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 14px;
+}
+.near-task .near-task__name {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 14px;
+}
+
+.room-label {
+  display: flex;
+  flex-direction: column;
+  border: #b4bec7 0.2vw solid;
+  background-color: #eef4f7;
+  cursor: pointer;
+}
+.room-label .room-label__header {
+  display: flex;
+  align-items: center;
+  height: 19.79%;
+  padding: 0 8.62%;
+}
+.room-label .room-label__header .room-label__header__name {
+  margin: 0;
+  color: #002544;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 28px;
+}
+.room-label .room-label__meta {
+  display: flex;
+  align-items: center;
+  height: 13.99%;
+  padding: 0 8.62%;
+  border-bottom: #b4bec7 0.2vw solid;
+}
+.room-label .room-label__meta .room-label__meta__audience {
+  margin: 0;
+  color: #002544;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 18px;
+}
+.room-label .room-label__nearest-tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8.62%;
+  flex-shrink: 1;
+}
+.room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task {
+  padding: 4.31% 0;
+}
+
+.studying-rooms-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.studying-rooms-list .room-label {
+  width: 18.12%;
+  height: 29.3%;
+  border-radius: 0.7vw;
+  overflow: hidden;
+  margin: 0 0 1.56% 1.36%;
 }
 
 @font-face {
