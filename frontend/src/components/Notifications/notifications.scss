@@ -4,18 +4,96 @@
   position: absolute;
   display: flex;
   justify-content: start;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
+  width: 20%;
+  max-height: 45%;
+  padding: 0 2vh;
   right: 0;
   background-color: $secondary_background_color;
   border: 0.10vw $border_color solid;
+  border-radius: 0 0 0.52vw 0.52vw;
+  transition: transform 200ms ease-out;
+
+  & .infinite-scroll {
+    overflow-y: auto;
+  }
 
   & .notifications__notification {
+    position: relative;
     display: flex;
     flex-direction: column;
+    margin-top: 2vh;
 
     & .notifications__notification__header, .notifications__notification__text {
       margin: 0;
     }
+
+    & .notifications__notification__header {
+      font-family: "TTNormsPro SemiBold", "sans-serif";
+      font-size: 18px;
+    }
+
+    & .notifications__notification__text {
+      font-family: "TTNormsPro", "sans-serif";
+      font-size: 16px;
+    }
+
+    & .cancel-button {
+      position: absolute;
+      z-index: 1;
+      top: 2vh;
+      right: 0;
+      width: 5%;
+      height: 5%;
+
+      & .cancel-button__first-line, .cancel-button__second-line {
+        background-color: $primary_color;
+        height: 0.2vw;
+        top: 0.1vw;
+      }
+    }
   }
+
+  & .notifications__notification:last-child {
+    margin-bottom: 2vh;
+  }
+
+  & .notifications__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 4.65%;
+    margin-top: 1.38%;
+    margin-bottom: 2vh;
+    outline: none;
+    border: $primary_color 0.2vw solid;
+    border-radius: 0.5vw;
+    background-color: $inputs_background_color;
+    color: $primary_color;
+    transition: color 200ms ease-out, background-color 200ms ease-out;
+    font-size: 18px;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .notifications__button:hover {
+    background-color: $primary_color;
+    color: $secondary_color;
+    cursor: pointer;
+  }
+
+  & .notifications__text {
+    margin: 2vh 0 1.6vh 0;
+    font-family: "TTNormsPro", "sans-serif";
+    font-size: 16px;
+  }
+}
+
+.notifications_hidden {
+  transform: translateY(-100%);
+}
+
+.notifications_opened {
+  transform: translateY(0);
 }

@@ -11,4 +11,6 @@ public interface ICustomerNotificationRepository extends IRepository {
     public void AddRoomCustomerNotification(int roomCustomerID, String header, String text);
 
     public void AddRoomCustomersNotification(int roomID, String header, String text);
+
+    public void SetIsRead(int customerNotificationID);
 }

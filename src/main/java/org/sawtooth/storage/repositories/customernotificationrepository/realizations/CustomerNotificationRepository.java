@@ -33,4 +33,10 @@ public class CustomerNotificationRepository implements ICustomerNotificationRepo
         template.queryForObject("SELECT * FROM insert_customers_notification(?, ?, ?)", new SingleColumnRowMapper<>(),
             roomID, header, text);
     }
+
+    @Override
+    public void SetIsRead(int customerNotificationID) {
+        template.queryForObject("SELECT * FROM set_customer_notification_readed(?)", new SingleColumnRowMapper<>(),
+            customerNotificationID);
+    }
 }

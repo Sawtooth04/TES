@@ -1,19 +1,13 @@
 package org.sawtooth.controllers;
 
-import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.customernotification.CustomerNotification;
-import org.sawtooth.models.roomtask.RoomTask;
+import org.sawtooth.models.customernotification.SetIsReadCustomerNotificationModel;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.customernotificationrepository.abstractions.ICustomerNotificationRepository;
-import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
-import org.sawtooth.storage.repositories.roomcustomermessage.abstractions.IRoomCustomerMessageRepository;
-import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +27,10 @@ public class CustomerNotificationController {
             .getAuthentication().getName()).customerID();
 
         return storage.GetRepository(ICustomerNotificationRepository.class).Get(customerID, start, count);
+    }
+
+    @PostMapping("/set-is-read")
+    public void SetIsRead(@RequestBody SetIsReadCustomerNotificationModel model) throws InstantiationException {
+        storage.GetRepository(ICustomerNotificationRepository.class).SetIsRead(model.customerNotificationID());
     }
 }

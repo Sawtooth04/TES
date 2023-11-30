@@ -12,6 +12,7 @@ import Notifications from "../Notifications/Notifications";
 
 const ContentRoutes = ({ onNavigate }) => {
     const [isSidebarHidden, setIsSidebarHidden] = useState(true);
+    const [isNotificationsHidden, setIsNotificationsHidden] = useState(true);
     const [createRoomDialogOpened, setCreateRoomDialogOpened] = useState(false);
 
     useEffect(() => {
@@ -30,18 +31,23 @@ const ContentRoutes = ({ onNavigate }) => {
         setIsSidebarHidden(!isSidebarHidden);
     }
 
-    function hideSidebar(event) {
+    function onNotificationsStateSwitch() {
+        setIsNotificationsHidden(!isNotificationsHidden);
+    }
+
+    function hideMenus(event) {
         setIsSidebarHidden(true);
+        setIsNotificationsHidden(true);
         event.stopPropagation();
     }
 
     return (
         <div className="main">
-            <Header onSidebarClick={onSidebarStateSwitch} switchCreateRoomDialogState={switchCreateRoomDialogState}/>
+            <Header onSidebarClick={onSidebarStateSwitch} onNotificationsClick={onNotificationsStateSwitch} switchCreateRoomDialogState={switchCreateRoomDialogState}/>
             <div className="main__wrapper">
                 <Sidebar hidden={isSidebarHidden}/>
-                <Notifications />
-                <div className="main__wrapper__content" onClick={hideSidebar}>
+                <Notifications hidden={isNotificationsHidden}/>
+                <div className="main__wrapper__content" onClick={hideMenus}>
                     {(createRoomDialogOpened) ? <CreateRoomForm onCreate={switchCreateRoomDialogState}/> : null}
                     <Routes>
                         <Route path="/room/:roomID/task/:roomTaskID" element={<RoomTask onMount={onMount}/>}/>

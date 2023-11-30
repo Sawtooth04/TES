@@ -9,7 +9,7 @@ public class CustomerNotificationMapper implements RowMapper<CustomerNotificatio
     @Override
     public CustomerNotification mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         return new CustomerNotification(
-            resultSet.getInt("сustomerNotificationID"),
+            resultSet.getInt("customerNotificationID"),
             resultSet.getString("header"),
             resultSet.getString("text")
         );

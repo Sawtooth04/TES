@@ -2817,18 +2817,87 @@
   position: absolute;
   display: flex;
   justify-content: start;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
+  width: 20%;
+  max-height: 45%;
+  padding: 0 2vh;
   right: 0;
   background-color: #e6f3ff;
   border: 0.1vw #b4bec7 solid;
+  border-radius: 0 0 0.52vw 0.52vw;
+  transition: transform 200ms ease-out;
+}
+.notifications .infinite-scroll {
+  overflow-y: auto;
 }
 .notifications .notifications__notification {
+  position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 2vh;
 }
 .notifications .notifications__notification .notifications__notification__header, .notifications .notifications__notification .notifications__notification__text {
   margin: 0;
+}
+.notifications .notifications__notification .notifications__notification__header {
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+  font-size: 18px;
+}
+.notifications .notifications__notification .notifications__notification__text {
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+}
+.notifications .notifications__notification .cancel-button {
+  position: absolute;
+  z-index: 1;
+  top: 2vh;
+  right: 0;
+  width: 5%;
+  height: 5%;
+}
+.notifications .notifications__notification .cancel-button .cancel-button__first-line, .notifications .notifications__notification .cancel-button .cancel-button__second-line {
+  background-color: #002544;
+  height: 0.2vw;
+  top: 0.1vw;
+}
+.notifications .notifications__notification:last-child {
+  margin-bottom: 2vh;
+}
+.notifications .notifications__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 4.65%;
+  margin-top: 1.38%;
+  margin-bottom: 2vh;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 18px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.notifications .notifications__button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
+}
+.notifications .notifications__text {
+  margin: 2vh 0 1.6vh 0;
+  font-family: "TTNormsPro", "sans-serif";
+  font-size: 16px;
+}
+
+.notifications_hidden {
+  transform: translateY(-100%);
+}
+
+.notifications_opened {
+  transform: translateY(0);
 }
 
 .main {
@@ -2845,6 +2914,7 @@
   width: 100%;
   height: 92.6vh;
   background-color: #ecf6ff;
+  overflow: hidden;
 }
 .main .main__wrapper .main__wrapper__sidebar {
   position: absolute;

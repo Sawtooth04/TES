@@ -21,6 +21,7 @@
     width: 100%;
     height: 92.60vh;
     background-color: $background_color;
+    overflow: hidden;
 
     & .main__wrapper__sidebar {
       position: absolute;
