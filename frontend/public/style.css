@@ -1359,6 +1359,7 @@
   border-radius: 0.3vw;
 }
 .verified-solution .verified-solution__body {
+  position: relative;
   width: 60%;
   height: 94%;
   overflow: auto;
@@ -1395,6 +1396,17 @@
 .verified-solution .verified-solution__body .numbered-text-view::-webkit-scrollbar-thumb {
   background-color: #b4bec7;
   border-radius: 0.3vw;
+}
+.verified-solution .verified-solution__body .cancel-button {
+  position: absolute;
+  right: 1vw;
+  top: 0;
+  width: 2vw;
+  height: 2vw;
+}
+.verified-solution .verified-solution__body .cancel-button .cancel-button__first-line, .verified-solution .verified-solution__body .cancel-button .cancel-button__second-line {
+  background-color: #002544;
+  height: 0.2vw;
 }
 
 .verified-task-label {
@@ -2870,7 +2882,7 @@
   justify-content: center;
   width: 60%;
   height: 4.65%;
-  margin-top: 1.38%;
+  margin-top: 2vh;
   margin-bottom: 2vh;
   outline: none;
   border: #002544 0.2vw solid;
@@ -2887,7 +2899,7 @@
   cursor: pointer;
 }
 .notifications .notifications__text {
-  margin: 2vh 0 1.6vh 0;
+  margin: 2vh 0 0 0;
   font-family: "TTNormsPro", "sans-serif";
   font-size: 16px;
 }

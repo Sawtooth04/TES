@@ -1,10 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {maxNotificationsPerPagesCount, notificationsPerPagesCount} from "../../constants";
 import InfiniteScrollPaginator from "../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 import CancelButton from "../UI/CancelButton/CancelButton";
 
 const Notifications = ({ hidden }) => {
     const [notifications, setNotifications] = useState([]);
+
+    useEffect(() => {
+        async function getNotifications() {
+            let response = await fetch("/customer-notification/get-page", {
+                method: "get",
+                headers: {"Accept": "application/json"}
+            })
+
+            if (response.ok)
+                setNotifications(await response.json());
+        }
+
+        void getNotifications();
+    }, []);
 
     async function setIsRead(notification) {
         await fetch("/customer-notification/set-is-read", {
@@ -32,16 +46,13 @@ const Notifications = ({ hidden }) => {
             {(notifications.length === 0) ?
                 <p className={"notifications__text"}> Уведомления отсутствуют </p> : null
             }
-            <InfiniteScrollPaginator params={{}} endpoint={'/customer-notification/get-page'} data={notifications}
-                countByPage={notificationsPerPagesCount} maxCountByPage={maxNotificationsPerPagesCount} updateData={setNotifications}>
-                {notifications.map((notification) => {
-                    return <div className={"notifications__notification"} key={notification.customerNotificationID}>
-                        <p className={"notifications__notification__header"}> {notification.header} </p>
-                        <p className={"notifications__notification__text"}> {notification.text} </p>
-                        <CancelButton onClick={async () => {await setIsReadCallback(notification)}}/>
-                    </div>
-                })}
-            </InfiniteScrollPaginator>
+            {notifications.map((notification) => {
+                return <div className={"notifications__notification"} key={notification.customerNotificationID}>
+                    <p className={"notifications__notification__header"}> {notification.header} </p>
+                    <p className={"notifications__notification__text"}> {notification.text} </p>
+                    <CancelButton onClick={async () => {await setIsReadCallback(notification)}}/>
+                </div>
+            })}
             <button className={"notifications__button"} onClick={setIsReadAllCallback}>
                 Прочитано
             </button>

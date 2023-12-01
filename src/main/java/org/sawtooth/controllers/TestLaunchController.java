@@ -6,9 +6,11 @@ import org.sawtooth.configuration.abstractions.ILanguageConfigurationProvider;
 import org.sawtooth.configuration.models.LanguageConfiguration;
 import org.sawtooth.launcher.configuration.abstractions.ILauncherConfigurationProvider;
 import org.sawtooth.launcher.configuration.models.LauncherConfiguration;
+import org.sawtooth.models.roomtaskvariant.RoomTaskVariant;
 import org.sawtooth.models.solutionlaunchresult.SolutionLaunchResult;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
+import org.sawtooth.storage.repositories.roomtaskvariant.abstractions.IRoomTaskVariantRepository;
 import org.sawtooth.tester.abstractions.ITesterLauncher;
 import org.sawtooth.tester.models.TestLaunchResults;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,8 +93,9 @@ public class TestLaunchController {
             throws IOException, InstantiationException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         int variant = storage.GetRepository(IRoomCustomerRepository.class).GetVariant(authentication.getName(),roomID);
+        RoomTaskVariant taskVariant = storage.GetRepository(IRoomTaskVariantRepository.class).Get(taskID, variant);
         ArrayList<LauncherConfiguration> launcherConfigurations = launcherConfigurationProvider.TryGetLauncherConfigurations(
-            String.format("%s/%d/%d/%d", tasksPath, roomID, taskID, variant));
+            String.format("%s/%d/%d/%d", tasksPath, roomID, taskID, taskVariant.variant()));
         LanguageConfiguration languageConfiguration = languageConfigurationProvider.TryGetValue(language);
         String rootPath = String.format("%s/%d/%d/%s", solutionsPath, roomID, taskID, authentication.getName());
         SetLaunchCommand(languageConfiguration, rootPath, solution);

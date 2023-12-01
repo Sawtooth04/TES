@@ -16,7 +16,7 @@ const InfiniteScroll = ({ onPrev, onNext, children }) => {
             }
             return () => { observer.disconnect() }
         }
-    }, [children]);
+    });
 
     function onIntersect(entries, observer) {
         if (Math.round(entries[0].intersectionRatio) === 1) {

@@ -58,6 +58,7 @@
   }
 
   & .verified-solution__body {
+    position: relative;
     width: 60%;
     height: 94%;
     overflow: auto;
@@ -104,6 +105,19 @@
     & .numbered-text-view::-webkit-scrollbar-thumb {
       background-color: $border_color;
       border-radius: 0.3vw;
+    }
+
+    & .cancel-button {
+      position: absolute;
+      right: 1vw;
+      top: 0;
+      width: 2vw;
+      height: 2vw;
+
+      & .cancel-button__first-line, .cancel-button__second-line {
+        background-color: $primary_color;
+        height: 0.2vw;
+      }
     }
   }
 }

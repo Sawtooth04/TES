@@ -1,15 +1,20 @@
 package org.sawtooth.controllers;
 
+import org.sawtooth.models.customernotification.CustomerNotification;
+import org.sawtooth.models.room.Room;
 import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomcustomermessage.*;
 import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
+import org.sawtooth.storage.repositories.customernotificationrepository.abstractions.ICustomerNotificationRepository;
+import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomermessage.abstractions.IRoomCustomerMessageRepository;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
+import org.sawtooth.utils.CustomerNotificationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -44,12 +49,20 @@ public class RoomCustomerMessageController {
     @PostMapping("/add-teacher")
     public void AddTeacher(@RequestBody RoomTeacherMessageUploadModel message) {
         try {
+            CustomerNotificationBuilder customerNotificationBuilder = new CustomerNotificationBuilder();
             int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
-                    .getAuthentication().getName()).customerID();
+                .getAuthentication().getName()).customerID();
             RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(message.roomID(), customerID);
+            RoomCustomer recipient = storage.GetRepository(IRoomCustomerRepository.class).Get(message.recipient());
+            Room room = storage.GetRepository(IRoomRepository.class).Get(message.roomID());
+            RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(message.roomTaskID());
+            CustomerNotification notification = customerNotificationBuilder.BuildMessageNotification(SecurityContextHolder.getContext()
+                .getAuthentication().getName(), room, roomTask);
 
             storage.GetRepository(IRoomCustomerMessageRepository.class).AddTeacherMessage(roomCustomer.roomCustomerID(),
-                    message.roomTaskID(), message.text(), message.recipient());
+                message.roomTaskID(), message.text(), message.recipient());
+            storage.GetRepository(ICustomerNotificationRepository.class).AddRoomCustomerNotification(recipient.customerID(),
+                    notification.header(), notification.text());
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

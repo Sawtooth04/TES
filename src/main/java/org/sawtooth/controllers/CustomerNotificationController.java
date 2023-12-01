@@ -22,11 +22,11 @@ public class CustomerNotificationController {
     }
 
     @GetMapping("/get-page")
-    public List<CustomerNotification> GetPage(int start, int count) throws InstantiationException {
+    public List<CustomerNotification> GetPage() throws InstantiationException {
         int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
             .getAuthentication().getName()).customerID();
 
-        return storage.GetRepository(ICustomerNotificationRepository.class).Get(customerID, start, count);
+        return storage.GetRepository(ICustomerNotificationRepository.class).Get(customerID);
     }
 
     @PostMapping("/set-is-read")

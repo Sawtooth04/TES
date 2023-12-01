@@ -17,9 +17,9 @@ public class CustomerNotificationRepository implements ICustomerNotificationRepo
     }
 
     @Override
-    public List<CustomerNotification> Get(int customerID, int start, int count) {
-        return template.query("SELECT * FROM get_customer_notifications(?, ?, ?)", new CustomerNotificationMapper(),
-            customerID, start, count);
+    public List<CustomerNotification> Get(int customerID) {
+        return template.query("SELECT * FROM get_customer_notifications(?)", new CustomerNotificationMapper(),
+            customerID);
     }
 
     @Override

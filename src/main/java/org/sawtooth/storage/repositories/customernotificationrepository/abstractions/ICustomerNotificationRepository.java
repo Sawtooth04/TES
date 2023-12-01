@@ -6,7 +6,7 @@ import org.sawtooth.storage.repositories.IRepository;
 import java.util.List;
 
 public interface ICustomerNotificationRepository extends IRepository {
-    public List<CustomerNotification> Get(int roomCustomerID, int start, int count);
+    public List<CustomerNotification> Get(int roomCustomerID);
 
     public void AddRoomCustomerNotification(int roomCustomerID, String header, String text);
 

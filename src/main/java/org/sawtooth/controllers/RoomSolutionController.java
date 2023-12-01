@@ -1,10 +1,19 @@
 package org.sawtooth.controllers;
 
+import org.sawtooth.models.customernotification.CustomerNotification;
+import org.sawtooth.models.room.Room;
+import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomsolution.*;
+import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.models.solutiontreeitem.SolutionTreeItem;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
+import org.sawtooth.storage.repositories.customernotificationrepository.abstractions.ICustomerNotificationRepository;
+import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
+import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
+import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
+import org.sawtooth.utils.CustomerNotificationBuilder;
 import org.sawtooth.utils.RoomSolutionTreeBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -101,12 +110,30 @@ public class RoomSolutionController {
 
     @PostMapping("/set-accepted")
     public void SetAccepted(@RequestBody int roomSolutionID) throws InstantiationException {
+        CustomerNotificationBuilder customerNotificationBuilder = new CustomerNotificationBuilder();
+        RoomSolution roomSolution = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID);
+        RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomSolution.roomCustomerID());
+        RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomSolution.roomTaskID());
+        Room room = storage.GetRepository(IRoomRepository.class).Get(roomTask.roomID());
+        CustomerNotification customerNotification = customerNotificationBuilder.BuildAcceptedSolutionNotification(room, roomTask);
+
         storage.GetRepository(IRoomSolutionRepository.class).SetAccepted(roomSolutionID);
+        storage.GetRepository(ICustomerNotificationRepository.class).AddRoomCustomerNotification(roomCustomer.customerID(),
+            customerNotification.header(), customerNotification.text());
     }
 
     @PostMapping("/set-declined")
     public void SetDeclined(@RequestBody int roomSolutionID) throws InstantiationException {
+        CustomerNotificationBuilder customerNotificationBuilder = new CustomerNotificationBuilder();
+        RoomSolution roomSolution = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID);
+        RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomSolution.roomCustomerID());
+        RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomSolution.roomTaskID());
+        Room room = storage.GetRepository(IRoomRepository.class).Get(roomTask.roomID());
+        CustomerNotification customerNotification = customerNotificationBuilder.BuildDeclinedSolutionNotification(room, roomTask);
+
         storage.GetRepository(IRoomSolutionRepository.class).SetDeclined(roomSolutionID);
+        storage.GetRepository(ICustomerNotificationRepository.class).AddRoomCustomerNotification(roomCustomer.customerID(),
+            customerNotification.header(), customerNotification.text());
     }
 
     @GetMapping("/get")
