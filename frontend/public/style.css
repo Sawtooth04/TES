@@ -226,6 +226,17 @@
 .registration .registration__link:hover {
   color: #002544;
 }
+.registration .registration__error {
+  margin-top: 0.2%;
+  margin-bottom: 0;
+  text-decoration: none;
+  color: #cc194b;
+  font-size: 16px;
+  font-family: "TTNormsPro", "sans-serif";
+}
+.registration .registration__error:first-child {
+  margin-top: 1.38%;
+}
 
 .registration:after {
   height: 5%;

@@ -1,18 +1,24 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import PasswordInput from "../UI/PasswordInput/PasswordInput";
 import {Link, useNavigate} from "react-router-dom";
 
 const Registration = () => {
+    const [results, setResults] = useState(null);
     const loginInput = useRef(null);
     const emailInput = useRef(null);
     const passwordInput = useRef(null);
     const verificationPasswordInput = useRef(null);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (results && results.total)
+            navigate("/login");
+    }, [results]);
+
     async function registration() {
         let response = await fetch("/registration/register", {
             method: "post",
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
             body: JSON.stringify({
                 "name": loginInput.current.value,
                 "password": passwordInput.current.value,
@@ -20,7 +26,7 @@ const Registration = () => {
             })
         })
         if (response.ok)
-            navigate("/login");
+            setResults(await response.json());
     }
 
     return (
@@ -41,6 +47,11 @@ const Registration = () => {
             <PasswordInput className={"registration__verification-password-input"} maxLength={12}
                placeholder={"Подтвердите пароль"} inputRef={verificationPasswordInput}/>
             <button className={"registration__submit-button"} onClick={registration}> Зарегистрироваться </button>
+            {(results && !results.isNameFree) ? <p className={"registration__error"}> Этот логин уже используется </p> : null}
+            {(results && !results.isNameValid) ? <p className={"registration__error"}> Имя должно состоять минимум из 8 символов и максимум из 30 </p> : null}
+            {(results && !results.isPasswordValid) ? <p className={"registration__error"}> Пароль должен состоять минимум из 8 символов и максимум из 20 </p> : null}
+            {(results && !results.isEmailValid) ? <p className={"registration__error"}> Неверный формат электронной почты </p> : null}
+            {(results && !results.isEmailFree) ? <p className={"registration__error"}> Эта почта уже используется </p> : null}
             <Link className={"registration__link"} to={"/login"}> Уже есть аккаунт? Войти. </Link>
         </div>
     );

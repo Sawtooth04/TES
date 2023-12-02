@@ -31,4 +31,16 @@ public class CustomerRepository implements ICustomerRepository {
     public Customer Get(String name) {
         return template.queryForObject("SELECT * FROM get_customer_by_name(?)", new CustomerMapper(), name);
     }
+
+    @Override
+    public boolean IsCustomerNameFree(String name) {
+        return Boolean.TRUE.equals(template.queryForObject("SELECT * FROM is_customer_name_free(?)",
+            new SingleColumnRowMapper<>(), name));
+    }
+
+    @Override
+    public boolean IsCustomerEmailFree(String email) {
+        return Boolean.TRUE.equals(template.queryForObject("SELECT * FROM is_customer_email_free(?)",
+            new SingleColumnRowMapper<>(), email));
+    }
 }
