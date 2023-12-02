@@ -1,0 +1,47 @@
+.user-menu {
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  max-height: 45%;
+  padding: 0 2vh;
+  right: 0;
+  background-color: #e6f3ff;
+  border: 0.1vw #b4bec7 solid;
+  border-radius: 0 0 0.52vw 0.52vw;
+  transition: transform 200ms ease-out;
+}
+.user-menu .user-menu__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 4.65%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  outline: none;
+  border: #002544 0.2vw solid;
+  border-radius: 0.5vw;
+  background-color: #eef4f7;
+  color: #002544;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+  font-size: 18px;
+  font-family: "TTNormsPro SemiBold", "sans-serif";
+}
+.user-menu .user-menu__button:hover {
+  background-color: #002544;
+  color: #cc194b;
+  cursor: pointer;
+}
+
+.user-menu_hidden {
+  transform: translateY(-100%);
+}
+
+.user-menu_opened {
+  transform: translateY(0);
+}
+
+/*# sourceMappingURL=user-menu.css.map */

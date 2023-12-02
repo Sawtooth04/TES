@@ -1,0 +1,49 @@
+@import "../../public-variables";
+
+.user-menu {
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 12%;
+  max-height: 45%;
+  padding: 0 2vh;
+  right: 0;
+  background-color: $secondary_background_color;
+  border: 0.10vw $border_color solid;
+  border-radius: 0 0 0.52vw 0.52vw;
+  transition: transform 200ms ease-out;
+
+  & .user-menu__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 4.65%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    outline: none;
+    border: $primary_color 0.2vw solid;
+    border-radius: 0.5vw;
+    background-color: $inputs_background_color;
+    color: $primary_color;
+    transition: color 200ms ease-out, background-color 200ms ease-out;
+    font-size: 18px;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .user-menu__button:hover {
+    background-color: $primary_color;
+    color: $secondary_color;
+    cursor: pointer;
+  }
+}
+
+.user-menu_hidden {
+  transform: translateY(-100%);
+}
+
+.user-menu_opened {
+  transform: translateY(0);
+}

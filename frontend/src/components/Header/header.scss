@@ -51,4 +51,17 @@
     width: auto;
     height: 68.75%;
   }
+
+  & .header__user {
+    margin: 0 1.38% 0 0;
+    color: $background_color;
+    font-family: "TTNormsPro SemiBold", "sans-serif";
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 200ms ease-out;
+  }
+
+  & .header__user:hover {
+    color: $secondary_color;
+  }
 }

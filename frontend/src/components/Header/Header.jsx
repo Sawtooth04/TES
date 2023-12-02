@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Header = ({ onSidebarClick, onNotificationsClick, switchCreateRoomDialogState }) => {
+const Header = ({ onSidebarClick, onNotificationsClick, switchCreateRoomDialogState, username, onUserClick }) => {
     return (
         <header className={"header main__header"}>
             <button className={"header__sidebar-button"} onClick={onSidebarClick}>
@@ -15,6 +15,7 @@ const Header = ({ onSidebarClick, onNotificationsClick, switchCreateRoomDialogSt
                     <img src={"/assets/images/icons/notifications.png"} alt={"Notifications"}/>
                 </button>
             </nav>
+            <p className={"header__user"} onClick={onUserClick}> {username} </p>
         </header>
     );
 };

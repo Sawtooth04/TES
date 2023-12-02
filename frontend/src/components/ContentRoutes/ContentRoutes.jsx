@@ -9,14 +9,23 @@ import RoomTask from "../RoomTask/RoomTask";
 import OwnRoomsList from "../OwnRoomsList/OwnRoomsList";
 import StudyingRoomsList from "../StudyingRoomsList/StudyingRoomsList";
 import Notifications from "../Notifications/Notifications";
+import UserMenu from "../UserMenu/UserMenu";
 
 const ContentRoutes = ({ onNavigate }) => {
+    const [username, setUsername] = useState("");
     const [isSidebarHidden, setIsSidebarHidden] = useState(true);
     const [isNotificationsHidden, setIsNotificationsHidden] = useState(true);
+    const [isUserMenuHidden, setIsUserMenuHidden] = useState(true);
     const [createRoomDialogOpened, setCreateRoomDialogOpened] = useState(false);
 
     useEffect(() => {
+        async function getUserName() {
+            let response = await fetch("/authentication/get/username");
+            setUsername(await response.text());
+        }
+
         onNavigate();
+        void getUserName();
     }, []);
 
     function onMount() {
@@ -35,18 +44,25 @@ const ContentRoutes = ({ onNavigate }) => {
         setIsNotificationsHidden(!isNotificationsHidden);
     }
 
+    function onUserMenuStateSwitch() {
+        setIsUserMenuHidden(!isUserMenuHidden);
+    }
+
     function hideMenus(event) {
         setIsSidebarHidden(true);
         setIsNotificationsHidden(true);
+        setIsUserMenuHidden(true);
         event.stopPropagation();
     }
 
     return (
         <div className="main">
-            <Header onSidebarClick={onSidebarStateSwitch} onNotificationsClick={onNotificationsStateSwitch} switchCreateRoomDialogState={switchCreateRoomDialogState}/>
+            <Header onSidebarClick={onSidebarStateSwitch} onNotificationsClick={onNotificationsStateSwitch}
+                switchCreateRoomDialogState={switchCreateRoomDialogState} username={username} onUserClick={onUserMenuStateSwitch}/>
             <div className="main__wrapper">
                 <Sidebar hidden={isSidebarHidden}/>
                 <Notifications hidden={isNotificationsHidden}/>
+                <UserMenu hidden={isUserMenuHidden}/>
                 <div className="main__wrapper__content" onClick={hideMenus}>
                     {(createRoomDialogOpened) ? <CreateRoomForm onCreate={switchCreateRoomDialogState}/> : null}
                     <Routes>
