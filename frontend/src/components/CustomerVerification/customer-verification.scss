@@ -1,0 +1,47 @@
+@import "../../public-variables";
+
+.customer-verification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $background_color;
+
+  & .customer-verification__text {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .customer-verification__successful {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    & .customer-verification__successful__text {
+      margin: 0;
+      text-align: center;
+      font-size: 24px;
+      font-family: 'TTNormsPro SemiBold', 'sans-serif';
+    }
+
+    & .customer-verification__successful__link {
+      margin: 1vh 0 0 0;
+      color: $primary_color;
+      text-align: center;
+      font-size: 24px;
+      font-family: 'TTNormsPro SemiBold', 'sans-serif';
+      transition: color 200ms ease-out;
+    }
+
+    & .customer-verification__successful__link:hover {
+      color: $secondary_color;
+    }
+  }
+}

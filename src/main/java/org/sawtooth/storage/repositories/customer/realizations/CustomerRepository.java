@@ -18,13 +18,13 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public Customer Get(int id) {
-        return template.queryForObject("SELECT * FROM get_customer_by_id(?)", new CustomerMapper(), id);
+    public Customer Get(int customerID) {
+        return template.queryForObject("SELECT * FROM get_customer_by_id(?)", new CustomerMapper(), customerID);
     }
 
     @Override
-    public void Add(Customer customer) {
-        template.query("SELECT * FROM insert_default_customer(?, ?, ?)", new SingleColumnRowMapper<>(),
+    public Integer Add(Customer customer) {
+        return template.queryForObject("SELECT * FROM insert_default_customer(?, ?, ?)", new SingleColumnRowMapper<>(),
             customer.name(), customer.passwordHash(), customer.email());
     }
 
@@ -42,5 +42,10 @@ public class CustomerRepository implements ICustomerRepository {
     public boolean IsCustomerEmailFree(String email) {
         return Boolean.TRUE.equals(template.queryForObject("SELECT * FROM is_customer_email_free(?)",
             new SingleColumnRowMapper<>(), email));
+    }
+
+    @Override
+    public void SetVerified(int customerID) {
+        template.queryForObject("SELECT * FROM set_customer_verified(?)", new SingleColumnRowMapper<>(), customerID);
     }
 }

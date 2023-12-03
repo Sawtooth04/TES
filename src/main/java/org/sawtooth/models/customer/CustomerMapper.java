@@ -12,7 +12,8 @@ public class CustomerMapper implements RowMapper<Customer> {
             resultSet.getString("name"),
             resultSet.getString("passwordHash"),
             resultSet.getString("email"),
-            resultSet.getInt("roleID")
+            resultSet.getInt("roleID"),
+            resultSet.getBoolean("verified")
         );
     }
 }
