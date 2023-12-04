@@ -12,7 +12,7 @@ const Registration = () => {
 
     useEffect(() => {
         if (results && results.total)
-            navigate("/login");
+            navigate(`/registration/verification/${loginInput.current.value}`);
     }, [results]);
 
     async function registration() {

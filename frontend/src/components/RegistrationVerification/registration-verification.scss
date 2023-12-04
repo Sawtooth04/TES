@@ -1,0 +1,31 @@
+@import "../../public-variables";
+
+.registration-verification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $background_color;
+
+  & .registration-verification__text {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+  }
+
+  & .registration-verification__new-link-button {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'TTNormsPro SemiBold', 'sans-serif';
+    transition: color 200ms ease-out;
+    cursor: pointer;
+  }
+
+  & .registration-verification__new-link-button:hover {
+    color: $secondary_color;
+  }
+}
