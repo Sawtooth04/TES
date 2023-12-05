@@ -45,7 +45,7 @@ public class RoomsController {
     public List<Room> GetOwnRooms() {
         try {
             int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
-                    .getAuthentication().getName()).customerID();
+                .getAuthentication().getName()).customerID();
             return storage.GetRepository(IRoomRepository.class).GetCustomerOwnRooms(customerID);
         }
         catch (Exception e) {
@@ -59,7 +59,7 @@ public class RoomsController {
     public List<Room> GetStudyingRooms() {
         try {
             int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
-                    .getAuthentication().getName()).customerID();
+                .getAuthentication().getName()).customerID();
             return storage.GetRepository(IRoomRepository.class).GetCustomerStudyingRooms(customerID);
         }
         catch (Exception e) {

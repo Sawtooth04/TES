@@ -1,4 +1,4 @@
-package org.sawtooth.utils;
+package org.sawtooth.services.jwtbuilder;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,6 +8,7 @@ import org.sawtooth.models.jwtroomlink.JWTRoomLinkPayload;
 import org.sawtooth.models.jwtverification.JWTVerificationHeader;
 import org.sawtooth.models.jwtverification.JWTVerificationPayload;
 import org.springframework.security.crypto.codec.Hex;
+import org.springframework.stereotype.Service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,7 +16,8 @@ import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 
-public class JWTBuilder {
+@Service
+public class JWTBuilder implements IJWTBuilder {
     private final String key = "TESServerPrivateKey";
 
     private String GetRoomLinkHeader() throws JsonProcessingException {
@@ -39,12 +41,14 @@ public class JWTBuilder {
         return Base64.getEncoder().encodeToString(objectWriter.writeValueAsBytes(payload));
     }
 
+    @Override
     public String GetRoomLinkSignature(int roomID, long exp) throws JsonProcessingException, NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         return new String(Hex.encode(digest.digest(String.join(".", GetRoomLinkHeader(),
             GetRoomLinkPayload(roomID, exp)).getBytes())));
     }
 
+    @Override
     public String GetRoomLinkToken(int roomID) throws JsonProcessingException, NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         String token = String.join(".", GetRoomLinkHeader(), GetRoomLinkPayload(roomID));
@@ -72,12 +76,14 @@ public class JWTBuilder {
         return Base64.getEncoder().encodeToString(objectWriter.writeValueAsBytes(payload));
     }
 
+    @Override
     public String GetVerificationSignature(int customerID, long exp) throws JsonProcessingException, NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         return new String(Hex.encode(digest.digest(String.join(".", GetVerificationHeader(),
                 GetVerificationPayload(customerID, exp)).getBytes())));
     }
 
+    @Override
     public String GetVerificationToken(int customerID) throws JsonProcessingException, NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         String token = String.join(".", GetVerificationHeader(), GetVerificationPayload(customerID));

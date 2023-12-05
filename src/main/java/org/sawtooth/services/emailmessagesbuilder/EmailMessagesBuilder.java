@@ -1,14 +1,15 @@
-package org.sawtooth.utils;
+package org.sawtooth.services.emailmessagesbuilder;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmailMessagesBuilder {
+public class EmailMessagesBuilder implements IEmailMessagesBuilder {
     @Value("${spring.mail.username}")
     private String sender;
 
+    @Override
     public SimpleMailMessage BuildEmailConfirmationMessage(String recipient, String token) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(sender);

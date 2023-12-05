@@ -7,6 +7,7 @@ import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.models.roomtaskvariant.RoomTaskVariant;
 import org.sawtooth.models.roomtaskvariant.RoomTaskVariantUploadModel;
+import org.sawtooth.services.tesenginepathesbuilder.ITESEnginePathsBuilder;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
@@ -21,6 +22,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,12 +32,12 @@ import java.util.Objects;
 @RequestMapping("/task-variant")
 public class RoomTaskVariantController {
     private final IStorage storage;
-    @Value("${tes.tasks.folder}")
-    private String tasksPath;
+    private final ITESEnginePathsBuilder pathsBuilder;
 
     @Autowired
-    public RoomTaskVariantController(IStorage storage) {
+    public RoomTaskVariantController(IStorage storage, ITESEnginePathsBuilder pathsBuilder) {
         this.storage = storage;
+        this.pathsBuilder = pathsBuilder;
     }
 
     private boolean ClearDirectory(File directory) {
@@ -49,17 +51,16 @@ public class RoomTaskVariantController {
     @PostMapping("/upload-or-update")
     public void UploadOrUpdate(@RequestBody RoomTaskVariantUploadModel uploadModel) throws IOException, InstantiationException {
         RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(uploadModel.roomTaskID());
-        String path = String.format("%s/%s/%s/%s", tasksPath, roomTask.roomID(), roomTask.roomTaskID(),
-            uploadModel.variant());
+        Path path = pathsBuilder.BuildTaskVariantPath(roomTask.roomID(), roomTask.roomTaskID(), uploadModel.variant());
         ObjectMapper objectMapper = new ObjectMapper();
 
-        ClearDirectory(Files.createDirectories(Paths.get(path)).toFile());
+        ClearDirectory(Files.createDirectories(path).toFile());
         for (int i = 0; i < uploadModel.configs().length; i++)
-            try (FileWriter writer = new FileWriter(String.format("%s/%d.json", path, i), false)) {
+            try (FileWriter writer = new FileWriter(String.format("%s/%d.json", path.toString(), i), false)) {
                 writer.write(objectMapper.writeValueAsString(uploadModel.configs()[i]));
             }
         storage.GetRepository(IRoomTaskVariantRepository.class).Add(new RoomTaskVariant(-1,
-            roomTask.roomTaskID(), uploadModel.variant(), path, uploadModel.description()));
+            roomTask.roomTaskID(), uploadModel.variant(), path.toString(), uploadModel.description()));
     }
 
     @GetMapping("/delete")

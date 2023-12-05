@@ -1,5 +1,6 @@
-package org.sawtooth.utils;
+package org.sawtooth.services.imagehandler;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
@@ -8,7 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ImageHandler {
+@Service
+public class ImageHandler implements IImageHandler {
+    @Override
     public int GetMedianColor(MultipartFile file) throws IOException {
         BufferedImage bufferedImage = ImageIO.read(file.getInputStream());
         ArrayList<Integer> colors = new ArrayList<>();

@@ -1,10 +1,13 @@
-package org.sawtooth.utils;
+package org.sawtooth.services.customernotificationbuilder;
 
 import org.sawtooth.models.customernotification.CustomerNotification;
 import org.sawtooth.models.room.Room;
 import org.sawtooth.models.roomtask.RoomTask;
+import org.springframework.stereotype.Service;
 
-public class CustomerNotificationBuilder {
+@Service
+public class CustomerNotificationBuilder implements ICustomerNotificationBuilder {
+    @Override
     public CustomerNotification BuildAddedTaskNotification(Room room, RoomTask roomTask) {
         return new CustomerNotification(-1,
                 room.name(),
@@ -12,6 +15,7 @@ public class CustomerNotificationBuilder {
             );
     }
 
+    @Override
     public CustomerNotification BuildAcceptedSolutionNotification(Room room, RoomTask roomTask) {
         return new CustomerNotification(-1,
             room.name(),
@@ -19,6 +23,7 @@ public class CustomerNotificationBuilder {
         );
     }
 
+    @Override
     public CustomerNotification BuildDeclinedSolutionNotification(Room room, RoomTask roomTask) {
         return new CustomerNotification(-1,
                 room.name(),
@@ -26,6 +31,7 @@ public class CustomerNotificationBuilder {
         );
     }
 
+    @Override
     public CustomerNotification BuildMessageNotification(String sender, Room room, RoomTask roomTask) {
         return new CustomerNotification(-1,
             String.format("%s: %s", room.name(), roomTask.name()),

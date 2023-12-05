@@ -8,14 +8,16 @@ import org.sawtooth.models.room.Room;
 import org.sawtooth.models.room.RoomBackgroundUploadModel;
 import org.sawtooth.models.room.RoomUpdateModel;
 import org.sawtooth.models.roomrole.RoomRole;
+import org.sawtooth.services.imagehandler.IImageHandler;
+import org.sawtooth.services.jwtbuilder.IJWTBuilder;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCustomerRoleRepository;
 import org.sawtooth.storage.repositories.roomrole.abstractions.IRoomRoleRepository;
-import org.sawtooth.utils.ImageHandler;
-import org.sawtooth.utils.JWTBuilder;
+import org.sawtooth.services.imagehandler.ImageHandler;
+import org.sawtooth.services.jwtbuilder.JWTBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -36,10 +38,14 @@ public class RoomController {
     @Value("${tes.backgrounds.folder}")
     private String backgroundsFolder;
     private final IStorage storage;
+    private final IImageHandler imageHandler;
+    private final IJWTBuilder jwtBuilder;
 
     @Autowired
-    public RoomController(IStorage storage) {
+    public RoomController(IStorage storage, IImageHandler imageHandler, IJWTBuilder jwtBuilder) {
         this.storage = storage;
+        this.imageHandler = imageHandler;
+        this.jwtBuilder = jwtBuilder;
     }
 
     @GetMapping("/get-room")
@@ -76,12 +82,11 @@ public class RoomController {
     @ResponseBody
     public String GetRoomToken(int roomID) {
         try {
-            JWTBuilder builder = new JWTBuilder();
             Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
             RoomRole roomRole = storage.GetRepository(IRoomRoleRepository.class).Get("teacher");
             if (storage.GetRepository(IRoomCustomerRoleRepository.class).IsCustomerHasRole(roomID, customer, roomRole))
-                return builder.GetRoomLinkToken(roomID);
+                return jwtBuilder.GetRoomLinkToken(roomID);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -93,14 +98,13 @@ public class RoomController {
     @ResponseBody
     public boolean JoinRoom(String token) {
         try {
-            JWTBuilder builder = new JWTBuilder();
             Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
             ObjectReader reader = new ObjectMapper().readerFor(JWTRoomLinkPayload.class);
             String[] parts = token.split("\\.");
             JWTRoomLinkPayload payload = reader.readValue(Base64.getDecoder().decode(parts[1]));
 
-            if (Objects.equals(parts[2], builder.GetRoomLinkSignature(payload.roomID(), payload.exp())) && payload.exp() > new Date().getTime()) {
+            if (Objects.equals(parts[2], jwtBuilder.GetRoomLinkSignature(payload.roomID(), payload.exp())) && payload.exp() > new Date().getTime()) {
                 storage.GetRepository(IRoomCustomerRepository.class).Add(payload.roomID(), customer.customerID());
                 return true;
             }
@@ -134,7 +138,6 @@ public class RoomController {
             Customer customer = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
             RoomRole roomRole = storage.GetRepository(IRoomRoleRepository.class).Get("teacher");
-            ImageHandler imageHandler = new ImageHandler();
             Path path = Path.of(String.format("%s/", backgroundsFolder));
             String filePath = String.format("%s/%d.jpg", path, uploadModel.roomID());
 

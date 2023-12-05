@@ -8,6 +8,7 @@ import org.sawtooth.launcher.configuration.abstractions.ILauncherConfigurationPr
 import org.sawtooth.launcher.configuration.models.LauncherConfiguration;
 import org.sawtooth.models.roomtaskvariant.RoomTaskVariant;
 import org.sawtooth.models.solutionlaunchresult.SolutionLaunchResult;
+import org.sawtooth.services.tesenginepathesbuilder.ITESEnginePathsBuilder;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomtaskvariant.abstractions.IRoomTaskVariantRepository;
@@ -27,29 +28,26 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/test")
 public class TestLaunchController {
-    @Value("${tes.solutions.folder}")
-    private String solutionsPath;
-    @Value("${tes.tasks.folder}")
-    private String tasksPath;
-    @Value("${tes.path.placeholder}")
-    private String pathPlaceholder;
-    @Value("${tes.solution.placeholder}")
-    private String solutionPlaceholder;
-
     private final ILanguageConfigurationProvider languageConfigurationProvider;
     private final ICompiler compiler;
     private final ITesterLauncher testerLauncher;
     private final ILauncherConfigurationProvider launcherConfigurationProvider;
     private final IStorage storage;
+    private final ITESEnginePathsBuilder pathsBuilder;
+    @Value("${tes.path.placeholder}")
+    private String pathPlaceholder;
+    @Value("${tes.solution.placeholder}")
+    private String solutionPlaceholder;
 
     @Autowired
     public TestLaunchController(ILanguageConfigurationProvider provider, ICompiler compiler, IStorage storage,
-        ITesterLauncher testerLauncher, ILauncherConfigurationProvider launcherConfigurationProvider) {
+        ITesterLauncher testerLauncher, ILauncherConfigurationProvider launcherConfigurationProvider, ITESEnginePathsBuilder pathsBuilder) {
         this.languageConfigurationProvider = provider;
         this.compiler = compiler;
         this.testerLauncher = testerLauncher;
         this.launcherConfigurationProvider = launcherConfigurationProvider;
         this.storage = storage;
+        this.pathsBuilder = pathsBuilder;
     }
 
     private boolean TryCompile(LanguageConfiguration languageConfiguration, String rootPath, String solution) {
@@ -95,9 +93,9 @@ public class TestLaunchController {
         int variant = storage.GetRepository(IRoomCustomerRepository.class).GetVariant(authentication.getName(),roomID);
         RoomTaskVariant taskVariant = storage.GetRepository(IRoomTaskVariantRepository.class).Get(taskID, variant);
         ArrayList<LauncherConfiguration> launcherConfigurations = launcherConfigurationProvider.TryGetLauncherConfigurations(
-            String.format("%s/%d/%d/%d", tasksPath, roomID, taskID, taskVariant.variant()));
+            pathsBuilder.BuildTaskVariantPath(roomID, taskID, taskVariant.variant()).toString());
         LanguageConfiguration languageConfiguration = languageConfigurationProvider.TryGetValue(language);
-        String rootPath = String.format("%s/%d/%d/%s", solutionsPath, roomID, taskID, authentication.getName());
+        String rootPath = pathsBuilder.BuildSolutionPath(roomID, taskID, authentication.getName()).toString();
         SetLaunchCommand(languageConfiguration, rootPath, solution);
         if (TryCompile(languageConfiguration, rootPath, solution))
             return ResponseEntity.status(HttpStatus.OK).body(LaunchAll(languageConfiguration, solution,

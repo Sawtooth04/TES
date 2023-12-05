@@ -55,7 +55,7 @@ public class RoomTaskCommentController {
     public void Delete(@RequestBody RoomTaskCommentView roomTaskComment) {
         try {
             int customerID = storage.GetRepository(ICustomerRepository.class).Get(
-                    SecurityContextHolder.getContext().getAuthentication().getName()).customerID();
+                SecurityContextHolder.getContext().getAuthentication().getName()).customerID();
             RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomTaskComment.roomTaskID());
 
             if (storage.GetRepository(IRoomCustomerRepository.class).IsCustomerInRoom(customerID, roomTask.roomID()))

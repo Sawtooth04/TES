@@ -6,6 +6,9 @@ import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomsolution.*;
 import org.sawtooth.models.roomtask.RoomTask;
 import org.sawtooth.models.solutiontreeitem.SolutionTreeItem;
+import org.sawtooth.services.customernotificationbuilder.ICustomerNotificationBuilder;
+import org.sawtooth.services.roomsolutiontreebuilder.IRoomSolutionTreeBuilder;
+import org.sawtooth.services.tesenginepathesbuilder.ITESEnginePathsBuilder;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.customernotificationrepository.abstractions.ICustomerNotificationRepository;
@@ -13,8 +16,8 @@ import org.sawtooth.storage.repositories.room.abstractions.IRoomRepository;
 import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomerRepository;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
-import org.sawtooth.utils.CustomerNotificationBuilder;
-import org.sawtooth.utils.RoomSolutionTreeBuilder;
+import org.sawtooth.services.customernotificationbuilder.CustomerNotificationBuilder;
+import org.sawtooth.services.roomsolutiontreebuilder.RoomSolutionTreeBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,7 +29,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -34,16 +36,17 @@ import java.util.zip.ZipInputStream;
 @RequestMapping("/solution")
 public class RoomSolutionController {
     private final IStorage storage;
-    @Value("${tes.solutions.folder}")
-    private String solutionsPath;
-    @Value("${tes.temp.folder}")
-    private String tempPath;
-    @Value("${tes.solutions.sources.folder}")
-    private String sourcesFolder;
+    private final ICustomerNotificationBuilder customerNotificationBuilder;
+    private final IRoomSolutionTreeBuilder roomSolutionTreeBuilder;
+    private final ITESEnginePathsBuilder pathsBuilder;
 
     @Autowired
-    public RoomSolutionController(IStorage storage) {
+    public RoomSolutionController(IStorage storage, ICustomerNotificationBuilder customerNotificationBuilder,
+        IRoomSolutionTreeBuilder roomSolutionTreeBuilder, ITESEnginePathsBuilder pathsBuilder) {
         this.storage = storage;
+        this.customerNotificationBuilder = customerNotificationBuilder;
+        this.roomSolutionTreeBuilder = roomSolutionTreeBuilder;
+        this.pathsBuilder = pathsBuilder;
     }
 
     private void WriteFile(String newFilePath, ZipInputStream zipInputStream) throws IOException {
@@ -53,11 +56,11 @@ public class RoomSolutionController {
         }
     }
 
-    private String UnZip(String path, RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
+    private String UnZip(String path, RoomSolutionUploadModel solutionUploadModel, String username) throws IOException {
         ZipEntry entry;
         Path newFilePath;
-        Path rootPath = Files.createDirectories(Paths.get(String.format("%s/%s/%s/%s/%s", solutionsPath,
-            solutionUploadModel.roomID(), solutionUploadModel.taskID(), userName, sourcesFolder)));
+        Path rootPath = Files.createDirectories(pathsBuilder.BuildSolutionSourcesPath(solutionUploadModel.roomID(),
+            solutionUploadModel.taskID(), username));
 
         try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(path))) {
             while((entry = zipInputStream.getNextEntry()) != null) {
@@ -71,20 +74,18 @@ public class RoomSolutionController {
         return rootPath.toString();
     }
 
-    private String WriteTempSolution(RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
-        String path = String.format("%s/%s/%s/%s", tempPath, solutionUploadModel.roomID(), solutionUploadModel.taskID(),
-            userName);
-        String filePath = String.format("%s/%s", path, solutionUploadModel.file().getOriginalFilename());
+    private String WriteTempSolution(RoomSolutionUploadModel solutionUploadModel, String username) throws IOException {
+        Path path = pathsBuilder.BuildCustomerTempPath(solutionUploadModel.roomID(), solutionUploadModel.taskID(), username);
+        String filePath = String.format("%s/%s", path.toString(), solutionUploadModel.file().getOriginalFilename());
 
-        Files.createDirectories(Paths.get(path));
+        Files.createDirectories(path);
         solutionUploadModel.file().transferTo(new File(filePath));
         return filePath;
     }
 
-    private void DeleteTempSolution(RoomSolutionUploadModel solutionUploadModel, String userName) throws IOException {
-        String path = String.format("%s/%s/%s/%s", tempPath, solutionUploadModel.roomID(), solutionUploadModel.taskID(),
-                userName);
-        String filePath = String.format("%s/%s", path, solutionUploadModel.file().getOriginalFilename());
+    private void DeleteTempSolution(RoomSolutionUploadModel solutionUploadModel, String username) throws IOException {
+        Path path = pathsBuilder.BuildCustomerTempPath(solutionUploadModel.roomID(), solutionUploadModel.taskID(), username);
+        String filePath = String.format("%s/%s", path.toString(), solutionUploadModel.file().getOriginalFilename());
 
         Files.deleteIfExists(Path.of(filePath));
     }
@@ -110,7 +111,6 @@ public class RoomSolutionController {
 
     @PostMapping("/set-accepted")
     public void SetAccepted(@RequestBody int roomSolutionID) throws InstantiationException {
-        CustomerNotificationBuilder customerNotificationBuilder = new CustomerNotificationBuilder();
         RoomSolution roomSolution = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID);
         RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomSolution.roomCustomerID());
         RoomTask roomTask = storage.GetRepository(IRoomTaskRepository.class).Get(roomSolution.roomTaskID());
@@ -165,7 +165,7 @@ public class RoomSolutionController {
     @ResponseBody
     public ArrayList<SolutionTreeItem> GetSolutionTreeLevel(int roomSolutionID, String relativePath) throws InstantiationException {
         String fullPath = storage.GetRepository(IRoomSolutionRepository.class).Get(roomSolutionID).path().concat(relativePath);
-        return (new RoomSolutionTreeBuilder()).GetRoomSolutionTree(fullPath);
+        return roomSolutionTreeBuilder.GetRoomSolutionTree(fullPath);
     }
 
     @GetMapping("/get-solution-tree-file")

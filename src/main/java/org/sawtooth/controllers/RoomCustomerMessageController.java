@@ -6,6 +6,7 @@ import org.sawtooth.models.roomcustomer.RoomCustomer;
 import org.sawtooth.models.roomcustomermessage.*;
 import org.sawtooth.models.roomsolution.RoomSolution;
 import org.sawtooth.models.roomtask.RoomTask;
+import org.sawtooth.services.customernotificationbuilder.ICustomerNotificationBuilder;
 import org.sawtooth.storage.abstractions.IStorage;
 import org.sawtooth.storage.repositories.customer.abstractions.ICustomerRepository;
 import org.sawtooth.storage.repositories.customernotificationrepository.abstractions.ICustomerNotificationRepository;
@@ -14,7 +15,6 @@ import org.sawtooth.storage.repositories.roomcustomer.abstractions.IRoomCustomer
 import org.sawtooth.storage.repositories.roomcustomermessage.abstractions.IRoomCustomerMessageRepository;
 import org.sawtooth.storage.repositories.roomsolution.abstractions.IRoomSolutionRepository;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
-import org.sawtooth.utils.CustomerNotificationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -25,10 +25,12 @@ import java.util.List;
 @RequestMapping("/room-customer-message")
 public class RoomCustomerMessageController {
     private final IStorage storage;
+    private final ICustomerNotificationBuilder customerNotificationBuilder;
 
     @Autowired
-    public RoomCustomerMessageController(IStorage storage) {
+    public RoomCustomerMessageController(IStorage storage, ICustomerNotificationBuilder notificationBuilder) {
         this.storage = storage;
+        this.customerNotificationBuilder = notificationBuilder;
     }
 
     @PostMapping("/add-member")
@@ -49,7 +51,6 @@ public class RoomCustomerMessageController {
     @PostMapping("/add-teacher")
     public void AddTeacher(@RequestBody RoomTeacherMessageUploadModel message) {
         try {
-            CustomerNotificationBuilder customerNotificationBuilder = new CustomerNotificationBuilder();
             int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
                 .getAuthentication().getName()).customerID();
             RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(message.roomID(), customerID);
@@ -79,7 +80,7 @@ public class RoomCustomerMessageController {
             RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomTask.roomID(), customerID);
 
             storage.GetRepository(IRoomCustomerMessageRepository.class).AddTeacherMessage(roomCustomer.roomCustomerID(),
-                    roomTask.roomTaskID(), message.text(), roomSolution.roomCustomerID());
+                roomTask.roomTaskID(), message.text(), roomSolution.roomCustomerID());
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -123,7 +124,7 @@ public class RoomCustomerMessageController {
     @GetMapping("/get-messages-meta")
     public List<RoomCustomerMessageMeta> GetTeacherPageMeta(int roomID) throws InstantiationException {
         int customerID = storage.GetRepository(ICustomerRepository.class).Get(SecurityContextHolder.getContext()
-                .getAuthentication().getName()).customerID();
+            .getAuthentication().getName()).customerID();
         RoomCustomer roomCustomer = storage.GetRepository(IRoomCustomerRepository.class).Get(roomID, customerID);
 
         return storage.GetRepository(IRoomCustomerMessageRepository.class).GetMessagesMeta(roomID, roomCustomer.roomCustomerID());

@@ -16,7 +16,7 @@ import org.sawtooth.storage.repositories.roomcustomerrole.abstractions.IRoomCust
 import org.sawtooth.storage.repositories.roomrole.abstractions.IRoomRoleRepository;
 import org.sawtooth.storage.repositories.roomtask.abstractions.IRoomTaskRepository;
 
-import org.sawtooth.utils.CustomerNotificationBuilder;
+import org.sawtooth.services.customernotificationbuilder.CustomerNotificationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
