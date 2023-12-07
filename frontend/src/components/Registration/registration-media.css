@@ -1,0 +1,171 @@
+@media (max-width: 375px) {
+  .registration .registration__logo-underline {
+    width: 70%;
+  }
+  .registration > .registration__password-input {
+    width: 64%;
+  }
+  .registration .registration__input {
+    width: 64%;
+  }
+}
+@media (max-width: 425px) {
+  .registration .registration__logo {
+    width: 20%;
+  }
+  .registration > .registration__password-input > .password-input__input {
+    font-size: 14px;
+  }
+  .registration .registration__input {
+    font-size: 14px;
+  }
+  .registration .registration__submit-button {
+    width: 40%;
+    font-size: 16px;
+  }
+
+  .registration-header .registration-header__name {
+    font-size: 20px;
+  }
+}
+@media (min-width: 376px) and (max-width: 425px) {
+  .registration .registration__logo-underline {
+    width: 55%;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .registration .registration__logo {
+    width: 17%;
+  }
+  .registration .registration__logo-underline {
+    width: 40%;
+  }
+  .registration > .registration__password-input {
+    width: 37%;
+  }
+  .registration > .registration__password-input > .password-input__input {
+    font-size: 18px;
+  }
+  .registration .registration__input {
+    width: 37%;
+    font-size: 18px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 26px;
+  }
+  .registration .registration__submit-button {
+    width: 20%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .registration .registration__logo {
+    width: 17%;
+  }
+  .registration .registration__logo-underline {
+    width: 32%;
+  }
+  .registration > .registration__password-input {
+    width: 29%;
+  }
+  .registration > .registration__password-input > .password-input__input {
+    font-size: 18px;
+  }
+  .registration .registration__input {
+    width: 29%;
+    font-size: 18px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 26px;
+  }
+  .registration .registration__submit-button {
+    width: 20%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .registration .registration__logo {
+    width: 10%;
+  }
+  .registration .registration__logo-underline {
+    width: 26%;
+  }
+  .registration > .registration__password-input {
+    width: 24%;
+  }
+  .registration > .registration__password-input > .password-input__input {
+    font-size: 22px;
+  }
+  .registration .registration__input {
+    width: 24%;
+    font-size: 22px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 30px;
+  }
+  .registration .registration__submit-button {
+    width: 14%;
+    font-size: 22px;
+  }
+  .registration .registration__link {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .registration .registration__logo {
+    width: 10%;
+  }
+  .registration .registration__logo-underline {
+    width: 26%;
+  }
+  .registration > .registration__password-input {
+    width: 24%;
+  }
+  .registration > .registration__password-input > .password-input__input {
+    font-size: 32px;
+  }
+  .registration .registration__input {
+    width: 24%;
+    font-size: 32px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 40px;
+  }
+  .registration .registration__submit-button {
+    width: 14%;
+    font-size: 32px;
+  }
+  .registration .registration__link {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .registration .registration__logo {
+    width: 7%;
+  }
+  .registration .registration__logo-underline {
+    width: 30%;
+  }
+  .registration > .registration__password-input {
+    width: 27%;
+  }
+  .registration > .registration__password-input > .password-input__input {
+    font-size: 40px;
+  }
+  .registration .registration__input {
+    width: 27%;
+    font-size: 40px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 50px;
+  }
+  .registration .registration__submit-button {
+    width: 18%;
+    font-size: 40px;
+  }
+  .registration .registration__link {
+    font-size: 38px;
+  }
+}
+
+/*# sourceMappingURL=registration-media.css.map */

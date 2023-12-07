@@ -1,0 +1,252 @@
+@media (max-width: 375px) {
+  .registration {
+    & .registration__logo-underline {
+      width: 70%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      width: 64%;
+    }
+
+    & .registration__input {
+      width: 64%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .registration {
+    & .registration__logo {
+      width: 20%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      & > .password-input__input {
+        font-size: 14px;
+      }
+    }
+
+    & .registration__input {
+      font-size: 14px;
+    }
+
+    & .registration__submit-button {
+      width: 53%;
+      font-size: 16px;
+    }
+  }
+
+  .registration-header {
+    & .registration-header__name {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .registration {
+    & .registration__logo-underline {
+      width: 55%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      width: 51%;
+    }
+
+    & .registration__input {
+      width: 51%;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .registration {
+    & .registration__logo {
+      width: 17%;
+    }
+
+    & .registration__logo-underline {
+      width: 40%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      width: 37%;
+
+      & > .password-input__input {
+        font-size: 18px;
+      }
+    }
+
+    & .registration__input {
+      width: 37%;
+      font-size: 18px;
+    }
+
+    .registration-header {
+      & .registration-header__name {
+        font-size: 26px;
+      }
+    }
+
+    & .registration__submit-button {
+      width: 30%;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .registration {
+    & .registration__logo {
+      width: 17%;
+    }
+
+    & .registration__logo-underline {
+      width: 32%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      width: 29%;
+
+      & > .password-input__input {
+        font-size: 18px;
+      }
+    }
+
+    & .registration__input {
+      width: 29%;
+      font-size: 18px;
+    }
+
+    .registration-header {
+      & .registration-header__name {
+        font-size: 26px;
+      }
+    }
+
+    & .registration__submit-button {
+      width: 25%;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .registration {
+    & .registration__logo {
+      width: 10%;
+    }
+
+    & .registration__logo-underline {
+      width: 26%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      width: 24%;
+
+      & > .password-input__input {
+        font-size: 22px;
+      }
+    }
+
+    & .registration__input {
+      width: 24%;
+      font-size: 22px;
+    }
+
+    .registration-header {
+      & .registration-header__name {
+        font-size: 30px;
+      }
+    }
+
+    & .registration__submit-button {
+      width: 20%;
+      font-size: 22px;
+    }
+
+    & .registration__link {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .registration {
+    & .registration__logo {
+      width: 10%;
+    }
+
+    & .registration__logo-underline {
+      width: 26%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      width: 24%;
+
+      & > .password-input__input {
+        font-size: 32px;
+      }
+    }
+
+    & .registration__input {
+      width: 24%;
+      font-size: 32px;
+    }
+
+    .registration-header {
+      & .registration-header__name {
+        font-size: 40px;
+      }
+    }
+
+    & .registration__submit-button {
+      width: 20%;
+      font-size: 32px;
+    }
+
+    & .registration__link {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .registration {
+    & .registration__logo {
+      width: 7%;
+    }
+
+    & .registration__logo-underline {
+      width: 30%;
+    }
+
+    & > .registration__password-input, > .registration__verification-password-input {
+      width: 27%;
+
+      & > .password-input__input {
+        font-size: 40px;
+      }
+    }
+
+    & .registration__input {
+      width: 27%;
+      font-size: 40px;
+    }
+
+    .registration-header {
+      & .registration-header__name {
+        font-size: 50px;
+      }
+    }
+
+    & .registration__submit-button {
+      width: 18%;
+      font-size: 40px;
+    }
+
+    & .registration__link {
+      font-size: 38px;
+    }
+  }
+}

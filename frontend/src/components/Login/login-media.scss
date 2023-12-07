@@ -1,0 +1,244 @@
+@media (max-width: 375px) {
+  .login {
+    & .login__logo-underline {
+      width: 70%;
+    }
+
+    & > .login__password-input {
+      width: 64%;
+    }
+
+    & .login__input {
+      width: 64%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .login {
+    & .login__logo {
+      width: 20%;
+    }
+
+    & > .login__password-input {
+      & > .password-input__input {
+        font-size: 14px;
+      }
+    }
+
+    & .login__input {
+      font-size: 14px;
+    }
+
+    & .login__submit-button {
+      width: 40%;
+      font-size: 16px;
+    }
+  }
+
+  .login-header {
+    & .login-header__name {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .login {
+    & .login__logo-underline {
+      width: 55%;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .login {
+    & .login__logo {
+      width: 17%;
+    }
+
+    & .login__logo-underline {
+      width: 40%;
+    }
+
+    & > .login__password-input {
+      width: 37%;
+
+      & > .password-input__input {
+        font-size: 18px;
+      }
+    }
+
+    & .login__input {
+      width: 37%;
+      font-size: 18px;
+    }
+
+    .login-header {
+      & .login-header__name {
+        font-size: 26px;
+      }
+    }
+
+    & .login__submit-button {
+      width: 20%;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login {
+    & .login__logo {
+      width: 17%;
+    }
+
+    & .login__logo-underline {
+      width: 32%;
+    }
+
+    & > .login__password-input {
+      width: 29%;
+
+      & > .password-input__input {
+        font-size: 18px;
+      }
+    }
+
+    & .login__input {
+      width: 29%;
+      font-size: 18px;
+    }
+
+    .login-header {
+      & .login-header__name {
+        font-size: 26px;
+      }
+    }
+
+    & .login__submit-button {
+      width: 20%;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .login {
+    & .login__logo {
+      width: 10%;
+    }
+
+    & .login__logo-underline {
+      width: 26%;
+    }
+
+    & > .login__password-input {
+      width: 24%;
+
+      & > .password-input__input {
+        font-size: 22px;
+      }
+    }
+
+    & .login__input {
+      width: 24%;
+      font-size: 22px;
+    }
+
+    .login-header {
+      & .login-header__name {
+        font-size: 30px;
+      }
+    }
+
+    & .login__submit-button {
+      width: 14%;
+      font-size: 22px;
+    }
+
+    & .login__link {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login {
+    & .login__logo {
+      width: 10%;
+    }
+
+    & .login__logo-underline {
+      width: 26%;
+    }
+
+    & > .login__password-input {
+      width: 24%;
+
+      & > .password-input__input {
+        font-size: 32px;
+      }
+    }
+
+    & .login__input {
+      width: 24%;
+      font-size: 32px;
+    }
+
+    .login-header {
+      & .login-header__name {
+        font-size: 40px;
+      }
+    }
+
+    & .login__submit-button {
+      width: 14%;
+      font-size: 32px;
+    }
+
+    & .login__link {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .login {
+    & .login__logo {
+      width: 7%;
+    }
+
+    & .login__logo-underline {
+      width: 30%;
+    }
+
+    & > .login__password-input {
+      width: 27%;
+
+      & > .password-input__input {
+        font-size: 40px;
+      }
+    }
+
+    & .login__input {
+      width: 27%;
+      font-size: 40px;
+    }
+
+    .login-header {
+      & .login-header__name {
+        font-size: 50px;
+      }
+    }
+
+    & .login__submit-button {
+      width: 18%;
+      font-size: 40px;
+    }
+
+    & .login__link {
+      font-size: 38px;
+    }
+  }
+}
