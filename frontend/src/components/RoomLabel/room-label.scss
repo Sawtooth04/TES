@@ -11,21 +11,18 @@
   & .room-label__header {
     display: flex;
     align-items: center;
-    height: 19.79%;
     padding: 0 8.62%;
 
     & .room-label__header__name {
       margin: 0;
       color: $primary_color;
       font-family: "TTNormsPro SemiBold", "sans-serif";
-      font-size: 28px;
     }
   }
 
   & .room-label__meta {
     display: flex;
     align-items: center;
-    height: 13.99%;
     padding: 0 8.62%;
     border-bottom: $border_color 0.2vw solid;
 
@@ -33,19 +30,14 @@
       margin: 0;
       color: $primary_color;
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 18px;
     }
   }
 
   & .room-label__nearest-tasks {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 0 8.62%;
     flex-shrink: 1;
-
-    & .room-label__nearest-tasks__near-task {
-      padding: 4.31% 0;
-    }
   }
 }

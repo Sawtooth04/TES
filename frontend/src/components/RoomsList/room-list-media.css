@@ -1,0 +1,9 @@
+@media (max-width: 375px) {
+  .rooms-list .room-label {
+    width: 95%;
+    height: 60%;
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=room-list-media.css.map */

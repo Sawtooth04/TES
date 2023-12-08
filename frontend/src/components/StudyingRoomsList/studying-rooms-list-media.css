@@ -1,0 +1,194 @@
+@media (max-width: 425px) {
+  .studying-rooms-list {
+    justify-content: center;
+    align-content: start;
+  }
+  .studying-rooms-list .room-label {
+    width: 75%;
+    height: 40%;
+    margin: 4vh 0 0 0;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 13%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 20px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 8%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 14px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 14px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 14px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 29.3%;
+    height: 40%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 13%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 20px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 8%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 14px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 14px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 14px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 21%;
+    height: 45%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 24px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 18px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 17px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 21%;
+    height: 35%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 30px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 28px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 20px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 16.1%;
+    height: 35%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 34px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 30px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 22px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 16.1%;
+    height: 33%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 38px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 34px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 26px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 26px;
+  }
+}
+
+/*# sourceMappingURL=studying-rooms-list-media.css.map */

@@ -1,3 +1,172 @@
+@media (max-width: 375px) {
+  .login .login__logo-underline {
+    width: 70%;
+  }
+  .login > .login__password-input {
+    width: 64%;
+  }
+  .login .login__input {
+    width: 64%;
+  }
+}
+@media (max-width: 425px) {
+  .login .login__logo {
+    width: 20%;
+  }
+  .login > .login__password-input > .password-input__input {
+    font-size: 14px;
+  }
+  .login .login__input {
+    font-size: 14px;
+  }
+  .login .login__submit-button {
+    width: 40%;
+    font-size: 16px;
+  }
+
+  .login-header .login-header__name {
+    font-size: 20px;
+  }
+}
+@media (min-width: 376px) and (max-width: 425px) {
+  .login .login__logo-underline {
+    width: 55%;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .login .login__logo {
+    width: 17%;
+  }
+  .login .login__logo-underline {
+    width: 40%;
+  }
+  .login > .login__password-input {
+    width: 37%;
+  }
+  .login > .login__password-input > .password-input__input {
+    font-size: 18px;
+  }
+  .login .login__input {
+    width: 37%;
+    font-size: 18px;
+  }
+  .login .login-header .login-header__name {
+    font-size: 26px;
+  }
+  .login .login__submit-button {
+    width: 20%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login .login__logo {
+    width: 17%;
+  }
+  .login .login__logo-underline {
+    width: 32%;
+  }
+  .login > .login__password-input {
+    width: 29%;
+  }
+  .login > .login__password-input > .password-input__input {
+    font-size: 18px;
+  }
+  .login .login__input {
+    width: 29%;
+    font-size: 18px;
+  }
+  .login .login-header .login-header__name {
+    font-size: 26px;
+  }
+  .login .login__submit-button {
+    width: 20%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .login .login__logo {
+    width: 10%;
+  }
+  .login .login__logo-underline {
+    width: 26%;
+  }
+  .login > .login__password-input {
+    width: 24%;
+  }
+  .login > .login__password-input > .password-input__input {
+    font-size: 22px;
+  }
+  .login .login__input {
+    width: 24%;
+    font-size: 22px;
+  }
+  .login .login-header .login-header__name {
+    font-size: 30px;
+  }
+  .login .login__submit-button {
+    width: 14%;
+    font-size: 22px;
+  }
+  .login .login__link {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .login .login__logo {
+    width: 10%;
+  }
+  .login .login__logo-underline {
+    width: 26%;
+  }
+  .login > .login__password-input {
+    width: 24%;
+  }
+  .login > .login__password-input > .password-input__input {
+    font-size: 32px;
+  }
+  .login .login__input {
+    width: 24%;
+    font-size: 32px;
+  }
+  .login .login-header .login-header__name {
+    font-size: 40px;
+  }
+  .login .login__submit-button {
+    width: 14%;
+    font-size: 32px;
+  }
+  .login .login__link {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .login .login__logo {
+    width: 7%;
+  }
+  .login .login__logo-underline {
+    width: 30%;
+  }
+  .login > .login__password-input {
+    width: 27%;
+  }
+  .login > .login__password-input > .password-input__input {
+    font-size: 40px;
+  }
+  .login .login__input {
+    width: 27%;
+    font-size: 40px;
+  }
+  .login .login-header .login-header__name {
+    font-size: 50px;
+  }
+  .login .login__submit-button {
+    width: 18%;
+    font-size: 40px;
+  }
+  .login .login__link {
+    font-size: 38px;
+  }
+}
 .login {
   display: flex;
   flex-direction: column;
@@ -8,12 +177,10 @@
   background-color: #ecf6ff;
 }
 .login .login__logo {
-  width: 10.41%;
   height: auto;
 }
 .login .login__logo-underline {
-  width: 30.04%;
-  height: 0.3%;
+  height: 0.3vh;
   content: "";
   background-color: #002544;
 }
@@ -22,7 +189,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 20.83%;
   height: 3.7%;
   margin-top: 1.38%;
   padding: 0.15% 0.78%;
@@ -37,7 +203,6 @@
   border: none;
   border-radius: 0.5vw;
   background-color: #eef4f7;
-  font-size: 22px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login > .login__password-input > .password-input__button {
@@ -57,7 +222,6 @@
   width: auto;
 }
 .login .login__input {
-  width: 20.83%;
   height: 3.7%;
   padding: 0.15% 0.78%;
   margin-top: 1.38%;
@@ -65,14 +229,12 @@
   border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
-  font-size: 22px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login .login__submit-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 14.58%;
   height: 4.65%;
   margin-top: 1.38%;
   outline: none;
@@ -81,7 +243,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 22px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login .login__submit-button:hover {
@@ -94,7 +255,6 @@
   text-decoration: none;
   color: rgba(0, 37, 68, 0.67);
   transition: color 200ms ease-out;
-  font-size: 18px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login .login__link:hover {
@@ -114,7 +274,6 @@
 }
 .login-header .login-header__name {
   margin: 0 0.7% 0 0.7%;
-  font-size: 36px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .login-header .login-header__name_primary {
@@ -124,6 +283,181 @@
   color: #cc194b;
 }
 
+@media (max-width: 375px) {
+  .registration .registration__logo-underline {
+    width: 70%;
+  }
+  .registration > .registration__password-input, .registration > .registration__verification-password-input {
+    width: 64%;
+  }
+  .registration .registration__input {
+    width: 64%;
+  }
+}
+@media (max-width: 425px) {
+  .registration .registration__logo {
+    width: 20%;
+  }
+  .registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
+    font-size: 14px;
+  }
+  .registration .registration__input {
+    font-size: 14px;
+  }
+  .registration .registration__submit-button {
+    width: 53%;
+    font-size: 16px;
+  }
+
+  .registration-header .registration-header__name {
+    font-size: 20px;
+  }
+}
+@media (min-width: 376px) and (max-width: 425px) {
+  .registration .registration__logo-underline {
+    width: 55%;
+  }
+  .registration > .registration__password-input, .registration > .registration__verification-password-input {
+    width: 51%;
+  }
+  .registration .registration__input {
+    width: 51%;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .registration .registration__logo {
+    width: 17%;
+  }
+  .registration .registration__logo-underline {
+    width: 40%;
+  }
+  .registration > .registration__password-input, .registration > .registration__verification-password-input {
+    width: 37%;
+  }
+  .registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
+    font-size: 18px;
+  }
+  .registration .registration__input {
+    width: 37%;
+    font-size: 18px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 26px;
+  }
+  .registration .registration__submit-button {
+    width: 30%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .registration .registration__logo {
+    width: 17%;
+  }
+  .registration .registration__logo-underline {
+    width: 32%;
+  }
+  .registration > .registration__password-input, .registration > .registration__verification-password-input {
+    width: 29%;
+  }
+  .registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
+    font-size: 18px;
+  }
+  .registration .registration__input {
+    width: 29%;
+    font-size: 18px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 26px;
+  }
+  .registration .registration__submit-button {
+    width: 25%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .registration .registration__logo {
+    width: 10%;
+  }
+  .registration .registration__logo-underline {
+    width: 26%;
+  }
+  .registration > .registration__password-input, .registration > .registration__verification-password-input {
+    width: 24%;
+  }
+  .registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
+    font-size: 22px;
+  }
+  .registration .registration__input {
+    width: 24%;
+    font-size: 22px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 30px;
+  }
+  .registration .registration__submit-button {
+    width: 20%;
+    font-size: 22px;
+  }
+  .registration .registration__link {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .registration .registration__logo {
+    width: 10%;
+  }
+  .registration .registration__logo-underline {
+    width: 26%;
+  }
+  .registration > .registration__password-input, .registration > .registration__verification-password-input {
+    width: 24%;
+  }
+  .registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
+    font-size: 32px;
+  }
+  .registration .registration__input {
+    width: 24%;
+    font-size: 32px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 40px;
+  }
+  .registration .registration__submit-button {
+    width: 20%;
+    font-size: 32px;
+  }
+  .registration .registration__link {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .registration .registration__logo {
+    width: 7%;
+  }
+  .registration .registration__logo-underline {
+    width: 30%;
+  }
+  .registration > .registration__password-input, .registration > .registration__verification-password-input {
+    width: 27%;
+  }
+  .registration > .registration__password-input > .password-input__input, .registration > .registration__verification-password-input > .password-input__input {
+    font-size: 40px;
+  }
+  .registration .registration__input {
+    width: 27%;
+    font-size: 40px;
+  }
+  .registration .registration-header .registration-header__name {
+    font-size: 50px;
+  }
+  .registration .registration__submit-button {
+    width: 18%;
+    font-size: 40px;
+  }
+  .registration .registration__link {
+    font-size: 38px;
+  }
+}
 .registration {
   display: flex;
   flex-direction: column;
@@ -134,12 +468,10 @@
   background-color: #ecf6ff;
 }
 .registration .registration__logo {
-  width: 10.41%;
   height: auto;
 }
 .registration .registration__logo-underline {
-  width: 30.04%;
-  height: 0.3%;
+  height: 0.3vh;
   content: "";
   background-color: #002544;
 }
@@ -148,7 +480,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 20.83%;
   height: 3.7%;
   margin-top: 1.38%;
   padding: 0.15% 0.78%;
@@ -163,7 +494,6 @@
   border: none;
   border-radius: 0.5vw;
   background-color: #eef4f7;
-  font-size: 22px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .registration > .registration__password-input > .password-input__button, .registration > .registration__verification-password-input > .password-input__button {
@@ -183,7 +513,6 @@
   width: auto;
 }
 .registration .registration__input {
-  width: 20.83%;
   height: 3.7%;
   padding: 0.15% 0.78%;
   margin-top: 1.38%;
@@ -191,14 +520,12 @@
   border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
-  font-size: 22px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .registration .registration__submit-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 17.34%;
   height: 4.65%;
   margin-top: 1.38%;
   outline: none;
@@ -207,7 +534,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 22px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .registration .registration__submit-button:hover {
@@ -251,7 +577,6 @@
 }
 .registration-header .registration-header__name {
   margin: 0 0.7% 0 0.7%;
-  font-size: 36px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .registration-header .registration-header__name_primary {
@@ -339,6 +664,114 @@
   padding: 0;
 }
 
+@media (max-width: 425px) {
+  .sidebar .sidebar__delimiter {
+    width: 100%;
+    height: 0.1vw;
+    left: 0;
+    top: 7.7%;
+  }
+  .sidebar .sidebar__item {
+    height: 4%;
+    margin-top: 8%;
+  }
+  .sidebar .sidebar__item img {
+    margin-right: 3%;
+  }
+  .sidebar .sidebar__item .sidebar-item__text {
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .sidebar .sidebar__delimiter {
+    width: 100%;
+    height: 0.1vw;
+    left: 0;
+    top: 9.1%;
+  }
+  .sidebar .sidebar__item {
+    height: 4%;
+    margin-top: 8%;
+  }
+  .sidebar .sidebar__item img {
+    margin-right: 3%;
+  }
+  .sidebar .sidebar__item .sidebar-item__text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar .sidebar__delimiter {
+    width: 100%;
+    height: 0.1vw;
+    left: 0;
+    top: 9%;
+  }
+  .sidebar .sidebar__item {
+    height: 4%;
+    margin-top: 8%;
+  }
+  .sidebar .sidebar__item img {
+    margin-right: 3%;
+  }
+  .sidebar .sidebar__item .sidebar-item__text {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .sidebar .sidebar__delimiter {
+    width: 100%;
+    height: 0.1vw;
+    left: 0;
+    top: 9%;
+  }
+  .sidebar .sidebar__item {
+    height: 4%;
+    margin-top: 8%;
+  }
+  .sidebar .sidebar__item img {
+    margin-right: 2%;
+  }
+  .sidebar .sidebar__item .sidebar-item__text {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .sidebar .sidebar__delimiter {
+    width: 100%;
+    height: 0.1vw;
+    left: 0;
+    top: 7.7%;
+  }
+  .sidebar .sidebar__item {
+    height: 4%;
+    margin-top: 8%;
+  }
+  .sidebar .sidebar__item img {
+    margin-right: 2%;
+  }
+  .sidebar .sidebar__item .sidebar-item__text {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .sidebar .sidebar__delimiter {
+    width: 100%;
+    height: 0.1vw;
+    left: 0;
+    top: 7%;
+  }
+  .sidebar .sidebar__item {
+    height: 4%;
+    margin-top: 8%;
+  }
+  .sidebar .sidebar__item img {
+    margin-right: 2%;
+  }
+  .sidebar .sidebar__item .sidebar-item__text {
+    font-size: 23px;
+  }
+}
 .sidebar {
   position: relative;
   display: flex;
@@ -354,25 +787,22 @@
   width: 100%;
   height: 0.1vw;
   left: 0;
-  top: 6.6%;
   background-color: #b4bec7;
 }
 .sidebar .sidebar__item {
-  width: auto;
   height: 4%;
   margin-top: 8%;
   cursor: pointer;
 }
 .sidebar .sidebar__item img {
-  position: absolute;
+  position: relative;
   width: auto;
-  height: 4.5%;
-  left: 6%;
+  height: 100%;
+  left: 0;
 }
 .sidebar .sidebar__item .sidebar-item__text {
   color: #002544;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 20px;
   white-space: nowrap;
   transition: color 200ms ease-out;
 }
@@ -400,11 +830,9 @@
 }
 .near-task .near-task__deadline {
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 14px;
 }
 .near-task .near-task__name {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 14px;
 }
 
 .room-label {
@@ -417,19 +845,16 @@
 .room-label .room-label__header {
   display: flex;
   align-items: center;
-  height: 19.79%;
   padding: 0 8.62%;
 }
 .room-label .room-label__header .room-label__header__name {
   margin: 0;
   color: #002544;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 28px;
 }
 .room-label .room-label__meta {
   display: flex;
   align-items: center;
-  height: 13.99%;
   padding: 0 8.62%;
   border-bottom: #b4bec7 0.2vw solid;
 }
@@ -437,17 +862,13 @@
   margin: 0;
   color: #002544;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 .room-label .room-label__nearest-tasks {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 0 8.62%;
   flex-shrink: 1;
-}
-.room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task {
-  padding: 4.31% 0;
 }
 
 .pop-up-form .pop-up-form__form__wrapper {
@@ -464,18 +885,209 @@
   font-size: 18px;
 }
 
+@media (max-width: 425px) {
+  .rooms-list {
+    justify-content: center;
+    align-content: start;
+  }
+  .rooms-list .room-label {
+    width: 75%;
+    height: 40%;
+    margin: 4vh 0 0 0;
+  }
+  .rooms-list .room-label .room-label__header {
+    height: 13%;
+  }
+  .rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 18px;
+  }
+  .rooms-list .room-label .room-label__meta {
+    height: 8%;
+  }
+  .rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 12px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 12px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .rooms-list .room-label {
+    width: 29.3%;
+    height: 40%;
+    margin: 3% 0 0 3%;
+  }
+  .rooms-list .room-label .room-label__header {
+    height: 13%;
+  }
+  .rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 18px;
+  }
+  .rooms-list .room-label .room-label__meta {
+    height: 8%;
+  }
+  .rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 12px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 12px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .rooms-list .room-label {
+    width: 21%;
+    height: 45%;
+    margin: 3% 0 0 3%;
+  }
+  .rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 22px;
+  }
+  .rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 16px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 15px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .rooms-list .room-label {
+    width: 16.1%;
+    height: 35%;
+    margin: 3% 0 0 3%;
+  }
+  .rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 25px;
+  }
+  .rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 23px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 14px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .rooms-list .room-label {
+    width: 16.1%;
+    height: 35%;
+    margin: 3% 0 0 3%;
+  }
+  .rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 30px;
+  }
+  .rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 26px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 18px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .rooms-list .room-label {
+    width: 16.1%;
+    height: 33%;
+    margin: 3% 0 0 3%;
+  }
+  .rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 34px;
+  }
+  .rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 30px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 22px;
+  }
+  .rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 22px;
+  }
+}
 .rooms-list {
   display: flex;
-  justify-content: start;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 .rooms-list .room-label {
-  width: 18.12%;
-  height: 29.3%;
   border-radius: 0.7vw;
   overflow: hidden;
-  margin: 0 0 1.56% 1.36%;
 }
 
 .add-room-form {
@@ -3059,7 +3671,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  padding: 0 0.78% 0 3.9%;
+  padding: 0 1.3% 0 1.3%;
 }
 .main .main__wrapper .main__wrapper__content {
   display: flex;
@@ -3071,7 +3683,6 @@
 }
 .main .main__wrapper .main__wrapper__content .main__wrapper__content__rooms-list, .main .main__wrapper .main__wrapper__content .main__wrapper__content__own-rooms-list, .main .main__wrapper .main__wrapper__content .main__wrapper__content__studying-rooms-list {
   width: 100%;
-  padding: 1.56% 0;
 }
 .main .main__wrapper .main__wrapper__content::-webkit-scrollbar {
   width: 0.6vw;
@@ -3084,6 +3695,108 @@
   border-radius: 0.3vw;
 }
 
+@media (max-width: 425px) {
+  .header .header__sidebar-button {
+    width: 4%;
+    margin: 0 1.82%;
+  }
+  .header .header__navigation .navigation__button {
+    height: 40%;
+    margin: 0 10% 0 0;
+  }
+  .header .header__logo {
+    height: 40%;
+  }
+  .header .header__user {
+    margin: 0 3% 0 0;
+    font-size: 14px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .header .header__sidebar-button {
+    width: 2.5%;
+    margin: 0 1.82%;
+  }
+  .header .header__navigation .navigation__button {
+    height: 48%;
+    margin: 0 3% 0 0;
+  }
+  .header .header__logo {
+    height: 50%;
+  }
+  .header .header__user {
+    margin: 0 2% 0 0;
+    font-size: 18px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header .header__sidebar-button {
+    width: 2.5%;
+    margin: 0 1.82%;
+  }
+  .header .header__navigation .navigation__button {
+    height: 48%;
+    margin: 0 3% 0 0;
+  }
+  .header .header__logo {
+    height: 55%;
+  }
+  .header .header__user {
+    margin: 0 2% 0 0;
+    font-size: 24px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .header .header__sidebar-button {
+    width: 2%;
+    margin: 0 1.82%;
+  }
+  .header .header__navigation .navigation__button {
+    height: 48%;
+    margin: 0 2% 0 0;
+  }
+  .header .header__logo {
+    height: 57%;
+  }
+  .header .header__user {
+    margin: 0 1.5% 0 0;
+    font-size: 26px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .header .header__sidebar-button {
+    width: 2%;
+    margin: 0 2%;
+  }
+  .header .header__navigation .navigation__button {
+    height: 50%;
+    margin: 0 2% 0 0;
+  }
+  .header .header__logo {
+    height: 60%;
+  }
+  .header .header__user {
+    margin: 0 1.5% 0 0;
+    font-size: 30px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .header .header__sidebar-button {
+    width: 1.7%;
+    margin: 0 1%;
+  }
+  .header .header__navigation .navigation__button {
+    height: 54%;
+    margin: 0 1% 0 0;
+  }
+  .header .header__logo {
+    height: 64%;
+  }
+  .header .header__user {
+    margin: 0 0.5% 0 0;
+    font-size: 30px;
+  }
+}
 .header {
   display: flex;
   justify-content: start;
@@ -3095,8 +3808,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.73%;
-  margin: 0 1.82%;
   padding: 0;
   outline: none;
   border: none;
@@ -3119,8 +3830,6 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  height: 52.08%;
-  margin: 0 2.76% 0 0;
 }
 .header .header__navigation .navigation__button > img {
   width: auto;
@@ -3128,13 +3837,10 @@
 }
 .header .header__logo {
   width: auto;
-  height: 68.75%;
 }
 .header .header__user {
-  margin: 0 1.38% 0 0;
   color: #ecf6ff;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 20px;
   cursor: pointer;
   transition: color 200ms ease-out;
 }
@@ -3151,11 +3857,9 @@
 }
 .near-task .near-task__deadline {
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 14px;
 }
 .near-task .near-task__name {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 14px;
 }
 
 .room-label {
@@ -3168,19 +3872,16 @@
 .room-label .room-label__header {
   display: flex;
   align-items: center;
-  height: 19.79%;
   padding: 0 8.62%;
 }
 .room-label .room-label__header .room-label__header__name {
   margin: 0;
   color: #002544;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 28px;
 }
 .room-label .room-label__meta {
   display: flex;
   align-items: center;
-  height: 13.99%;
   padding: 0 8.62%;
   border-bottom: #b4bec7 0.2vw solid;
 }
@@ -3188,31 +3889,26 @@
   margin: 0;
   color: #002544;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 .room-label .room-label__nearest-tasks {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 0 8.62%;
   flex-shrink: 1;
-}
-.room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task {
-  padding: 4.31% 0;
 }
 
 .own-rooms-list {
   display: flex;
-  justify-content: start;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 .own-rooms-list .room-label {
-  width: 18.12%;
-  height: 29.3%;
   border-radius: 0.7vw;
   overflow: hidden;
-  margin: 0 0 1.56% 1.36%;
 }
 
 .near-task {
@@ -3224,11 +3920,9 @@
 }
 .near-task .near-task__deadline {
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 14px;
 }
 .near-task .near-task__name {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 14px;
 }
 
 .room-label {
@@ -3241,19 +3935,16 @@
 .room-label .room-label__header {
   display: flex;
   align-items: center;
-  height: 19.79%;
   padding: 0 8.62%;
 }
 .room-label .room-label__header .room-label__header__name {
   margin: 0;
   color: #002544;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 28px;
 }
 .room-label .room-label__meta {
   display: flex;
   align-items: center;
-  height: 13.99%;
   padding: 0 8.62%;
   border-bottom: #b4bec7 0.2vw solid;
 }
@@ -3261,31 +3952,218 @@
   margin: 0;
   color: #002544;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 .room-label .room-label__nearest-tasks {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 0 8.62%;
   flex-shrink: 1;
 }
-.room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task {
-  padding: 4.31% 0;
-}
 
+@media (max-width: 425px) {
+  .studying-rooms-list {
+    justify-content: center;
+    align-content: start;
+  }
+  .studying-rooms-list .room-label {
+    width: 75%;
+    height: 40%;
+    margin: 4vh 0 0 0;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 13%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 18px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 8%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 12px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 12px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 29.3%;
+    height: 40%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 13%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 18px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 8%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 12px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 12px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 21%;
+    height: 45%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 22px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 16px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 15px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 16.1%;
+    height: 35%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 25px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 23px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 14px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 16.1%;
+    height: 35%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 30px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 26px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 18px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .studying-rooms-list {
+    align-content: start;
+    padding: 0;
+  }
+  .studying-rooms-list .room-label {
+    width: 16.1%;
+    height: 33%;
+    margin: 3% 0 0 3%;
+  }
+  .studying-rooms-list .room-label .room-label__header {
+    height: 15%;
+  }
+  .studying-rooms-list .room-label .room-label__header .room-label__header__name {
+    font-size: 34px;
+  }
+  .studying-rooms-list .room-label .room-label__meta {
+    height: 14%;
+  }
+  .studying-rooms-list .room-label .room-label__meta .room-label__meta__audience {
+    font-size: 30px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks {
+    flex-grow: 1;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__deadline {
+    font-size: 22px;
+  }
+  .studying-rooms-list .room-label .room-label__nearest-tasks .room-label__nearest-tasks__near-task .near-task__name {
+    font-size: 22px;
+  }
+}
 .studying-rooms-list {
   display: flex;
-  justify-content: start;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 .studying-rooms-list .room-label {
-  width: 18.12%;
-  height: 29.3%;
   border-radius: 0.7vw;
   overflow: hidden;
-  margin: 0 0 1.56% 1.36%;
 }
 
 @font-face {

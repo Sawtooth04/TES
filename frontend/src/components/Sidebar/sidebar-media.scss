@@ -1,0 +1,143 @@
+@media (max-width: 425px) {
+  .sidebar {
+    & .sidebar__delimiter {
+      width: 100%;
+      height: 0.10vw;
+      left: 0;
+      top: 7.7%;
+    }
+
+    & .sidebar__item {
+      height: 4%;
+      margin-top: 8%;
+
+      & img {
+        margin-right: 3%;
+      }
+
+      & .sidebar-item__text {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .sidebar {
+    & .sidebar__delimiter {
+      width: 100%;
+      height: 0.10vw;
+      left: 0;
+      top: 9.1%;
+    }
+
+    & .sidebar__item {
+      height: 4%;
+      margin-top: 8%;
+
+      & img {
+        margin-right: 3%;
+      }
+
+      & .sidebar-item__text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    & .sidebar__delimiter {
+      width: 100%;
+      height: 0.10vw;
+      left: 0;
+      top: 9%;
+    }
+
+    & .sidebar__item {
+      height: 4%;
+      margin-top: 8%;
+
+      & img {
+        margin-right: 3%;
+      }
+
+      & .sidebar-item__text {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .sidebar {
+    & .sidebar__delimiter {
+      width: 100%;
+      height: 0.10vw;
+      left: 0;
+      top: 9%;
+    }
+
+    & .sidebar__item {
+      height: 4%;
+      margin-top: 8%;
+
+      & img {
+        margin-right: 2%;
+      }
+
+      & .sidebar-item__text {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .sidebar {
+    & .sidebar__delimiter {
+      width: 100%;
+      height: 0.10vw;
+      left: 0;
+      top: 7.7%;
+    }
+
+    & .sidebar__item {
+      height: 4%;
+      margin-top: 8%;
+
+      & img {
+        margin-right: 2%;
+      }
+
+      & .sidebar-item__text {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .sidebar {
+    & .sidebar__delimiter {
+      width: 100%;
+      height: 0.10vw;
+      left: 0;
+      top: 7%;
+    }
+
+    & .sidebar__item {
+      height: 4%;
+      margin-top: 8%;
+
+      & img {
+        margin-right: 2%;
+      }
+
+      & .sidebar-item__text {
+        font-size: 23px;
+      }
+    }
+  }
+}

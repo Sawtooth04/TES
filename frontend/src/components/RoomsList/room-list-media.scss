@@ -1,0 +1,257 @@
+@media (max-width: 425px) {
+  .rooms-list {
+    justify-content: center;
+    align-content: start;
+
+    & .room-label {
+      width: 75%;
+      height: 40%;
+      margin: 4vh 0 0 0;
+
+      & .room-label__header {
+        height: 13%;
+
+        & .room-label__header__name {
+          font-size: 18px;
+        }
+      }
+
+      & .room-label__meta {
+        height: 8%;
+
+        & .room-label__meta__audience {
+          font-size: 12px;
+        }
+      }
+
+      & .room-label__nearest-tasks {
+        flex-grow: 1;
+
+        & .room-label__nearest-tasks__near-task {
+          & .near-task__deadline {
+            font-size: 12px;
+          }
+
+          & .near-task__name {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+
+    & .room-label {
+      width: 29.3%;
+      height: 40%;
+      margin: 3% 0 0 3%;
+
+      & .room-label__header {
+        height: 13%;
+
+        & .room-label__header__name {
+          font-size: 18px;
+        }
+      }
+
+      & .room-label__meta {
+        height: 8%;
+
+        & .room-label__meta__audience {
+          font-size: 12px;
+        }
+      }
+
+      & .room-label__nearest-tasks {
+        flex-grow: 1;
+
+        & .room-label__nearest-tasks__near-task {
+          & .near-task__deadline {
+            font-size: 12px;
+          }
+
+          & .near-task__name {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+
+    & .room-label {
+      width: 21%;
+      height: 45%;
+      margin: 3% 0 0 3%;
+
+      & .room-label__header {
+        height: 15%;
+
+        & .room-label__header__name {
+          font-size: 22px;
+        }
+      }
+
+      & .room-label__meta {
+        height: 14%;
+
+        & .room-label__meta__audience {
+          font-size: 16px;
+        }
+      }
+
+      & .room-label__nearest-tasks {
+        flex-grow: 1;
+
+        & .room-label__nearest-tasks__near-task {
+          & .near-task__deadline {
+            font-size: 15px;
+          }
+
+          & .near-task__name {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+
+    & .room-label {
+      width: 16.1%;
+      height: 35%;
+      margin: 3% 0 0 3%;
+
+      & .room-label__header {
+        height: 15%;
+
+        & .room-label__header__name {
+          font-size: 25px;
+        }
+      }
+
+      & .room-label__meta {
+        height: 14%;
+
+        & .room-label__meta__audience {
+          font-size: 23px;
+        }
+      }
+
+      & .room-label__nearest-tasks {
+        flex-grow: 1;
+
+        & .room-label__nearest-tasks__near-task {
+          & .near-task__deadline {
+            font-size: 14px;
+          }
+
+          & .near-task__name {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+
+    & .room-label {
+      width: 16.1%;
+      height: 35%;
+      margin: 3% 0 0 3%;
+
+      & .room-label__header {
+        height: 15%;
+
+        & .room-label__header__name {
+          font-size: 30px;
+        }
+      }
+
+      & .room-label__meta {
+        height: 14%;
+
+        & .room-label__meta__audience {
+          font-size: 26px;
+        }
+      }
+
+      & .room-label__nearest-tasks {
+        flex-grow: 1;
+
+        & .room-label__nearest-tasks__near-task {
+          & .near-task__deadline {
+            font-size: 18px;
+          }
+
+          & .near-task__name {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .rooms-list {
+    align-content: start;
+    padding: 0;
+
+    & .room-label {
+      width: 16.1%;
+      height: 33%;
+      margin: 3% 0 0 3%;
+
+      & .room-label__header {
+        height: 15%;
+
+        & .room-label__header__name {
+          font-size: 34px;
+        }
+      }
+
+      & .room-label__meta {
+        height: 14%;
+
+        & .room-label__meta__audience {
+          font-size: 30px;
+        }
+      }
+
+      & .room-label__nearest-tasks {
+        flex-grow: 1;
+
+        & .room-label__nearest-tasks__near-task {
+          & .near-task__deadline {
+            font-size: 22px;
+          }
+
+          & .near-task__name {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
