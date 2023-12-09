@@ -1,3 +1,4 @@
+@import "verified-task-label-media";
 @import "../../../../../public-variables";
 
 .verified-task-label {
@@ -29,12 +30,10 @@
       & .verified-task-label__wrapper__body__header {
         margin: 0 auto;
         font-family: "TTNormsPro SemiBold", "sans-serif";
-        font-size: 16px;
       }
 
       & .verified-task-label__wrapper__body__date {
         font-family: "TTNormsPro", "sans-serif";
-        font-size: 16px;
       }
     }
   }
@@ -45,7 +44,6 @@
     & .verified-task-label__fold-view__solution {
       margin: 1vh 0 0 0;
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 18px;
       transition: color 200ms ease-out;
 
       &:last-child {

@@ -5,6 +5,7 @@
 @import "RoomTeachingMessages/room-teaching-messages";
 @import "RoomTeachingChat/room-teaching-chat";
 @import "RoomTeachingManagement/room-teaching-management";
+@import "room-teaching-media";
 
 .room-teaching {
   display: flex;
@@ -23,7 +24,6 @@
       color: rgb(var(--color));
       text-decoration: none;
       font-family: "TTNormsPro SemiBold", "sans-serif";
-      font-size: 20px;
     }
 
     & .room-teaching__header__link.active:after {

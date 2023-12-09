@@ -1,0 +1,58 @@
+@media (max-width: 425px) {
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__header {
+    font-size: 10px;
+  }
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__date {
+    font-size: 10px;
+  }
+  .unverified-task-label .fold-view .unverified-task-label__fold-view__solution {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-teaching__header__link {
+    font-size: 12px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-teaching__header__link {
+    font-size: 14px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-teaching__header__link {
+    font-size: 20px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-teaching__header__link {
+    font-size: 22px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-teaching__header__link {
+    font-size: 24px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 24px;
+  }
+}
+
+/*# sourceMappingURL=unverified-task-label-media.css.map */

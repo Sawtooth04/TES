@@ -1,0 +1,83 @@
+@media (max-width: 425px) {
+  .create-comment-form {
+    height: 7%;
+
+    & .create-comment-form__input {
+      font-size: 10px;
+    }
+
+    & .create-comment-form__button {
+      height: 57.14%;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .create-comment-form {
+    height: 8%;
+
+    & .create-comment-form__input {
+      font-size: 14px;
+    }
+
+    & .create-comment-form__button {
+      height: 57.14%;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .create-comment-form {
+    height: 9%;
+
+    & .create-comment-form__input {
+      font-size: 15px;
+    }
+
+    & .create-comment-form__button {
+      height: 57.14%;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .create-comment-form {
+    height: 10%;
+
+    & .create-comment-form__input {
+      font-size: 16px;
+    }
+
+    & .create-comment-form__button {
+      height: 57.14%;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .create-comment-form {
+    height: 10%;
+
+    & .create-comment-form__input {
+      font-size: 16px;
+    }
+
+    & .create-comment-form__button {
+      height: 57.14%;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .create-comment-form {
+    height: 10%;
+
+    & .create-comment-form__input {
+      font-size: 18px;
+    }
+
+    & .create-comment-form__button {
+      height: 57.14%;
+    }
+  }
+}

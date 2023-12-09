@@ -1,4 +1,5 @@
 @import "../../../UI/ContextMenuButton/context-menu-button";
+@import "room-task-label-media";
 
 .room-task-label {
   display: flex;
@@ -22,12 +23,10 @@
 
     & .room-task-label__body__header {
       font-family: "TTNormsPro SemiBold", "sans-serif";
-      font-size: 16px;
     }
 
     & .room-task-label__body__date {
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 16px;
     }
   }
 

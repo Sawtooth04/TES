@@ -1,0 +1,14 @@
+@media (max-width: 425px) {
+  .create-comment-form {
+    width: 97%;
+    height: 10.43%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 24px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+
+/*# sourceMappingURL=create-comment-form-media.css.map */

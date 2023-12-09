@@ -1,3 +1,4 @@
+@import "room-description-media";
 @import "../../../public-variables";
 
 .room-description {
@@ -9,6 +10,5 @@
   & .room-description__description {
     margin: 0;
     font-family: "TTNormsPro", "sans-serif";
-    font-size: 18px;
   }
 }

@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import {maxTasksPerPagesCount, tasksPerPagesCount} from "../../../../constants";
 import InfiniteScrollPaginator from "../../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 import UnverifiedTaskLabel from "./UnverifiedTaskLabel/UnverifiedTaskLabel";
+import {useParams} from "react-router-dom";
 
-const RoomTeachingUnverified = ({ roomID }) => {
+const RoomTeachingUnverified = () => {
+    const {roomID} = useParams();
     const [unverifiedTasks, setUnverifiedTasks] = useState([]);
     const [solutionsDictionary, setSolutionsDictionary] = useState({});
 

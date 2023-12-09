@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import RoomTeachingMessage from "./RoomTeachingMessage/RoomTeachingMessage";
+import {useParams} from "react-router-dom";
 
-const RoomTeachingMessages = ({ roomID }) => {
+const RoomTeachingMessages = () => {
+    const {roomID} = useParams();
     const [messagesMeta, setMessagesMeta] = useState([]);
 
     useEffect(() => {

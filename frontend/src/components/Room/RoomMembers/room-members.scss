@@ -1,3 +1,4 @@
+@import "room-members-media";
 @import "../../../public-variables";
 
 .room-members {
@@ -14,7 +15,6 @@
       padding-left: 3%;
       color: rgb(var(--color));
       font-family: "TTNormsPro SemiBold", "sans-serif";
-      font-size: 40px;
     }
 
     & .room-members__teachers__header:after {
@@ -39,7 +39,6 @@
       padding-left: 3%;
       color: rgb(var(--color));
       font-family: "TTNormsPro SemiBold", "sans-serif";
-      font-size: 40px;
     }
 
     & .room-members__members__header:after {
@@ -69,7 +68,6 @@
           margin: 0;
           color: $primary_color;
           font-family: "TTNormsPro SemiBold", "sans-serif";
-          font-size: 20px;
         }
       }
     }

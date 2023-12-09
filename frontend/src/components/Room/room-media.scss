@@ -1,0 +1,245 @@
+@media (max-width: 425px) {
+  .room {
+    & .room__header {
+      width: 100%;
+      height: 20%;
+
+      & .room__header__name {
+        font-size: 26px;
+      }
+
+      & .room__header__owner {
+        & .room__header__owner__article {
+          font-size: 18px;
+        }
+
+        & .room__header__owner__name {
+          margin: 0 0 0 0.5em;
+          font-size: 18px;
+        }
+      }
+    }
+
+    & .room__content {
+      width: 95%;
+      height: 80%;
+
+      & .room__content__header {
+        height: 9.54%;
+
+        & .content-header__link {
+          font-size: 12px;
+        }
+      }
+
+      & .room__content__body {
+        height: 90.46%;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room {
+    & .room__header {
+      width: 100%;
+      height: 20%;
+
+      & .room__header__name {
+        font-size: 30px;
+      }
+
+      & .room__header__owner {
+        & .room__header__owner__article {
+          font-size: 22px;
+        }
+
+        & .room__header__owner__name {
+          margin: 0 0 0 0.5em;
+          font-size: 22px;
+        }
+      }
+    }
+
+    & .room__content {
+      width: 95%;
+      height: 80%;
+
+      & .room__content__header {
+        height: 9.54%;
+
+        & .content-header__link {
+          font-size: 18px;
+        }
+      }
+
+      & .room__content__body {
+        height: 90.46%;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room {
+    & .room__header {
+      width: 80%;
+      height: 17%;
+
+      & .room__header__name {
+        font-size: 34px;
+      }
+
+      & .room__header__owner {
+        & .room__header__owner__article {
+          font-size: 26px;
+        }
+
+        & .room__header__owner__name {
+          margin: 0 0 0 0.5em;
+          font-size: 26px;
+        }
+      }
+    }
+
+    & .room__content {
+      width: 80%;
+      height: 77%;
+
+      & .room__content__header {
+        height: 9.54%;
+
+        & .content-header__link {
+          font-size: 22px;
+        }
+      }
+
+      & .room__content__body {
+        height: 90.46%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room {
+    & .room__header {
+      width: 75%;
+      height: 17%;
+
+      & .room__header__name {
+        font-size: 36px;
+      }
+
+      & .room__header__owner {
+        & .room__header__owner__article {
+          font-size: 26px;
+        }
+
+        & .room__header__owner__name {
+          margin: 0 0 0 0.5em;
+          font-size: 26px;
+        }
+      }
+    }
+
+    & .room__content {
+      width: 75%;
+      height: 77%;
+
+      & .room__content__header {
+        height: 9.54%;
+
+        & .content-header__link {
+          font-size: 22px;
+        }
+      }
+
+      & .room__content__body {
+        height: 90.46%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room {
+    & .room__header {
+      width: 75%;
+      height: 17%;
+
+      & .room__header__name {
+        font-size: 36px;
+      }
+
+      & .room__header__owner {
+        & .room__header__owner__article {
+          font-size: 28px;
+        }
+
+        & .room__header__owner__name {
+          margin: 0 0 0 0.5em;
+          font-size: 28px;
+        }
+      }
+    }
+
+    & .room__content {
+      width: 75%;
+      height: 77%;
+
+      & .room__content__header {
+        height: 9.54%;
+
+        & .content-header__link {
+          font-size: 23px;
+        }
+      }
+
+      & .room__content__body {
+        height: 90.46%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room {
+    & .room__header {
+      width: 75%;
+      height: 17%;
+
+      & .room__header__name {
+        font-size: 38px;
+      }
+
+      & .room__header__owner {
+        & .room__header__owner__article {
+          font-size: 28px;
+        }
+
+        & .room__header__owner__name {
+          margin: 0 0 0 0.5em;
+          font-size: 28px;
+        }
+      }
+    }
+
+    & .room__content {
+      width: 75%;
+      height: 77%;
+
+      & .room__content__header {
+        height: 9.54%;
+
+        & .content-header__link {
+          font-size: 24px;
+        }
+      }
+
+      & .room__content__body {
+        height: 90.46%;
+      }
+    }
+  }
+}

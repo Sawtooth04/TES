@@ -1,0 +1,71 @@
+@media (max-width: 425px) {
+  .room-teaching-management-input {
+    & .room-teaching-management-input__header {
+      font-size: 8px;
+    }
+
+    & .room-teaching-management-input__input {
+      font-size: 10px;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-teaching-management-input {
+    & .room-teaching-management-input__header {
+      font-size: 9px;
+    }
+
+    & .room-teaching-management-input__input {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-teaching-management-input {
+    & .room-teaching-management-input__header {
+      font-size: 10px;
+    }
+
+    & .room-teaching-management-input__input {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-teaching-management-input {
+    & .room-teaching-management-input__header {
+      font-size: 12px;
+    }
+
+    & .room-teaching-management-input__input {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-teaching-management-input {
+    & .room-teaching-management-input__header {
+      font-size: 12px;
+    }
+
+    & .room-teaching-management-input__input {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-teaching-management-input {
+    & .room-teaching-management-input__header {
+      font-size: 14px;
+    }
+
+    & .room-teaching-management-input__input {
+      font-size: 20px;
+    }
+  }
+}

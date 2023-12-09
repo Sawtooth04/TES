@@ -28,10 +28,10 @@ const RoomTeaching = ({ room }) => {
             <div className="room-teaching__body">
                 <Routes>
                     <Route path={"chat/:roomTaskID/:roomCustomerID"} element={<RoomTeachingChat />}/>
-                    <Route path={"messages"} element={<RoomTeachingMessages roomID={room?.roomID}/>}/>
-                    <Route path={"unverified"} element={<RoomTeachingUnverified roomID={room?.roomID}/>}/>
+                    <Route path={"messages"} element={<RoomTeachingMessages/>}/>
+                    <Route path={"unverified"} element={<RoomTeachingUnverified />}/>
                     <Route path={"unverified/solution/:solutionID"} element={<RoomTeachingUnverifiedSolution/>}/>
-                    <Route path={"verified"} element={<RoomTeachingVerified roomID={room?.roomID}/>}/>
+                    <Route path={"verified"} element={<RoomTeachingVerified/>}/>
                     <Route path={"verified/solution/:solutionID"} element={<RoomTeachingVerifiedSolution/>}/>
                     <Route path={"management"} element={<RoomTeachingManagement room={room}/>}/>
                     <Route path={"*"} element={<Navigate to={"messages"}/>}/>

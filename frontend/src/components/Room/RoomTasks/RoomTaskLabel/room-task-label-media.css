@@ -1,0 +1,10 @@
+@media (max-width: 425px) {
+  .room-task-label .room-task-label__body .room-task-label__body__header {
+    font-size: 10px;
+  }
+  .room-task-label .room-task-label__body .room-task-label__body__date {
+    font-size: 10px;
+  }
+}
+
+/*# sourceMappingURL=room-task-label-media.css.map */

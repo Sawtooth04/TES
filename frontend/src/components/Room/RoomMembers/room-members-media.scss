@@ -1,0 +1,143 @@
+@media (max-width: 425px) {
+  .room-members {
+    & .room-members__teachers {
+      & .room-members__teachers__header {
+        font-size: 20px;
+      }
+    }
+
+    & .room-members__members {
+      & .room-members__members__header {
+        font-size: 20px;
+      }
+
+      & .room-members__members__list {
+        & .room-members__members__list__member {
+          & .room-members__members__member__name {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-members {
+    & .room-members__teachers {
+      & .room-members__teachers__header {
+        font-size: 22px;
+      }
+    }
+
+    & .room-members__members {
+      & .room-members__members__header {
+        font-size: 22px;
+      }
+
+      & .room-members__members__list {
+        & .room-members__members__list__member {
+          & .room-members__members__member__name {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-members {
+    & .room-members__teachers {
+      & .room-members__teachers__header {
+        font-size: 23px;
+      }
+    }
+
+    & .room-members__members {
+      & .room-members__members__header {
+        font-size: 23px;
+      }
+
+      & .room-members__members__list {
+        & .room-members__members__list__member {
+          & .room-members__members__member__name {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-members {
+    & .room-members__teachers {
+      & .room-members__teachers__header {
+        font-size: 25px;
+      }
+    }
+
+    & .room-members__members {
+      & .room-members__members__header {
+        font-size: 25px;
+      }
+
+      & .room-members__members__list {
+        & .room-members__members__list__member {
+          & .room-members__members__member__name {
+            font-size: 19px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-members {
+    & .room-members__teachers {
+      & .room-members__teachers__header {
+        font-size: 27px;
+      }
+    }
+
+    & .room-members__members {
+      & .room-members__members__header {
+        font-size: 27px;
+      }
+
+      & .room-members__members__list {
+        & .room-members__members__list__member {
+          & .room-members__members__member__name {
+            font-size: 21px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-members {
+    & .room-members__teachers {
+      & .room-members__teachers__header {
+        font-size: 29px;
+      }
+    }
+
+    & .room-members__members {
+      & .room-members__members__header {
+        font-size: 29px;
+      }
+
+      & .room-members__members__list {
+        & .room-members__members__list__member {
+          & .room-members__members__member__name {
+            font-size: 23px;
+          }
+        }
+      }
+    }
+  }
+}

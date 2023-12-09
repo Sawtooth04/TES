@@ -1,0 +1,83 @@
+@media (max-width: 425px) {
+  .room-last-task {
+    padding: 0 4.28%;
+
+    & .room-last-task__name {
+      font-size: 9px;
+    }
+
+    & .room-last-task__description {
+      font-size: 9px;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-last-task {
+    padding: 0 4.28%;
+
+    & .room-last-task__name {
+      font-size: 12px;
+    }
+
+    & .room-last-task__description {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-last-task {
+    padding: 0 4.28%;
+
+    & .room-last-task__name {
+      font-size: 14px;
+    }
+
+    & .room-last-task__description {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-last-task {
+    padding: 0 4.28%;
+
+    & .room-last-task__name {
+      font-size: 16px;
+    }
+
+    & .room-last-task__description {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-last-task {
+    padding: 0 4.28%;
+
+    & .room-last-task__name {
+      font-size: 17px;
+    }
+
+    & .room-last-task__description {
+      font-size: 19px;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-last-task {
+    padding: 0 4.28%;
+
+    & .room-last-task__name {
+      font-size: 18px;
+    }
+
+    & .room-last-task__description {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@media (max-width: 425px) {
+  .room-task-label {
+    & .room-task-label__body {
+      & .room-task-label__body__header {
+        font-size: 9px;
+      }
+
+      & .room-task-label__body__date {
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task-label {
+    & .room-task-label__body {
+      & .room-task-label__body__header {
+        font-size: 11px;
+      }
+
+      & .room-task-label__body__date {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task-label {
+    & .room-task-label__body {
+      & .room-task-label__body__header {
+        font-size: 13px;
+      }
+
+      & .room-task-label__body__date {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task-label {
+    & .room-task-label__body {
+      & .room-task-label__body__header {
+        font-size: 15px;
+      }
+
+      & .room-task-label__body__date {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task-label {
+    & .room-task-label__body {
+      & .room-task-label__body__header {
+        font-size: 16px;
+      }
+
+      & .room-task-label__body__date {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task-label {
+    & .room-task-label__body {
+      & .room-task-label__body__header {
+        font-size: 18px;
+      }
+
+      & .room-task-label__body__date {
+        font-size: 18px;
+      }
+    }
+  }
+}

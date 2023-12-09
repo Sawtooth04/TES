@@ -1,0 +1,13 @@
+@media (max-width: 425px) {
+  .room-members .room-members__teachers .room-members__teachers__header {
+    font-size: 20px;
+  }
+  .room-members .room-members__members .room-members__members__header {
+    font-size: 20px;
+  }
+  .room-members .room-members__members .room-members__members__list .room-members__members__list__member .room-members__members__member__name {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=room-members-media.css.map */

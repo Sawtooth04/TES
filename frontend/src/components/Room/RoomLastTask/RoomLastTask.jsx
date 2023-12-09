@@ -11,7 +11,7 @@ const RoomLastTask = ({ task }) => {
     return (
         <div className={"room-last-task"} onClick={onClick}>
             <p className={"room-last-task__name"}> {task.name} </p>
-            <p className={"room-last-task__description"}> {task.description.slice(0, 16)} </p>
+            <p className={"room-last-task__description"}> {task.description.slice(0, 14)} </p>
         </div>
     );
 };

@@ -955,9 +955,9 @@
     padding: 0;
   }
   .rooms-list .room-label {
-    width: 21%;
+    width: 22.5%;
     height: 45%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .rooms-list .room-label .room-label__header {
     height: 15%;
@@ -987,9 +987,9 @@
     padding: 0;
   }
   .rooms-list .room-label {
-    width: 16.1%;
+    width: 17.6%;
     height: 35%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .rooms-list .room-label .room-label__header {
     height: 15%;
@@ -1019,9 +1019,9 @@
     padding: 0;
   }
   .rooms-list .room-label {
-    width: 16.1%;
+    width: 17.6%;
     height: 35%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .rooms-list .room-label .room-label__header {
     height: 15%;
@@ -1051,9 +1051,9 @@
     padding: 0;
   }
   .rooms-list .room-label {
-    width: 16.1%;
+    width: 17.6%;
     height: 33%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .rooms-list .room-label .room-label__header {
     height: 15%;
@@ -1163,6 +1163,72 @@
   cursor: pointer;
 }
 
+@media (max-width: 425px) {
+  .room-post .room-post__header .room-post__header__name {
+    font-size: 11px;
+  }
+  .room-post .room-post__header .room-post__header__time {
+    font-size: 11px;
+  }
+  .room-post .room-post__text {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-post .room-post__header .room-post__header__name {
+    font-size: 13px;
+  }
+  .room-post .room-post__header .room-post__header__time {
+    font-size: 13px;
+  }
+  .room-post .room-post__text {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-post .room-post__header .room-post__header__name {
+    font-size: 15px;
+  }
+  .room-post .room-post__header .room-post__header__time {
+    font-size: 15px;
+  }
+  .room-post .room-post__text {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-post .room-post__header .room-post__header__name {
+    font-size: 16px;
+  }
+  .room-post .room-post__header .room-post__header__time {
+    font-size: 16px;
+  }
+  .room-post .room-post__text {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-post .room-post__header .room-post__header__name {
+    font-size: 17px;
+  }
+  .room-post .room-post__header .room-post__header__time {
+    font-size: 17px;
+  }
+  .room-post .room-post__text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-post .room-post__header .room-post__header__name {
+    font-size: 18px;
+  }
+  .room-post .room-post__header .room-post__header__time {
+    font-size: 18px;
+  }
+  .room-post .room-post__text {
+    font-size: 17px;
+  }
+}
 .room-post {
   padding: 0 1.33%;
 }
@@ -1177,13 +1243,11 @@
 .room-post .room-post__header .room-post__header__name {
   color: #002544;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 18px;
 }
 .room-post .room-post__header .room-post__header__time {
   padding-left: 1.33%;
   color: #002544;
   font-family: "TTNormsPro Light", "sans-serif";
-  font-size: 18px;
 }
 .room-post .room-post__header:after {
   content: "";
@@ -1199,24 +1263,86 @@
   margin: 1% 0;
   color: #002544;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 
+@media (max-width: 425px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 9px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 9px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 12px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 14px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 16px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 17px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 18px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 20px;
+  }
+}
 .room-last-task {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-  padding: 0 4.28%;
   transition: color 200ms ease-out;
 }
 .room-last-task .room-last-task__name {
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
 }
 .room-last-task .room-last-task__description {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 .room-last-task .room-last-task__name, .room-last-task .room-last-task__description {
   margin: 0;
@@ -1227,11 +1353,76 @@
   color: #cc194b;
 }
 
+@media (max-width: 425px) {
+  .create-comment-form {
+    height: 7%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 10px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .create-comment-form {
+    height: 8%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 14px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .create-comment-form {
+    height: 9%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 15px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .create-comment-form {
+    height: 10%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 16px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .create-comment-form {
+    height: 10%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 16px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .create-comment-form {
+    height: 10%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 18px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
 .create-comment-form {
   display: flex;
   align-items: center;
   width: 97%;
-  height: 10.43%;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;
   border-radius: 0.52vw;
@@ -1242,7 +1433,6 @@
   outline: none;
   border: none;
   background-color: inherit;
-  font-size: 24px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .create-comment-form .create-comment-form__button {
@@ -1321,21 +1511,84 @@
   border-radius: 0.3vw;
 }
 
+@media (max-width: 425px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 9px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 9px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 12px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 14px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 16px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 17px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-last-task {
+    padding: 0 4.28%;
+  }
+  .room-last-task .room-last-task__name {
+    font-size: 18px;
+  }
+  .room-last-task .room-last-task__description {
+    font-size: 20px;
+  }
+}
 .room-last-task {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-  padding: 0 4.28%;
   transition: color 200ms ease-out;
 }
 .room-last-task .room-last-task__name {
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
 }
 .room-last-task .room-last-task__description {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 .room-last-task .room-last-task__name, .room-last-task .room-last-task__description {
   margin: 0;
@@ -1358,6 +1611,54 @@
   height: auto;
 }
 
+@media (max-width: 425px) {
+  .room-task-label .room-task-label__body .room-task-label__body__header {
+    font-size: 9px;
+  }
+  .room-task-label .room-task-label__body .room-task-label__body__date {
+    font-size: 9px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task-label .room-task-label__body .room-task-label__body__header {
+    font-size: 11px;
+  }
+  .room-task-label .room-task-label__body .room-task-label__body__date {
+    font-size: 11px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task-label .room-task-label__body .room-task-label__body__header {
+    font-size: 13px;
+  }
+  .room-task-label .room-task-label__body .room-task-label__body__date {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task-label .room-task-label__body .room-task-label__body__header {
+    font-size: 15px;
+  }
+  .room-task-label .room-task-label__body .room-task-label__body__date {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task-label .room-task-label__body .room-task-label__body__header {
+    font-size: 16px;
+  }
+  .room-task-label .room-task-label__body .room-task-label__body__date {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task-label .room-task-label__body .room-task-label__body__header {
+    font-size: 18px;
+  }
+  .room-task-label .room-task-label__body .room-task-label__body__date {
+    font-size: 18px;
+  }
+}
 .room-task-label {
   display: flex;
   align-items: center;
@@ -1378,11 +1679,9 @@
 }
 .room-task-label .room-task-label__body .room-task-label__body__header {
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
 }
 .room-task-label .room-task-label__body .room-task-label__body__date {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 .room-task-label .context-menu-button {
   width: 1.3%;
@@ -1542,6 +1841,72 @@
   border-radius: 0.3vw;
 }
 
+@media (max-width: 425px) {
+  .room-members .room-members__teachers .room-members__teachers__header {
+    font-size: 20px;
+  }
+  .room-members .room-members__members .room-members__members__header {
+    font-size: 20px;
+  }
+  .room-members .room-members__members .room-members__members__list .room-members__members__list__member .room-members__members__member__name {
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-members .room-members__teachers .room-members__teachers__header {
+    font-size: 22px;
+  }
+  .room-members .room-members__members .room-members__members__header {
+    font-size: 22px;
+  }
+  .room-members .room-members__members .room-members__members__list .room-members__members__list__member .room-members__members__member__name {
+    font-size: 16px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-members .room-members__teachers .room-members__teachers__header {
+    font-size: 23px;
+  }
+  .room-members .room-members__members .room-members__members__header {
+    font-size: 23px;
+  }
+  .room-members .room-members__members .room-members__members__list .room-members__members__list__member .room-members__members__member__name {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-members .room-members__teachers .room-members__teachers__header {
+    font-size: 25px;
+  }
+  .room-members .room-members__members .room-members__members__header {
+    font-size: 25px;
+  }
+  .room-members .room-members__members .room-members__members__list .room-members__members__list__member .room-members__members__member__name {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-members .room-members__teachers .room-members__teachers__header {
+    font-size: 27px;
+  }
+  .room-members .room-members__members .room-members__members__header {
+    font-size: 27px;
+  }
+  .room-members .room-members__members .room-members__members__list .room-members__members__list__member .room-members__members__member__name {
+    font-size: 21px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-members .room-members__teachers .room-members__teachers__header {
+    font-size: 29px;
+  }
+  .room-members .room-members__members .room-members__members__header {
+    font-size: 29px;
+  }
+  .room-members .room-members__members .room-members__members__list .room-members__members__list__member .room-members__members__member__name {
+    font-size: 23px;
+  }
+}
 .room-members {
   display: flex;
   flex-direction: column;
@@ -1556,7 +1921,6 @@
   padding-left: 3%;
   color: rgb(var(--color));
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 40px;
 }
 .room-members .room-members__teachers .room-members__teachers__header:after {
   content: "";
@@ -1578,7 +1942,6 @@
   padding-left: 3%;
   color: rgb(var(--color));
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 40px;
 }
 .room-members .room-members__members .room-members__members__header:after {
   content: "";
@@ -1606,7 +1969,6 @@
   margin: 0;
   color: #002544;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 20px;
 }
 .room-members .room-members__members .room-members__members__list::-webkit-scrollbar {
   width: 0.6vw;
@@ -1619,6 +1981,36 @@
   border-radius: 0.3vw;
 }
 
+@media (max-width: 425px) {
+  .room-description .room-description__description {
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-description .room-description__description {
+    font-size: 14px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-description .room-description__description {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-description .room-description__description {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-description .room-description__description {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-description .room-description__description {
+    font-size: 20px;
+  }
+}
 .room-description {
   padding: 1.14%;
   background-color: #eef4f7;
@@ -1628,13 +2020,78 @@
 .room-description .room-description__description {
   margin: 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 
+@media (max-width: 425px) {
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__header {
+    font-size: 10px;
+  }
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__date {
+    font-size: 10px;
+  }
+  .unverified-task-label .fold-view .unverified-task-label__fold-view__solution {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__header {
+    font-size: 12px;
+  }
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__date {
+    font-size: 12px;
+  }
+  .unverified-task-label .fold-view .unverified-task-label__fold-view__solution {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__header {
+    font-size: 14px;
+  }
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__date {
+    font-size: 14px;
+  }
+  .unverified-task-label .fold-view .unverified-task-label__fold-view__solution {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__header {
+    font-size: 18px;
+  }
+  .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__date {
+    font-size: 18px;
+  }
+  .unverified-task-label .fold-view .unverified-task-label__fold-view__solution {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 20px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 20px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 22px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 22px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 22px;
+  }
+}
 .unverified-task-label {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   padding: 0.4% 1.2%;
 }
 .unverified-task-label .unverified-task-label__wrapper {
@@ -1658,11 +2115,9 @@
 .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__header {
   margin: 0 auto;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
 }
 .unverified-task-label .unverified-task-label__wrapper .unverified-task-label__wrapper__body .unverified-task-label__wrapper__body__date {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 .unverified-task-label .fold-view {
   width: 100%;
@@ -1670,7 +2125,6 @@
 .unverified-task-label .fold-view .unverified-task-label__fold-view__solution {
   margin: 1vh 0 0 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
   transition: color 200ms ease-out;
 }
 .unverified-task-label .fold-view .unverified-task-label__fold-view__solution:last-child {
@@ -2100,6 +2554,72 @@
   height: 0.2vw;
 }
 
+@media (max-width: 425px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 10px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 10px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 12px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 12px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 14px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 14px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 18px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 18px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 20px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 20px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
+    font-size: 22px;
+  }
+  .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
+    font-size: 22px;
+  }
+  .verified-task-label .fold-view .verified-task-label__fold-view__solution {
+    font-size: 22px;
+  }
+}
 .verified-task-label {
   display: flex;
   flex-direction: column;
@@ -2127,11 +2647,9 @@
 .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__header {
   margin: 0 auto;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
 }
 .verified-task-label .verified-task-label__wrapper .verified-task-label__wrapper__body .verified-task-label__wrapper__body__date {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 .verified-task-label .fold-view {
   width: 100%;
@@ -2139,7 +2657,6 @@
 .verified-task-label .fold-view .verified-task-label__fold-view__solution {
   margin: 1vh 0 0 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
   transition: color 200ms ease-out;
 }
 .verified-task-label .fold-view .verified-task-label__fold-view__solution:last-child {
@@ -2209,7 +2726,6 @@
   margin: 0;
   text-align: center;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 20px;
 }
 .room__teaching__body__messages .room__teaching__body__messages__message.message_unread {
   border-width: 0.2vw;
@@ -2316,6 +2832,54 @@
   height: 100%;
 }
 
+@media (max-width: 425px) {
+  .room-teaching-management-input .room-teaching-management-input__header {
+    font-size: 8px;
+  }
+  .room-teaching-management-input .room-teaching-management-input__input {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-teaching-management-input .room-teaching-management-input__header {
+    font-size: 9px;
+  }
+  .room-teaching-management-input .room-teaching-management-input__input {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-teaching-management-input .room-teaching-management-input__header {
+    font-size: 10px;
+  }
+  .room-teaching-management-input .room-teaching-management-input__input {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-teaching-management-input .room-teaching-management-input__header {
+    font-size: 12px;
+  }
+  .room-teaching-management-input .room-teaching-management-input__input {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-teaching-management-input .room-teaching-management-input__header {
+    font-size: 12px;
+  }
+  .room-teaching-management-input .room-teaching-management-input__input {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-teaching-management-input .room-teaching-management-input__header {
+    font-size: 14px;
+  }
+  .room-teaching-management-input .room-teaching-management-input__input {
+    font-size: 20px;
+  }
+}
 .room-teaching-management-input {
   display: flex;
   flex-direction: column;
@@ -2330,7 +2894,6 @@
   margin: 0;
   padding-left: 2%;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 12px;
 }
 .room-teaching-management-input .room-teaching-management-input__input {
   height: 3.5vh;
@@ -2340,7 +2903,6 @@
   outline: none;
   background-color: #d0d6d9;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 20px;
 }
 
 .add-room-teacher-dialog {
@@ -2424,6 +2986,90 @@
   height: 15%;
 }
 
+@media (max-width: 425px) {
+  .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header {
+    font-size: 12px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
+    font-size: 12px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
+    font-size: 10px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers__button, .room__teaching__body__management .room__teaching__body__management__main__button {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header {
+    font-size: 14px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
+    font-size: 14px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
+    font-size: 12px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers__button, .room__teaching__body__management .room__teaching__body__management__main__button {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header {
+    font-size: 16px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
+    font-size: 16px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
+    font-size: 14px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers__button, .room__teaching__body__management .room__teaching__body__management__main__button {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header {
+    font-size: 20px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
+    font-size: 20px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
+    font-size: 18px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers__button, .room__teaching__body__management .room__teaching__body__management__main__button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header {
+    font-size: 22px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
+    font-size: 22px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
+    font-size: 20px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers__button, .room__teaching__body__management .room__teaching__body__management__main__button {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header {
+    font-size: 24px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
+    font-size: 24px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
+    font-size: 22px;
+  }
+  .room__teaching__body__management .room__teaching__body__management__teachers__button, .room__teaching__body__management .room__teaching__body__management__main__button {
+    font-size: 22px;
+  }
+}
 .room__teaching__body__management {
   display: flex;
   flex-direction: column;
@@ -2449,7 +3095,6 @@
   align-items: center;
   margin: 0;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 24px;
 }
 .room__teaching__body__management .room__teaching__body__management__main .room__teaching__body__management__main__header > * {
   height: 4vh;
@@ -2478,7 +3123,6 @@
 .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__header {
   margin: 0;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 24px;
 }
 .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers {
   display: flex;
@@ -2497,7 +3141,6 @@
 }
 .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .room__teaching__body__management__teachers__teacher__name {
   margin: 0;
-  font-size: 20px;
   font-family: "TTNormsPro", "sans-serif";
 }
 .room__teaching__body__management .room__teaching__body__management__teachers .room__teaching__body__management__teachers__teachers .room__teaching__body__management__teachers__teachers__teacher .cancel-button {
@@ -2525,7 +3168,6 @@
   align-items: center;
   justify-content: center;
   width: 50%;
-  height: 2.5vw;
   margin: 1.3% auto 0 auto;
   outline: none;
   border: #002544 0.2vw solid;
@@ -2533,7 +3175,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .room__teaching__body__management .room__teaching__body__management__teachers__button:hover, .room__teaching__body__management .room__teaching__body__management__main__button:hover {
@@ -2542,6 +3183,60 @@
   cursor: pointer;
 }
 
+@media (max-width: 425px) {
+  .room-teaching__header__link {
+    font-size: 10px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-teaching__header__link {
+    font-size: 12px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-teaching__header__link {
+    font-size: 14px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-teaching__header__link {
+    font-size: 20px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-teaching__header__link {
+    font-size: 22px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-teaching__header__link {
+    font-size: 24px;
+  }
+
+  .room__teaching__body__messages__message__name {
+    font-size: 24px;
+  }
+}
 .room-teaching {
   display: flex;
   flex-direction: column;
@@ -2559,7 +3254,6 @@
   color: rgb(var(--color));
   text-decoration: none;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 20px;
 }
 .room-teaching .room-teaching__header .room-teaching__header__link.active:after {
   position: absolute;
@@ -2580,6 +3274,180 @@
   width: 100%;
 }
 
+@media (max-width: 425px) {
+  .room .room__header {
+    width: 100%;
+    height: 20%;
+  }
+  .room .room__header .room__header__name {
+    font-size: 26px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__article {
+    font-size: 18px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__name {
+    margin: 0 0 0 0.5em;
+    font-size: 18px;
+  }
+  .room .room__content {
+    width: 95%;
+    height: 80%;
+  }
+  .room .room__content .room__content__header {
+    height: 9.54%;
+  }
+  .room .room__content .room__content__header .content-header__link {
+    font-size: 12px;
+  }
+  .room .room__content .room__content__body {
+    height: 90.46%;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room .room__header {
+    width: 100%;
+    height: 20%;
+  }
+  .room .room__header .room__header__name {
+    font-size: 30px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__article {
+    font-size: 22px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__name {
+    margin: 0 0 0 0.5em;
+    font-size: 22px;
+  }
+  .room .room__content {
+    width: 95%;
+    height: 80%;
+  }
+  .room .room__content .room__content__header {
+    height: 9.54%;
+  }
+  .room .room__content .room__content__header .content-header__link {
+    font-size: 18px;
+  }
+  .room .room__content .room__content__body {
+    height: 90.46%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room .room__header {
+    width: 80%;
+    height: 17%;
+  }
+  .room .room__header .room__header__name {
+    font-size: 34px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__article {
+    font-size: 26px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__name {
+    margin: 0 0 0 0.5em;
+    font-size: 26px;
+  }
+  .room .room__content {
+    width: 80%;
+    height: 77%;
+  }
+  .room .room__content .room__content__header {
+    height: 9.54%;
+  }
+  .room .room__content .room__content__header .content-header__link {
+    font-size: 22px;
+  }
+  .room .room__content .room__content__body {
+    height: 90.46%;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room .room__header {
+    width: 75%;
+    height: 17%;
+  }
+  .room .room__header .room__header__name {
+    font-size: 36px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__article {
+    font-size: 26px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__name {
+    margin: 0 0 0 0.5em;
+    font-size: 26px;
+  }
+  .room .room__content {
+    width: 75%;
+    height: 77%;
+  }
+  .room .room__content .room__content__header {
+    height: 9.54%;
+  }
+  .room .room__content .room__content__header .content-header__link {
+    font-size: 22px;
+  }
+  .room .room__content .room__content__body {
+    height: 90.46%;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room .room__header {
+    width: 75%;
+    height: 17%;
+  }
+  .room .room__header .room__header__name {
+    font-size: 36px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__article {
+    font-size: 28px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__name {
+    margin: 0 0 0 0.5em;
+    font-size: 28px;
+  }
+  .room .room__content {
+    width: 75%;
+    height: 77%;
+  }
+  .room .room__content .room__content__header {
+    height: 9.54%;
+  }
+  .room .room__content .room__content__header .content-header__link {
+    font-size: 23px;
+  }
+  .room .room__content .room__content__body {
+    height: 90.46%;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room .room__header {
+    width: 75%;
+    height: 17%;
+  }
+  .room .room__header .room__header__name {
+    font-size: 38px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__article {
+    font-size: 28px;
+  }
+  .room .room__header .room__header__owner .room__header__owner__name {
+    margin: 0 0 0 0.5em;
+    font-size: 28px;
+  }
+  .room .room__content {
+    width: 75%;
+    height: 77%;
+  }
+  .room .room__content .room__content__header {
+    height: 9.54%;
+  }
+  .room .room__content .room__content__header .content-header__link {
+    font-size: 24px;
+  }
+  .room .room__content .room__content__body {
+    height: 90.46%;
+  }
+}
 .room {
   display: flex;
   flex-direction: column;
@@ -2593,8 +3461,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 78.12%;
-  height: 16.5%;
   background-color: #eef4f7;
   background-repeat: repeat;
 }
@@ -2603,7 +3469,6 @@
   color: rgb(var(--headerColor));
   font-family: "TTNormsPro", sans-serif;
   font-weight: bold;
-  font-size: 38px;
 }
 .room .room__header .room__header__owner {
   display: flex;
@@ -2615,17 +3480,11 @@
   color: rgb(var(--headerColor));
   font-family: "TTNormsPro", sans-serif;
   font-weight: bold;
-  font-size: 22px;
 }
 .room .room__header .room__header__owner .room__header__owner__name {
   margin: 0 0 0 0.5em;
   color: rgb(var(--headerColor));
   font-family: "TTNormsPro SemiBold", sans-serif;
-  font-size: 22px;
-}
-.room .room__content {
-  width: 65%;
-  height: 77.5%;
 }
 .room .room__content .room__content__header {
   display: flex;
@@ -2657,7 +3516,6 @@
   color: rgb(var(--color));
   text-decoration: none;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 26px;
 }
 .content-header .content-header__link.active:after {
   position: absolute;
@@ -2903,11 +3761,76 @@
   border-color: #00bd00;
 }
 
+@media (max-width: 425px) {
+  .create-comment-form {
+    height: 7%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 10px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .create-comment-form {
+    height: 8%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 14px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .create-comment-form {
+    height: 9%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 15px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .create-comment-form {
+    height: 10%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 16px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .create-comment-form {
+    height: 10%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 16px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .create-comment-form {
+    height: 10%;
+  }
+  .create-comment-form .create-comment-form__input {
+    font-size: 18px;
+  }
+  .create-comment-form .create-comment-form__button {
+    height: 57.14%;
+  }
+}
 .create-comment-form {
   display: flex;
   align-items: center;
   width: 97%;
-  height: 10.43%;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;
   border-radius: 0.52vw;
@@ -2918,7 +3841,6 @@
   outline: none;
   border: none;
   background-color: inherit;
-  font-size: 24px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .create-comment-form .create-comment-form__button {
@@ -4031,9 +4953,9 @@
     padding: 0;
   }
   .studying-rooms-list .room-label {
-    width: 21%;
+    width: 22.5%;
     height: 45%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .studying-rooms-list .room-label .room-label__header {
     height: 15%;
@@ -4063,9 +4985,9 @@
     padding: 0;
   }
   .studying-rooms-list .room-label {
-    width: 16.1%;
+    width: 17.6%;
     height: 35%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .studying-rooms-list .room-label .room-label__header {
     height: 15%;
@@ -4095,9 +5017,9 @@
     padding: 0;
   }
   .studying-rooms-list .room-label {
-    width: 16.1%;
+    width: 17.6%;
     height: 35%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .studying-rooms-list .room-label .room-label__header {
     height: 15%;
@@ -4127,9 +5049,9 @@
     padding: 0;
   }
   .studying-rooms-list .room-label {
-    width: 16.1%;
+    width: 17.6%;
     height: 33%;
-    margin: 3% 0 0 3%;
+    margin: 2% 0 0 2%;
   }
   .studying-rooms-list .room-label .room-label__header {
     height: 15%;

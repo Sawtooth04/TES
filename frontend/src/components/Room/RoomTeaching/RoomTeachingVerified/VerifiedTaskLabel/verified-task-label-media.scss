@@ -1,0 +1,131 @@
+@media (max-width: 425px) {
+  .verified-task-label {
+    & .verified-task-label__wrapper {
+      & .verified-task-label__wrapper__body {
+        & .verified-task-label__wrapper__body__header {
+          font-size: 10px;
+        }
+
+        & .verified-task-label__wrapper__body__date {
+          font-size: 10px;
+        }
+      }
+    }
+
+    & .fold-view {
+      & .verified-task-label__fold-view__solution {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .verified-task-label {
+    & .verified-task-label__wrapper {
+      & .verified-task-label__wrapper__body {
+        & .verified-task-label__wrapper__body__header {
+          font-size: 12px;
+        }
+
+        & .verified-task-label__wrapper__body__date {
+          font-size: 12px;
+        }
+      }
+    }
+
+    & .fold-view {
+      & .verified-task-label__fold-view__solution {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .verified-task-label {
+    & .verified-task-label__wrapper {
+      & .verified-task-label__wrapper__body {
+        & .verified-task-label__wrapper__body__header {
+          font-size: 14px;
+        }
+
+        & .verified-task-label__wrapper__body__date {
+          font-size: 14px;
+        }
+      }
+    }
+
+    & .fold-view {
+      & .verified-task-label__fold-view__solution {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .verified-task-label {
+    & .verified-task-label__wrapper {
+      & .verified-task-label__wrapper__body {
+        & .verified-task-label__wrapper__body__header {
+          font-size: 18px;
+        }
+
+        & .verified-task-label__wrapper__body__date {
+          font-size: 18px;
+        }
+      }
+    }
+
+    & .fold-view {
+      & .verified-task-label__fold-view__solution {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .verified-task-label {
+    & .verified-task-label__wrapper {
+      & .verified-task-label__wrapper__body {
+        & .verified-task-label__wrapper__body__header {
+          font-size: 20px;
+        }
+
+        & .verified-task-label__wrapper__body__date {
+          font-size: 20px;
+        }
+      }
+    }
+
+    & .fold-view {
+      & .verified-task-label__fold-view__solution {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .verified-task-label {
+    & .verified-task-label__wrapper {
+      & .verified-task-label__wrapper__body {
+        & .verified-task-label__wrapper__body__header {
+          font-size: 22px;
+        }
+
+        & .verified-task-label__wrapper__body__date {
+          font-size: 22px;
+        }
+      }
+    }
+
+    & .fold-view {
+      & .verified-task-label__fold-view__solution {
+        font-size: 22px;
+      }
+    }
+  }
+}

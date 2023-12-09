@@ -1,3 +1,4 @@
+@import "room-teaching-management-input-media";
 @import "../../../../../public-variables";
 
 .room-teaching-management-input {
@@ -14,7 +15,6 @@
     margin: 0;
     padding-left: 2%;
     font-family: "TTNormsPro", "sans-serif";
-    font-size: 12px;
   }
 
   & .room-teaching-management-input__input {
@@ -25,6 +25,5 @@
     outline: none;
     background-color: $fourth_background_color;
     font-family: "TTNormsPro", "sans-serif";
-    font-size: 20px;
   }
 }
