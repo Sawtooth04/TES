@@ -1,4 +1,5 @@
 @import "../../../../UI/CancelButton/cancel-button";
+@import "room-task-variants-form-media";
 @import "../../../../../public-variables";
 
 .room-task-variants-form {
@@ -16,13 +17,9 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 15%;
-    left: 24.82%;
-    width: 10%;
     height: 60%;
     overflow: auto;
     font-family: "TTNormsPro", "sans-serif";
-    font-size: 18px;
     background-color: $third_background_color;
     border: 0.10vw $border_color solid;
     border-radius: 0.52vw 0 0 0.52vw;
@@ -65,13 +62,9 @@
 
   & .room-task-variants-form__body {
     position: absolute;
-    right: 25%;
-    top: 15%;
-    width: 40%;
     height: 60%;
     overflow: auto;
     font-family: "TTNormsPro", "sans-serif";
-    font-size: 16px;
     background-color: $third_background_color;
     border: 0.10vw $border_color solid;
     border-left: none;
@@ -81,7 +74,6 @@
       display: flex;
       flex-direction: column;
       padding: 3%;
-      font-size: 18px;
 
       & * {
         margin: 0;
@@ -91,7 +83,6 @@
         width: 100%;
         text-align: center;
         font-family: "TTNormsPro SemiBold", "sans-serif";
-        font-size: 20px;
       }
 
       & .room-task-variants-form__body__variant__input {
@@ -114,7 +105,6 @@
           border: $border_color 0.1vw solid;
           border-radius: 0.5vw;
           background-color: $inputs_background_color;
-          font-size: 16px;
           font-family: 'TTNormsPro SemiBold', 'sans-serif';
         }
       }
@@ -204,7 +194,6 @@
                   border: none;
                   border-bottom: 0.10vw $border_color solid;
                   outline: none;
-                  font-size: 18px;
                   font-family: 'TTNormsPro', 'sans-serif';
                 }
 
@@ -236,7 +225,6 @@
           background-color: $inputs_background_color;
           color: $primary_color;
           transition: color 200ms ease-out, background-color 200ms ease-out;
-          font-size: 20px;
           font-family: 'TTNormsPro SemiBold', 'sans-serif';
           white-space: nowrap;
         }

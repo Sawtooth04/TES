@@ -1,0 +1,107 @@
+@media (max-width: 425px) {
+  .room-task-comment {
+    & .room-task-comment__header {
+      & .room-task-comment__header__customer-name {
+        font-size: 10px;
+      }
+
+      & .room-task-comment__header__posted {
+        font-size: 10px;
+      }
+    }
+
+    & .room-task-comment__comment {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task-comment {
+    & .room-task-comment__header {
+      & .room-task-comment__header__customer-name {
+        font-size: 12px;
+      }
+
+      & .room-task-comment__header__posted {
+        font-size: 12px;
+      }
+    }
+
+    & .room-task-comment__comment {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task-comment {
+    & .room-task-comment__header {
+      & .room-task-comment__header__customer-name {
+        font-size: 14px;
+      }
+
+      & .room-task-comment__header__posted {
+        font-size: 14px;
+      }
+    }
+
+    & .room-task-comment__comment {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task-comment {
+    & .room-task-comment__header {
+      & .room-task-comment__header__customer-name {
+        font-size: 16px;
+      }
+
+      & .room-task-comment__header__posted {
+        font-size: 16px;
+      }
+    }
+
+    & .room-task-comment__comment {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task-comment {
+    & .room-task-comment__header {
+      & .room-task-comment__header__customer-name {
+        font-size: 18px;
+      }
+
+      & .room-task-comment__header__posted {
+        font-size: 18px;
+      }
+    }
+
+    & .room-task-comment__comment {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task-comment {
+    & .room-task-comment__header {
+      & .room-task-comment__header__customer-name {
+        font-size: 20px;
+      }
+
+      & .room-task-comment__header__posted {
+        font-size: 20px;
+      }
+    }
+
+    & .room-task-comment__comment {
+      font-size: 22px;
+    }
+  }
+}

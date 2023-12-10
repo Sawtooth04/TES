@@ -1,4 +1,5 @@
 @import "../../../../public-variables";
+@import "room-task-comment-media";
 @import "../../../UI/ContextMenu/context-menu";
 
 .room-task-comment {
@@ -22,13 +23,11 @@
       margin: 0;
       flex-grow: 1;
       font-family: "TTNormsPro SemiBold", "sans-serif";
-      font-size: 16px;
     }
 
     & .room-task-comment__header__posted {
       margin: 0;
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 16px;
     }
 
     & .context-menu-button {
@@ -47,6 +46,5 @@
     margin: 0;
     word-break: break-word;
     font-family: "TTNormsPro", "sans-serif";
-    font-size: 18px;
   }
 }

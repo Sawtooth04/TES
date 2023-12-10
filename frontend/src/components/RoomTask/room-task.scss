@@ -1,5 +1,6 @@
 @import "RoomTaskComments/room-task-comments";
 @import "RoomTaskControls/room-task-controls";
+@import "room-task-media";
 @import "../../public-variables";
 
 .room-task {
@@ -13,7 +14,6 @@
   & .room-task__content {
     display: flex;
     flex-direction: column;
-    width: 40.95%;
     height: 100%;
     margin-right: 1.56%;
 
@@ -31,7 +31,6 @@
       & .room-task__content__header__name {
         flex-grow: 1;
         margin: 0 0 0 3.18%;
-        font-size: 36px;
         font-family: "TTNormsPro SemiBold", "sans-serif";
         color: $primary_color;
       }
@@ -55,7 +54,6 @@
       max-height: 35%;
       margin: 3.24% 0 0 1%;
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 18px;
 
       & .room-task__content__description__text {
         max-height: 100%;
@@ -95,7 +93,6 @@
   }
 
   & .room-task__controls {
-    width: 26.07%;
     height: 100%;
   }
 }

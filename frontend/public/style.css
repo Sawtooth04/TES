@@ -1687,6 +1687,108 @@
   width: 1.3%;
 }
 
+@media (max-width: 425px) {
+  .pop-up-form .pop-up-form__form {
+    width: 75%;
+  }
+  .pop-up-form .pop-up-form__form .pop-up-form__form__header .pop-up-form__form__header__name {
+    font-size: 12px;
+  }
+  .pop-up-form .pop-up-form__form > input {
+    font-size: 10px;
+  }
+  .pop-up-form .pop-up-form__form button {
+    font-size: 10px;
+  }
+  .pop-up-form .pop-up-form__form > select {
+    font-size: 8px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .pop-up-form .pop-up-form__form {
+    width: 50%;
+  }
+  .pop-up-form .pop-up-form__form .pop-up-form__form__header .pop-up-form__form__header__name {
+    font-size: 14px;
+  }
+  .pop-up-form .pop-up-form__form > input {
+    font-size: 12px;
+  }
+  .pop-up-form .pop-up-form__form button {
+    font-size: 12px;
+  }
+  .pop-up-form .pop-up-form__form > select {
+    font-size: 10px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pop-up-form .pop-up-form__form {
+    width: 30%;
+  }
+  .pop-up-form .pop-up-form__form .pop-up-form__form__header .pop-up-form__form__header__name {
+    font-size: 16px;
+  }
+  .pop-up-form .pop-up-form__form > input {
+    font-size: 14px;
+  }
+  .pop-up-form .pop-up-form__form button {
+    font-size: 14px;
+  }
+  .pop-up-form .pop-up-form__form > select {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .pop-up-form .pop-up-form__form {
+    width: 22.39%;
+  }
+  .pop-up-form .pop-up-form__form .pop-up-form__form__header .pop-up-form__form__header__name {
+    font-size: 18px;
+  }
+  .pop-up-form .pop-up-form__form > input {
+    font-size: 16px;
+  }
+  .pop-up-form .pop-up-form__form button {
+    font-size: 16px;
+  }
+  .pop-up-form .pop-up-form__form > select {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .pop-up-form .pop-up-form__form {
+    width: 22.39%;
+  }
+  .pop-up-form .pop-up-form__form .pop-up-form__form__header .pop-up-form__form__header__name {
+    font-size: 20px;
+  }
+  .pop-up-form .pop-up-form__form > input {
+    font-size: 18px;
+  }
+  .pop-up-form .pop-up-form__form button {
+    font-size: 18px;
+  }
+  .pop-up-form .pop-up-form__form > select {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .pop-up-form .pop-up-form__form {
+    width: 22.39%;
+  }
+  .pop-up-form .pop-up-form__form .pop-up-form__form__header .pop-up-form__form__header__name {
+    font-size: 22px;
+  }
+  .pop-up-form .pop-up-form__form > input {
+    font-size: 20px;
+  }
+  .pop-up-form .pop-up-form__form button {
+    font-size: 20px;
+  }
+  .pop-up-form .pop-up-form__form > select {
+    font-size: 18px;
+  }
+}
 .pop-up-form {
   display: flex;
   justify-content: center;
@@ -1705,7 +1807,6 @@
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  width: 22.39%;
   padding: 0 0.78%;
   margin-bottom: 4.16%;
   background-color: #ecf6ff;
@@ -1723,7 +1824,6 @@
 }
 .pop-up-form .pop-up-form__form .pop-up-form__form__header .pop-up-form__form__header__name {
   margin: 1.38vh 0;
-  font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   white-space: nowrap;
   color: #ecf6ff;
@@ -1737,7 +1837,6 @@
   border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
-  font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .pop-up-form .pop-up-form__form button {
@@ -1753,7 +1852,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .pop-up-form .pop-up-form__form button:hover {
@@ -1770,7 +1868,6 @@
   border: #002544 0.2vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
-  font-size: 18px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 
@@ -3527,6 +3624,72 @@
   background-color: rgb(var(--color));
 }
 
+@media (max-width: 425px) {
+  .room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+    font-size: 10px;
+  }
+  .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+    font-size: 10px;
+  }
+  .room-task-comment .room-task-comment__comment {
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+    font-size: 12px;
+  }
+  .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+    font-size: 12px;
+  }
+  .room-task-comment .room-task-comment__comment {
+    font-size: 14px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+    font-size: 14px;
+  }
+  .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+    font-size: 14px;
+  }
+  .room-task-comment .room-task-comment__comment {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+    font-size: 16px;
+  }
+  .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+    font-size: 16px;
+  }
+  .room-task-comment .room-task-comment__comment {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+    font-size: 18px;
+  }
+  .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+    font-size: 18px;
+  }
+  .room-task-comment .room-task-comment__comment {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+    font-size: 20px;
+  }
+  .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+    font-size: 20px;
+  }
+  .room-task-comment .room-task-comment__comment {
+    font-size: 22px;
+  }
+}
 .context-menu {
   display: flex;
   justify-content: start;
@@ -3595,12 +3758,10 @@
   margin: 0;
   flex-grow: 1;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
 }
 .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
   margin: 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 .room-task-comment .room-task-comment__header .context-menu-button {
   height: 100%;
@@ -3615,9 +3776,56 @@
   margin: 0;
   word-break: break-word;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 
+@media (max-width: 425px) {
+  .room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > p {
+    font-size: 10px;
+  }
+  .room-task-comments .room-task-comments__header .room-task-comments__header__comments {
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > p {
+    font-size: 12px;
+  }
+  .room-task-comments .room-task-comments__header .room-task-comments__header__comments {
+    font-size: 14px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > p {
+    font-size: 14px;
+  }
+  .room-task-comments .room-task-comments__header .room-task-comments__header__comments {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > p {
+    font-size: 16px;
+  }
+  .room-task-comments .room-task-comments__header .room-task-comments__header__comments {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > p {
+    font-size: 18px;
+  }
+  .room-task-comments .room-task-comments__header .room-task-comments__header__comments {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task-comments .room-task-comments__header .room-task-comments__header__add-comment-button > p {
+    font-size: 20px;
+  }
+  .room-task-comments .room-task-comments__header .room-task-comments__header__comments {
+    font-size: 22px;
+  }
+}
 .room-task-comments {
   display: flex;
   flex-direction: column;
@@ -3645,7 +3853,6 @@
   margin: 0;
   padding-left: 4.4%;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
   white-space: nowrap;
 }
 .room-task-comments .room-task-comments__header .room-task-comments__header__comments {
@@ -3654,7 +3861,6 @@
   padding-left: 1%;
   font-family: "TTNormsPro", "sans-serif";
   font-weight: bold;
-  font-size: 18px;
 }
 .room-task-comments .room-task-comments__comments {
   height: 90%;
@@ -3704,6 +3910,36 @@
   transition: max-height 200ms ease-out;
 }
 
+@media (max-width: 425px) {
+  .solution-output .solution-output__output > * {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .solution-output .solution-output__output > * {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .solution-output .solution-output__output > * {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .solution-output .solution-output__output > * {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .solution-output .solution-output__output > * {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .solution-output .solution-output__output > * {
+    font-size: 20px;
+  }
+}
 .solution-output {
   display: flex;
   flex-direction: column;
@@ -3723,7 +3959,6 @@
 .solution-output .solution-output__output > * {
   margin: 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 .solution-output .solution-output__error-output {
   border-width: 0.15vw;
@@ -3858,6 +4093,72 @@
   margin: 0 1.33% 0 1.33%;
 }
 
+@media (max-width: 425px) {
+  .room-task-message .room-task-message__header .room-task-message__header__customer-name {
+    font-size: 8px;
+  }
+  .room-task-message .room-task-message__header .room-task-message__header__sent {
+    font-size: 8px;
+  }
+  .room-task-message .room-task-message__message {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task-message .room-task-message__header .room-task-message__header__customer-name {
+    font-size: 10px;
+  }
+  .room-task-message .room-task-message__header .room-task-message__header__sent {
+    font-size: 10px;
+  }
+  .room-task-message .room-task-message__message {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task-message .room-task-message__header .room-task-message__header__customer-name {
+    font-size: 12px;
+  }
+  .room-task-message .room-task-message__header .room-task-message__header__sent {
+    font-size: 12px;
+  }
+  .room-task-message .room-task-message__message {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task-message .room-task-message__header .room-task-message__header__customer-name {
+    font-size: 14px;
+  }
+  .room-task-message .room-task-message__header .room-task-message__header__sent {
+    font-size: 14px;
+  }
+  .room-task-message .room-task-message__message {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task-message .room-task-message__header .room-task-message__header__customer-name {
+    font-size: 16px;
+  }
+  .room-task-message .room-task-message__header .room-task-message__header__sent {
+    font-size: 16px;
+  }
+  .room-task-message .room-task-message__message {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task-message .room-task-message__header .room-task-message__header__customer-name {
+    font-size: 18px;
+  }
+  .room-task-message .room-task-message__header .room-task-message__header__sent {
+    font-size: 18px;
+  }
+  .room-task-message .room-task-message__message {
+    font-size: 20px;
+  }
+}
 .room-task-message {
   display: flex;
   flex-direction: column;
@@ -3877,19 +4178,16 @@
   margin: 0;
   flex-grow: 1;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 16px;
 }
 .room-task-message .room-task-message__header .room-task-message__header__sent {
   margin: 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 .room-task-message .room-task-message__message {
   max-width: 100%;
   margin: 0;
   word-break: break-word;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 
 .cancel-button {
@@ -3915,6 +4213,180 @@
   transform: rotate(-45deg);
 }
 
+@media (max-width: 425px) {
+  .room-task-variants-form .room-task-variants-form__sidebar {
+    top: 15%;
+    left: 10%;
+    width: 20%;
+    font-size: 10px;
+  }
+  .room-task-variants-form .room-task-variants-form__body {
+    right: 10%;
+    top: 15%;
+    width: 60%;
+    font-size: 10px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant {
+    font-size: 10px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__name {
+    font-size: 10px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__input {
+    font-size: 10px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item {
+    font-size: 10px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task-variants-form .room-task-variants-form__sidebar {
+    top: 15%;
+    left: 10%;
+    width: 20%;
+    font-size: 12px;
+  }
+  .room-task-variants-form .room-task-variants-form__body {
+    right: 10%;
+    top: 15%;
+    width: 60%;
+    font-size: 12px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant {
+    font-size: 12px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__name {
+    font-size: 12px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__input {
+    font-size: 12px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item {
+    font-size: 12px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task-variants-form .room-task-variants-form__sidebar {
+    top: 15%;
+    left: 24.82%;
+    width: 10%;
+    font-size: 14px;
+  }
+  .room-task-variants-form .room-task-variants-form__body {
+    right: 25%;
+    top: 15%;
+    width: 40%;
+    font-size: 14px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant {
+    font-size: 14px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__name {
+    font-size: 14px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__input {
+    font-size: 14px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item {
+    font-size: 14px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task-variants-form .room-task-variants-form__sidebar {
+    top: 15%;
+    left: 24.82%;
+    width: 10%;
+    font-size: 16px;
+  }
+  .room-task-variants-form .room-task-variants-form__body {
+    right: 25%;
+    top: 15%;
+    width: 40%;
+    font-size: 16px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant {
+    font-size: 16px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__name {
+    font-size: 16px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__input {
+    font-size: 16px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item {
+    font-size: 16px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task-variants-form .room-task-variants-form__sidebar {
+    top: 15%;
+    left: 24.82%;
+    width: 10%;
+    font-size: 18px;
+  }
+  .room-task-variants-form .room-task-variants-form__body {
+    right: 25%;
+    top: 15%;
+    width: 40%;
+    font-size: 18px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant {
+    font-size: 18px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__name {
+    font-size: 18px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__input {
+    font-size: 18px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item {
+    font-size: 18px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task-variants-form .room-task-variants-form__sidebar {
+    top: 15%;
+    left: 24.82%;
+    width: 10%;
+    font-size: 20px;
+  }
+  .room-task-variants-form .room-task-variants-form__body {
+    right: 25%;
+    top: 15%;
+    width: 40%;
+    font-size: 20px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant {
+    font-size: 20px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__name {
+    font-size: 20px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input .room-task-variants-form__body__variant__input__input {
+    font-size: 20px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item {
+    font-size: 20px;
+  }
+  .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__controls .room-task-variants-form__body__variant__controls__button {
+    font-size: 20px;
+  }
+}
 .room-task-variants-form {
   display: flex;
   position: absolute;
@@ -3930,13 +4402,9 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 15%;
-  left: 24.82%;
-  width: 10%;
   height: 60%;
   overflow: auto;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;
   border-radius: 0.52vw 0 0 0.52vw;
@@ -3971,13 +4439,9 @@
 }
 .room-task-variants-form .room-task-variants-form__body {
   position: absolute;
-  right: 25%;
-  top: 15%;
-  width: 40%;
   height: 60%;
   overflow: auto;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
   background-color: #eef4f7;
   border: 0.1vw #b4bec7 solid;
   border-left: none;
@@ -3987,7 +4451,6 @@
   display: flex;
   flex-direction: column;
   padding: 3%;
-  font-size: 18px;
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant * {
   margin: 0;
@@ -3996,7 +4459,6 @@
   width: 100%;
   text-align: center;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 20px;
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__input {
   display: flex;
@@ -4017,7 +4479,6 @@
   border: #b4bec7 0.1vw solid;
   border-radius: 0.5vw;
   background-color: #eef4f7;
-  font-size: 16px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values {
@@ -4097,7 +4558,6 @@
   border: none;
   border-bottom: 0.1vw #b4bec7 solid;
   outline: none;
-  font-size: 18px;
   font-family: "TTNormsPro", "sans-serif";
 }
 .room-task-variants-form .room-task-variants-form__body .room-task-variants-form__body__variant .room-task-variants-form__body__variant__values .room-task-variants-form__body__variant__values__body .body-variant-table-input .body-variant-table-input__body .body-variant-table-input__body__content .body-variant-table-input__body__content__item:last-child {
@@ -4122,7 +4582,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   white-space: nowrap;
 }
@@ -4155,6 +4614,36 @@
   border-radius: 0.3vw;
 }
 
+@media (max-width: 425px) {
+  .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph {
+    font-size: 8px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph {
+    font-size: 20px;
+  }
+}
 .room-task__controls__teacher-control__statistic {
   display: flex;
   flex-direction: column;
@@ -4165,18 +4654,120 @@
   display: flex;
   margin-top: 1.3vh;
   width: 70%;
+  word-break: break-word;
 }
 .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph {
   width: 60%;
   margin: 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 .room-task__controls__teacher-control__statistic .room-task__controls__teacher-control__statistic__item .room-task__controls__teacher-control__statistic__item__paragraph:last-child {
   width: 40%;
   text-align: center;
 }
 
+@media (max-width: 425px) {
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
+    font-size: 12px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__submit-button {
+    font-size: 10px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__paragraph {
+    font-size: 10px;
+  }
+  .room-task__controls .room-task__controls__teacher-control .room-task__controls__teacher-control__button {
+    font-size: 10px;
+  }
+  .room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
+    font-size: 6px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
+    font-size: 14px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__submit-button {
+    font-size: 12px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__paragraph {
+    font-size: 12px;
+  }
+  .room-task__controls .room-task__controls__teacher-control .room-task__controls__teacher-control__button {
+    font-size: 12px;
+  }
+  .room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
+    font-size: 10px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
+    font-size: 16px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__submit-button {
+    font-size: 14px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__paragraph {
+    font-size: 14px;
+  }
+  .room-task__controls .room-task__controls__teacher-control .room-task__controls__teacher-control__button {
+    font-size: 14px;
+  }
+  .room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
+    font-size: 18px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__submit-button {
+    font-size: 16px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__paragraph {
+    font-size: 16px;
+  }
+  .room-task__controls .room-task__controls__teacher-control .room-task__controls__teacher-control__button {
+    font-size: 14px;
+  }
+  .room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
+    font-size: 20px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__submit-button {
+    font-size: 18px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__paragraph {
+    font-size: 18px;
+  }
+  .room-task__controls .room-task__controls__teacher-control .room-task__controls__teacher-control__button {
+    font-size: 16px;
+  }
+  .room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
+    font-size: 22px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__submit-button {
+    font-size: 20px;
+  }
+  .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__paragraph {
+    font-size: 20px;
+  }
+  .room-task__controls .room-task__controls__teacher-control .room-task__controls__teacher-control__button {
+    font-size: 18px;
+  }
+  .room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
+    font-size: 18px;
+  }
+}
 .room-task__controls {
   display: flex;
   flex-direction: column;
@@ -4200,7 +4791,6 @@
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__header .room-task__controls__solution__header__title {
   margin: 0;
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 22px;
   white-space: nowrap;
 }
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__content {
@@ -4247,7 +4837,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   white-space: nowrap;
 }
@@ -4259,7 +4848,6 @@
 .room-task__controls .room-task__controls__solution .room-task__controls__solution__controls .room-task__controls__solution__controls__paragraph {
   width: 90%;
   margin: 1.38vh 0;
-  font-size: 18px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   text-align: center;
 }
@@ -4285,7 +4873,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 20px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   white-space: nowrap;
 }
@@ -4310,9 +4897,6 @@
   width: 95%;
   height: 9%;
   margin-top: 2.5%;
-}
-.room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__input {
-  font-size: 20px;
 }
 .room-task__controls .room-task__controls__solution-messages .create-comment-form .create-comment-form__button {
   display: flex;
@@ -4353,6 +4937,90 @@
   margin-top: 2.5%;
 }
 
+@media (max-width: 425px) {
+  .room-task .room-task__content {
+    width: 60%;
+  }
+  .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
+    font-size: 16px;
+  }
+  .room-task .room-task__content .room-task__content__description {
+    font-size: 10px;
+  }
+  .room-task .room-task__controls {
+    width: 30%;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task .room-task__content {
+    width: 60%;
+  }
+  .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
+    font-size: 18px;
+  }
+  .room-task .room-task__content .room-task__content__description {
+    font-size: 14px;
+  }
+  .room-task .room-task__controls {
+    width: 30%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task .room-task__content {
+    width: 40.95%;
+  }
+  .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
+    font-size: 22px;
+  }
+  .room-task .room-task__content .room-task__content__description {
+    font-size: 14px;
+  }
+  .room-task .room-task__controls {
+    width: 26.07%;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task .room-task__content {
+    width: 40.95%;
+  }
+  .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
+    font-size: 30px;
+  }
+  .room-task .room-task__content .room-task__content__description {
+    font-size: 16px;
+  }
+  .room-task .room-task__controls {
+    width: 26.07%;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task .room-task__content {
+    width: 40.95%;
+  }
+  .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
+    font-size: 32px;
+  }
+  .room-task .room-task__content .room-task__content__description {
+    font-size: 18px;
+  }
+  .room-task .room-task__controls {
+    width: 26.07%;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task .room-task__content {
+    width: 40.95%;
+  }
+  .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
+    font-size: 34px;
+  }
+  .room-task .room-task__content .room-task__content__description {
+    font-size: 20px;
+  }
+  .room-task .room-task__controls {
+    width: 26.07%;
+  }
+}
 .room-task {
   display: flex;
   justify-content: center;
@@ -4364,7 +5032,6 @@
 .room-task .room-task__content {
   display: flex;
   flex-direction: column;
-  width: 40.95%;
   height: 100%;
   margin-right: 1.56%;
 }
@@ -4381,7 +5048,6 @@
 .room-task .room-task__content .room-task__content__header .room-task__content__header__name {
   flex-grow: 1;
   margin: 0 0 0 3.18%;
-  font-size: 36px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
   color: #002544;
 }
@@ -4402,7 +5068,6 @@
   max-height: 35%;
   margin: 3.24% 0 0 1%;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 18px;
 }
 .room-task .room-task__content .room-task__content__description .room-task__content__description__text {
   max-height: 100%;
@@ -4434,10 +5099,93 @@
   margin-top: 3.24%;
 }
 .room-task .room-task__controls {
-  width: 26.07%;
   height: 100%;
 }
 
+@media (max-width: 425px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 10px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 10px;
+  }
+  .notifications .notifications__button {
+    font-size: 10px;
+  }
+  .notifications .notifications__text {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 12px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 10px;
+  }
+  .notifications .notifications__button {
+    font-size: 12px;
+  }
+  .notifications .notifications__text {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 14px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 12px;
+  }
+  .notifications .notifications__button {
+    font-size: 14px;
+  }
+  .notifications .notifications__text {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 16px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 14px;
+  }
+  .notifications .notifications__button {
+    font-size: 16px;
+  }
+  .notifications .notifications__text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 18px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 16px;
+  }
+  .notifications .notifications__button {
+    font-size: 18px;
+  }
+  .notifications .notifications__text {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 20px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 18px;
+  }
+  .notifications .notifications__button {
+    font-size: 20px;
+  }
+  .notifications .notifications__text {
+    font-size: 20px;
+  }
+}
 .notifications {
   position: absolute;
   display: flex;
@@ -4467,11 +5215,9 @@
 }
 .notifications .notifications__notification .notifications__notification__header {
   font-family: "TTNormsPro SemiBold", "sans-serif";
-  font-size: 18px;
 }
 .notifications .notifications__notification .notifications__notification__text {
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 .notifications .notifications__notification .cancel-button {
   position: absolute;
@@ -4503,7 +5249,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 18px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .notifications .notifications__button:hover {
@@ -4514,7 +5259,6 @@
 .notifications .notifications__text {
   margin: 2vh 0 0 0;
   font-family: "TTNormsPro", "sans-serif";
-  font-size: 16px;
 }
 
 .notifications_hidden {
@@ -4525,6 +5269,36 @@
   transform: translateY(0);
 }
 
+@media (max-width: 425px) {
+  .user-menu .user-menu__button {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .user-menu .user-menu__button {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .user-menu .user-menu__button {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .user-menu .user-menu__button {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .user-menu .user-menu__button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .user-menu .user-menu__button {
+    font-size: 20px;
+  }
+}
 .user-menu {
   position: absolute;
   display: flex;
@@ -4554,7 +5328,6 @@
   background-color: #eef4f7;
   color: #002544;
   transition: color 200ms ease-out, background-color 200ms ease-out;
-  font-size: 18px;
   font-family: "TTNormsPro SemiBold", "sans-serif";
 }
 .user-menu .user-menu__button:hover {

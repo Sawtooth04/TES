@@ -1,0 +1,59 @@
+@media (max-width: 425px) {
+  .room-task__controls__teacher-control__statistic {
+    & .room-task__controls__teacher-control__statistic__item {
+      & .room-task__controls__teacher-control__statistic__item__paragraph {
+        font-size: 8px;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task__controls__teacher-control__statistic {
+    & .room-task__controls__teacher-control__statistic__item {
+      & .room-task__controls__teacher-control__statistic__item__paragraph {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task__controls__teacher-control__statistic {
+    & .room-task__controls__teacher-control__statistic__item {
+      & .room-task__controls__teacher-control__statistic__item__paragraph {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task__controls__teacher-control__statistic {
+    & .room-task__controls__teacher-control__statistic__item {
+      & .room-task__controls__teacher-control__statistic__item__paragraph {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task__controls__teacher-control__statistic {
+    & .room-task__controls__teacher-control__statistic__item {
+      & .room-task__controls__teacher-control__statistic__item__paragraph {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task__controls__teacher-control__statistic {
+    & .room-task__controls__teacher-control__statistic__item {
+      & .room-task__controls__teacher-control__statistic__item__paragraph {
+        font-size: 20px;
+      }
+    }
+  }
+}

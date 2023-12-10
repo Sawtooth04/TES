@@ -1,4 +1,5 @@
 @import "../../../../UI/FoldView/fold-view";
+@import "room-task-controls-solution-output-media";
 @import "../../../../../public-variables";
 
 .solution-output {
@@ -21,7 +22,6 @@
     & > * {
       margin: 0;
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 16px;
     }
   }
 

@@ -1,4 +1,5 @@
 @import "RoomTaskVariantsForm/room-task-variants-form";
+@import "room-task-teacher-controls-media";
 
 .room-task__controls__teacher-control__statistic {
   display: flex;
@@ -10,12 +11,12 @@
     display: flex;
     margin-top: 1.3vh;
     width: 70%;
+    word-break: break-word;
 
     & .room-task__controls__teacher-control__statistic__item__paragraph {
       width: 60%;
       margin: 0;
       font-family: "TTNormsPro", "sans-serif";
-      font-size: 18px;
     }
 
     & .room-task__controls__teacher-control__statistic__item__paragraph:last-child {

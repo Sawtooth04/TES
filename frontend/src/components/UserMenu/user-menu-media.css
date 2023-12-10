@@ -1,0 +1,77 @@
+@media (max-width: 425px) {
+  .user-menu .user-menu__button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 12px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 10px;
+  }
+  .notifications .notifications__button {
+    font-size: 12px;
+  }
+  .notifications .notifications__text {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 14px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 12px;
+  }
+  .notifications .notifications__button {
+    font-size: 14px;
+  }
+  .notifications .notifications__text {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 16px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 14px;
+  }
+  .notifications .notifications__button {
+    font-size: 16px;
+  }
+  .notifications .notifications__text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 18px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 16px;
+  }
+  .notifications .notifications__button {
+    font-size: 18px;
+  }
+  .notifications .notifications__text {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .notifications .notifications__notification .notifications__notification__header {
+    font-size: 20px;
+  }
+  .notifications .notifications__notification .notifications__notification__text {
+    font-size: 18px;
+  }
+  .notifications .notifications__button {
+    font-size: 20px;
+  }
+  .notifications .notifications__text {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=user-menu-media.css.map */

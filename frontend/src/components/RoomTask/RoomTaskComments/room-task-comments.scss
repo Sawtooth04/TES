@@ -1,4 +1,5 @@
 @import "RoomTaskComment/room-task-comment";
+@import "room-task-comments-media";
 @import "../../../public-variables";
 
 .room-task-comments {
@@ -29,7 +30,6 @@
         margin: 0;
         padding-left: 4.40%;
         font-family: "TTNormsPro SemiBold", "sans-serif";
-        font-size: 16px;
         white-space: nowrap;
       }
     }
@@ -40,7 +40,6 @@
       padding-left: 1%;
       font-family: "TTNormsPro", "sans-serif";
       font-weight: bold;
-      font-size: 18px;
     }
   }
 

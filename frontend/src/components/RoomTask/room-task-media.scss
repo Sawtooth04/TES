@@ -1,0 +1,119 @@
+@media (max-width: 425px) {
+  .room-task {
+    & .room-task__content {
+      width: 60%;
+
+      & .room-task__content__header {
+        & .room-task__content__header__name {
+          font-size: 16px;
+        }
+      }
+      & .room-task__content__description {
+        font-size: 10px;
+      }
+    }
+    & .room-task__controls {
+      width: 30%;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .room-task {
+    & .room-task__content {
+      width: 60%;
+
+      & .room-task__content__header {
+        & .room-task__content__header__name {
+          font-size: 18px;
+        }
+      }
+      & .room-task__content__description {
+        font-size: 14px;
+      }
+    }
+    & .room-task__controls {
+      width: 30%;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .room-task {
+    & .room-task__content {
+      width: 40.95%;
+
+      & .room-task__content__header {
+        & .room-task__content__header__name {
+          font-size: 22px;
+        }
+      }
+      & .room-task__content__description {
+        font-size: 14px;
+      }
+    }
+    & .room-task__controls {
+      width: 26.07%;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .room-task {
+    & .room-task__content {
+      width: 40.95%;
+
+      & .room-task__content__header {
+        & .room-task__content__header__name {
+          font-size: 30px;
+        }
+      }
+      & .room-task__content__description {
+        font-size: 16px;
+      }
+    }
+    & .room-task__controls {
+      width: 26.07%;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .room-task {
+    & .room-task__content {
+      width: 40.95%;
+
+      & .room-task__content__header {
+        & .room-task__content__header__name {
+          font-size: 32px;
+        }
+      }
+      & .room-task__content__description {
+        font-size: 18px;
+      }
+    }
+    & .room-task__controls {
+      width: 26.07%;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .room-task {
+    & .room-task__content {
+      width: 40.95%;
+
+      & .room-task__content__header {
+        & .room-task__content__header__name {
+          font-size: 34px;
+        }
+      }
+      & .room-task__content__description {
+        font-size: 20px;
+      }
+    }
+    & .room-task__controls {
+      width: 26.07%;
+    }
+  }
+}

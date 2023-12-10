@@ -1,0 +1,13 @@
+@media (max-width: 425px) {
+  .room-task-comment .room-task-comment__header .room-task-comment__header__customer-name {
+    font-size: 10px;
+  }
+  .room-task-comment .room-task-comment__header .room-task-comment__header__posted {
+    font-size: 10px;
+  }
+  .room-task-comment .room-task-comment__comment {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=room-task-comment-media.css.map */

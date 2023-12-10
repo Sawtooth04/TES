@@ -1,0 +1,155 @@
+@media (max-width: 425px) {
+  .pop-up-form {
+    & .pop-up-form__form {
+      width: 75%;
+
+      & .pop-up-form__form__header {
+        & .pop-up-form__form__header__name {
+          font-size: 12px;
+        }
+      }
+
+      & > input {
+        font-size: 10px;
+      }
+
+      & button {
+        font-size: 10px;
+      }
+
+      & > select {
+        font-size: 8px;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .pop-up-form {
+    & .pop-up-form__form {
+      width: 50%;
+
+      & .pop-up-form__form__header {
+        & .pop-up-form__form__header__name {
+          font-size: 14px;
+        }
+      }
+
+      & > input {
+        font-size: 12px;
+      }
+
+      & button {
+        font-size: 12px;
+      }
+
+      & > select {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pop-up-form {
+    & .pop-up-form__form {
+      width: 30%;
+
+      & .pop-up-form__form__header {
+        & .pop-up-form__form__header__name {
+          font-size: 16px;
+        }
+      }
+
+      & > input {
+        font-size: 14px;
+      }
+
+      & button {
+        font-size: 14px;
+      }
+
+      & > select {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .pop-up-form {
+    & .pop-up-form__form {
+      width: 22.39%;
+
+      & .pop-up-form__form__header {
+        & .pop-up-form__form__header__name {
+          font-size: 18px;
+        }
+      }
+
+      & > input {
+        font-size: 16px;
+      }
+
+      & button {
+        font-size: 16px;
+      }
+
+      & > select {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .pop-up-form {
+    & .pop-up-form__form {
+      width: 22.39%;
+
+      & .pop-up-form__form__header {
+        & .pop-up-form__form__header__name {
+          font-size: 20px;
+        }
+      }
+
+      & > input {
+        font-size: 18px;
+      }
+
+      & button {
+        font-size: 18px;
+      }
+
+      & > select {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .pop-up-form {
+    & .pop-up-form__form {
+      width: 22.39%;
+
+      & .pop-up-form__form__header {
+        & .pop-up-form__form__header__name {
+          font-size: 22px;
+        }
+      }
+
+      & > input {
+        font-size: 20px;
+      }
+
+      & button {
+        font-size: 20px;
+      }
+
+      & > select {
+        font-size: 18px;
+      }
+    }
+  }
+}
