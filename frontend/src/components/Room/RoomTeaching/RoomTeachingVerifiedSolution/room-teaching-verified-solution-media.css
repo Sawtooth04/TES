@@ -1,0 +1,104 @@
+@media (max-width: 425px) {
+  .unverified-solution .unverified-solution__sidebar {
+    font-size: 10px;
+  }
+  .unverified-solution .unverified-solution__body {
+    font-size: 8px;
+  }
+  .unverified-solution .unverified-solution__solution-controls {
+    font-size: 10px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__button {
+    font-size: 10px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__wrapper > .unverified-solution__solution-controls__wrapper__button {
+    font-size: 10px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .unverified-solution .unverified-solution__sidebar {
+    font-size: 12px;
+  }
+  .unverified-solution .unverified-solution__body {
+    font-size: 10px;
+  }
+  .unverified-solution .unverified-solution__solution-controls {
+    font-size: 12px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__button {
+    font-size: 12px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__wrapper > .unverified-solution__solution-controls__wrapper__button {
+    font-size: 10px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .unverified-solution .unverified-solution__sidebar {
+    font-size: 14px;
+  }
+  .unverified-solution .unverified-solution__body {
+    font-size: 12px;
+  }
+  .unverified-solution .unverified-solution__solution-controls {
+    font-size: 14px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__button {
+    font-size: 14px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__wrapper > .unverified-solution__solution-controls__wrapper__button {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .unverified-solution .unverified-solution__sidebar {
+    font-size: 16px;
+  }
+  .unverified-solution .unverified-solution__body {
+    font-size: 16px;
+  }
+  .unverified-solution .unverified-solution__solution-controls {
+    font-size: 16px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__button {
+    font-size: 16px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__wrapper > .unverified-solution__solution-controls__wrapper__button {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .unverified-solution .unverified-solution__sidebar {
+    font-size: 18px;
+  }
+  .unverified-solution .unverified-solution__body {
+    font-size: 18px;
+  }
+  .unverified-solution .unverified-solution__solution-controls {
+    font-size: 18px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__button {
+    font-size: 18px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__wrapper > .unverified-solution__solution-controls__wrapper__button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .unverified-solution .unverified-solution__sidebar {
+    font-size: 20px;
+  }
+  .unverified-solution .unverified-solution__body {
+    font-size: 20px;
+  }
+  .unverified-solution .unverified-solution__solution-controls {
+    font-size: 20px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__button {
+    font-size: 20px;
+  }
+  .unverified-solution .unverified-solution__solution-controls > .unverified-solution__solution-controls__wrapper > .unverified-solution__solution-controls__wrapper__button {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=room-teaching-verified-solution-media.css.map */

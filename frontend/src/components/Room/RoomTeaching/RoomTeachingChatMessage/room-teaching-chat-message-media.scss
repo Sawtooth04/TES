@@ -1,0 +1,83 @@
+@media (max-width: 425px) {
+  .message {
+    & .message__header {
+      & .message__header__name, .message__header__time {
+        font-size: 10px;
+      }
+    }
+
+    & .message__text {
+      font-size: 10px;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .message {
+    & .message__header {
+      & .message__header__name, .message__header__time {
+        font-size: 12px;
+      }
+    }
+
+    & .message__text {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .message {
+    & .message__header {
+      & .message__header__name, .message__header__time {
+        font-size: 14px;
+      }
+    }
+
+    & .message__text {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .message {
+    & .message__header {
+      & .message__header__name, .message__header__time {
+        font-size: 16px;
+      }
+    }
+
+    & .message__text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .message {
+    & .message__header {
+      & .message__header__name, .message__header__time {
+        font-size: 18px;
+      }
+    }
+
+    & .message__text {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .message {
+    & .message__header {
+      & .message__header__name, .message__header__time {
+        font-size: 20px;
+      }
+    }
+
+    & .message__text {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@media (max-width: 425px) {
+  .add-room-teacher-dialog {
+    & .add-room-teacher-dialog__form {
+      & .add-room-teacher-dialog__form__members {
+        & .add-room-teacher-dialog__form__members__member {
+          & .add-room-teacher-dialog__form__members__member__name {
+            font-size: 10px;
+          }
+        }
+      }
+
+      & .add-room-teacher-dialog__form__members__member__button, .add-room-teacher-dialog__form__close {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .add-room-teacher-dialog {
+    & .add-room-teacher-dialog__form {
+      & .add-room-teacher-dialog__form__members {
+        & .add-room-teacher-dialog__form__members__member {
+          & .add-room-teacher-dialog__form__members__member__name {
+            font-size: 12px;
+          }
+        }
+      }
+
+      & .add-room-teacher-dialog__form__members__member__button, .add-room-teacher-dialog__form__close {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .add-room-teacher-dialog {
+    & .add-room-teacher-dialog__form {
+      & .add-room-teacher-dialog__form__members {
+        & .add-room-teacher-dialog__form__members__member {
+          & .add-room-teacher-dialog__form__members__member__name {
+            font-size: 14px;
+          }
+        }
+      }
+
+      & .add-room-teacher-dialog__form__members__member__button, .add-room-teacher-dialog__form__close {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .add-room-teacher-dialog {
+    & .add-room-teacher-dialog__form {
+      & .add-room-teacher-dialog__form__members {
+        & .add-room-teacher-dialog__form__members__member {
+          & .add-room-teacher-dialog__form__members__member__name {
+            font-size: 16px;
+          }
+        }
+      }
+
+      & .add-room-teacher-dialog__form__members__member__button, .add-room-teacher-dialog__form__close {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .add-room-teacher-dialog {
+    & .add-room-teacher-dialog__form {
+      & .add-room-teacher-dialog__form__members {
+        & .add-room-teacher-dialog__form__members__member {
+          & .add-room-teacher-dialog__form__members__member__name {
+            font-size: 18px;
+          }
+        }
+      }
+
+      & .add-room-teacher-dialog__form__members__member__button, .add-room-teacher-dialog__form__close {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .add-room-teacher-dialog {
+    & .add-room-teacher-dialog__form {
+      & .add-room-teacher-dialog__form__members {
+        & .add-room-teacher-dialog__form__members__member {
+          & .add-room-teacher-dialog__form__members__member__name {
+            font-size: 20px;
+          }
+        }
+      }
+
+      & .add-room-teacher-dialog__form__members__member__button, .add-room-teacher-dialog__form__close {
+        font-size: 20px;
+      }
+    }
+  }
+}
