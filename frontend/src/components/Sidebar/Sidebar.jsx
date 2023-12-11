@@ -21,6 +21,14 @@ const Sidebar = ({ hidden }) => {
         navigate("/rooms/join");
     }
 
+    function onRepository() {
+        window.open("https://github.com/Sawtooth04/TES");
+    }
+
+    function onAuthor() {
+        window.open("https://github.com/Sawtooth04");
+    }
+
     return (
         <nav className={`main__wrapper__sidebar sidebar sidebar_${hidden ? 'hidden' : 'opened'}`}>
             <SidebarItem src={"/assets/images/icons/home.png"} alt={"Icon"} text={"Главная"} onClick={onHomePage}/>
@@ -28,6 +36,8 @@ const Sidebar = ({ hidden }) => {
             <SidebarItem src={"/assets/images/icons/link.png"} alt={"Icon"} text={"Присоединиться"} onClick={onJoin}/>
             <SidebarItem src={"/assets/images/icons/taught-courses.png"} alt={"Icon"} text={"Ваши комнаты"} onClick={onOwnRooms}/>
             <SidebarItem src={"/assets/images/icons/your-courses.png"} alt={"Icon"} text={"Комнаты"} onClick={onStudyingRooms}/>
+            <SidebarItem src={"/assets/images/icons/github.png"} alt={"Icon"} text={"Репозиторий"} onClick={onRepository}/>
+            <SidebarItem src={"/assets/images/icons/github.png"} alt={"Icon"} text={"Автор"} onClick={onAuthor}/>
         </nav>
     );
 };
