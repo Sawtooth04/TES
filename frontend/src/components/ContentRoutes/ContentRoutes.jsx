@@ -10,6 +10,7 @@ import OwnRoomsList from "../OwnRoomsList/OwnRoomsList";
 import StudyingRoomsList from "../StudyingRoomsList/StudyingRoomsList";
 import Notifications from "../Notifications/Notifications";
 import UserMenu from "../UserMenu/UserMenu";
+import LoadingView from "../UI/LoadingView/LoadingView";
 
 const ContentRoutes = ({ onNavigate }) => {
     const [username, setUsername] = useState("");
@@ -17,6 +18,7 @@ const ContentRoutes = ({ onNavigate }) => {
     const [isNotificationsHidden, setIsNotificationsHidden] = useState(true);
     const [isUserMenuHidden, setIsUserMenuHidden] = useState(true);
     const [createRoomDialogOpened, setCreateRoomDialogOpened] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         async function getUserName() {
@@ -55,23 +57,33 @@ const ContentRoutes = ({ onNavigate }) => {
         event.stopPropagation();
     }
 
+    function showLoading() {
+        setIsLoading(true);
+    }
+
+    function hideLoading() {
+        setIsLoading(false);
+    }
+
     return (
         <div className="main">
             <Header onSidebarClick={onSidebarStateSwitch} onNotificationsClick={onNotificationsStateSwitch}
                 switchCreateRoomDialogState={switchCreateRoomDialogState} username={username} onUserClick={onUserMenuStateSwitch}/>
             <div className="main__wrapper">
+                {isLoading ? <LoadingView/> : null}
                 <Sidebar hidden={isSidebarHidden}/>
                 <Notifications hidden={isNotificationsHidden}/>
                 <UserMenu hidden={isUserMenuHidden}/>
                 <div className="main__wrapper__content" onClick={hideMenus}>
                     {(createRoomDialogOpened) ? <CreateRoomForm onCreate={switchCreateRoomDialogState}/> : null}
                     <Routes>
-                        <Route path="/room/:roomID/task/:roomTaskID" element={<RoomTask onMount={onMount}/>}/>
-                        <Route path="/room/:roomID/*" element={<Room onMount={onMount}/>}/>
-                        <Route path="/rooms/own" element={<OwnRoomsList onMount={onMount}/>}/>
-                        <Route path="/rooms/studying" element={<StudyingRoomsList onMount={onMount}/>}/>
-                        <Route path="/rooms/join" element={<RoomsList onMount={onMount} isJoining={true}/>}/>
-                        <Route path="*" element={<RoomsList onMount={onMount} isJoining={false}/>}/>
+                        <Route path="/room/:roomID/task/:roomTaskID" element={<RoomTask onMount={onMount} showLoading={showLoading}
+                            hideLoading={hideLoading}/>}/>
+                        <Route path="/room/:roomID/*" element={<Room onMount={onMount} showLoading={showLoading} hideLoading={hideLoading}/>}/>
+                        <Route path="/rooms/own" element={<OwnRoomsList onMount={onMount} showLoading={showLoading} hideLoading={hideLoading}/>}/>
+                        <Route path="/rooms/studying" element={<StudyingRoomsList onMount={onMount} showLoading={showLoading} hideLoading={hideLoading}/>}/>
+                        <Route path="/rooms/join" element={<RoomsList onMount={onMount} isJoining={true} showLoading={showLoading} hideLoading={hideLoading}/>}/>
+                        <Route path="*" element={<RoomsList onMount={onMount} isJoining={false} showLoading={showLoading} hideLoading={hideLoading}/>}/>
                     </Routes>
                 </div>
             </div>

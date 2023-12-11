@@ -6,7 +6,7 @@ import RoomMembers from "./RoomMembers/RoomMembers";
 import RoomDescription from "./RoomDescription/RoomDescription";
 import RoomTeaching from "./RoomTeaching/RoomTeaching";
 
-const Room = ({ onMount }) => {
+const Room = ({ onMount, showLoading, hideLoading }) => {
     const [room, setRoom] = useState(null);
     const [roomOwner, setRoomOwner] = useState(null);
     const [role, setRole] = useState(null);
@@ -70,6 +70,7 @@ const Room = ({ onMount }) => {
             }
         }
 
+        showLoading();
         onMount();
         void getRoom();
         void getRoomOwner();
@@ -77,6 +78,11 @@ const Room = ({ onMount }) => {
         void getBackground();
         void getColor();
     }, []);
+
+    useEffect(() => {
+        if (room && roomOwner && role)
+            hideLoading();
+    }, [room, roomOwner, role]);
 
     return (
         <div className={"room"} style = {{"--color": (color) ? color : "0, 37, 86", "--headerColor": (headerColor) ? headerColor : "236,246,255"}}>
@@ -113,8 +119,8 @@ const Room = ({ onMount }) => {
                     <Routes>
                         <Route path={"description"} element={<RoomDescription room={room}/>}/>
                         <Route path={"members"} element={<RoomMembers/>}/>
-                        <Route path={"tasks"} element={<RoomTasks role={role}/>}/>
-                        <Route path={"main"} element={<RoomMain/>}/>
+                        <Route path={"tasks"} element={<RoomTasks role={role} showLoading={showLoading} hideLoading={hideLoading}/>}/>
+                        <Route path={"main"} element={<RoomMain/>} />
                         <Route path={"teaching/*"} element={<RoomTeaching room={room}/>}/>
                         <Route path={"*"} element={<Navigate to={"main"}/>}/>
                     </Routes>

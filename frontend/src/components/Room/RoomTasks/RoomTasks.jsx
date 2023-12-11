@@ -6,7 +6,7 @@ import RoomTaskLabel from "./RoomTaskLabel/RoomTaskLabel";
 import CreateRoomTaskForm from "../../UI/CreateRoomTaskForm/CreateRoomTaskForm";
 import InfiniteScrollPaginator from "../../UI/InfiniteScrollPaginator/InfiniteScrollPaginator";
 
-const RoomTasks = ({ role }) => {
+const RoomTasks = ({ role, showLoading, hideLoading }) => {
     const { roomID } = useParams();
     const [latestTasks, setLatestTasks]  = useState([]);
     const [createTaskDialogOpened, setCreateTaskDialogOpened] = useState(false);
@@ -17,6 +17,7 @@ const RoomTasks = ({ role }) => {
     }, [])
 
     async function getLatestTasks() {
+        showLoading();
         let response = await fetch(`/task/get-latest?roomID=${roomID}`, {
             method: "get",
             headers: {
@@ -25,6 +26,7 @@ const RoomTasks = ({ role }) => {
         })
         if (response.ok)
             setLatestTasks(await response.json());
+        hideLoading();
     }
 
     function switchCreateTaskDialogState() {

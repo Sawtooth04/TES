@@ -1,19 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import JoinRoomForm from "../JoinRoomForm/JoinRoomForm";
 import RoomLabel from "../RoomLabel/RoomLabel";
 
-const OwnRoomsList = ({ onMount }) => {
+const OwnRoomsList = ({ onMount, showLoading, hideLoading }) => {
     const [rooms, setRooms] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         async function getRooms() {
+            showLoading();
             let response = await fetch("/rooms/get/own-rooms", {
                 'method': 'get',
                 'headers': {'Accept': 'application/json'}
             });
             setRooms(await response.json());
+            hideLoading();
         }
 
         onMount();

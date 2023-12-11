@@ -1,3 +1,4 @@
+@import "customer-verification-media";
 @import "../../public-variables";
 
 .customer-verification {
@@ -12,7 +13,6 @@
   & .customer-verification__text {
     margin: 0;
     text-align: center;
-    font-size: 24px;
     font-family: 'TTNormsPro SemiBold', 'sans-serif';
   }
 
@@ -27,7 +27,6 @@
     & .customer-verification__successful__text {
       margin: 0;
       text-align: center;
-      font-size: 24px;
       font-family: 'TTNormsPro SemiBold', 'sans-serif';
     }
 
@@ -35,7 +34,6 @@
       margin: 1vh 0 0 0;
       color: $primary_color;
       text-align: center;
-      font-size: 24px;
       font-family: 'TTNormsPro SemiBold', 'sans-serif';
       transition: color 200ms ease-out;
     }
