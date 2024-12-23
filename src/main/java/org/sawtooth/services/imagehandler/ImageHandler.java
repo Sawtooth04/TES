@@ -14,6 +14,10 @@ public class ImageHandler implements IImageHandler {
     @Override
     public int GetMedianColor(MultipartFile file) throws IOException {
         BufferedImage bufferedImage = ImageIO.read(file.getInputStream());
+        if (bufferedImage == null) {
+            throw new IllegalArgumentException("Uploaded file is not a valid image");
+        }
+        
         ArrayList<Integer> colors = new ArrayList<>();
 
         for (int x = 0; x < bufferedImage.getWidth(); x += 5)
